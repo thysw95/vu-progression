@@ -138,6 +138,21 @@ table.insert(weaponCustoms,'Weapons/XP2_SPAS12/SPAS12_Customization')
 table.insert(weaponCustoms,'Weapons/XP2_SteyrAug/SteyrAug_Customization')
 table.insert(weaponCustoms,'Weapons/XP4_Crossbow_Prototype/Crossbow_Prototype_Customization')
 
+generalProgressionUnlockList = {
+    {
+        lvl = 2,
+        equipmentPath = 'Weapons/UMP45/U_UMP45',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_PRIMARY'
+    },
+    {
+        lvl = 3,
+        equipmentPath = 'Weapons/AK74M/U_AK74M',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_PRIMARY'
+    },
+}
+
 
 
 

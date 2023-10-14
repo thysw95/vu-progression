@@ -6,8 +6,8 @@ currentPlayers = {}
 
 function PlayerXPUpdated(player, score)
     if #currentPlayers > 0 then
-        for playerIndex = #currentPlayers, 1, -1 do
-            if currentPlayers[playerIndex]['r_PlayerName'] == player.name then
+        for playerIndex, cPlayer in pairs(currentPlayers) do
+            if cPlayer['r_PlayerName'] == player.name then
                 -- self.r_PlayerCurrentXP = self.r_PlayerCurrentXP + xpValue
                 -- currentPlayers[i]['r_PlayerCurrentXP'] = currentPlayers[i]['r_PlayerCurrentXP']
                 print("Found a player to increase XP!!!!")
@@ -34,8 +34,14 @@ function GeneralLevelUp(playerIndex)
     currentPlayers[playerIndex]['r_PlayerRequiredXP'] = currentPlayers[playerIndex]['r_PlayerRequiredXP'] + (currentPlayers[playerIndex]['r_PlayerRequiredXP'])
     currentPlayers[playerIndex]['r_PlayerLevel'] = currentPlayers[playerIndex]['r_PlayerLevel'] + 1
 
-    -- print(currentPlayers[playerIndex]['r_PlayerName'] .. " HAS GAINED A LEVEL!!!!")
-    -- print("NEW LEVEL IS: ")
+    print(currentPlayers[playerIndex]['r_PlayerName'] .. " HAS GAINED A LEVEL!!!!")
+    print("NEW LEVEL IS: ")
+    print(currentPlayers[playerIndex]['r_PlayerLevel'])
+
+    local level = currentPlayers[playerIndex]['r_PlayerLevel']
+
+    NetEvents:Broadcast('OnGeneralLevelUp', level)
+    
     -- print(currentPlayers[playerIndex]['r_PlayerLevel'])
     
 end
@@ -88,4 +94,22 @@ NetEvents:Subscribe('AddNewPlayerForStats', function(player, data)
 
     local playerRankObject = playerRankClass(player)
     table.insert(currentPlayers, playerRankObject)
+
+
+end)
+
+Events:Subscribe('Player:Left', function(player)
+    if #currentPlayers > 0 then
+        for playerIndex, cPlayer in pairs(currentPlayers) do
+            if cPlayer['r_PlayerName'] == player.name then
+                print("AWWW A PLAYER LEFT QWQ")
+
+                currentPlayers[playerIndex] = nil
+            end
+        end
+    end
+end)
+
+NetEvents:Subscribe('AddExperience', function(player, data)
+    PlayerXPUpdated(player, data)
 end)
