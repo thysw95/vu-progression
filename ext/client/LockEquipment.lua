@@ -11,11 +11,11 @@ function LockSoldierCustomizationAsset(veniceSoldierAsset, categoryId)
 
         if partCatId == categoryId then
             for i = #unlockPart.selectableUnlocks,0,-1 do
-                if i ~= 1 then
-                    if unlockPart.selectableUnlocks[i] ~= nil then
-                        unlockPart.selectableUnlocks:erase(i)
-                    end 
-                end
+                -- if i ~= 1 then
+                if unlockPart.selectableUnlocks[i] ~= nil then
+                    unlockPart.selectableUnlocks:erase(i)
+                end 
+                -- end
             end
         end
         

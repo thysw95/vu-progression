@@ -25,14 +25,22 @@ function IncreaseGeneralPlayerXP(playerIndex, xpValue)
     -- print("CURRENT EXPERIENCE:")
     -- print(currentPlayers[playerIndex]['r_PlayerCurrentXP'])
 
-    if currentPlayers[playerIndex]['r_PlayerCurrentXP'] >= currentPlayers[playerIndex]['r_PlayerRequiredXP'] then
-        GeneralLevelUp(playerIndex)
+    -- if currentPlayers[playerIndex]['r_PlayerCurrentXP'] >= currentPlayers[playerIndex]['r_PlayerRequiredXP'] then
+    --     GeneralLevelUp(playerIndex)
+    -- end
+    if #generalProgressionUnlockList > 0 then
+        for _, progressU in pairs(generalProgressionUnlockList) do
+            if currentPlayers[playerIndex]['r_PlayerLevel'] < progressU.lvl and currentPlayers[playerIndex]['r_PlayerCurrentXP'] >= progressU.xpRequired then
+                currentPlayers[playerIndex]['r_PlayerLevel'] = progressU.lvl
+                GeneralLevelUp(playerIndex)
+            end
+        end
     end
 end
 
 function GeneralLevelUp(playerIndex)
-    currentPlayers[playerIndex]['r_PlayerRequiredXP'] = currentPlayers[playerIndex]['r_PlayerRequiredXP'] + (currentPlayers[playerIndex]['r_PlayerRequiredXP'])
-    currentPlayers[playerIndex]['r_PlayerLevel'] = currentPlayers[playerIndex]['r_PlayerLevel'] + 1
+    -- currentPlayers[playerIndex]['r_PlayerRequiredXP'] = currentPlayers[playerIndex]['r_PlayerRequiredXP'] + (currentPlayers[playerIndex]['r_PlayerRequiredXP'])
+    -- currentPlayers[playerIndex]['r_PlayerLevel'] = currentPlayers[playerIndex]['r_PlayerLevel'] + 1
 
     print(currentPlayers[playerIndex]['r_PlayerName'] .. " HAS GAINED A LEVEL!!!!")
     print("NEW LEVEL IS: ")
@@ -40,7 +48,12 @@ function GeneralLevelUp(playerIndex)
 
     local level = currentPlayers[playerIndex]['r_PlayerLevel']
 
-    NetEvents:Broadcast('OnGeneralLevelUp', level)
+    local player = PlayerManager:GetPlayerByName(currentPlayers[playerIndex]['r_PlayerName'])
+
+    if player ~= nil then
+        NetEvents:SendTo('OnGeneralLevelUp', player, level)
+    end
+    -- NetEvents:Broadcast('OnGeneralLevelUp', level)
     
     -- print(currentPlayers[playerIndex]['r_PlayerLevel'])
     
@@ -95,7 +108,7 @@ NetEvents:Subscribe('AddNewPlayerForStats', function(player, data)
     local playerRankObject = playerRankClass(player)
     table.insert(currentPlayers, playerRankObject)
 
-
+    NetEvents:SendTo('OnInitialUnlock', player, playerRankObject['r_PlayerLevel'])
 end)
 
 Events:Subscribe('Player:Left', function(player)

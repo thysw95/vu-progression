@@ -20,7 +20,7 @@ end
 function VUPlayerRankClass:InitGeneralRankStats()
     self.r_PlayerLevel = 1
     self.r_PlayerCurrentXP = 0
-    self.r_PlayerRequiredXP = 200
+    -- self.r_PlayerRequiredXP = 200
 end
 
 -- function VUPlayerRankClass:OnExperienceGained(xpValue)

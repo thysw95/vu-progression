@@ -140,16 +140,32 @@ table.insert(weaponCustoms,'Weapons/XP4_Crossbow_Prototype/Crossbow_Prototype_Cu
 
 generalProgressionUnlockList = {
     {
+        lvl = 1,
+        equipmentPath = 'Weapons/M9/U_M9',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_SECONDARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/MP443/U_MP443',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_SECONDARY',
+        xpRequired = 0
+    },
+    {
         lvl = 2,
         equipmentPath = 'Weapons/UMP45/U_UMP45',
         kit = 'All',
-        slotId = 'ID_M_SOLDIER_PRIMARY'
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 1000
     },
     {
         lvl = 3,
         equipmentPath = 'Weapons/AK74M/U_AK74M',
         kit = 'All',
-        slotId = 'ID_M_SOLDIER_PRIMARY'
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 2100
     },
 }
 
