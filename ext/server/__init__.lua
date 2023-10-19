@@ -2,60 +2,118 @@ require("__shared/config")
 -- require("SQLTest")
 
 playerRankClass = require('__shared/PlayerRank')
-currentPlayers = {}
+currentRankupPlayers = {}
+
+function AddPlayerToRankUpList(player)
+    local playerRankObject = playerRankClass(player)
+
+    -- local playerAdded = false
+    
+    if #currentRankupPlayers > 0 then
+        local foundPlayer = false
+
+        for _, cPlayer in pairs(currentRankupPlayers) do
+            if cPlayer['r_PlayerName'] == player.name then
+                print(player.name .. ' IS ALREADY ON THE LIST')
+
+                foundPlayer = true
+            end
+        end
+
+        if foundPlayer == false then
+            print("ADDING " .. player.name .. " TO THE RANKUP LIST")
+
+            table.insert(currentRankupPlayers, playerRankObject)
+
+            -- playerAdded = true
+        end
+    else
+        print("ADDING " .. player.name .. " TO THE RANKUP LIST")
+
+        table.insert(currentRankupPlayers, playerRankObject)
+
+        -- playerAdded = true
+    end
+
+    -- if playerAdded == true then
+    --     initPlayerLevels(player, playerRankObject)
+    -- end
+    initPlayerLevels(player, playerRankObject)
+end
+
+function initPlayerLevels(player, playerRankObject)
+    NetEvents:SendTo('OnInitialUnlock', player, "General", playerRankObject['r_PlayerLevel'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Assault", playerRankObject['r_AssaultLevel'])
+end
 
 function PlayerXPUpdated(player, score)
-    if #currentPlayers > 0 then
-        for playerIndex, cPlayer in pairs(currentPlayers) do
+    -- player:MakeWritable()
+    local selectedKit = player.customization
+    local kitData = DataContainer(selectedKit)
+    local veniceSoldierAsset = VeniceSoldierCustomizationAsset(kitData)
+    veniceSoldierAsset:MakeWritable()
+
+    local kitName = veniceSoldierAsset.labelSid
+
+    if #currentRankupPlayers > 0 then
+        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
             if cPlayer['r_PlayerName'] == player.name then
-                -- self.r_PlayerCurrentXP = self.r_PlayerCurrentXP + xpValue
-                -- currentPlayers[i]['r_PlayerCurrentXP'] = currentPlayers[i]['r_PlayerCurrentXP']
                 print("Found a player to increase XP!!!!")
 
                 IncreaseGeneralPlayerXP(playerIndex, score)
+
+                if kitName == 'ID_M_ASSAULT' then
+                    IncreaseAssaultPlayerXP(playerIndex, score)
+                end
             end
         end
     end
 end
 
 function IncreaseGeneralPlayerXP(playerIndex, xpValue)
-    currentPlayers[playerIndex]['r_PlayerCurrentXP'] = currentPlayers[playerIndex]['r_PlayerCurrentXP'] + xpValue
+    currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] = currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] + xpValue
 
-    -- print("GAINED EXPERIENCE!!!!!")
-    -- print("CURRENT EXPERIENCE:")
-    -- print(currentPlayers[playerIndex]['r_PlayerCurrentXP'])
-
-    -- if currentPlayers[playerIndex]['r_PlayerCurrentXP'] >= currentPlayers[playerIndex]['r_PlayerRequiredXP'] then
-    --     GeneralLevelUp(playerIndex)
-    -- end
     if #generalProgressionUnlockList > 0 then
-        for _, progressU in pairs(generalProgressionUnlockList) do
-            if currentPlayers[playerIndex]['r_PlayerLevel'] < progressU.lvl and currentPlayers[playerIndex]['r_PlayerCurrentXP'] >= progressU.xpRequired then
-                currentPlayers[playerIndex]['r_PlayerLevel'] = progressU.lvl
-                GeneralLevelUp(playerIndex)
+        for _, gProgress in pairs(generalProgressionUnlockList) do
+            if currentRankupPlayers[playerIndex]['r_PlayerLevel'] < gProgress.lvl and currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] >= gProgress.xpRequired then
+                currentRankupPlayers[playerIndex]['r_PlayerLevel'] = gProgress.lvl
+
+                print("CHANGED GENERAL PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex]['r_PlayerLevel']))
+
+                PlayerLevelUp(playerIndex, "General", currentRankupPlayers[playerIndex]['r_PlayerLevel'])
             end
         end
     end
 end
 
-function GeneralLevelUp(playerIndex)
-    -- currentPlayers[playerIndex]['r_PlayerRequiredXP'] = currentPlayers[playerIndex]['r_PlayerRequiredXP'] + (currentPlayers[playerIndex]['r_PlayerRequiredXP'])
-    -- currentPlayers[playerIndex]['r_PlayerLevel'] = currentPlayers[playerIndex]['r_PlayerLevel'] + 1
+function IncreaseAssaultPlayerXP(playerIndex, xpValue)
+    currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] = currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] + xpValue
 
-    print(currentPlayers[playerIndex]['r_PlayerName'] .. " HAS GAINED A LEVEL!!!!")
-    print("NEW LEVEL IS: ")
-    print(currentPlayers[playerIndex]['r_PlayerLevel'])
+    if #assaultProgressionUnlockList > 0 then
+        for _, aProgress in pairs(assaultProgressionUnlockList) do
+            if currentRankupPlayers[playerIndex]['r_AssaultLevel'] < aProgress.lvl and currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] >= aProgress.xpRequired then
+                currentRankupPlayers[playerIndex]['r_AssaultLevel'] = aProgress.lvl
 
-    local level = currentPlayers[playerIndex]['r_PlayerLevel']
+                print("CHANGED ASSAULT PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex]['r_AssaultLevel']))
 
-    local player = PlayerManager:GetPlayerByName(currentPlayers[playerIndex]['r_PlayerName'])
+                PlayerLevelUp(playerIndex, "Assault", currentRankupPlayers[playerIndex]['r_AssaultLevel'])
+            end
+        end
+    end
+end
+
+function PlayerLevelUp(playerIndex, levelType, level)
+    -- print(currentRankupPlayers[playerIndex]['r_PlayerName'] .. " HAS GAINED A LEVEL FOR " .. levelType .. "!!!!")
+    -- print("NEW " .. levelType .. " LEVEL IS: ")
+    -- print(currentRankupPlayers[playerIndex]['r_PlayerLevel'])
+
+    -- local level = currentRankupPlayers[playerIndex]['r_PlayerLevel']
+
+    local player = PlayerManager:GetPlayerByName(currentRankupPlayers[playerIndex]['r_PlayerName'])
 
     if player ~= nil then
-        NetEvents:SendTo('OnGeneralLevelUp', player, level)
+        NetEvents:SendTo('OnGeneralLevelUp', player, levelType, level)
     end
-    -- NetEvents:Broadcast('OnGeneralLevelUp', level)
-    
-    -- print(currentPlayers[playerIndex]['r_PlayerLevel'])
     
 end
 
@@ -65,6 +123,20 @@ Events:Subscribe('Player:Score', function(player, scoringTypeData, score)
     -- if rankPlayer.name == player.name then
     --     NetEvents:Broadcast('PlayerScoreEvent', score)
     -- end
+    
+
+    if player.name == 'MJShepherd' then
+        print("A SCORING EVENT HAS TRIGGERED FOR: " .. player.name)
+        print("SCORE AMOUNT: " .. tostring(score))
+
+        print('THE CURRENT PLAYER LIST IS: ')
+        if #currentRankupPlayers > 0 then
+            for playerIndex, cPlayer in pairs(currentRankupPlayers) do
+                print(cPlayer['r_PlayerName'])
+            end
+        end
+    end
+
     PlayerXPUpdated(player, score)
 end)
 
@@ -85,7 +157,7 @@ Events:Subscribe('Player:Joining', function(name, playerGuid, ipAddress, account
 
     --     local playerRankObject = playerRankClass(player)
 
-    --     table.insert(currentPlayers, playerRankObject)
+    --     table.insert(currentRankupPlayers, playerRankObject)
     -- end
 
     
@@ -97,27 +169,25 @@ Events:Subscribe('Player:Created', function(player)
     -- print("THE RECEIVED PLAYER OBJECT IS: ")
     -- print(player)
 
-    -- table.insert(currentPlayers, playerRankObject)
+    -- table.insert(currentRankupPlayers, playerRankObject)
 
 end)
 
 NetEvents:Subscribe('AddNewPlayerForStats', function(player, data)
-    print(player.name .. ' is joining.')
-    print(data)
+    -- local playerRankObject = playerRankClass(player)
+    -- table.insert(currentRankupPlayers, playerRankObject)
+    AddPlayerToRankUpList(player)
 
-    local playerRankObject = playerRankClass(player)
-    table.insert(currentPlayers, playerRankObject)
-
-    NetEvents:SendTo('OnInitialUnlock', player, playerRankObject['r_PlayerLevel'])
+    
 end)
 
 Events:Subscribe('Player:Left', function(player)
-    if #currentPlayers > 0 then
-        for playerIndex, cPlayer in pairs(currentPlayers) do
+    if #currentRankupPlayers > 0 then
+        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
             if cPlayer['r_PlayerName'] == player.name then
                 print("AWWW A PLAYER LEFT QWQ")
 
-                currentPlayers[playerIndex] = nil
+                currentRankupPlayers[playerIndex] = nil
             end
         end
     end

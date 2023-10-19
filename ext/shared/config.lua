@@ -1,52 +1,51 @@
-playerName = "MJShepherd"
-
 kits = {}
 table.insert(kits, 'Gameplay/Kits/RUAssault')
-table.insert(kits, 'Gameplay/Kits/RUAssault_GM')
-table.insert(kits, 'Gameplay/Kits/RUAssault_GM_XP4')
-table.insert(kits, 'Gameplay/Kits/RUAssault_XP4')
-table.insert(kits, 'Gameplay/Kits/RUAssault_XP4_SCV')
+-- table.insert(kits, 'Gameplay/Kits/RUAssault_GM')
+-- table.insert(kits, 'Gameplay/Kits/RUAssault_GM_XP4')
+-- table.insert(kits, 'Gameplay/Kits/RUAssault_XP4')
+-- table.insert(kits, 'Gameplay/Kits/RUAssault_XP4_SCV')
 table.insert(kits, 'Gameplay/Kits/RUEngineer')
-table.insert(kits, 'Gameplay/Kits/RUEngineer_GM')
-table.insert(kits, 'Gameplay/Kits/RUEngineer_GM_XP4')
-table.insert(kits, 'Gameplay/Kits/RUEngineer_XP4')
-table.insert(kits, 'Gameplay/Kits/RUEngineer_XP4_SCV')
+-- table.insert(kits, 'Gameplay/Kits/RUEngineer_GM')
+-- table.insert(kits, 'Gameplay/Kits/RUEngineer_GM_XP4')
+-- table.insert(kits, 'Gameplay/Kits/RUEngineer_XP4')
+-- table.insert(kits, 'Gameplay/Kits/RUEngineer_XP4_SCV')
 table.insert(kits, 'Gameplay/Kits/RURecon')
-table.insert(kits, 'Gameplay/Kits/RURecon_GM')
-table.insert(kits, 'Gameplay/Kits/RURecon_GM_XP4')
-table.insert(kits, 'Gameplay/Kits/RURecon_XP4')
-table.insert(kits, 'Gameplay/Kits/RURecon_XP4_SCV')
+-- table.insert(kits, 'Gameplay/Kits/RURecon_GM')
+-- table.insert(kits, 'Gameplay/Kits/RURecon_GM_XP4')
+-- table.insert(kits, 'Gameplay/Kits/RURecon_XP4')
+-- table.insert(kits, 'Gameplay/Kits/RURecon_XP4_SCV')
 table.insert(kits, 'Gameplay/Kits/RUSupport')
-table.insert(kits, 'Gameplay/Kits/RUSupport_GM')
-table.insert(kits, 'Gameplay/Kits/RUSupport_GM_XP4')
-table.insert(kits, 'Gameplay/Kits/RUSupport_XP4')
-table.insert(kits, 'Gameplay/Kits/RUSupport_XP4_SCV')
+-- table.insert(kits, 'Gameplay/Kits/RUSupport_GM')
+-- table.insert(kits, 'Gameplay/Kits/RUSupport_GM_XP4')
+-- table.insert(kits, 'Gameplay/Kits/RUSupport_XP4')
+-- table.insert(kits, 'Gameplay/Kits/RUSupport_XP4_SCV')
 table.insert(kits, 'Gameplay/Kits/USAssault')
-table.insert(kits, 'Gameplay/Kits/USAssault_GM')
-table.insert(kits, 'Gameplay/Kits/USAssault_GM_XP4')
-table.insert(kits, 'Gameplay/Kits/USAssault_XP4')
-table.insert(kits, 'Gameplay/Kits/USAssault_XP4_SCV')
+-- table.insert(kits, 'Gameplay/Kits/USAssault_GM')
+-- table.insert(kits, 'Gameplay/Kits/USAssault_GM_XP4')
+-- table.insert(kits, 'Gameplay/Kits/USAssault_XP4')
+-- table.insert(kits, 'Gameplay/Kits/USAssault_XP4_SCV')
 table.insert(kits, 'Gameplay/Kits/USEngineer')
-table.insert(kits, 'Gameplay/Kits/USEngineer_GM')
-table.insert(kits, 'Gameplay/Kits/USEngineer_GM_XP4')
-table.insert(kits, 'Gameplay/Kits/USEngineer_XP4')
-table.insert(kits, 'Gameplay/Kits/USEngineer_XP4_SCV')
+-- table.insert(kits, 'Gameplay/Kits/USEngineer_GM')
+-- table.insert(kits, 'Gameplay/Kits/USEngineer_GM_XP4')
+-- table.insert(kits, 'Gameplay/Kits/USEngineer_XP4')
+-- table.insert(kits, 'Gameplay/Kits/USEngineer_XP4_SCV')
 table.insert(kits, 'Gameplay/Kits/USRecon')
-table.insert(kits, 'Gameplay/Kits/USRecon_GM')
-table.insert(kits, 'Gameplay/Kits/USRecon_GM_XP4')
-table.insert(kits, 'Gameplay/Kits/USRecon_XP4')
-table.insert(kits, 'Gameplay/Kits/USRecon_XP4_SCV')
+-- table.insert(kits, 'Gameplay/Kits/USRecon_GM')
+-- table.insert(kits, 'Gameplay/Kits/USRecon_GM_XP4')
+-- table.insert(kits, 'Gameplay/Kits/USRecon_XP4')
+-- table.insert(kits, 'Gameplay/Kits/USRecon_XP4_SCV')
 table.insert(kits, 'Gameplay/Kits/USSupport')
-table.insert(kits, 'Gameplay/Kits/USSupport_GM')
-table.insert(kits, 'Gameplay/Kits/USSupport_GM_XP4')
-table.insert(kits, 'Gameplay/Kits/USSupport_XP4')
-table.insert(kits, 'Gameplay/Kits/USSupport_XP4_SCV')
+-- table.insert(kits, 'Gameplay/Kits/USSupport_GM')
+-- table.insert(kits, 'Gameplay/Kits/USSupport_GM_XP4')
+-- table.insert(kits, 'Gameplay/Kits/USSupport_XP4')
+-- table.insert(kits, 'Gameplay/Kits/USSupport_XP4_SCV')
 
 kitPrimaryWeaponID = 'ID_M_SOLDIER_PRIMARY'
 kitSecondaryWeaponID = 'ID_M_SOLDIER_SECONDARY'
 kitSpecializationID = 'ID_M_SOLDIER_SPECIALIZATION'
 kitSoldierGadget1ID = 'ID_M_SOLDIER_GADGET1'
 kitSoldierGadget2ID = 'ID_M_SOLDIER_GADGET2'
+kitWeaponCatGadgetID = 'ID_WEAPON_CATEGORYGADGET1'
 kitGadget1ID = 'GADGET1'
 
 weaponCustoms = {}
@@ -162,10 +161,54 @@ generalProgressionUnlockList = {
     },
     {
         lvl = 3,
-        equipmentPath = 'Weapons/AK74M/U_AK74M',
+        equipmentPath = 'Weapons/Remington870/U_870',
         kit = 'All',
         slotId = 'ID_M_SOLDIER_PRIMARY',
         xpRequired = 2100
+    },
+}
+
+assaultProgressionUnlockList = {
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/AK74M/U_AK74M',
+        uskit = 'Gameplay/Kits/USAssault',
+        rukit = 'Gameplay/Kits/RUAssault',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/M16A4/U_M16A4',
+        uskit = 'Gameplay/Kits/USAssault',
+        rukit = 'Gameplay/Kits/RUAssault',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/Gadgets/Medicbag/U_Medkit',
+        uskit = 'Gameplay/Kits/USAssault',
+        rukit = 'Gameplay/Kits/RUAssault',
+        slotId = 'ID_M_SOLDIER_GADGET1',
+        xpRequired = 0
+    },
+    {
+        lvl = 2,
+        equipmentPath = 'Weapons/Gadgets/Defibrillator/U_Defib',
+        uskit = 'Gameplay/Kits/USAssault',
+        rukit = 'Gameplay/Kits/RUAssault',
+        slotId = 'ID_M_SOLDIER_GADGET2',
+        xpRequired = 100
+    },
+    {
+        lvl = 3,
+        equipmentPath = 'Weapons/M9/U_M9',
+        uskit = 'Gameplay/Kits/USAssault',
+        rukit = 'Gameplay/Kits/RUAssault',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 200
     },
 }
 
