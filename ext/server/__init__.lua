@@ -42,8 +42,14 @@ function AddPlayerToRankUpList(player)
 end
 
 function initPlayerLevels(player, playerRankObject)
+    -- Player General Initial Unlock
     NetEvents:SendTo('OnInitialUnlock', player, "General", playerRankObject['r_PlayerLevel'])
+
+    -- Kit Initial Unlocks
     NetEvents:SendTo('OnInitialUnlock', player, "Assault", playerRankObject['r_AssaultLevel'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Engineer", playerRankObject['r_EngineerLevel'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Support", playerRankObject['r_SupportLevel'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Recon", playerRankObject['r_ReconLevel'])
 end
 
 function PlayerXPUpdated(player, score)
@@ -60,43 +66,73 @@ function PlayerXPUpdated(player, score)
             if cPlayer['r_PlayerName'] == player.name then
                 print("Found a player to increase XP!!!!")
 
-                IncreaseGeneralPlayerXP(playerIndex, score)
+                -- IncreaseGeneralPlayerXP(playerIndex, score)
+                IncreasePlayerXP(playerIndex, 'r_PlayerLevel', 'r_PlayerCurrentXP', score, generalProgressionUnlockList, "General")
 
                 if kitName == 'ID_M_ASSAULT' then
-                    IncreaseAssaultPlayerXP(playerIndex, score)
+                    -- IncreaseAssaultPlayerXP(playerIndex, score)
+                    IncreasePlayerXP(playerIndex, 'r_AssaultLevel', 'r_AssaultCurrentXP', score, assaultProgressionUnlockList, "Assault")
+                end
+
+                if kitName == 'ID_M_ENGINEER' then
+                    IncreasePlayerXP(playerIndex, 'r_EngineerLevel', 'r_EngineerCurrentXP', score, engineerProgressUnlockList, "Engineer")
+                end
+
+                if kitName == 'ID_M_SUPPORT' then
+                    IncreasePlayerXP(playerIndex, 'r_SupportLevel', 'r_SupportCurrentXP', score, supportProgressUnlockList, "Support")
+                end
+
+                if kitName == 'ID_M_RECON' then
+                    IncreasePlayerXP(playerIndex, 'r_ReconLevel', 'r_ReconCurrentXP', score, reconProgressUnlockList, "Recon")
                 end
             end
         end
     end
 end
 
-function IncreaseGeneralPlayerXP(playerIndex, xpValue)
-    currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] = currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] + xpValue
+-- function IncreaseGeneralPlayerXP(playerIndex, xpValue)
+--     currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] = currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] + xpValue
 
-    if #generalProgressionUnlockList > 0 then
-        for _, gProgress in pairs(generalProgressionUnlockList) do
-            if currentRankupPlayers[playerIndex]['r_PlayerLevel'] < gProgress.lvl and currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] >= gProgress.xpRequired then
-                currentRankupPlayers[playerIndex]['r_PlayerLevel'] = gProgress.lvl
+--     if #generalProgressionUnlockList > 0 then
+--         for _, gProgress in pairs(generalProgressionUnlockList) do
+--             if currentRankupPlayers[playerIndex]['r_PlayerLevel'] < gProgress.lvl and currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] >= gProgress.xpRequired then
+--                 currentRankupPlayers[playerIndex]['r_PlayerLevel'] = gProgress.lvl
 
-                print("CHANGED GENERAL PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex]['r_PlayerLevel']))
+--                 print("CHANGED GENERAL PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex]['r_PlayerLevel']))
 
-                PlayerLevelUp(playerIndex, "General", currentRankupPlayers[playerIndex]['r_PlayerLevel'])
-            end
-        end
-    end
-end
+--                 PlayerLevelUp(playerIndex, "General", currentRankupPlayers[playerIndex]['r_PlayerLevel'])
+--             end
+--         end
+--     end
+-- end
 
-function IncreaseAssaultPlayerXP(playerIndex, xpValue)
-    currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] = currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] + xpValue
+-- function IncreaseAssaultPlayerXP(playerIndex, xpValue)
+--     currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] = currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] + xpValue
 
-    if #assaultProgressionUnlockList > 0 then
-        for _, aProgress in pairs(assaultProgressionUnlockList) do
-            if currentRankupPlayers[playerIndex]['r_AssaultLevel'] < aProgress.lvl and currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] >= aProgress.xpRequired then
-                currentRankupPlayers[playerIndex]['r_AssaultLevel'] = aProgress.lvl
+--     if #assaultProgressionUnlockList > 0 then
+--         for _, aProgress in pairs(assaultProgressionUnlockList) do
+--             if currentRankupPlayers[playerIndex]['r_AssaultLevel'] < aProgress.lvl and currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] >= aProgress.xpRequired then
+--                 currentRankupPlayers[playerIndex]['r_AssaultLevel'] = aProgress.lvl
 
-                print("CHANGED ASSAULT PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex]['r_AssaultLevel']))
+--                 print("CHANGED ASSAULT PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex]['r_AssaultLevel']))
 
-                PlayerLevelUp(playerIndex, "Assault", currentRankupPlayers[playerIndex]['r_AssaultLevel'])
+--                 PlayerLevelUp(playerIndex, "Assault", currentRankupPlayers[playerIndex]['r_AssaultLevel'])
+--             end
+--         end
+--     end
+-- end
+
+function IncreasePlayerXP(playerIndex, levelKey, xpKey, xpValue, progressUnlockList, levelType)
+    currentRankupPlayers[playerIndex][xpKey] = currentRankupPlayers[playerIndex][xpKey] + xpValue
+
+    if #progressUnlockList > 0 then
+        for _, aProgress in pairs(progressUnlockList) do
+            if currentRankupPlayers[playerIndex][levelKey] < aProgress.lvl and currentRankupPlayers[playerIndex][xpKey] >= aProgress.xpRequired then
+                currentRankupPlayers[playerIndex][levelKey] = aProgress.lvl
+
+                print("CHANGED " .. levelType .. " PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex][levelKey]))
+
+                PlayerLevelUp(playerIndex, levelType, currentRankupPlayers[playerIndex][levelKey])
             end
         end
     end
@@ -112,7 +148,7 @@ function PlayerLevelUp(playerIndex, levelType, level)
     local player = PlayerManager:GetPlayerByName(currentRankupPlayers[playerIndex]['r_PlayerName'])
 
     if player ~= nil then
-        NetEvents:SendTo('OnGeneralLevelUp', player, levelType, level)
+        NetEvents:SendTo('OnLevelUp', player, levelType, level)
     end
     
 end

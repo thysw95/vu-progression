@@ -9,8 +9,11 @@ end
 function VUPlayerRankClass:InitVariables(player)
     self.InitPlayerVariables(self, player)
     self.InitGeneralRankStats(self)
+
     self.InitAssaultRankStats(self)
-    -- print("SUCCESSFULLY ADDED INITIALIZED A NEW PLAYER!!!!!!!!!")
+    self.InitEngineerRankStats(self)
+    self.InitSupportRankStats(self)
+    self.InitReconRankStats(self)
 end
 
 function VUPlayerRankClass:InitPlayerVariables(player)
@@ -27,6 +30,24 @@ function VUPlayerRankClass:InitAssaultRankStats()
     self.r_AssaultLevel = 1
     self.r_AssaultCurrentXP = 0
 end
+
+function VUPlayerRankClass:InitEngineerRankStats()
+    self.r_EngineerLevel = 1
+    self.r_EngineerCurrentXP = 0
+end
+
+function VUPlayerRankClass:InitSupportRankStats()
+    self.r_SupportLevel = 1
+    self.r_SupportCurrentXP = 0
+end
+
+function VUPlayerRankClass:InitReconRankStats()
+    self.r_ReconLevel = 1
+    self.r_ReconCurrentXP = 0
+end
+
+
+
 
 -- function VUPlayerRankClass:OnExperienceGained(xpValue)
 --     self.r_PlayerCurrentXP = self.r_PlayerCurrentXP + xpValue

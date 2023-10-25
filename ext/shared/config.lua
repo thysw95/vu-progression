@@ -212,6 +212,137 @@ assaultProgressionUnlockList = {
     },
 }
 
+engineerProgressUnlockList = {
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/AKS74u/U_AKS74u',
+        uskit = 'Gameplay/Kits/USEngineer',
+        rukit = 'Gameplay/Kits/RUEngineer',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/M4A1/U_M4A1',
+        uskit = 'Gameplay/Kits/USEngineer',
+        rukit = 'Gameplay/Kits/RUEngineer',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/RPG7/U_RPG7',
+        uskit = 'Gameplay/Kits/USEngineer',
+        rukit = 'Gameplay/Kits/RUEngineer',
+        slotId = 'ID_M_SOLDIER_GADGET1',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/SMAW/U_SMAW',
+        uskit = 'Gameplay/Kits/USEngineer',
+        rukit = 'Gameplay/Kits/RUEngineer',
+        slotId = 'ID_M_SOLDIER_GADGET1',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/Gadgets/Repairtool/U_Repairtool',
+        uskit = 'Gameplay/Kits/USEngineer',
+        rukit = 'Gameplay/Kits/RUEngineer',
+        slotId = 'ID_M_SOLDIER_GADGET2',
+        xpRequired = 0
+    },
+    {
+        lvl = 2,
+        equipmentPath = 'Weapons/Sa18IGLA/U_Sa18IGLA',
+        uskit = 'Gameplay/Kits/USEngineer',
+        rukit = 'Gameplay/Kits/RUEngineer',
+        slotId = 'ID_M_SOLDIER_GADGET1',
+        xpRequired = 100
+    },
+    {
+        lvl = 2,
+        equipmentPath = 'Weapons/FIM92A/U_FIM92',
+        uskit = 'Gameplay/Kits/USEngineer',
+        rukit = 'Gameplay/Kits/RUEngineer',
+        slotId = 'ID_M_SOLDIER_GADGET1',
+        xpRequired = 100
+    },
+}
+
+supportProgressUnlockList = {
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/RPK/U_RPK-74M',
+        uskit = 'Gameplay/Kits/USSupport',
+        rukit = 'Gameplay/Kits/RUSupport',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/M27IAR/U_M27IAR',
+        uskit = 'Gameplay/Kits/USSupport',
+        rukit = 'Gameplay/Kits/RUSupport',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+    -- This is a strange one. For some reason, im unable to lock the ammo bag because its in a weird slot. 
+    -- You would think it would go into 'ID_M_SOLDIER_GADGET1', and it does, but this category is shared with another. 
+    -- So currently, its unnecessary to unlock it again, because it will get duplicated...
+    -- {
+    --     lvl = 1,
+    --     equipmentPath = 'Weapons/Gadgets/Ammobag/U_Ammobag',
+    --     uskit = 'Gameplay/Kits/USSupport',
+    --     rukit = 'Gameplay/Kits/RUSupport',
+    --     slotId = 'ID_M_SOLDIER_GADGET1',
+    --     xpRequired = 0
+    -- },
+    {
+        lvl = 2,
+        equipmentPath = 'Weapons/Gadgets/C4/U_C4',
+        uskit = 'Gameplay/Kits/USSupport',
+        rukit = 'Gameplay/Kits/RUSupport',
+        slotId = 'ID_M_SOLDIER_GADGET2',
+        xpRequired = 100
+    },
+}
+
+reconProgressUnlockList = {
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/SVD/U_SVD',
+        uskit = 'Gameplay/Kits/USRecon',
+        rukit = 'Gameplay/Kits/RURecon',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/MK11/U_MK11',
+        uskit = 'Gameplay/Kits/USRecon',
+        rukit = 'Gameplay/Kits/RURecon',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/Gadgets/RadioBeacon/U_RadioBeacon',
+        uskit = 'Gameplay/Kits/USRecon',
+        rukit = 'Gameplay/Kits/RURecon',
+        slotId = 'ID_M_SOLDIER_GADGET2',
+        xpRequired = 0
+    },
+    {
+        lvl = 2,
+        equipmentPath = 'Weapons/Gadgets/T-UGS/U_UGS',
+        uskit = 'Gameplay/Kits/USRecon',
+        rukit = 'Gameplay/Kits/RURecon',
+        slotId = 'ID_M_SOLDIER_GADGET1',
+        xpRequired = 100
+    },
+}
 
 
 

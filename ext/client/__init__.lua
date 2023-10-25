@@ -23,13 +23,57 @@ function UnlockClientItem(levelCat, level)
     if levelCat == 'Assault' then
         print("SOMETHING WITH ASSUALT IS SUPPOSED TO HAPPEN")
         print("ASSAULT IS LEVEL " .. level)
-        -- print("ASSAULT UNLOCK IS ")
-        -- print(assaultProgressionUnlockList)
+
         if #assaultProgressionUnlockList > 0 then
             for _, unlock in pairs(assaultProgressionUnlockList) do
                 if unlock.lvl == level then
                     print("THE FOUND UNLOCK IS: ")
                     print(unlock)
+
+                    ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.uskit)
+                    ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.rukit)
+                end
+            end
+        end
+    end
+
+    -- If level category is engineer, unlock a piece of equipment for engineer
+    if levelCat == 'Engineer' then
+        if #engineerProgressUnlockList > 0 then
+            for _, unlock in pairs(engineerProgressUnlockList) do
+                if unlock.lvl == level then
+                    -- print("THE FOUND UNLOCK IS: ")
+                    -- print(unlock)
+
+                    ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.uskit)
+                    ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.rukit)
+                end
+            end
+        end
+    end
+
+    -- If level category is support, unlock a piece of equipment for support
+    if levelCat == 'Support' then
+        if #supportProgressUnlockList > 0 then
+            for _, unlock in pairs(supportProgressUnlockList) do
+                if unlock.lvl == level then
+                    -- print("THE FOUND UNLOCK IS: ")
+                    -- print(unlock)
+
+                    ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.uskit)
+                    ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.rukit)
+                end
+            end
+        end
+    end
+
+    -- If level category is recon, unlock a piece of equipment for recon
+    if levelCat == 'Recon' then
+        if #reconProgressUnlockList > 0 then
+            for _, unlock in pairs(reconProgressUnlockList) do
+                if unlock.lvl == level then
+                    -- print("THE FOUND UNLOCK IS: ")
+                    -- print(unlock)
 
                     ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.uskit)
                     ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.rukit)
@@ -50,7 +94,7 @@ NetEvents:Subscribe('OnInitialUnlock', function(levelCat, level)
     UnlockClientItem(levelCat, level)
 end)
 
-NetEvents:Subscribe('OnGeneralLevelUp', function(levelCat, level)
+NetEvents:Subscribe('OnLevelUp', function(levelCat, level)
     -- if levelCat == 'Assault' then
     --     print("OH YEAH ITS ASSAULT LEVELLIN TIMEEEEE!!!!!!! UWU")
     -- end
