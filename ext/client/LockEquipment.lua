@@ -43,12 +43,18 @@ end
 -- Function to remove all the customization options on the selected weapon
 function LockWeaponCustomizationAsset(weaponCustomizationAsset)
     local attachTable = CustomizationTable(weaponCustomizationAsset.customization)
+    -- print("{name = " .. weaponCustomizationAsset.name .. "}")
+
     for i, unlockPart in pairs(attachTable.unlockParts) do
 
         local unlockPart = CustomizationUnlockParts(unlockPart)
         unlockPart:MakeWritable()
 
+        -- print("INDEX: " .. i)
+
         for i = #unlockPart.selectableUnlocks,1,-1 do
+            -- print("UNLOCK: ")
+            -- print(unlockPart.selectableUnlocks[i])
             unlockPart.selectableUnlocks:erase(i)
         end
     end

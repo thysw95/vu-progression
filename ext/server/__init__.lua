@@ -50,6 +50,12 @@ function initPlayerLevels(player, playerRankObject)
     NetEvents:SendTo('OnInitialUnlock', player, "Engineer", playerRankObject['r_EngineerLevel'])
     NetEvents:SendTo('OnInitialUnlock', player, "Support", playerRankObject['r_SupportLevel'])
     NetEvents:SendTo('OnInitialUnlock', player, "Recon", playerRankObject['r_ReconLevel'])
+
+    -- Attachment unlocks
+    if #playerRankObject['r_WeaponProgressList'] > 0 then
+        NetEvents:SendTo('OnInitialAttachmentUnlock', player, playerRankObject['r_WeaponProgressList'])
+    end
+    -- NetEvents:SendTo('OnInitialAttachmentUnlock', player)
 end
 
 function PlayerXPUpdated(player, score)
@@ -88,6 +94,27 @@ function PlayerXPUpdated(player, score)
             end
         end
     end
+end
+
+function IncreaseWeaponKills(playerIndex, weaponName) 
+    -- if currentRankupPlayers[playerIndex] ~= nil then
+        if #currentRankupPlayers[playerIndex]['r_WeaponProgressList'] > 0 then
+            for _, weapon in pairs(currentRankupPlayers[playerIndex]['r_WeaponProgressList']) do
+                if weapon.weaponName == weaponName then
+                    weapon.kills = weapon.kills + 1
+
+                    print("THE WEAPON " .. weapon.weaponName .. " CURRENT KILLS IS " .. tostring(weapon.kills))
+
+                    local player = PlayerManager:GetPlayerByName(currentRankupPlayers[playerIndex]['r_PlayerName'])
+                    if player ~= nil then
+                        NetEvents:SendTo('OnKilledPlayer', player, weapon.weaponName, weapon.kills)
+                    end
+
+                    break
+                end
+            end
+        end
+    -- end
 end
 
 -- function IncreaseGeneralPlayerXP(playerIndex, xpValue)
@@ -176,6 +203,34 @@ Events:Subscribe('Player:Score', function(player, scoringTypeData, score)
     PlayerXPUpdated(player, score)
 end)
 
+-- This event is used by the inflictor
+Events:Subscribe('Player:Killed', function(player, inflictor, position, weapon, isRoadKill, isHeadShot, wasVictimInReviveState, info)
+    if inflictor ~= nil and inflictor.name == 'MJShepherd' then
+        print(player.name .. " was killed by " .. inflictor.name .. " with a " .. weapon)
+
+        -- local damageGiverInfo = DamageGiverInfo(info)
+        -- local soldierWeaponUnlockAsset = SoldierWeaponUnlockAsset(damageGiverInfo.weaponUnlock)
+        -- local weaponFiringData = WeaponFiringData(damageGiverInfo.weaponFiring)
+
+        -- print("WEAPON UNLOCK")
+        -- print(soldierWeaponUnlockAsset)
+        -- print("WEAPON FIRING")
+        -- print(weaponFiringData)
+        -- print("MOMENT OF TRUTH")
+        -- print("WEAPON IDENTIFIER")
+        -- print(soldierWeaponUnlockAsset.weaponIdentifier)
+    end
+    
+    if inflictor ~= nil and #currentRankupPlayers > 0 then
+        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
+            if currentRankupPlayers[playerIndex]['r_PlayerName'] == inflictor.name then
+                print("HERE WE FUCKING GOOOOOOOOOOOO")
+                IncreaseWeaponKills(playerIndex, weapon)
+            end
+        end
+    end
+end)
+
 Events:Subscribe('Player:Joining', function(name, playerGuid, ipAddress, accountGuid)
     -- print('PLAYER JOINING OWO!!!!!!!!!')
     -- print('Player Name:')
@@ -232,3 +287,9 @@ end)
 NetEvents:Subscribe('AddExperience', function(player, data)
     PlayerXPUpdated(player, data)
 end)
+
+NetEvents:Subscribe('AddM16Kill', function(player, data)
+    -- PlayerXPUpdated(player, data)
+end)
+
+-- AddM16Kill

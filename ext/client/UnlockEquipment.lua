@@ -85,3 +85,19 @@ function UnlockEquipment(veniceSoldierAsset, equipmentPath, equipmentSlot)
     end
     
 end
+
+-- Unlock weapon attachment
+function UnlockAttachment(weaponCustimozationPath, attachmentPath, slotIndex)
+    local weaponCustomAsset = ResourceManager:SearchForDataContainer(weaponCustimozationPath)
+    local attachment = ResourceManager:SearchForDataContainer(attachmentPath)
+
+    if weaponCustomAsset ~= nil and attachment ~= nil then
+        local weaponCustomAssetMain = VeniceSoldierWeaponCustomizationAsset(weaponCustomAsset)
+        local attachmentMain = UnlockAsset(attachment)
+
+        local attachTable = CustomizationTable(weaponCustomAssetMain.customization)
+
+        attachTable.unlockParts[slotIndex]:MakeWritable();
+        attachTable.unlockParts[slotIndex].selectableUnlocks:add(attachmentMain)
+    end
+end

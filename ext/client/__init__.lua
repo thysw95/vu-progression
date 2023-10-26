@@ -83,6 +83,30 @@ function UnlockClientItem(levelCat, level)
     end
 end
 
+function UnlockClientAttachment(weaponName, kills)
+    if #weaponProgressUnlocks > 0 then
+        for _, weaponUnlocks in pairs(weaponProgressUnlocks) do
+
+            if weaponUnlocks.weaponName == weaponName then
+                if #weaponUnlocks.unlocks > 0 then
+                    for _, unlocks in pairs(weaponUnlocks.unlocks) do
+
+                        if kills >= unlocks.killsRequired then
+                            UnlockAttachment(weaponUnlocks.customizationPath, unlocks.attachmentPath, unlocks.attachmentSlotIndex)
+                        end
+
+                    end
+                end
+
+                -- Break the main loop when a weapon is found
+                break
+            end
+
+        end
+    end 
+end
+
+
 Events:Subscribe('Level:Finalized', function(levelName, gameMode)
     InitAssetsLock()
     NetEvents:Send('AddNewPlayerForStats', 'Adding new player to Stats')
@@ -91,7 +115,36 @@ end)
 NetEvents:Subscribe('OnInitialUnlock', function(levelCat, level)
     print("THE SELECTED LEVEL CAT IS:")
     print(levelCat)
+
     UnlockClientItem(levelCat, level)
+
+end)
+
+NetEvents:Subscribe('OnInitialAttachmentUnlock', function(weaponProgressList)
+    print("UNLOCKING INITIAL ATTACHMENTS")
+    
+    -- if #weaponProgressUnlocks > 0 then
+    --     for _, weaponUnlocks in pairs(weaponProgressUnlocks) do
+    --         UnlockClientAttachment(weaponUnlocks.weaponName, 0)
+    --     end
+    -- end
+    if #weaponProgressList > 0 then
+        for _, weapon in pairs(weaponProgressList) do
+            UnlockClientAttachment(weapon.weaponName, weapon.kills)
+        end
+    end
+    
+end)
+
+NetEvents:Subscribe('OnKilledPlayer', function(weaponName, kills)
+    print("RECIEVED " .. tostring(kills) .. " KILLS WITH THE WEAPON " .. weaponName)
+    
+    -- if #weaponProgressUnlocks > 0 then
+    --     for _, weaponUnlocks in pairs(weaponProgressUnlocks) do
+    --         UnlockClientAttachment(weaponUnlocks.weaponName, 0)
+    --     end
+    -- end
+    UnlockClientAttachment(weaponName, kills)
 end)
 
 NetEvents:Subscribe('OnLevelUp', function(levelCat, level)
@@ -103,4 +156,8 @@ end)
 
 local command = Console:Register('addExperience', 'Adds Experience', function()
 	NetEvents:Send('AddExperience', 4000)
+end)
+
+local command = Console:Register('addKill', 'Adds Kill for M16', function()
+	NetEvents:Send('AddKill', 'Weapons/M16A4/M16A4')
 end)
