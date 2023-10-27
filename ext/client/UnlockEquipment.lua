@@ -1,4 +1,4 @@
-require("__shared/config")
+require("__shared/KitVariables")
 
 foundAssaultKit = false
 kitNameGlobal = ''

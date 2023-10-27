@@ -1,4 +1,12 @@
 require("__shared/config")
+require("__shared/KitVariables")
+
+local generalProgressionUnlockList = require("__shared/GeneralProgressionConfig")
+local assaultProgressionUnlockList = require("__shared/AssaultProgressionConfig")
+local engineerProgressUnlockList = require("__shared/EngineerProgressionConfig")
+local supportProgressUnlockList = require("__shared/SupportProgressionConfig")
+local reconProgressUnlockList = require("__shared/ReconProgressionConfig")
+local weaponProgressUnlocks = require("__shared/WeaponProgressionConfig")
 -- require("SQLTest")
 
 playerRankClass = require('__shared/PlayerRank')
@@ -66,6 +74,7 @@ function PlayerXPUpdated(player, score)
     veniceSoldierAsset:MakeWritable()
 
     local kitName = veniceSoldierAsset.labelSid
+    local xp = score * xpMultiplier
 
     if #currentRankupPlayers > 0 then
         for playerIndex, cPlayer in pairs(currentRankupPlayers) do
@@ -73,23 +82,23 @@ function PlayerXPUpdated(player, score)
                 print("Found a player to increase XP!!!!")
 
                 -- IncreaseGeneralPlayerXP(playerIndex, score)
-                IncreasePlayerXP(playerIndex, 'r_PlayerLevel', 'r_PlayerCurrentXP', score, generalProgressionUnlockList, "General")
+                IncreasePlayerXP(playerIndex, 'r_PlayerLevel', 'r_PlayerCurrentXP', xp, generalProgressionUnlockList, "General")
 
                 if kitName == 'ID_M_ASSAULT' then
                     -- IncreaseAssaultPlayerXP(playerIndex, score)
-                    IncreasePlayerXP(playerIndex, 'r_AssaultLevel', 'r_AssaultCurrentXP', score, assaultProgressionUnlockList, "Assault")
+                    IncreasePlayerXP(playerIndex, 'r_AssaultLevel', 'r_AssaultCurrentXP', xp, assaultProgressionUnlockList, "Assault")
                 end
 
                 if kitName == 'ID_M_ENGINEER' then
-                    IncreasePlayerXP(playerIndex, 'r_EngineerLevel', 'r_EngineerCurrentXP', score, engineerProgressUnlockList, "Engineer")
+                    IncreasePlayerXP(playerIndex, 'r_EngineerLevel', 'r_EngineerCurrentXP', xp, engineerProgressUnlockList, "Engineer")
                 end
 
                 if kitName == 'ID_M_SUPPORT' then
-                    IncreasePlayerXP(playerIndex, 'r_SupportLevel', 'r_SupportCurrentXP', score, supportProgressUnlockList, "Support")
+                    IncreasePlayerXP(playerIndex, 'r_SupportLevel', 'r_SupportCurrentXP', xp, supportProgressUnlockList, "Support")
                 end
 
                 if kitName == 'ID_M_RECON' then
-                    IncreasePlayerXP(playerIndex, 'r_ReconLevel', 'r_ReconCurrentXP', score, reconProgressUnlockList, "Recon")
+                    IncreasePlayerXP(playerIndex, 'r_ReconLevel', 'r_ReconCurrentXP', xp, reconProgressUnlockList, "Recon")
                 end
             end
         end

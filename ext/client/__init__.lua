@@ -1,6 +1,14 @@
 require('LockEquipment')
 require('UnlockEquipment')
+
 require('__shared/config')
+require("__shared/KitVariables")
+local generalProgressionUnlockList = require("__shared/GeneralProgressionConfig")
+local assaultProgressionUnlockList = require("__shared/AssaultProgressionConfig")
+local engineerProgressUnlockList = require("__shared/EngineerProgressionConfig")
+local supportProgressUnlockList = require("__shared/SupportProgressionConfig")
+local reconProgressUnlockList = require("__shared/ReconProgressionConfig")
+local weaponProgressUnlocks = require("__shared/WeaponProgressionConfig")
 
 -- This function unlocks an item for the client, depending on the selected category
 function UnlockClientItem(levelCat, level)

@@ -1,4 +1,4 @@
-require("__shared/config")
+require("__shared/KitVariables")
 
 -- Function to remove all the customization options on the selected soldier
 function LockSoldierCustomizationAsset(veniceSoldierAsset, categoryId)
