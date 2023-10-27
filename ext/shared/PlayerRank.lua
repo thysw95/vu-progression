@@ -19,6 +19,9 @@ end
 
 function VUPlayerRankClass:InitPlayerVariables(player)
     self.r_PlayerName = player.name
+    self.r_PlayerGuid = player.guid
+    self.r_Kills = 0
+    self.r_Deaths = 0
 end
 
 function VUPlayerRankClass:InitGeneralRankStats()

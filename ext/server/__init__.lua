@@ -1,12 +1,15 @@
 require("__shared/config")
 require("__shared/KitVariables")
+require("SQL/DBCreation")
 
-local generalProgressionUnlockList = require("__shared/GeneralProgressionConfig")
-local assaultProgressionUnlockList = require("__shared/AssaultProgressionConfig")
-local engineerProgressUnlockList = require("__shared/EngineerProgressionConfig")
-local supportProgressUnlockList = require("__shared/SupportProgressionConfig")
-local reconProgressUnlockList = require("__shared/ReconProgressionConfig")
-local weaponProgressUnlocks = require("__shared/WeaponProgressionConfig")
+local generalProgressionUnlockList = require("__shared/Progression/GeneralProgressionConfig")
+local assaultProgressionUnlockList = require("__shared/Progression/AssaultProgressionConfig")
+local engineerProgressUnlockList = require("__shared/Progression/EngineerProgressionConfig")
+local supportProgressUnlockList = require("__shared/Progression/SupportProgressionConfig")
+local reconProgressUnlockList = require("__shared/Progression/ReconProgressionConfig")
+
+local rankingStorageManager = require('SQL/RankingStorageManager')
+-- local weaponProgressUnlocks = require("__shared/Progression/WeaponProgressionConfig")
 -- require("SQLTest")
 
 playerRankClass = require('__shared/PlayerRank')
@@ -15,13 +18,17 @@ currentRankupPlayers = {}
 function AddPlayerToRankUpList(player)
     local playerRankObject = playerRankClass(player)
 
+    playerRankObject = rankingStorageManager:FetchPlayerProgress(playerRankObject)
+
+    print("NEW PLAYER GUID: ")
+    print(playerRankObject['r_PlayerGuid'])
     -- local playerAdded = false
     
     if #currentRankupPlayers > 0 then
         local foundPlayer = false
 
         for _, cPlayer in pairs(currentRankupPlayers) do
-            if cPlayer['r_PlayerName'] == player.name then
+            if cPlayer['r_PlayerGuid'] == player.guid then
                 print(player.name .. ' IS ALREADY ON THE LIST')
 
                 foundPlayer = true
@@ -78,7 +85,7 @@ function PlayerXPUpdated(player, score)
 
     if #currentRankupPlayers > 0 then
         for playerIndex, cPlayer in pairs(currentRankupPlayers) do
-            if cPlayer['r_PlayerName'] == player.name then
+            if cPlayer['r_PlayerGuid'] == player.guid then
                 print("Found a player to increase XP!!!!")
 
                 -- IncreaseGeneralPlayerXP(playerIndex, score)
@@ -114,7 +121,7 @@ function IncreaseWeaponKills(playerIndex, weaponName)
 
                     print("THE WEAPON " .. weapon.weaponName .. " CURRENT KILLS IS " .. tostring(weapon.kills))
 
-                    local player = PlayerManager:GetPlayerByName(currentRankupPlayers[playerIndex]['r_PlayerName'])
+                    local player = PlayerManager:GetPlayerByGuid(currentRankupPlayers[playerIndex]['r_PlayerGuid'])
                     if player ~= nil then
                         NetEvents:SendTo('OnKilledPlayer', player, weapon.weaponName, weapon.kills)
                     end
@@ -181,7 +188,7 @@ function PlayerLevelUp(playerIndex, levelType, level)
 
     -- local level = currentRankupPlayers[playerIndex]['r_PlayerLevel']
 
-    local player = PlayerManager:GetPlayerByName(currentRankupPlayers[playerIndex]['r_PlayerName'])
+    local player = PlayerManager:GetPlayerByGuid(currentRankupPlayers[playerIndex]['r_PlayerGuid'])
 
     if player ~= nil then
         NetEvents:SendTo('OnLevelUp', player, levelType, level)
@@ -209,31 +216,33 @@ Events:Subscribe('Player:Score', function(player, scoringTypeData, score)
         end
     end
 
-    PlayerXPUpdated(player, score)
+    if player.guid ~= nil then
+        PlayerXPUpdated(player, score)
+    end
+    
 end)
 
 -- This event is used by the inflictor
 Events:Subscribe('Player:Killed', function(player, inflictor, position, weapon, isRoadKill, isHeadShot, wasVictimInReviveState, info)
     if inflictor ~= nil and inflictor.name == 'MJShepherd' then
         print(player.name .. " was killed by " .. inflictor.name .. " with a " .. weapon)
+    end
 
-        -- local damageGiverInfo = DamageGiverInfo(info)
-        -- local soldierWeaponUnlockAsset = SoldierWeaponUnlockAsset(damageGiverInfo.weaponUnlock)
-        -- local weaponFiringData = WeaponFiringData(damageGiverInfo.weaponFiring)
-
-        -- print("WEAPON UNLOCK")
-        -- print(soldierWeaponUnlockAsset)
-        -- print("WEAPON FIRING")
-        -- print(weaponFiringData)
-        -- print("MOMENT OF TRUTH")
-        -- print("WEAPON IDENTIFIER")
-        -- print(soldierWeaponUnlockAsset.weaponIdentifier)
+    -- Player was killed
+    if player ~= nil and #currentRankupPlayers > 0 and player.guid ~= nil then
+        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
+            if currentRankupPlayers[playerIndex]['r_PlayerGuid'] == player.guid then
+                currentRankupPlayers[playerIndex]['r_Deaths'] = currentRankupPlayers[playerIndex]['r_Deaths'] + 1
+            end
+        end
     end
     
-    if inflictor ~= nil and #currentRankupPlayers > 0 then
+    -- Player got a kill
+    if inflictor ~= nil and #currentRankupPlayers > 0 and player.guid ~= nil then
         for playerIndex, cPlayer in pairs(currentRankupPlayers) do
-            if currentRankupPlayers[playerIndex]['r_PlayerName'] == inflictor.name then
-                print("HERE WE FUCKING GOOOOOOOOOOOO")
+            if currentRankupPlayers[playerIndex]['r_PlayerGuid'] == inflictor.guid then
+
+                currentRankupPlayers[playerIndex]['r_Kills'] = currentRankupPlayers[playerIndex]['r_Kills'] + 1
                 IncreaseWeaponKills(playerIndex, weapon)
             end
         end
@@ -284,8 +293,10 @@ end)
 Events:Subscribe('Player:Left', function(player)
     if #currentRankupPlayers > 0 then
         for playerIndex, cPlayer in pairs(currentRankupPlayers) do
-            if cPlayer['r_PlayerName'] == player.name then
-                print("AWWW A PLAYER LEFT QWQ")
+            if cPlayer['r_PlayerGuid'] == player.guid then
+                -- print("AWWW A PLAYER LEFT")
+                -- print("THEY LEFT WITH " .. tostring(currentRankupPlayers[playerIndex]['r_Kills']) .. " KILLS AND WITH " .. tostring(currentRankupPlayers[playerIndex]['r_Deaths']) .. " DEATHS")
+                rankingStorageManager:StorePlayerProgress(currentRankupPlayers[playerIndex])
 
                 currentRankupPlayers[playerIndex] = nil
             end
@@ -301,4 +312,7 @@ NetEvents:Subscribe('AddM16Kill', function(player, data)
     -- PlayerXPUpdated(player, data)
 end)
 
--- AddM16Kill
+Events:Subscribe('Extension:Loaded', function()
+    print('Initializing VU Progression DB')
+    CreateProgressionTable()
+end)
