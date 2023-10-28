@@ -58,13 +58,13 @@ end
 
 function initPlayerLevels(player, playerRankObject)
     -- Player General Initial Unlock
-    NetEvents:SendTo('OnInitialUnlock', player, "General", playerRankObject['r_PlayerLevel'])
+    NetEvents:SendTo('OnInitialUnlock', player, "General", playerRankObject['r_PlayerCurrentXP'])
 
     -- Kit Initial Unlocks
-    NetEvents:SendTo('OnInitialUnlock', player, "Assault", playerRankObject['r_AssaultLevel'])
-    NetEvents:SendTo('OnInitialUnlock', player, "Engineer", playerRankObject['r_EngineerLevel'])
-    NetEvents:SendTo('OnInitialUnlock', player, "Support", playerRankObject['r_SupportLevel'])
-    NetEvents:SendTo('OnInitialUnlock', player, "Recon", playerRankObject['r_ReconLevel'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Assault", playerRankObject['r_AssaultCurrentXP'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Engineer", playerRankObject['r_EngineerCurrentXP'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Support", playerRankObject['r_SupportCurrentXP'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Recon", playerRankObject['r_ReconCurrentXP'])
 
     -- Attachment unlocks
     if #playerRankObject['r_WeaponProgressList'] > 0 then
@@ -116,14 +116,14 @@ function IncreaseWeaponKills(playerIndex, weaponName)
     -- if currentRankupPlayers[playerIndex] ~= nil then
         if #currentRankupPlayers[playerIndex]['r_WeaponProgressList'] > 0 then
             for _, weapon in pairs(currentRankupPlayers[playerIndex]['r_WeaponProgressList']) do
-                if weapon.weaponName == weaponName then
-                    weapon.kills = weapon.kills + 1
+                if weapon['weaponName'] == weaponName then
+                    weapon['kills'] = weapon['kills'] + 1
 
-                    print("THE WEAPON " .. weapon.weaponName .. " CURRENT KILLS IS " .. tostring(weapon.kills))
+                    print("THE WEAPON " .. weapon['weaponName'] .. " CURRENT KILLS IS " .. tostring(weapon['kills']))
 
                     local player = PlayerManager:GetPlayerByGuid(currentRankupPlayers[playerIndex]['r_PlayerGuid'])
                     if player ~= nil then
-                        NetEvents:SendTo('OnKilledPlayer', player, weapon.weaponName, weapon.kills)
+                        NetEvents:SendTo('OnKilledPlayer', player, weapon['weaponName'], weapon['kills'])
                     end
 
                     break
@@ -175,13 +175,13 @@ function IncreasePlayerXP(playerIndex, levelKey, xpKey, xpValue, progressUnlockL
 
                 print("CHANGED " .. levelType .. " PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex][levelKey]))
 
-                PlayerLevelUp(playerIndex, levelType, currentRankupPlayers[playerIndex][levelKey])
+                PlayerLevelUp(playerIndex, levelType, currentRankupPlayers[playerIndex][xpKey])
             end
         end
     end
 end
 
-function PlayerLevelUp(playerIndex, levelType, level)
+function PlayerLevelUp(playerIndex, levelType, currentXp)
     -- print(currentRankupPlayers[playerIndex]['r_PlayerName'] .. " HAS GAINED A LEVEL FOR " .. levelType .. "!!!!")
     -- print("NEW " .. levelType .. " LEVEL IS: ")
     -- print(currentRankupPlayers[playerIndex]['r_PlayerLevel'])
@@ -191,7 +191,7 @@ function PlayerLevelUp(playerIndex, levelType, level)
     local player = PlayerManager:GetPlayerByGuid(currentRankupPlayers[playerIndex]['r_PlayerGuid'])
 
     if player ~= nil then
-        NetEvents:SendTo('OnLevelUp', player, levelType, level)
+        NetEvents:SendTo('OnLevelUp', player, levelType, currentXp)
     end
     
 end
@@ -238,7 +238,7 @@ Events:Subscribe('Player:Killed', function(player, inflictor, position, weapon, 
     end
     
     -- Player got a kill
-    if inflictor ~= nil and #currentRankupPlayers > 0 and player.guid ~= nil then
+    if inflictor ~= nil and #currentRankupPlayers > 0 and inflictor.guid ~= nil then
         for playerIndex, cPlayer in pairs(currentRankupPlayers) do
             if currentRankupPlayers[playerIndex]['r_PlayerGuid'] == inflictor.guid then
 

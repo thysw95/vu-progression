@@ -11,7 +11,7 @@ local reconProgressUnlockList = require("__shared/Progression/ReconProgressionCo
 local weaponProgressUnlocks = require("__shared/Progression/WeaponProgressionConfig")
 
 -- This function unlocks an item for the client, depending on the selected category
-function UnlockClientItem(levelCat, level)
+function UnlockClientItem(levelCat, currentXp)
     
     -- print("levelCat: " .. levelCat)
     -- print("level: " .. tostring(level))
@@ -20,7 +20,7 @@ function UnlockClientItem(levelCat, level)
     if levelCat == 'General' then
         if #generalProgressionUnlockList > 0 then
             for _, unlock in pairs(generalProgressionUnlockList) do
-                if unlock.lvl == level then
+                if unlock.xpRequired <= currentXp then
                     ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.kit)
                 end
             end
@@ -29,12 +29,10 @@ function UnlockClientItem(levelCat, level)
     
     -- If level category is assault, unlock a piece of equipment for assault
     if levelCat == 'Assault' then
-        print("SOMETHING WITH ASSUALT IS SUPPOSED TO HAPPEN")
-        print("ASSAULT IS LEVEL " .. level)
 
         if #assaultProgressionUnlockList > 0 then
             for _, unlock in pairs(assaultProgressionUnlockList) do
-                if unlock.lvl == level then
+                if unlock.xpRequired <= currentXp then
                     print("THE FOUND UNLOCK IS: ")
                     print(unlock)
 
@@ -49,7 +47,7 @@ function UnlockClientItem(levelCat, level)
     if levelCat == 'Engineer' then
         if #engineerProgressUnlockList > 0 then
             for _, unlock in pairs(engineerProgressUnlockList) do
-                if unlock.lvl == level then
+                if unlock.xpRequired <= currentXp then
                     -- print("THE FOUND UNLOCK IS: ")
                     -- print(unlock)
 
@@ -64,7 +62,7 @@ function UnlockClientItem(levelCat, level)
     if levelCat == 'Support' then
         if #supportProgressUnlockList > 0 then
             for _, unlock in pairs(supportProgressUnlockList) do
-                if unlock.lvl == level then
+                if unlock.xpRequired <= currentXp then
                     -- print("THE FOUND UNLOCK IS: ")
                     -- print(unlock)
 
@@ -79,7 +77,7 @@ function UnlockClientItem(levelCat, level)
     if levelCat == 'Recon' then
         if #reconProgressUnlockList > 0 then
             for _, unlock in pairs(reconProgressUnlockList) do
-                if unlock.lvl == level then
+                if unlock.xpRequired <= currentXp then
                     -- print("THE FOUND UNLOCK IS: ")
                     -- print(unlock)
 
@@ -120,11 +118,11 @@ Events:Subscribe('Level:Finalized', function(levelName, gameMode)
     NetEvents:Send('AddNewPlayerForStats', 'Adding new player to Stats')
 end)
 
-NetEvents:Subscribe('OnInitialUnlock', function(levelCat, level)
+NetEvents:Subscribe('OnInitialUnlock', function(levelCat, currentXp)
     print("THE SELECTED LEVEL CAT IS:")
     print(levelCat)
 
-    UnlockClientItem(levelCat, level)
+    UnlockClientItem(levelCat, currentXp)
 
 end)
 
@@ -155,11 +153,11 @@ NetEvents:Subscribe('OnKilledPlayer', function(weaponName, kills)
     UnlockClientAttachment(weaponName, kills)
 end)
 
-NetEvents:Subscribe('OnLevelUp', function(levelCat, level)
+NetEvents:Subscribe('OnLevelUp', function(levelCat, currentXp)
     -- if levelCat == 'Assault' then
     --     print("OH YEAH ITS ASSAULT LEVELLIN TIMEEEEE!!!!!!! UWU")
     -- end
-    UnlockClientItem(levelCat, level)
+    UnlockClientItem(levelCat, currentXp)
 end)
 
 local command = Console:Register('addExperience', 'Adds Experience', function()
