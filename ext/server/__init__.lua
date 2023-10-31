@@ -308,8 +308,17 @@ NetEvents:Subscribe('AddExperience', function(player, data)
     PlayerXPUpdated(player, data)
 end)
 
-NetEvents:Subscribe('AddM16Kill', function(player, data)
+NetEvents:Subscribe('AddKill', function(player, data)
     -- PlayerXPUpdated(player, data)
+    if player ~= nil and #currentRankupPlayers > 0 and player.guid ~= nil then
+        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
+            if currentRankupPlayers[playerIndex]['r_PlayerGuid'] == player.guid then
+                currentRankupPlayers[playerIndex]['r_Kills'] = currentRankupPlayers[playerIndex]['r_Kills'] + 10
+                IncreaseWeaponKills(playerIndex, 'M16A4')
+            end
+        end
+    end
+    
 end)
 
 Events:Subscribe('Extension:Loaded', function()

@@ -161,7 +161,7 @@ NetEvents:Subscribe('OnLevelUp', function(levelCat, currentXp)
 end)
 
 local command = Console:Register('addExperience', 'Adds Experience', function()
-	NetEvents:Send('AddExperience', 4000)
+	NetEvents:Send('AddExperience', 40000)
 end)
 
 local command = Console:Register('addKill', 'Adds Kill for M16', function()

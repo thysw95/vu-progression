@@ -73,12 +73,32 @@ function UnlockEquipment(veniceSoldierAsset, equipmentPath, equipmentSlot)
 
                 local findEquipment = ResourceManager:SearchForDataContainer(equipmentPath)
                 if findEquipment ~= nil then
-                    local equipment = SoldierWeaponUnlockAsset(findEquipment)
+                    --local equipment = SoldierWeaponUnlockAsset(findEquipment)
+                    local equipment = UnlockAssetBase(findEquipment)
+                    -- Can later come back to UnlockAssetBase to figure out how to lock or unluck something without removing them from the SoldierAsset 
+                    equipment:MakeWritable()
 
+                    print("THE UNLOCK ID OF THIS ITEM IS: ")
+                    print(equipment.debugUnlockId)
+                    -- equipment.hiddenInProgression = true
+                    local foundEquip = false
+
+                    if #unlockPart.selectableUnlocks > 0 then
+                        for _, unlock in pairs(unlockPart.selectableUnlocks) do
+
+                            unlock = UnlockAssetBase(unlock)
+                            unlock:MakeWritable()
+
+                            if unlock.debugUnlockId == equipment.debugUnlockId then
+                                foundEquip = true
+                            end
+                        end
+                    end
+
+                    if foundEquip == false then
+                        unlockPart.selectableUnlocks:add(equipment)
+                    end
                     
-
-                    unlockPart.selectableUnlocks:add(equipment)
-
                 end
             end
         end
@@ -93,11 +113,30 @@ function UnlockAttachment(weaponCustimozationPath, attachmentPath, slotIndex)
 
     if weaponCustomAsset ~= nil and attachment ~= nil then
         local weaponCustomAssetMain = VeniceSoldierWeaponCustomizationAsset(weaponCustomAsset)
-        local attachmentMain = UnlockAsset(attachment)
+        local attachmentMain = UnlockAssetBase(attachment)
+        attachmentMain:MakeWritable()
 
         local attachTable = CustomizationTable(weaponCustomAssetMain.customization)
 
         attachTable.unlockParts[slotIndex]:MakeWritable();
-        attachTable.unlockParts[slotIndex].selectableUnlocks:add(attachmentMain)
+
+        local foundAttach = false
+
+        if #attachTable.unlockParts[slotIndex].selectableUnlocks > 0 then
+            for _, unlock in pairs(attachTable.unlockParts[slotIndex].selectableUnlocks) do
+
+                unlock = UnlockAssetBase(unlock)
+                unlock:MakeWritable()
+
+                if unlock.debugUnlockId == attachmentMain.debugUnlockId then
+                    foundAttach = true
+                end
+            end
+        end
+
+        if foundAttach == false then
+            attachTable.unlockParts[slotIndex].selectableUnlocks:add(attachmentMain)
+        end
+        
     end
 end
