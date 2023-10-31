@@ -72,9 +72,7 @@ function RankingStorageManager:FetchPlayerProgress(playerRankObject)
     local returnPlayer = playerRankObject
 
     if #existingPlayers > 0 then
-        print("FOUND THE CONNECTED PLAYER IN THE DB!!!!")
         if existingPlayers[1] ~= nil then
-            print("YUMMMMYYYYYYYYYYYYYYYYYYY")
 
             returnPlayer['r_Kills'] = existingPlayers[1]['player_kills']
             returnPlayer['r_Deaths'] = existingPlayers[1]['player_deaths']
@@ -92,13 +90,11 @@ function RankingStorageManager:FetchPlayerProgress(playerRankObject)
             returnPlayer['r_WeaponProgressList'] = string_to_table(existingPlayers[1]['weapon_progression'])
             -- returnPlayer['r_WeaponProgressList'] = loadstring("return " .. existingPlayers[1]['weapon_progression'])()
 
-            print("THE RETURNING WEAPON PROGRESSION IS: ")
             -- if #returnPlayer['r_WeaponProgressList'] > 0 then
             --     for _, w in pairs(returnPlayer['r_WeaponProgressList']) do
             --         print(w)
             --     end
             -- end
-            print(returnPlayer['r_WeaponProgressList'])
 
             return returnPlayer
         end

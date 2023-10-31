@@ -196,6 +196,14 @@ function PlayerLevelUp(playerIndex, levelType, currentXp)
     
 end
 
+function StoreAllPlayerStats()
+    if #currentRankupPlayers > 0 then
+        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
+            rankingStorageManager:StorePlayerProgress(currentRankupPlayers[playerIndex])
+        end
+    end
+end
+
 Events:Subscribe('Player:Score', function(player, scoringTypeData, score)
     -- local rankPlayer = PlayerManager:GetPlayerByName(playerName)
 
@@ -324,4 +332,9 @@ end)
 Events:Subscribe('Extension:Loaded', function()
     print('Initializing VU Progression DB')
     CreateProgressionTable()
+end)
+
+Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)
+    print("THE ROUND IS OVER!!! TIME TO SAVE THE CONNECTED PLAYERS' STATS!!!!")
+    StoreAllPlayerStats()
 end)
