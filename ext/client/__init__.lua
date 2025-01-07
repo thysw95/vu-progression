@@ -1,3 +1,43 @@
+Hooks:Install('UI:PushScreen', 999, function(hook, screen, graphPriority, parentGraph)
+	local screen = UIGraphAsset(screen)
+ if  screen.name == 'UI/Flow/Screen/SpawnScreenTicketCounterTDMScreen' or
+            screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsScreen' or
+            screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD32Screen' or
+            screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD16Screen' or
+            screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD64Screen' then
+	hook:Return()
+	end
+end)
+inputPress = InputDeviceKeys.IDK_Tab -- Input for Open / Close the Menu
+ m_UpdateTimer = 0
+UPDATE_RATE=6
+
+Events:Subscribe('Extension:Loaded', function()
+    WebUI:Init()
+	WebUI:Hide()
+	print("UI initialized.")
+end)
+
+-- When key is pressed, show, and hide when unpress
+Events:Subscribe('Client:PostFrameUpdate', function(deltaTime)
+	-- We make a simple timer so we only udpate UI every so often.
+	m_UpdateTimer = m_UpdateTimer + deltaTime
+
+	if m_UpdateTimer < UPDATE_RATE then
+		return
+	end
+m_UpdateTimer = 0
+NetEvents:Send('getinfo')
+end)
+
+Events:Subscribe('Client:UpdateInput', function(data)
+	if InputManager:WentKeyDown(inputPress) then
+WebUI:Show()	
+	end
+	if InputManager:WentKeyUp(inputPress) then
+	WebUI:Hide()
+	end
+end)
 require('LockEquipment')
 require('UnlockEquipment')
 
@@ -10,6 +50,23 @@ local supportProgressUnlockList = require("__shared/Progression/SupportProgressi
 local reconProgressUnlockList = require("__shared/Progression/ReconProgressionConfig")
 local weaponProgressUnlocks = require("__shared/Progression/WeaponProgressionConfig")
 
+NetEvents:Subscribe('showscore', function(data)
+team1=data[1][1]
+team2=data[1][2]
+s_UsTickets, s_RuTickets = GetTicketCounterTickets()
+tickets={}
+tickets[1]=s_UsTickets
+tickets[2]=s_RuTickets
+table.sort(team1, function(a,b)
+    return a[3] > b[3]
+end)
+table.sort(team2, function(a,b)
+    return a[3] > b[3]
+end)
+local Execute = 'scoreboard(' ..  json.encode(team1) .. ',' ..  json.encode(team2) .. ',' ..  json.encode(tickets) ..');';
+WebUI:ExecuteJS(Execute) 
+
+end)
 -- This function unlocks an item for the client, depending on the selected category
 function UnlockClientItem(levelCat, currentXp)
     
@@ -167,3 +224,21 @@ end)
 local command = Console:Register('addKill', 'Adds Kill for M16', function()
 	NetEvents:Send('AddKill', 'Weapons/M16A4/M16A4')
 end)
+function GetTicketCounterTickets()
+	local s_ClientTicketCounterIterator = EntityManager:GetIterator('ClientTicketCounterEntity')
+	local s_TicketCounterEntity = s_ClientTicketCounterIterator:Next()
+	local s_UsTickets = " "
+	local s_RuTickets = " "
+
+	while s_TicketCounterEntity ~= nil do
+		if TicketCounterEntity(s_TicketCounterEntity).team == TeamId.Team1 then
+			s_UsTickets = TicketCounterEntity(s_TicketCounterEntity).ticketCount
+		else
+			s_RuTickets = TicketCounterEntity(s_TicketCounterEntity).ticketCount
+		end
+
+		s_TicketCounterEntity = s_ClientTicketCounterIterator:Next()
+	end
+
+	return s_UsTickets, s_RuTickets
+end
