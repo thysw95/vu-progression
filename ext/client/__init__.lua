@@ -1,8 +1,7 @@
 Hooks:Install('UI:PushScreen', 999, function(hook, screen, graphPriority, parentGraph)
 	local screen = UIGraphAsset(screen)
- if  screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD32Screen' or
-            screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD16Screen' or
-            screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD64Screen' then
+ if         screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsScreen' or
+            
 	hook:Return()
 	end
 end)
