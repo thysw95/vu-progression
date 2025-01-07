@@ -3,6 +3,7 @@
     "Description": "A mod that integrates progression into venice unleashed",
     "Version": "1.0.0",
     "HasVeniceEXT": true,
+	"HasWebUI": true,
     "Dependencies": {
         "veniceext": "^1.0.0"
     },
