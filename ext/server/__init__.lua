@@ -384,6 +384,8 @@ function get_rank (pl)
 for playerIndex, cPlayer in pairs(currentRankupPlayers) do
 if currentRankupPlayers[playerIndex]['r_PlayerGuid'] == pl.guid then
 return {currentRankupPlayers[playerIndex]['r_PlayerLevel'],pl.ping}
+else
+return 0
 end
 end
 end
