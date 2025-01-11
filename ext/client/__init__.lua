@@ -1,14 +1,33 @@
-Hooks:Install('UI:PushScreen', 999, function(hook, screen, graphPriority, parentGraph)
-	local screen = UIGraphAsset(screen)
- if  screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD16Screen'  or 
- screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD32Screen'  or 
- screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD64Screen'  then
-hook:Return()
-	end
-end)
 inputPress = InputDeviceKeys.IDK_Tab -- Input for Open / Close the Menu
  m_UpdateTimer = 0
 UPDATE_RATE=6
+ss=0
+Hooks:Install('UI:PushScreen', 999, function(p_HookCtx, p_Screen, p_GraphPriority, p_ParentGraph)
+	local p_Screen = UIGraphAsset(p_Screen)
+	
+	if p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsScreen'
+		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoSquadsScreen'
+		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardFourSquadsScreen' 
+		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD16Screen'
+		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD32Screen'
+		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD64Screen'
+		 then
+			local s_ScreenClone = UIScreenAsset(ResourceManager:SearchForDataContainer("UI/Flow/Screen/ScoreboardBackScreen"))
+			s_ScreenClone:MakeWritable()
+			local s_UiPageHeaderBinding = UIPageHeaderBinding(WidgetNode(s_ScreenClone.nodes[4]).dataBinding)
+			s_UiPageHeaderBinding:MakeWritable()
+			s_UiPageHeaderBinding.staticHeader = ""
+			s_UiPageHeaderBinding.staticSubHeader = ""
+			NetEvents:Send('getinfo') 
+			p_HookCtx:Pass(s_ScreenClone, p_GraphPriority, p_ParentGraph)			
+end			
+if p_Screen.name == 'UI/Flow/Screen/ScoreboardBackScreen' or ss==1 then
+		NetEvents:Send('getinfo')
+		WebUI:Show()	
+		else
+		WebUI:Hide()
+		end
+end)
 
 Events:Subscribe('Extension:Loaded', function()
     WebUI:Init()
