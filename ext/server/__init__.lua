@@ -357,7 +357,7 @@ pdata[2]={}
 
 for _, player in pairs(PlayerManager:GetPlayers()) do
 
- if player.guid ~= nil then
+ if player.guid ~= nil and player.alive then
 prank=get_rank(player)
 
 if player.teamId == 1 then
