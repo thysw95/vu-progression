@@ -89,7 +89,7 @@ function InitAssetsLock()
                     LockSoldierCustomizationAsset(veniceSoldierAsset, kitSecondaryWeaponID)
 
                     -- Lock specializations
-                    lockSoldierSpecializationAsset(veniceSoldierAsset)
+                    --lockSoldierSpecializationAsset(veniceSoldierAsset)
 
                     -- Lock Soldier Gadget 1
                     LockSoldierCustomizationAsset(veniceSoldierAsset, kitSoldierGadget1ID)
