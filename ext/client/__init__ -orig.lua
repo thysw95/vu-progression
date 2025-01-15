@@ -2,32 +2,29 @@
 inputPress = InputDeviceKeys.IDK_Tab -- Input for Open / Close the Menu
  m_UpdateTimer = 0
 UPDATE_RATE=6
-ss=0
+
 Hooks:Install('UI:PushScreen', 999, function(p_HookCtx, p_Screen, p_GraphPriority, p_ParentGraph)
 	local p_Screen = UIGraphAsset(p_Screen)
 	
-	if p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsScreen'
+	
+		if p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsScreen'
 		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoSquadsScreen'
-		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardFourSquadsScreen' 
+		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardFourSquadsScreen'
 		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD16Screen'
-		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD32Screen'
-		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD64Screen'
-		 then
+		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD32Screen' 
+		or p_Screen.name == 'UI/Flow/Screen/Scoreboards/ScoreboardTwoTeamsHUD64Screen' then
 			local s_ScreenClone = UIScreenAsset(ResourceManager:SearchForDataContainer("UI/Flow/Screen/ScoreboardBackScreen"))
 			s_ScreenClone:MakeWritable()
 			local s_UiPageHeaderBinding = UIPageHeaderBinding(WidgetNode(s_ScreenClone.nodes[4]).dataBinding)
 			s_UiPageHeaderBinding:MakeWritable()
 			s_UiPageHeaderBinding.staticHeader = ""
 			s_UiPageHeaderBinding.staticSubHeader = ""
-			NetEvents:Send('getinfo') 
-			p_HookCtx:Pass(s_ScreenClone, p_GraphPriority, p_ParentGraph)			
-end			
-if p_Screen.name == 'UI/Flow/Screen/ScoreboardBackScreen' or ss==1 then
-		NetEvents:Send('getinfo')
-		WebUI:Show()	
-		else
-		WebUI:Hide()
+			 NetEvents:Send('getinfo')
+			p_HookCtx:Pass(s_ScreenClone, p_GraphPriority, p_ParentGraph)
+			
+
 		end
+WebUI:ExecuteJS("closeSmart()")
 end)
 Events:Subscribe('Extension:Loaded', function()
     WebUI:Init()
@@ -35,25 +32,24 @@ Events:Subscribe('Extension:Loaded', function()
 	print("UI initialized.")
 end)
 
+-- When key is pressed, show, and hide when unpress
 Events:Subscribe('Client:PostFrameUpdate', function(deltaTime)
 	-- We make a simple timer so we only udpate UI every so often.
-	--[[m_UpdateTimer = m_UpdateTimer + deltaTime
+	m_UpdateTimer = m_UpdateTimer + deltaTime
 
 	if m_UpdateTimer < UPDATE_RATE then
 		return
 	end
-m_UpdateTimer = 0--]]
+m_UpdateTimer = 0
 
 end)
--- When key is pressed, show, and hide when unpress
+
 Events:Subscribe('Client:UpdateInput', function(data)
 if InputManager:WentKeyDown(inputPress) then
---WebUI:Show()	
-ss=1
+WebUI:Show()	
 	end
 if InputManager:WentKeyUp(inputPress) then
---	WebUI:Hide()
-ss=0
+	WebUI:Hide()
 	end
 end)
 require('LockEquipment')
@@ -110,7 +106,7 @@ function UnlockClientItem(levelCat, currentXp)
                 if unlock.xpRequired <= currentXp then
                     print("THE FOUND UNLOCK IS: ")
                     print(unlock)
---NetEvents:Send('Airstrike:Yell', {PlayerManager:GetLocalPlayer().name,10,tostring(unlock.equipmentPath)})
+
                     ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.uskit)
                     ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.rukit)
                 end

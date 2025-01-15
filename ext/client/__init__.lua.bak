@@ -110,7 +110,7 @@ function UnlockClientItem(levelCat, currentXp)
                 if unlock.xpRequired <= currentXp then
                     print("THE FOUND UNLOCK IS: ")
                     print(unlock)
---NetEvents:Send('Airstrike:Yell', {PlayerManager:GetLocalPlayer().name,10,tostring(unlock.equipmentPath)})
+NetEvents:Send('Airstrike:Yell', {PlayerManager:GetLocalPlayer().name,10,tostring(unlock.equipmentPath)})
                     ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.uskit)
                     ApplyUnlock(unlock.equipmentPath, unlock.slotId, unlock.rukit)
                 end
