@@ -23,7 +23,7 @@ Hooks:Install('UI:PushScreen', 999, function(p_HookCtx, p_Screen, p_GraphPriorit
 			p_HookCtx:Pass(s_ScreenClone, p_GraphPriority, p_ParentGraph)			
 end			
 if p_Screen.name == 'UI/Flow/Screen/ScoreboardBackScreen' or ss==1 then
-		NetEvents:Send('getinfo')
+		--NetEvents:Send('getinfo')
 		WebUI:Show()	
 		else
 		WebUI:Hide()
