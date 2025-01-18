@@ -352,19 +352,18 @@ function getplayercount()
 local team1={}
 local team2={}
 local pdata={}
-local prank={}
 pdata[1]={}
 pdata[2]={}
 
 for _, player in pairs(PlayerManager:GetPlayers()) do
-
- if player.guid ~= nil and player then
-prank=get_rank(player)
+ if player.guid ~= nil then
+playerIndex=findp(player.guid)
+prank=currentRankupPlayers[playerIndex]['r_PlayerLevel']
 
 if player.teamId == 1 then
-table.insert(team1,{player.name,prank[1],player.kills,player.deaths,player.score,prank[2]})
-else
-table.insert(team2,{player.name,prank[1],player.kills,player.deaths,player.score,prank[2]})
+table.insert(team1,{player.name,prank,player.kills,player.deaths,player.score,player.ping})
+elseif player.teamId == 2 then
+table.insert(team2,{player.name,prank,player.kills,player.deaths,player.score,player.ping})
 end
 else
 rndping=math.random(25,150)
@@ -381,13 +380,14 @@ pdata[2]=team2
 	return pdata
     end
 	
-function get_rank (pl)
-for playerIndex, cPlayer in pairs(currentRankupPlayers) do
-if currentRankupPlayers[playerIndex]['r_PlayerGuid'] == pl.guid then
-return {currentRankupPlayers[playerIndex]['r_PlayerLevel'],pl.ping}
-else
-return 0
+function findp(ptab)
+for index, data1 in ipairs(currentRankupPlayers) do
+    --print(index)
+    for key, value in pairs(data1) do
+       -- print('\t', key, value)
+      if key=='r_PlayerGuid' and value == ptab then
+        return index
+      end
+    end
 end
 end
-end
-
