@@ -352,6 +352,7 @@ function getplayercount()
 local team1={}
 local team2={}
 local pdata={}
+local prank={}
 pdata[1]={}
 pdata[2]={}
 
