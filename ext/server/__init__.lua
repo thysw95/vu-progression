@@ -338,7 +338,6 @@ for _, player in pairs(PlayerManager:GetPlayers()) do
 if player.guid ~= nil and player.onlineId and findp(player.guid) ~= nil then
 playerIndex=findp(player.guid)
 prank=currentRankupPlayers[playerIndex]['r_PlayerLevel']
-prank=find_rank(player.guid)
 if player.teamId == 1 then
 table.insert(team1,{player.name,prank,player.kills,player.deaths,player.score,player.ping})
 elseif player.teamId == 2 then
@@ -359,12 +358,34 @@ pdata[2]=team2
 	return pdata
     end
 	
-function find_rank(guid)
-    for _, cPlayer in pairs(currentRankupPlayers) do
-            if cPlayer['r_PlayerGuid'] == guid then
-                --print(cPlayer['r_PlayerName'] .. ' level '..cPlayer['r_PlayerLevel'])
-                return cPlayer['r_PlayerLevel']
-               --foundPlayer = true
-            end
-        end
-		end
+function findp(ptab)
+for index, data1 in ipairs(currentRankupPlayers) do
+    --print(index)
+    for key, value in pairs(data1) do
+       -- print('\t', key, value)
+      if key=='r_PlayerGuid' and value == ptab then
+        return index
+      end
+    end
+end
+end
+
+function checkplayerinlist()
+for playerIndex, cPlayer in pairs(currentRankupPlayers) do
+for _, player in pairs(PlayerManager:GetPlayers()) do 
+      if currentRankupPlayers[playerIndex]['r_PlayerGuid']== player.guid then
+        return null
+		else
+		currentRankupPlayers[playerIndex] = nil
+      end
+    end
+end
+end
+
+Events:Subscribe('Player:Update', function(player, deltaTime)
+cumulateTime = cumulateTime + deltaTime
+	if cumulateTime >= playerUpdate and player.guid ~= nil then
+		cumulateTime = 0
+   checkplayerinlist()
+   end
+end)
