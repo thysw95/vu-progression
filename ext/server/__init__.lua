@@ -260,27 +260,6 @@ Events:Subscribe('Player:Killed', function(player, inflictor, position, weapon, 
 	getplayercount()
 end)
 
-Events:Subscribe('Player:Joining', function(name, playerGuid, ipAddress, accountGuid)
-    -- print('PLAYER JOINING OWO!!!!!!!!!')
-    -- print('Player Name:')
-    -- print(name)
-    -- print('Player Guid:')
-    -- print(playerGuid)
-    -- print('Account Guid')
-    -- print(accountGuid)
-
-    -- local player = PlayerManager:GetPlayersByName(playerGuid)
-
-    -- -- testSQL()
-    -- if player ~= nil then
-    --     print("New player found!!!! Adding to the stats list now")
-
-    --     local playerRankObject = playerRankClass(player)
-
-    --     table.insert(currentRankupPlayers, playerRankObject)
-    -- end
-
-    
 end)
 
 Events:Subscribe('Player:Created', function(player)
@@ -356,9 +335,9 @@ pdata[1]={}
 pdata[2]={}
 
 for _, player in pairs(PlayerManager:GetPlayers()) do
- if player.guid ~= nil then
---playerIndex=findp(player.guid)
---prank=currentRankupPlayers[playerIndex]['r_PlayerLevel']
+if player.guid ~= nil and player.onlineId and findp(player.guid) ~= nil then
+playerIndex=findp(player.guid)
+prank=currentRankupPlayers[playerIndex]['r_PlayerLevel']
 prank=find_rank(player.guid)
 if player.teamId == 1 then
 table.insert(team1,{player.name,prank,player.kills,player.deaths,player.score,player.ping})
