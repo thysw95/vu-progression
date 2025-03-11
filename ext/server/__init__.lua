@@ -359,14 +359,15 @@ pdata[2]=team2
     end
 	
 function findp(ptab)
-for index, data1 in ipairs(currentRankupPlayers) do
+for index, data1 in pairs(currentRankupPlayers) do
     --print(index)
     for key, value in pairs(data1) do
        -- print('\t', key, value)
-      if key=='r_PlayerGuid' and value == ptab then
+      if key=='r_PlayerGuid' and tostring(value) == tostring(ptab) then
         return index
       end
     end
+	return null
 end
 end
 
@@ -381,11 +382,3 @@ for _, player in pairs(PlayerManager:GetPlayers()) do
     end
 end
 end
-
-Events:Subscribe('Player:Update', function(player, deltaTime)
-cumulateTime = cumulateTime + deltaTime
-	if cumulateTime >= playerUpdate and player.guid ~= nil then
-		cumulateTime = 0
-   checkplayerinlist()
-   end
-end)
