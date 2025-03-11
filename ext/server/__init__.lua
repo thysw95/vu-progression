@@ -367,7 +367,6 @@ for index, data1 in pairs(currentRankupPlayers) do
         return index
       end
     end
-	return null
 end
 end
 
