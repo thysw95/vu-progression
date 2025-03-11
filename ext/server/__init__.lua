@@ -374,9 +374,7 @@ function checkplayerinlist()
 for playerIndex, cPlayer in pairs(currentRankupPlayers) do
 for _, player in pairs(PlayerManager:GetPlayers()) do 
       if currentRankupPlayers[playerIndex]['r_PlayerGuid']== player.guid then
-        return null
-		else
-		currentRankupPlayers[playerIndex] = nil
+        return playerIndex	
       end
     end
 end
