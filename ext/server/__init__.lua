@@ -260,7 +260,6 @@ Events:Subscribe('Player:Killed', function(player, inflictor, position, weapon, 
 	getplayercount()
 end)
 
-end)
 
 Events:Subscribe('Player:Created', function(player)
     -- local playerRankObject = playerRankClass(player)
