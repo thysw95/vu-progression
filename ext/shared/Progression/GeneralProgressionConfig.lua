@@ -1,5 +1,103 @@
 -- generalProgressionUnlockList = {
 return {
+--DLC Weapons
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/XP1_PP-19/U_PP-19',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/XP2_SPAS12/U_SPAS12',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer',--mk3a1
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/XP2_MP5K/U_MP5K',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 0
+    },
+
+--M1911
+    {
+        lvl = 0,
+        equipmentPath = 'Weapons/M1911/U_M1911',--m1911
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_SECONDARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 0,
+        equipmentPath = 'Weapons/M1911/U_M1911_Lit',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_SECONDARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 0,
+        equipmentPath = 'Weapons/M1911/U_M1911_Silenced',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_SECONDARY',
+        xpRequired = 0
+    },
+    {
+        lvl = 0,
+        equipmentPath = 'Weapons/M1911/U_M1911_Tactical',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_SECONDARY',
+        xpRequired = 0
+    },
+
+    {
+        lvl = 5,
+        equipmentPath = 'Weapons/MP412Rex/U_MP412Rex',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_SECONDARY',
+        xpRequired = 5000
+    },
+    {
+        lvl = 8,
+        equipmentPath = 'Weapons/M93R/U_M93R',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_SECONDARY',
+        xpRequired = 86000
+    },
+
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_Cobra',--xbow
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_GADGET1',
+        xpRequired = 0
+    },
+    {
+        lvl = 1,
+        equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_RifleScope',--xbow RifleScope
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_GADGET1',
+        xpRequired = 0
+    },
+--primary weapon
+    {
+        lvl = 10,
+        equipmentPath = 'Weapons/MP7/U_MP7',
+        kit = 'All',
+        slotId = 'ID_M_SOLDIER_PRIMARY',
+        xpRequired = 34000
+    },
+
     {
         lvl = 1,
         equipmentPath = 'Weapons/M9/U_M9',
