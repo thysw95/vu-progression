@@ -16,7 +16,8 @@ function CreateProgressionTable()
         player_support_current_xp INTEGER,
         player_recon_level INTEGER,
         player_recon_current_xp INTEGER,
-        weapon_progression BLOB
+        weapon_progression BLOB,
+        vehicle_progression BLOB
     )
     ]]
 
@@ -41,4 +42,17 @@ function CreateProgressionTable()
     -- )
     -- ]]
     -- SQL:Close()
+end
+
+function PatchProgressionTable()
+    local response = SQL:Query('SELECT * FROM player_rankings_table LIMIT 1')
+    if response == nil or #response ~= 1 or response[1] == nil then return end
+    
+    -- Add vehicle_progression if missing
+    if response[1]['vehicle_progression'] == nil then
+        print("Missing 'vehicle_progression' column detected. Patching DB to include it...")
+        if not SQL:Query('ALTER TABLE player_rankings_table ADD COLUMN vehicle_progression BLOB') then
+            print('Failed to execute query: ' .. SQL:Error())
+        end
+    end
 end

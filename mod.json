@@ -1,10 +1,14 @@
 {
-    "Name": "Rank up",
-    "Description": "A mod that integrates progression into venice unleashed",
-    "Version": "1.0.0",
+    "Name": "VU Progression",
+    "Authors": [
+        "thysw95",
+        "Red-Thirten"
+    ],
+    "Description": "A mod that integrates progression into Venice Unleashed",
+    "Version": "2.0.0",
     "HasVeniceEXT": true,
     "Dependencies": {
         "veniceext": "^1.0.0"
     },
-    "Tags": ["rank-up"]
+    "Tags": ["progression"]
 }

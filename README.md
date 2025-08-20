@@ -1,2 +1,2 @@
 # vu-progression
-A progression mod for venice unleashed
+A progression mod for Venice Unleashed
