@@ -1,5 +1,8 @@
+-- Multiplier for how quickly you gane experience in game
 xpMultiplier = 1
+-- Turn unlock notifications on or off
 enablePlayerUnlockNotifications = true
+-- Duration of how long a notifications should be visible
 notificationDurationSec = 10
 -- Notification must have `%s` for Class name, followed by `%i` for new level, followed by `%s` for gear name, in that order
 levelUpNotification = "[= PROMOTED! =]\n%s Level %i\n~ %s Unlocked ~"
