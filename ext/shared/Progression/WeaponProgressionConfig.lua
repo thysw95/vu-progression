@@ -787,17 +787,17 @@ return {
                     },{
                         prettyName = 'Tactical Light',
                         attachmentPath = 'Weapons/DAO-12/U_DAO-12_Flashlight',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 50
                     },{
                         prettyName = 'Laser Sight',
                         attachmentPath = 'Weapons/DAO-12/U_DAO-12_Targetpointer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 120
                     },{
                         prettyName = 'Flash Suppressor',
                         attachmentPath = 'Weapons/DAO-12/U_DAO-12_Flashsuppressor',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = 'No Primary Accessory',
@@ -807,7 +807,7 @@ return {
                     },{
                         prettyName = 'Suppressor',
                         attachmentPath = 'Weapons/DAO-12/U_DAO-12_Silencer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = '12G Buckshot',
@@ -1424,17 +1424,17 @@ return {
                     },{
                         prettyName = 'Tactical Light',
                         attachmentPath = 'Weapons/M1014/U_M1014_Flashlight',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 50
                     },{
                         prettyName = 'Laser Sight',
                         attachmentPath = 'Weapons/M1014/U_M1014_Targetpointer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 120
                     },{
                         prettyName = 'Flash Suppressor',
                         attachmentPath = 'Weapons/M1014/U_M1014_Flashsuppressor',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = 'No Primary Accessory',
@@ -1444,7 +1444,7 @@ return {
                     },{
                         prettyName = 'Suppressor',
                         attachmentPath = 'Weapons/M1014/U_M1014_Silencer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = '12G Buckshot',
@@ -3507,17 +3507,17 @@ return {
                     },{
                         prettyName = 'Tactical Light',
                         attachmentPath = 'Weapons/Remington870/U_870_Flash_Light',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 50
                     },{
                         prettyName = 'Laser Sight',
                         attachmentPath = 'Weapons/Remington870/U_870_Target_Pointer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 120
                     },{
                         prettyName = 'Flash Suppressor',
                         attachmentPath = 'Weapons/Remington870/U_870_FlashSuppressor',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = 'No Primary Accessory',
@@ -3527,7 +3527,7 @@ return {
                     },{
                         prettyName = 'Suppressor',
                         attachmentPath = 'Weapons/Remington870/U_870_Silencer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = '12G Buckshot',
@@ -3761,17 +3761,17 @@ return {
                     },{
                         prettyName = 'Tactical Light',
                         attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_Flashlight',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 50
                     },{
                         prettyName = 'Laser Sight',
                         attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_Targetpointer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 120
                     },{
                         prettyName = 'Flash Suppressor',
                         attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_Flashsuppressor',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = 'No Primary Accessory',
@@ -3781,7 +3781,7 @@ return {
                     },{
                         prettyName = 'Suppressor',
                         attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_Silencer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = '12G Buckshot',
@@ -4739,17 +4739,17 @@ return {
                     },{
                         prettyName = 'Tactical Light',
                         attachmentPath = 'Weapons/USAS-12/U_USAS-12_Flashlight',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 50
                     },{
                         prettyName = 'Laser Sight',
                         attachmentPath = 'Weapons/USAS-12/U_USAS-12_Target_Pointer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 120
                     },{
                         prettyName = 'Flash Suppressor',
                         attachmentPath = 'Weapons/USAS-12/U_USAS-12_FlashSuppressor',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = 'No Primary Accessory',
@@ -4759,7 +4759,7 @@ return {
                     },{
                         prettyName = 'Suppressor',
                         attachmentPath = 'Weapons/USAS-12/U_USAS-12_Silencer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = '12G Buckshot',
@@ -5110,17 +5110,17 @@ return {
                     },{
                         prettyName = 'Tactical Light',
                         attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_Flashlight',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 50
                     },{
                         prettyName = 'Laser Sight',
                         attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_TargetPointer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 120
                     },{
                         prettyName = 'Flash Suppressor',
                         attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_FlashSuppressor',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = 'No Primary Accessory',
@@ -5130,7 +5130,7 @@ return {
                     },{
                         prettyName = 'Suppressor',
                         attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_Silencer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = '12G Buckshot',
@@ -7087,17 +7087,17 @@ return {
                     },{
                         prettyName = 'Tactical Light',
                         attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_Flash_Light',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 50
                     },{
                         prettyName = 'Laser Sight',
                         attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_Target_Pointer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 120
                     },{
                         prettyName = 'Flash Suppressor',
                         attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_FlashSuppressor',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = 'No Primary Accessory',
@@ -7107,7 +7107,7 @@ return {
                     },{
                         prettyName = 'Suppressor',
                         attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_Silencer',
-                        attachmentSlotIndex = 3,
+                        attachmentSlotIndex = 2,
                         killsRequired = 90
                     },{
                         prettyName = '12G Buckshot',
