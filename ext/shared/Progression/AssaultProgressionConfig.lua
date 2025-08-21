@@ -14,7 +14,7 @@ return {
     {
         lvl = 1,
         prettyName = 'M16A3 (US)',
-        equipmentPath = 'Weapons/M16A4/U_M16_Burst',
+        equipmentPath = 'Weapons/M16A4/U_M16A4',
         kits = {
             'Gameplay/Kits/USAssault',
             'Gameplay/Kits/USAssault_XP4',
@@ -209,8 +209,8 @@ return {
     },
     {
         lvl = 7,
-        prettyName = 'M16A4',
-        equipmentPath = 'Weapons/M16A4/U_M16A4',
+        prettyName = 'M16A4', 
+        equipmentPath = 'Weapons/M16A4/U_M16_Burst',
         kits = {
             'Gameplay/Kits/USAssault',
             'Gameplay/Kits/USAssault_XP4',
@@ -273,7 +273,7 @@ return {
     {
         lvl = 10,
         prettyName = 'M16A3 (RU)',
-        equipmentPath = 'Weapons/M16A4/U_M16_Burst',
+        equipmentPath = 'Weapons/M16A4/U_M16A4',
         kits = {
             'Gameplay/Kits/RUAssault',
             'Gameplay/Kits/RUAssault_XP4',
