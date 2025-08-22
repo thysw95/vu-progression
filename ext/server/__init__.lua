@@ -201,21 +201,50 @@ end
 -- end
 
 function IncreasePlayerXP(playerIndex, levelKey, xpKey, xpValue, progressUnlockList, levelType)
+    local origScore = currentRankupPlayers[playerIndex][xpKey]
     currentRankupPlayers[playerIndex][xpKey] = currentRankupPlayers[playerIndex][xpKey] + xpValue
 
     if #progressUnlockList > 0 then
-        for _, aProgress in pairs(progressUnlockList) do
-            if currentRankupPlayers[playerIndex][levelKey] < aProgress.lvl and currentRankupPlayers[playerIndex][xpKey] >= aProgress.xpRequired then
-                currentRankupPlayers[playerIndex][levelKey] = aProgress.lvl
+        -- for _, aProgress in pairs(progressUnlockList) do
+        --     if currentRankupPlayers[playerIndex][levelKey] < aProgress.lvl and currentRankupPlayers[playerIndex][xpKey] >= aProgress.xpRequired then
+        --         currentRankupPlayers[playerIndex][levelKey] = aProgress.lvl
 
-                -- print("CHANGED " .. levelType .. " PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex][levelKey]))
+        --         -- print("CHANGED " .. levelType .. " PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex][levelKey]))
+
+        --         PlayerLevelUp(
+        --             PlayerManager:GetPlayerByGuid(currentRankupPlayers[playerIndex]['r_PlayerGuid']), 
+        --             levelType, 
+        --             currentRankupPlayers[playerIndex][levelKey], 
+        --             currentRankupPlayers[playerIndex][xpKey],
+        --             aProgress.prettyName
+        --         )
+        --     end
+        -- end
+
+        for index, aProgress in pairs(progressUnlockList) do
+            local progressRequired = aProgress.xpRequired
+
+            if progressRequired > origScore and progressRequired <= currentRankupPlayers[playerIndex][xpKey] then
+                currentRankupPlayers[playerIndex][levelKey] = index
+
+                local prettyNames = ""
+                -- Create a list of pretty unlocks
+                if #aProgress.unlocks > 0 then
+                    for index, unlock in pairs(aProgress.unlocks) do
+                        if index == 1 then
+                            prettyNames = unlock.prettyName
+                        else
+                            prettyNames = prettyNames .. ", " .. unlock.prettyName
+                        end
+                    end
+                end
 
                 PlayerLevelUp(
                     PlayerManager:GetPlayerByGuid(currentRankupPlayers[playerIndex]['r_PlayerGuid']), 
                     levelType, 
                     currentRankupPlayers[playerIndex][levelKey], 
                     currentRankupPlayers[playerIndex][xpKey],
-                    aProgress.prettyName
+                    prettyNames
                 )
             end
         end
@@ -226,6 +255,7 @@ function PlayerLevelUp(player, levelType, level, currentXp, unlockName)
     if player ~= nil then
         print(player.name .. " leveled up " .. levelType .. " to " .. level .. "!")
         NetEvents:SendTo('OnLevelUp', player, levelType, currentXp)
+        
         if enablePlayerUnlockNotifications == true then
             local message = string.format(levelUpNotification, levelType, level, unlockName)
             ChatManager:Yell(message, notificationDurationSec, player)
@@ -438,6 +468,9 @@ function ChatCommand(player, recipientMask, message)
             )
         end
 
+    elseif string.lower(message):sub(1, 3) == "!xp" then
+        local xpAmount = message:sub(5)
+        PlayerXPUpdated(player, xpAmount)
     end
 end
 

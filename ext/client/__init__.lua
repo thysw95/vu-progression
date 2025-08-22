@@ -19,11 +19,15 @@ local playerSoundEntities = {} -- current player initialized sound entities
 -- This function unlocks an item for the client, depending on the selected category
 function UnlockClientItem(levelCat, currentXp)
     if #UNLOCK_CONFIGS[levelCat] > 0 then
-        for _, unlock in pairs(UNLOCK_CONFIGS[levelCat]) do
-            if currentXp >= unlock.xpRequired then
-                for _, kit in pairs(unlock.kits) do
-                    ApplyUnlock(unlock.equipmentPath, unlock.slotId, kit)
+        for _, unlockSet in pairs(UNLOCK_CONFIGS[levelCat]) do
+            if (currentXp >= unlockSet.xpRequired and #unlockSet.unlocks > 0) then
+                -- Loop through unlocks in each unlock
+                for _, unlock in pairs(unlockSet.unlocks) do
+                    for _, kit in pairs(unlock.kits) do
+                        ApplyUnlock(unlock.equipmentPath, unlock.slotId, kit)
+                    end
                 end
+
             end
         end
     end
