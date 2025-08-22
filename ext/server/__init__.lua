@@ -246,6 +246,8 @@ function IncreasePlayerXP(playerIndex, levelKey, xpKey, xpValue, progressUnlockL
                     currentRankupPlayers[playerIndex][xpKey],
                     prettyNames
                 )
+
+                break
             end
         end
     end
