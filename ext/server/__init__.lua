@@ -205,21 +205,6 @@ function IncreasePlayerXP(playerIndex, levelKey, xpKey, xpValue, progressUnlockL
     currentRankupPlayers[playerIndex][xpKey] = currentRankupPlayers[playerIndex][xpKey] + xpValue
 
     if #progressUnlockList > 0 then
-        -- for _, aProgress in pairs(progressUnlockList) do
-        --     if currentRankupPlayers[playerIndex][levelKey] < aProgress.lvl and currentRankupPlayers[playerIndex][xpKey] >= aProgress.xpRequired then
-        --         currentRankupPlayers[playerIndex][levelKey] = aProgress.lvl
-
-        --         -- print("CHANGED " .. levelType .. " PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex][levelKey]))
-
-        --         PlayerLevelUp(
-        --             PlayerManager:GetPlayerByGuid(currentRankupPlayers[playerIndex]['r_PlayerGuid']), 
-        --             levelType, 
-        --             currentRankupPlayers[playerIndex][levelKey], 
-        --             currentRankupPlayers[playerIndex][xpKey],
-        --             aProgress.prettyName
-        --         )
-        --     end
-        -- end
 
         for index, aProgress in pairs(progressUnlockList) do
             local progressRequired = aProgress.xpRequired
@@ -246,10 +231,9 @@ function IncreasePlayerXP(playerIndex, levelKey, xpKey, xpValue, progressUnlockL
                     currentRankupPlayers[playerIndex][xpKey],
                     prettyNames
                 )
-
-                break
             end
         end
+        
     end
 end
 
