@@ -448,7 +448,7 @@ VIC_PROG_CONFIG = {
         customizationPath = 'Gameplay/Vehicles/IFVCustomization',
         vehicleNames = {
             'BMP2', -- BMP-2M
-            'Vehicles/LAV25/spec/LAV25_AI', -- LAV-25
+            'Vehicles/LAV25/LAV25', -- LAV-25
             'Vehicles/XPack01/BTR-90/BTR90', -- BTR-90
         }
     },
@@ -558,8 +558,9 @@ VIC_PROG_CONFIG = {
         vehicleNames = {
             'Su-25TM', -- SU-25TM FROGFOOT
             'Su-35BM Flanker-E', -- SU-35BM FLANKER-E
-            'Vehicles/F18_sp03/F18_Wingman', -- F/A-18E SUPER HORNET
+            'F16', -- F/A-18E SUPER HORNET
             'Vehicles/A-10_THUNDERBOLT/A10_THUNDERBOLT', -- A-10 THUNDERBOLT
+            'F35B', -- F-35
         }
     },
     {
@@ -670,8 +671,8 @@ VIC_PROG_CONFIG = {
         },
         customizationPath = 'Gameplay/Vehicles/LBTCustomization',
         vehicleNames = {
-            'M1128', -- M1128
-            'SPRUT-SD', -- SPRUT-SD
+            'Vehicles/XP3/M1128-Stryker/M1128-Stryker', -- M1128
+            'Vehicles/XP3/2S25-SPRUT-SD/2S25_SPRUT-SD', -- SPRUT-SD
         }
     },
     {
@@ -884,6 +885,10 @@ VIC_PROG_CONFIG = {
         vehicleNames = {
             'Vehicles/Z11W/Z-11w', -- Z-11W
             'Vehicles/AH6/AH6_Littlebird', -- AH-6J LITTLE BIRD
+            -- vvv TRANSPORT HELICOPTERS vvv
+            -- 'Vehicles/Venom/Venom', -- UH-1Y VENOM
+            -- 'AAV-7A1', -- AAV-7A1 AMTRAC
+            -- 'Ka-60', -- KA-60 KASATKA
         }
     },
 }
