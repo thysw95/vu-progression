@@ -181,23 +181,7 @@ local reconProgression = {
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
         }
-    },
-    {
-        xpRequired = 220000,
-        unlocks = {
-            {
-                prettyName = 'Crossbow',
-                equipmentPath = 'Weapons/XBow/U_Crossbow',
-                kits = {
-                    'Gameplay/Kits/USRecon',
-                    'Gameplay/Kits/USRecon_XP4',
-                    'Gameplay/Kits/RURecon',
-                    'Gameplay/Kits/RURecon_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_PRIMARY',
-            },
-        }
-    },
+    }
 }
 
 print("Sorting Recon Progress...")

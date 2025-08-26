@@ -283,39 +283,7 @@ local assaultProgression = {
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
         }
-    },
-    {
-        xpRequired = 250000,
-        unlocks = {
-            {
-                prettyName = 'XBOW',
-                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_Cobra',
-                kits = {
-                    'Gameplay/Kits/USAssault',
-                    'Gameplay/Kits/USAssault_XP4',
-                    'Gameplay/Kits/RUAssault',
-                    'Gameplay/Kits/RUAssault_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_GADGET1',
-            },
-        }
-    },
-    {
-        xpRequired = 280000,
-        unlocks = {
-            {
-                prettyName = 'XBOW SCOPED',
-                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_RifleScope',
-                kits = {
-                    'Gameplay/Kits/USAssault',
-                    'Gameplay/Kits/USAssault_XP4',
-                    'Gameplay/Kits/RUAssault',
-                    'Gameplay/Kits/RUAssault_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_GADGET1',
-            },
-        }
-    },
+    }
 }
 
 print("Sorting Assault Progress...")

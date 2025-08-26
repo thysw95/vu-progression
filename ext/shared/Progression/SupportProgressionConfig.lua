@@ -188,39 +188,7 @@ local supportProgression = {
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
         }
-    },
-    {
-        xpRequired = 200000,
-        unlocks = {
-            {
-                prettyName = 'XBOW',
-                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_Cobra',
-                kits = {
-                    'Gameplay/Kits/USSupport',
-                    'Gameplay/Kits/USSupport_XP4',
-                    'Gameplay/Kits/RUSupport',
-                    'Gameplay/Kits/RUSupport_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_GADGET2',
-            },
-        }
-    },
-    {
-        xpRequired = 230000,
-        unlocks = {
-            {
-                prettyName = 'XBOW SCOPED',
-                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_RifleScope',
-                kits = {
-                    'Gameplay/Kits/USSupport',
-                    'Gameplay/Kits/USSupport_XP4',
-                    'Gameplay/Kits/RUSupport',
-                    'Gameplay/Kits/RUSupport_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_GADGET2',
-            },
-        }
-    },
+    }
 }
 
 print("Sorting Support Progress...")

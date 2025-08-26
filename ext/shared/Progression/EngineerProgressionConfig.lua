@@ -216,39 +216,7 @@ local engineerProgression = {
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
         }
-    },
-    {
-        xpRequired = 175000,
-        unlocks = {
-            {
-                prettyName = 'XBOW',
-                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_Cobra',
-                kits = {
-                    'Gameplay/Kits/USEngineer',
-                    'Gameplay/Kits/USEngineer_XP4',
-                    'Gameplay/Kits/RUEngineer',
-                    'Gameplay/Kits/RUEngineer_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_GADGET1',
-            },
-        }
-    },
-    {
-        xpRequired = 205000,
-        unlocks = {
-            {
-                prettyName = 'XBOW SCOPED',
-                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_RifleScope',
-                kits = {
-                    'Gameplay/Kits/USEngineer',
-                    'Gameplay/Kits/USEngineer_XP4',
-                    'Gameplay/Kits/RUEngineer',
-                    'Gameplay/Kits/RUEngineer_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_GADGET1',
-            },
-        }
-    },
+    }
 }
 
 print("Sorting Engineer Progress...")
