@@ -185,7 +185,9 @@ function PlayerLevelUp(player, levelType, level, currentXp, unlockName)
 end
 
 function IncreaseVehicleScore(player, playerGuid, vehicleControllableType, scoreGained)
-    local cPlayer = currentRankupPlayers[playerGuid]
+    local guid = tostring(playerGuid)
+
+    local cPlayer = currentRankupPlayers[guid]
     if not cPlayer then return end
 
     -- Find progression config
