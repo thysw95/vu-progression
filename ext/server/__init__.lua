@@ -89,14 +89,16 @@ function PlayerXPUpdated(player, score)
     end
 end
 
-function IncreaseWeaponKills(playerGuid, weaponName) 
-    local cPlayer = currentRankupPlayers[playerGuid]
+function IncreaseWeaponKills(playerGuid, weaponName, killamount) 
+    local guid = tostring(playerGuid)
+
+    local cPlayer = currentRankupPlayers[guid]
     if not cPlayer then return end
 
     if #cPlayer['r_WeaponProgressList'] > 0 then
         for _, weapon in pairs(cPlayer['r_WeaponProgressList']) do
             if weapon['weaponName'] == weaponName then
-                weapon['kills'] = weapon['kills'] + 1
+                weapon['kills'] = weapon['kills'] + killamount
 
                 local player = PlayerManager:GetPlayerByGuid(playerGuid)
                 if player ~= nil then
@@ -115,7 +117,6 @@ function WeapAttachUnlockCheck(player, weaponName, weapKills)
             if weaponUnlocks.weaponName == weaponName then
                 if #weaponUnlocks.unlocks > 0 then
                     for _, unlock in pairs(weaponUnlocks.unlocks) do
-
                         if enablePlayerUnlockNotifications == true and weapKills == unlock.killsRequired then
                             print(player.name .. " unlocked " .. unlock.prettyName .. " for " .. weaponUnlocks.prettyName .. " at " .. weapKills .. " kills!")
                             local message = string.format(weapAttachUnlockNotification, weaponUnlocks.prettyName, weapKills, unlock.prettyName)
@@ -389,6 +390,14 @@ function ChatCommand(player, recipientMask, message)
         local xpAmount = message:sub(5)
         PlayerXPUpdated(player, xpAmount)
     end
+    -- elseif string.lower(message):sub(1, 3) == "!wp" then
+    --     local killAmount = message:sub(5)
+    --     ChatManager:SendMessage(
+    --         "Added " .. killAmount .. " to the M16A4",
+    --         player
+    --     )
+    --     IncreaseWeaponKills(player.guid, "M16A4", killAmount)
+    -- end
 end
 
 Events:Subscribe('Player:Score', function(player, scoringTypeData, score)
@@ -414,7 +423,7 @@ Events:Subscribe('Player:Killed', function(player, inflictor, position, weapon, 
         local killer = currentRankupPlayers[inflictor.guid]
         if killer then
             killer['r_Kills'] = killer['r_Kills'] + 1
-            IncreaseWeaponKills(inflictor.guid, weapon)
+            IncreaseWeaponKills(inflictor.guid, weapon, 1)
         end
     end
 end)
@@ -426,16 +435,6 @@ Events:Subscribe('Player:Left', function(player)
     if cPlayer then
         rankingStorageManager:StorePlayerProgress(cPlayer)
         currentRankupPlayers[guid] = nil
-    end
-end)
-
-NetEvents:Subscribe('AddKillsToWeap', function(player, kills, weapPath)
-    local guid = tostring(player.guid)
-    local cPlayer = currentRankupPlayers[guid]
-    if cPlayer then
-        for i = 1, kills do
-            IncreaseWeaponKills(guid, weapPath)
-        end
     end
 end)
 

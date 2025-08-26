@@ -34,6 +34,7 @@ function UnlockClientItem(levelCat, currentXp)
 end
 
 function UnlockClientAttachment(weaponName, kills)
+    print("Unlocking attach...")
     if #UNLOCK_CONFIGS.Weapon > 0 then
         for _, weaponUnlocks in pairs(UNLOCK_CONFIGS.Weapon) do
 
