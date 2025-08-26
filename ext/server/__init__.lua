@@ -17,43 +17,18 @@ playerRankClass = require('__shared/PlayerRank')
 currentRankupPlayers = {}
 
 function AddPlayerToRankUpList(player)
+    local guidKey = tostring(player.guid)
     local playerRankObject = playerRankClass(player)
 
     playerRankObject = rankingStorageManager:FetchPlayerProgress(playerRankObject)
 
-    -- print("NEW PLAYER GUID: ")
-    -- print(playerRankObject['r_PlayerGuid'])
-    -- local playerAdded = false
-    
-    if #currentRankupPlayers > 0 then
-        local foundPlayer = false
-
-        for _, cPlayer in pairs(currentRankupPlayers) do
-            if cPlayer['r_PlayerGuid'] == player.guid then
-                print(player.name .. ' IS ALREADY ON THE LIST')
-
-                foundPlayer = true
-            end
-        end
-
-        if foundPlayer == false then
-            print("ADDING " .. player.name .. " TO THE RANKUP LIST")
-
-            table.insert(currentRankupPlayers, playerRankObject)
-
-            -- playerAdded = true
-        end
+    if currentRankupPlayers[guidKey] then
+        print(player.name .. " IS ALREADY ON THE LIST")
     else
         print("ADDING " .. player.name .. " TO THE RANKUP LIST")
-
-        table.insert(currentRankupPlayers, playerRankObject)
-
-        -- playerAdded = true
+        currentRankupPlayers[guidKey] = playerRankObject
     end
 
-    -- if playerAdded == true then
-    --     initPlayerLevels(player, playerRankObject)
-    -- end
     initPlayerLevels(player, playerRankObject)
 end
 
@@ -79,7 +54,6 @@ function initPlayerLevels(player, playerRankObject)
 end
 
 function PlayerXPUpdated(player, score)
-    -- player:MakeWritable()
     local selectedKit = player.customization
     local kitData = DataContainer(selectedKit)
     local veniceSoldierAsset = VeniceSoldierCustomizationAsset(kitData)
@@ -95,54 +69,45 @@ function PlayerXPUpdated(player, score)
         vehicleEntityData = VehicleEntityData(player.attachedControllable.data)
     end
 
-    if #currentRankupPlayers > 0 then
-        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
-            if cPlayer['r_PlayerGuid'] == player.guid then
-                -- print(player.name .. " earned " .. score .. " XP on " .. kitName)
+    local guid = tostring(player.guid)
 
-                -- IncreaseGeneralPlayerXP(playerIndex, score)
-                IncreasePlayerXP(playerIndex, 'r_PlayerLevel', 'r_PlayerCurrentXP', xp, generalProgressionUnlockList, "General")
+    local cPlayer = currentRankupPlayers[guid]
+    if cPlayer then
+        IncreasePlayerXP(guid, 'r_PlayerLevel', 'r_PlayerCurrentXP', xp, generalProgressionUnlockList, "General")
 
-                if kitName == 'ID_M_ASSAULT' then
-                    -- IncreaseAssaultPlayerXP(playerIndex, score)
-                    IncreasePlayerXP(playerIndex, 'r_AssaultLevel', 'r_AssaultCurrentXP', xp, assaultProgressionUnlockList, "Assault")
-                elseif kitName == 'ID_M_ENGINEER' then
-                    IncreasePlayerXP(playerIndex, 'r_EngineerLevel', 'r_EngineerCurrentXP', xp, engineerProgressUnlockList, "Engineer")
-                elseif kitName == 'ID_M_SUPPORT' then
-                    IncreasePlayerXP(playerIndex, 'r_SupportLevel', 'r_SupportCurrentXP', xp, supportProgressUnlockList, "Support")
-                elseif kitName == 'ID_M_RECON' then
-                    IncreasePlayerXP(playerIndex, 'r_ReconLevel', 'r_ReconCurrentXP', xp, reconProgressUnlockList, "Recon")
-                elseif kitName == 'Vehicle' then
-                    IncreaseVehicleScore(player, playerIndex, vehicleEntityData.controllableType, xp)
-                end
-
-                break -- Player found in currentRankupPlayers
-            end
+        if kitName == 'ID_M_ASSAULT' then
+            IncreasePlayerXP(guid, 'r_AssaultLevel', 'r_AssaultCurrentXP', xp, assaultProgressionUnlockList, "Assault")
+        elseif kitName == 'ID_M_ENGINEER' then
+            IncreasePlayerXP(guid, 'r_EngineerLevel', 'r_EngineerCurrentXP', xp, engineerProgressUnlockList, "Engineer")
+        elseif kitName == 'ID_M_SUPPORT' then
+            IncreasePlayerXP(guid, 'r_SupportLevel', 'r_SupportCurrentXP', xp, supportProgressUnlockList, "Support")
+        elseif kitName == 'ID_M_RECON' then
+            IncreasePlayerXP(guid, 'r_ReconLevel', 'r_ReconCurrentXP', xp, reconProgressUnlockList, "Recon")
+        elseif kitName == 'Vehicle' then
+            IncreaseVehicleScore(player, guid, vehicleEntityData.controllableType, xp)
         end
     end
 end
 
-function IncreaseWeaponKills(playerIndex, weaponName) 
-    -- if currentRankupPlayers[playerIndex] ~= nil then
-        if #currentRankupPlayers[playerIndex]['r_WeaponProgressList'] > 0 then
-            for _, weapon in pairs(currentRankupPlayers[playerIndex]['r_WeaponProgressList']) do
-                if weapon['weaponName'] == weaponName then
-                    weapon['kills'] = weapon['kills'] + 1
+function IncreaseWeaponKills(playerGuid, weaponName) 
+    local cPlayer = currentRankupPlayers[playerGuid]
+    if not cPlayer then return end
 
-                    -- print("THE WEAPON " .. weapon['weaponName'] .. " CURRENT KILLS IS " .. tostring(weapon['kills']))
+    if #cPlayer['r_WeaponProgressList'] > 0 then
+        for _, weapon in pairs(cPlayer['r_WeaponProgressList']) do
+            if weapon['weaponName'] == weaponName then
+                weapon['kills'] = weapon['kills'] + 1
 
-                    local player = PlayerManager:GetPlayerByGuid(currentRankupPlayers[playerIndex]['r_PlayerGuid'])
-                    if player ~= nil then
-                        NetEvents:SendTo('OnKilledPlayer', player, weapon['weaponName'], weapon['kills'])
-                        WeapAttachUnlockCheck(player, weaponName, weapon['kills'])
-                    end
-                    break
+                local player = PlayerManager:GetPlayerByGuid(playerGuid)
+                if player ~= nil then
+                    NetEvents:SendTo('OnKilledPlayer', player, weapon['weaponName'], weapon['kills'])
+                    WeapAttachUnlockCheck(player, weaponName, weapon['kills'])
                 end
+                break
             end
         end
-    -- end
+    end
 end
-
 function WeapAttachUnlockCheck(player, weaponName, weapKills)
     if #weaponProgressUnlocks > 0 then
         for _, weaponUnlocks in pairs(weaponProgressUnlocks) do
@@ -168,55 +133,24 @@ function WeapAttachUnlockCheck(player, weaponName, weapKills)
     end
 end
 
--- function IncreaseGeneralPlayerXP(playerIndex, xpValue)
---     currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] = currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] + xpValue
+function IncreasePlayerXP(playerGuid, levelKey, xpKey, xpValue, progressUnlockList, levelType)
+    local cPlayer = currentRankupPlayers[playerGuid]
+    if not cPlayer then return end
 
---     if #generalProgressionUnlockList > 0 then
---         for _, gProgress in pairs(generalProgressionUnlockList) do
---             if currentRankupPlayers[playerIndex]['r_PlayerLevel'] < gProgress.lvl and currentRankupPlayers[playerIndex]['r_PlayerCurrentXP'] >= gProgress.xpRequired then
---                 currentRankupPlayers[playerIndex]['r_PlayerLevel'] = gProgress.lvl
-
---                 print("CHANGED GENERAL PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex]['r_PlayerLevel']))
-
---                 PlayerLevelUp(playerIndex, "General", currentRankupPlayers[playerIndex]['r_PlayerLevel'])
---             end
---         end
---     end
--- end
-
--- function IncreaseAssaultPlayerXP(playerIndex, xpValue)
---     currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] = currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] + xpValue
-
---     if #assaultProgressionUnlockList > 0 then
---         for _, aProgress in pairs(assaultProgressionUnlockList) do
---             if currentRankupPlayers[playerIndex]['r_AssaultLevel'] < aProgress.lvl and currentRankupPlayers[playerIndex]['r_AssaultCurrentXP'] >= aProgress.xpRequired then
---                 currentRankupPlayers[playerIndex]['r_AssaultLevel'] = aProgress.lvl
-
---                 print("CHANGED ASSAULT PROGRESSION TO LEVEL " .. tostring(currentRankupPlayers[playerIndex]['r_AssaultLevel']))
-
---                 PlayerLevelUp(playerIndex, "Assault", currentRankupPlayers[playerIndex]['r_AssaultLevel'])
---             end
---         end
---     end
--- end
-
-function IncreasePlayerXP(playerIndex, levelKey, xpKey, xpValue, progressUnlockList, levelType)
-    local origScore = currentRankupPlayers[playerIndex][xpKey]
-    currentRankupPlayers[playerIndex][xpKey] = currentRankupPlayers[playerIndex][xpKey] + xpValue
+    local origScore = cPlayer[xpKey]
+    cPlayer[xpKey] = cPlayer[xpKey] + xpValue
 
     if #progressUnlockList > 0 then
-
         for index, aProgress in pairs(progressUnlockList) do
             local progressRequired = aProgress.xpRequired
 
-            if progressRequired > origScore and progressRequired <= currentRankupPlayers[playerIndex][xpKey] then
-                currentRankupPlayers[playerIndex][levelKey] = index
+            if progressRequired > origScore and progressRequired <= cPlayer[xpKey] then
+                cPlayer[levelKey] = index
 
                 local prettyNames = ""
-                -- Create a list of pretty unlocks
                 if #aProgress.unlocks > 0 then
-                    for index, unlock in pairs(aProgress.unlocks) do
-                        if index == 1 then
+                    for i, unlock in pairs(aProgress.unlocks) do
+                        if i == 1 then
                             prettyNames = unlock.prettyName
                         else
                             prettyNames = prettyNames .. ", " .. unlock.prettyName
@@ -225,15 +159,14 @@ function IncreasePlayerXP(playerIndex, levelKey, xpKey, xpValue, progressUnlockL
                 end
 
                 PlayerLevelUp(
-                    PlayerManager:GetPlayerByGuid(currentRankupPlayers[playerIndex]['r_PlayerGuid']), 
+                    PlayerManager:GetPlayerByGuid(cPlayer.r_PlayerGuid), 
                     levelType, 
-                    currentRankupPlayers[playerIndex][levelKey], 
-                    currentRankupPlayers[playerIndex][xpKey],
+                    cPlayer[levelKey], 
+                    cPlayer[xpKey],
                     prettyNames
                 )
             end
         end
-        
     end
 end
 
@@ -250,8 +183,11 @@ function PlayerLevelUp(player, levelType, level, currentXp, unlockName)
     end
 end
 
-function IncreaseVehicleScore(player, playerIndex, vehicleControllableType, scoreGained)
-    -- Find progression config for vehicle name
+function IncreaseVehicleScore(player, playerGuid, vehicleControllableType, scoreGained)
+    local cPlayer = currentRankupPlayers[playerGuid]
+    if not cPlayer then return end
+
+    -- Find progression config
     local progCfg = nil
     for _, vehicleType in pairs(VIC_PROG_CONFIG) do
         for _, vehicleName in pairs(vehicleType.vehicleNames) do
@@ -264,9 +200,9 @@ function IncreaseVehicleScore(player, playerIndex, vehicleControllableType, scor
     end
     if progCfg == nil then return end
 
-    -- Find player vehicle progression for vehicle type name
+    -- Find player vehicle progression
     local playerVicProg = nil
-    for _, vehicleType in pairs(currentRankupPlayers[playerIndex]['r_VehicleProgressList']) do
+    for _, vehicleType in pairs(cPlayer['r_VehicleProgressList']) do
         if vehicleType.typeName == progCfg.prettyName then
             playerVicProg = vehicleType
             break
@@ -276,8 +212,7 @@ function IncreaseVehicleScore(player, playerIndex, vehicleControllableType, scor
 
     local origScore = playerVicProg.score
     playerVicProg.score = playerVicProg.score + scoreGained
-    
-    -- Check if vehicle customization unlock occurred
+
     for _, unlock in pairs(progCfg.unlocks) do
         if unlock.vicScoreRequired > origScore and unlock.vicScoreRequired <= playerVicProg.score then
             print(player.name .. " unlocked " .. unlock.prettyName .. " for " .. progCfg.prettyName .. "!")
@@ -292,26 +227,22 @@ function IncreaseVehicleScore(player, playerIndex, vehicleControllableType, scor
     end
 end
 
+
 function StoreAllPlayerStats()
-    if #currentRankupPlayers > 0 then
-        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
-            rankingStorageManager:StorePlayerProgress(currentRankupPlayers[playerIndex])
-        end
+    for guid, cPlayer in pairs(currentRankupPlayers) do
+        rankingStorageManager:StorePlayerProgress(cPlayer)
     end
 end
 
 function ChatCommand(player, recipientMask, message)
     if player == nil then return end
-    -- Get player index from rankup table
-    local playerIndex = nil
-    for iPlayer, cPlayer in pairs(currentRankupPlayers) do
-        if cPlayer['r_PlayerGuid'] == player.guid then
-            playerIndex = iPlayer
-            break
-        end
-    end
-    if playerIndex == nil then
-        print("COULD NOT FIND PLAYER " .. player.name .. " INDEX IN RANKUP PLAYERS TABLE!?")
+
+    local guid = tostring(player.guid)
+
+    local cPlayer = currentRankupPlayers[guid]
+
+    if not cPlayer then
+        print("COULD NOT FIND PLAYER " .. player.name .. " IN RANKUP PLAYERS TABLE!?")
         return
     end
 
@@ -330,8 +261,8 @@ function ChatCommand(player, recipientMask, message)
             player
         )
         for i, className in pairs(classNames) do
-            local classLvl = currentRankupPlayers[playerIndex]['r_' .. className .. 'Level']
-            local classXp = currentRankupPlayers[playerIndex]['r_' .. className .. 'CurrentXP']
+            local classLvl = cPlayer['r_' .. className .. 'Level']
+            local classXp = cPlayer['r_' .. className .. 'CurrentXP']
             local classNextLvlXp
             for _, unlock in pairs(unlockLists[i]) do
                 if classXp < unlock.xpRequired then
@@ -366,7 +297,7 @@ function ChatCommand(player, recipientMask, message)
         end
         -- Find current vehicle score for type
         local vicScore
-        for _, vicType in pairs(currentRankupPlayers[playerIndex]['r_VehicleProgressList']) do
+        for _, vicType in pairs(cPlayer['r_VehicleProgressList']) do
             if vicType['typeName'] == VIC_PROG_CONFIG[vicIndex].prettyName then
                 vicScore = vicType['score']
                 break
@@ -420,7 +351,7 @@ function ChatCommand(player, recipientMask, message)
         end
         -- Find current kills with weapon
         local curWeapKills
-        for _, weapon in pairs(currentRankupPlayers[playerIndex]['r_WeaponProgressList']) do
+        for _, weapon in pairs(cPlayer['r_WeaponProgressList']) do
             if weapon['weaponName'] == weaponProgressUnlocks[weapIndex].weaponName then
                 curWeapKills = weapon['kills']
                 break
@@ -461,129 +392,59 @@ function ChatCommand(player, recipientMask, message)
 end
 
 Events:Subscribe('Player:Score', function(player, scoringTypeData, score)
-    -- local rankPlayer = PlayerManager:GetPlayerByName(playerName)
-
-    -- if rankPlayer.name == player.name then
-    --     NetEvents:Broadcast('PlayerScoreEvent', score)
-    -- end
+    local guid = tostring(player.guid)
     
-
-    -- if player.name == 'MJShepherd' then
-    --     print("A SCORING EVENT HAS TRIGGERED FOR: " .. player.name)
-    --     print("SCORE AMOUNT: " .. tostring(score))
-
-    --     print('THE CURRENT PLAYER LIST IS: ')
-    --     if #currentRankupPlayers > 0 then
-    --         for playerIndex, cPlayer in pairs(currentRankupPlayers) do
-    --             print(cPlayer['r_PlayerName'])
-    --         end
-    --     end
-    -- end
-    
-    if player.guid ~= nil then
+    if guid ~= nil then
         PlayerXPUpdated(player, score)
     end
     
 end)
 
--- This event is used by the inflictor
+-- Player killed / death
 Events:Subscribe('Player:Killed', function(player, inflictor, position, weapon, isRoadKill, isHeadShot, wasVictimInReviveState, info)
-    -- if inflictor ~= nil and inflictor.name == 'MJShepherd' then
-    --     print(player.name .. " was killed by " .. inflictor.name .. " with a " .. weapon)
-    -- end
-
-    -- Player was killed
-    if player ~= nil and #currentRankupPlayers > 0 and player.guid ~= nil then
-        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
-            if currentRankupPlayers[playerIndex]['r_PlayerGuid'] == player.guid then
-                currentRankupPlayers[playerIndex]['r_Deaths'] = currentRankupPlayers[playerIndex]['r_Deaths'] + 1
-                break -- Player found in currentRankupPlayers
-            end
+    local guid = tostring(player.guid)
+    
+    if player and guid then
+        local victim = currentRankupPlayers[guid]
+        if victim then
+            victim['r_Deaths'] = victim['r_Deaths'] + 1
         end
     end
-    
-    -- Player got a kill
-    if inflictor ~= nil and #currentRankupPlayers > 0 and inflictor.guid ~= nil then
-        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
-            if currentRankupPlayers[playerIndex]['r_PlayerGuid'] == inflictor.guid then
-                currentRankupPlayers[playerIndex]['r_Kills'] = currentRankupPlayers[playerIndex]['r_Kills'] + 1
-                IncreaseWeaponKills(playerIndex, weapon)
-                break -- Inflictor found in currentRankupPlayers
-            end
+    if inflictor and inflictor.guid then
+        local killer = currentRankupPlayers[inflictor.guid]
+        if killer then
+            killer['r_Kills'] = killer['r_Kills'] + 1
+            IncreaseWeaponKills(inflictor.guid, weapon)
         end
     end
 end)
 
--- Events:Subscribe('Player:Joining', function(name, playerGuid, ipAddress, accountGuid)
---     -- print('PLAYER JOINING OWO!!!!!!!!!')
---     -- print('Player Name:')
---     -- print(name)
---     -- print('Player Guid:')
---     -- print(playerGuid)
---     -- print('Account Guid')
---     -- print(accountGuid)
-
---     -- local player = PlayerManager:GetPlayersByName(playerGuid)
-
---     -- -- testSQL()
---     -- if player ~= nil then
---     --     print("New player found!!!! Adding to the stats list now")
-
---     --     local playerRankObject = playerRankClass(player)
-
---     --     table.insert(currentRankupPlayers, playerRankObject)
---     -- end
-
-    
--- end)
-
--- Events:Subscribe('Player:Created', function(player)
---     -- local playerRankObject = playerRankClass(player)
-
---     -- print("THE RECEIVED PLAYER OBJECT IS: ")
---     -- print(player)
-
---     -- table.insert(currentRankupPlayers, playerRankObject)
-
--- end)
-
-NetEvents:Subscribe('AddNewPlayerForStats', function(player, data)
-    -- local playerRankObject = playerRankClass(player)
-    -- table.insert(currentRankupPlayers, playerRankObject)
-    AddPlayerToRankUpList(player)
-    
-end)
 
 Events:Subscribe('Player:Left', function(player)
-    if #currentRankupPlayers > 0 then
-        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
-            if cPlayer['r_PlayerGuid'] == player.guid then
-                -- print("AWWW A PLAYER LEFT")
-                -- print("THEY LEFT WITH " .. tostring(currentRankupPlayers[playerIndex]['r_Kills']) .. " KILLS AND WITH " .. tostring(currentRankupPlayers[playerIndex]['r_Deaths']) .. " DEATHS")
-                rankingStorageManager:StorePlayerProgress(currentRankupPlayers[playerIndex])
+    local guid = tostring(player.guid)
+    local cPlayer = currentRankupPlayers[guid]
+    if cPlayer then
+        rankingStorageManager:StorePlayerProgress(cPlayer)
+        currentRankupPlayers[guid] = nil
+    end
+end)
 
-                currentRankupPlayers[playerIndex] = nil
-            end
+NetEvents:Subscribe('AddKillsToWeap', function(player, kills, weapPath)
+    local guid = tostring(player.guid)
+    local cPlayer = currentRankupPlayers[guid]
+    if cPlayer then
+        for i = 1, kills do
+            IncreaseWeaponKills(guid, weapPath)
         end
     end
+end)
+
+NetEvents:Subscribe('AddNewPlayerForStats', function(player, data)
+    AddPlayerToRankUpList(player)
 end)
 
 NetEvents:Subscribe('AddXP', function(player, xp)
     PlayerXPUpdated(player, xp)
-end)
-
-NetEvents:Subscribe('AddKillsToWeap', function(player, kills, weapPath)
-    if player ~= nil and #currentRankupPlayers > 0 and player.guid ~= nil then
-        for playerIndex, cPlayer in pairs(currentRankupPlayers) do
-            if currentRankupPlayers[playerIndex]['r_PlayerGuid'] == player.guid then
-                for i = 1, kills do
-                    IncreaseWeaponKills(playerIndex, weapPath)
-                end
-                break
-            end
-        end
-    end
-    
 end)
 
 Events:Subscribe('Extension:Loaded', function()

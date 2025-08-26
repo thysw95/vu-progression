@@ -1,4 +1,7 @@
-return {
+local progressionManager = require("__shared/ProgressionManager")
+
+-- Add/update values in the below table to edit progression
+local supportProgression = {
     {
         xpRequired = 0,
         unlocks = {
@@ -219,3 +222,9 @@ return {
         }
     },
 }
+
+print("Sorting Support Progress...")
+
+supportProgression = progressionManager:sortKitProgressionTable(supportProgression)
+
+return supportProgression
