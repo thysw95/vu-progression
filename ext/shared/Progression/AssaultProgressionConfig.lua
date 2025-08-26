@@ -117,22 +117,6 @@ local assaultProgression = {
         }
     },
     {
-        xpRequired = 17000, -- Co-op score
-        unlocks = {
-            {
-                prettyName = 'KH2002',
-                equipmentPath = 'Weapons/KH2002/U_KH2002',
-                kits = {
-                    'Gameplay/Kits/USAssault',
-                    'Gameplay/Kits/USAssault_XP4',
-                    'Gameplay/Kits/RUAssault',
-                    'Gameplay/Kits/RUAssault_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_PRIMARY',
-            },
-        }
-    },
-    {
         xpRequired = 22000,
         unlocks = {
             {

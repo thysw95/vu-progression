@@ -195,22 +195,6 @@ local engineerProgression = {
         }
     },
     {
-        xpRequired = 120000, -- Co-op score
-        unlocks = {
-            {
-                prettyName = 'SG553',
-                equipmentPath = 'Weapons/SG553LB/U_SG553LB',
-                kits = {
-                    'Gameplay/Kits/USEngineer',
-                    'Gameplay/Kits/USEngineer_XP4',
-                    'Gameplay/Kits/RUEngineer',
-                    'Gameplay/Kits/RUEngineer_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_PRIMARY',
-            },
-        }
-    },
-    {
         xpRequired = 145000,
         unlocks = {
             {

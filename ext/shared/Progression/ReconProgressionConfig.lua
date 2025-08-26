@@ -112,22 +112,6 @@ local reconProgression = {
         }
     },
     {
-        xpRequired = 58000, -- Co-op score
-        unlocks = {
-            {
-                prettyName = 'M39 EBR',
-                equipmentPath = 'Weapons/EBR/U_EBR',
-                kits = {
-                    'Gameplay/Kits/USRecon',
-                    'Gameplay/Kits/USRecon_XP4',
-                    'Gameplay/Kits/RURecon',
-                    'Gameplay/Kits/RURecon_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_PRIMARY',
-            },
-        }
-    },
-    {
         xpRequired = 76000,
         unlocks = {
             {
