@@ -34,13 +34,13 @@ end
 
 function initPlayerLevels(player, playerRankObject)
     -- Player General Initial Unlock
-    NetEvents:SendTo('OnInitialUnlock', player, "General", playerRankObject['r_PlayerCurrentXP'])
+    NetEvents:SendTo('OnInitialUnlock', player, "General", playerRankObject['r_PlayerLevel'])
 
     -- Kit Initial Unlocks
-    NetEvents:SendTo('OnInitialUnlock', player, "Assault", playerRankObject['r_AssaultCurrentXP'])
-    NetEvents:SendTo('OnInitialUnlock', player, "Engineer", playerRankObject['r_EngineerCurrentXP'])
-    NetEvents:SendTo('OnInitialUnlock', player, "Support", playerRankObject['r_SupportCurrentXP'])
-    NetEvents:SendTo('OnInitialUnlock', player, "Recon", playerRankObject['r_ReconCurrentXP'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Assault", playerRankObject['r_AssaultLevel'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Engineer", playerRankObject['r_EngineerLevel'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Support", playerRankObject['r_SupportLevel'])
+    NetEvents:SendTo('OnInitialUnlock', player, "Recon", playerRankObject['r_ReconLevel'])
 
     -- Attachment unlocks
     if #playerRankObject['r_WeaponProgressList'] > 0 then
@@ -141,12 +141,44 @@ function IncreasePlayerXP(playerGuid, levelKey, xpKey, xpValue, progressUnlockLi
     local origScore = cPlayer[xpKey]
     cPlayer[xpKey] = cPlayer[xpKey] + xpValue
 
-    if #progressUnlockList > 0 then
-        for index, aProgress in pairs(progressUnlockList) do
+    -- if #progressUnlockList > 0 then
+    --     for index, aProgress in pairs(progressUnlockList) do
+    --         local progressRequired = aProgress.xpRequired
+
+    --         if progressRequired > origScore and progressRequired <= cPlayer[xpKey] then
+    --             cPlayer[levelKey] = index
+
+    --             local prettyNames = ""
+    --             if #aProgress.unlocks > 0 then
+    --                 for i, unlock in pairs(aProgress.unlocks) do
+    --                     if i == 1 then
+    --                         prettyNames = unlock.prettyName
+    --                     else
+    --                         prettyNames = prettyNames .. ", " .. unlock.prettyName
+    --                     end
+    --                 end
+    --             end
+
+    --             PlayerLevelUp(
+    --                 PlayerManager:GetPlayerByGuid(cPlayer.r_PlayerGuid), 
+    --                 levelType, 
+    --                 cPlayer[levelKey],
+    --                 prettyNames
+    --             )
+    --         end
+    --     end
+    -- end
+
+    if progressUnlockList then
+        local nextLevelIndex = cPlayer[levelKey] + 1
+
+        while nextLevelIndex <= #progressUnlockList do
+            local aProgress = progressUnlockList[nextLevelIndex]
+
             local progressRequired = aProgress.xpRequired
 
-            if progressRequired > origScore and progressRequired <= cPlayer[xpKey] then
-                cPlayer[levelKey] = index
+            if progressRequired <= cPlayer[xpKey] then
+                cPlayer[levelKey] = nextLevelIndex
 
                 local prettyNames = ""
                 if #aProgress.unlocks > 0 then
@@ -162,19 +194,22 @@ function IncreasePlayerXP(playerGuid, levelKey, xpKey, xpValue, progressUnlockLi
                 PlayerLevelUp(
                     PlayerManager:GetPlayerByGuid(cPlayer.r_PlayerGuid), 
                     levelType, 
-                    cPlayer[levelKey], 
-                    cPlayer[xpKey],
+                    cPlayer[levelKey],
                     prettyNames
                 )
+            else
+                break
             end
+
+            nextLevelIndex = nextLevelIndex + 1
         end
     end
 end
 
-function PlayerLevelUp(player, levelType, level, currentXp, unlockName)
+function PlayerLevelUp(player, levelType, level, unlockName)
     if player ~= nil then
         print(player.name .. " leveled up " .. levelType .. " to " .. level .. "!")
-        NetEvents:SendTo('OnLevelUp', player, levelType, currentXp)
+        NetEvents:SendTo('OnLevelUp', player, levelType, level)
         
         if enablePlayerUnlockNotifications == true then
             local message = string.format(levelUpNotification, levelType, level, unlockName)
@@ -391,7 +426,6 @@ function ChatCommand(player, recipientMask, message)
     elseif string.lower(message):sub(1, 3) == "!xp" then
         local xpAmount = message:sub(5)
         PlayerXPUpdated(player, xpAmount)
-    end
     -- elseif string.lower(message):sub(1, 3) == "!wp" then
     --     local killAmount = message:sub(5)
     --     ChatManager:SendMessage(
@@ -399,7 +433,7 @@ function ChatCommand(player, recipientMask, message)
     --         player
     --     )
     --     IncreaseWeaponKills(player.guid, "M16A4", killAmount)
-    -- end
+    end
 end
 
 Events:Subscribe('Player:Score', function(player, scoringTypeData, score)
@@ -422,7 +456,8 @@ Events:Subscribe('Player:Killed', function(player, inflictor, position, weapon, 
         end
     end
     if inflictor and inflictor.guid then
-        local killer = currentRankupPlayers[inflictor.guid]
+        local inflictorGuid = tostring(inflictor.guid)
+        local killer = currentRankupPlayers[inflictorGuid]
         if killer then
             killer['r_Kills'] = killer['r_Kills'] + 1
             IncreaseWeaponKills(inflictor.guid, weapon, 1)
@@ -455,7 +490,7 @@ Events:Subscribe('Extension:Loaded', function()
 end)
 
 Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)
-    print("THE ROUND IS OVER!!! TIME TO SAVE THE CONNECTED PLAYERS' STATS!!!!")
+    print("The round is over. Storing player data.")
     StoreAllPlayerStats()
 end)
 

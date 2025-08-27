@@ -89,21 +89,22 @@ function UnlockAttachment(weaponCustomizationPath, attachmentPath, slotIndex)
 
         local foundAttach = false
 
-        if #attachTable.unlockParts[slotIndex].selectableUnlocks > 0 then -- Check if already unlocked
-            for _, unlock in pairs(attachTable.unlockParts[slotIndex].selectableUnlocks) do
-                if unlock.debugUnlockId == attachmentMain.debugUnlockId then
-                    foundAttach = true
-                    break
+        if attachTable ~= nil and weaponCustomAssetMain ~= nil and attachmentMain ~= nil then
+            if #attachTable.unlockParts[slotIndex].selectableUnlocks > 0 then -- Check if already unlocked
+                for _, unlock in pairs(attachTable.unlockParts[slotIndex].selectableUnlocks) do
+                    if unlock.debugUnlockId == attachmentMain.debugUnlockId then
+                        foundAttach = true
+                        break
+                    end
                 end
             end
-        end
 
-        if foundAttach == false then
-            -- print("Unlocking " .. attachmentPath .. " in " .. weaponCustomizationPath)
-            attachTable.unlockParts[slotIndex]:MakeWritable();
-            attachTable.unlockParts[slotIndex].selectableUnlocks:add(attachmentMain)
+            if foundAttach == false then
+                -- print("Unlocking " .. attachmentPath .. " in " .. weaponCustomizationPath)
+                attachTable.unlockParts[slotIndex]:MakeWritable();
+                attachTable.unlockParts[slotIndex].selectableUnlocks:add(attachmentMain)
+            end
         end
-        
     end
 end
 
