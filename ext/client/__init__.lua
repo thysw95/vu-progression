@@ -92,8 +92,9 @@ end
 local function onLevelLoaded()
     -- load sound assets/entities when possible
     local soundList = {
-        levelUpSoundPath,
-        weapAttachUnlockSoundPath
+        CONFIG.UnlockNotifications.soundPaths.levelUp,
+        CONFIG.UnlockNotifications.soundPaths.weapAttachUnlock,
+        CONFIG.UnlockNotifications.soundPaths.vehicleUnlock
     }
     for _, sound in pairs(soundList) do
         print('Loading sound: ' .. sound)
@@ -221,18 +222,25 @@ end)
 
 NetEvents:Subscribe('PlayUnlockSound', PlayUnlockSound)
 
--- Console:Register('AddXP', 'DEBUG: Adds experience to local player', function(args)
---     if #args == 1 then
--- 	    NetEvents:SendLocal('AddXP', args[1])
---     end
--- end)
+-- DEBUG
+if CONFIG.General.debug then
 
--- Console:Register('AddKillsToWeap', 'DEBUG: Adds kills[1] to weaponName[2]', function(args)
---     if #args == 2 then
--- 	    NetEvents:SendLocal('AddKillsToWeap', args[1], args[2])
---     end
--- end)
+    Console:Register('AddXP', 'DEBUG: Adds experience to local player', function(args)
+        if #args == 1 then
+            NetEvents:SendLocal('AddXP', args[1])
+        end
+    end)
 
--- Console:Register('playlvlsound', 'Plays level up sound', function(p_Args)
--- 	PlayUnlockSound(p_Args[1])
--- end)
+    Console:Register('AddKillsToWeap', 'DEBUG: Adds kills[1] to weaponName[2]', function(args)
+        if #args == 2 then
+            NetEvents:SendLocal('AddKillsToWeap', args[1], args[2])
+        end
+    end)
+
+    Console:Register('playlvlsound', 'DEBUG: Plays unlock sound path[1]', function(p_Args)
+        if #args == 1 then
+            PlayUnlockSound(p_Args[1])
+        end
+    end)
+
+end

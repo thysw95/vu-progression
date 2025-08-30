@@ -60,7 +60,7 @@ function PlayerXPUpdated(player, score)
     veniceSoldierAsset:MakeWritable()
 
     local kitName = veniceSoldierAsset.labelSid
-    local xp = score * xpMultiplier
+    local xp = score * CONFIG.General.xpMultiplier
 
     -- Check if player is in vehicle
     local vehicleEntityData
@@ -117,11 +117,11 @@ function WeapAttachUnlockCheck(player, weaponName, weapKills)
             if weaponUnlocks.weaponName == weaponName then
                 if #weaponUnlocks.unlocks > 0 then
                     for _, unlock in pairs(weaponUnlocks.unlocks) do
-                        if enablePlayerUnlockNotifications == true and weapKills == unlock.killsRequired then
+                        if CONFIG.UnlockNotifications.enabled == true and weapKills == unlock.killsRequired then
                             print(player.name .. " unlocked " .. unlock.prettyName .. " for " .. weaponUnlocks.prettyName .. " at " .. weapKills .. " kills!")
-                            local message = string.format(weapAttachUnlockNotification, weaponUnlocks.prettyName, weapKills, unlock.prettyName)
-                            ChatManager:Yell(message, notificationDurationSec, player)
-                            NetEvents:SendTo('PlayUnlockSound', player, weapAttachUnlockSoundPath)
+                            local message = string.format(CONFIG.UnlockNotifications.messages.weapAttachUnlock, weaponUnlocks.prettyName, weapKills, unlock.prettyName)
+                            ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
+                            NetEvents:SendTo('PlayUnlockSound', player, CONFIG.UnlockNotifications.soundPaths.weapAttachUnlock)
                             break
                         end
 
@@ -211,10 +211,10 @@ function PlayerLevelUp(player, levelType, level, unlockName)
         print(player.name .. " leveled up " .. levelType .. " to " .. level .. "!")
         NetEvents:SendTo('OnLevelUp', player, levelType, level)
         
-        if enablePlayerUnlockNotifications == true then
-            local message = string.format(levelUpNotification, levelType, level, unlockName)
-            ChatManager:Yell(message, notificationDurationSec, player)
-            NetEvents:SendTo('PlayUnlockSound', player, levelUpSoundPath)
+        if CONFIG.UnlockNotifications.enabled == true then
+            local message = string.format(CONFIG.UnlockNotifications.messages.levelUp, levelType, level, unlockName)
+            ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
+            NetEvents:SendTo('PlayUnlockSound', player, CONFIG.UnlockNotifications.soundPaths.levelUp)
         end
     end
 end
@@ -255,10 +255,10 @@ function IncreaseVehicleScore(player, playerGuid, vehicleControllableType, score
         if unlock.vicScoreRequired > origScore and unlock.vicScoreRequired <= playerVicProg.score then
             print(player.name .. " unlocked " .. unlock.prettyName .. " for " .. progCfg.prettyName .. "!")
             NetEvents:SendTo('OnVehicleCustUnlock', player, progCfg.prettyName, playerVicProg.score)
-            if enablePlayerUnlockNotifications == true then
-                local message = string.format(vehicleUnlockNotification, progCfg.prettyName, playerVicProg.score, unlock.prettyName)
-                ChatManager:Yell(message, notificationDurationSec, player)
-                NetEvents:SendTo('PlayUnlockSound', player, vehicleUnlockSoundPath)
+            if CONFIG.UnlockNotifications.enabled == true then
+                local message = string.format(CONFIG.UnlockNotifications.messages.vehicleUnlock, progCfg.prettyName, playerVicProg.score, unlock.prettyName)
+                ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
+                NetEvents:SendTo('PlayUnlockSound', player, CONFIG.UnlockNotifications.soundPaths.vehicleUnlock)
             end
             break
         end
@@ -479,10 +479,6 @@ NetEvents:Subscribe('AddNewPlayerForStats', function(player, data)
     AddPlayerToRankUpList(player)
 end)
 
-NetEvents:Subscribe('AddXP', function(player, xp)
-    PlayerXPUpdated(player, xp)
-end)
-
 Events:Subscribe('Extension:Loaded', function()
     print('Initializing VU Progression DB')
     CreateProgressionTable()
@@ -495,3 +491,12 @@ Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)
 end)
 
 Events:Subscribe('Player:Chat', ChatCommand)
+
+-- DEBUG
+if CONFIG.General.debug then
+
+    NetEvents:Subscribe('AddXP', function(player, xp)
+        PlayerXPUpdated(player, xp)
+    end)
+    
+end
