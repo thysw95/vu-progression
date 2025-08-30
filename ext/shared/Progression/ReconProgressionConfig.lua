@@ -1,203 +1,239 @@
--- reconProgressUnlockList = {
-return {
+local progressionManager = require("__shared/ProgressionManager")
+
+-- Add/update values in the below table to edit progression
+local reconProgression = {
     {
-        lvl = 1,
-        prettyName = 'SVD (RU)',
-        equipmentPath = 'Weapons/SVD/U_SVD',
-        kits = {
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 0
+        xpRequired = 0,
+        unlocks = {
+            {
+                prettyName = 'SVD (RU)',
+                equipmentPath = 'Weapons/SVD/U_SVD',
+                kits = {
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+            {
+                prettyName = 'MK11 MOD 0 (US)',
+                equipmentPath = 'Weapons/MK11/U_MK11',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+            {
+                prettyName = 'No Gadget',
+                equipmentPath = 'Weapons/Common/NoGadget1',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+            {
+                prettyName = 'Radio Beacon',
+                equipmentPath = 'Weapons/Gadgets/RadioBeacon/U_RadioBeacon',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET2',
+            },
+        }
     },
     {
-        lvl = 1,
-        prettyName = 'MK11 MOD 0 (US)',
-        equipmentPath = 'Weapons/MK11/U_MK11',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 0
+        xpRequired = 5000,
+        unlocks = {
+            {
+                prettyName = 'T-UGS',
+                equipmentPath = 'Weapons/Gadgets/T-UGS/U_UGS',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+        }
     },
     {
-        lvl = 1,
-        prettyName = 'No Gadget',
-        equipmentPath = 'Weapons/Common/NoGadget1',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET1',
-        xpRequired = 0
+        xpRequired = 13000,
+        unlocks = {
+            {
+                prettyName = 'SV98',
+                equipmentPath = 'Weapons/SV98/U_SV98',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 1,
-        prettyName = 'Radio Beacon',
-        equipmentPath = 'Weapons/Gadgets/RadioBeacon/U_RadioBeacon',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET2',
-        xpRequired = 0
+        xpRequired = 26000,
+        unlocks = {
+            {
+                prettyName = 'SOFLAM',
+                equipmentPath = 'Weapons/Gadgets/SOFLAM/U_SOFLAM',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+        }
     },
     {
-        lvl = 2,
-        prettyName = 'T-UGS',
-        equipmentPath = 'Weapons/Gadgets/T-UGS/U_UGS',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET1',
-        xpRequired = 5000
+        xpRequired = 45000,
+        unlocks = {
+            {
+                prettyName = 'MAV',
+                equipmentPath = 'Weapons/Gadgets/MAV/U_MAV',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET2',
+            },
+        }
     },
     {
-        lvl = 3,
-        prettyName = 'SV98',
-        equipmentPath = 'Weapons/SV98/U_SV98',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 13000
+        xpRequired = 71000,
+        unlocks = {
+            {
+                prettyName = 'SKS',
+                equipmentPath = 'Weapons/SKS/U_SKS',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 4,
-        prettyName = 'SOFLAM',
-        equipmentPath = 'Weapons/Gadgets/SOFLAM/U_SOFLAM',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET2',
-        xpRequired = 26000
+        xpRequired = 104000,
+        unlocks = {
+            {
+                prettyName = 'M40A5',
+                equipmentPath = 'Weapons/M40A5/U_M40A5',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 5,
-        prettyName = 'MAV',
-        equipmentPath = 'Weapons/Gadgets/MAV/U_MAV',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET2',
-        xpRequired = 45000
+        xpRequired = 146000,
+        unlocks = {
+            {
+                prettyName = 'M98B',
+                equipmentPath = 'Weapons/M98B/U_M98B',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 5,
-        prettyName = 'M39 EBR',
-        equipmentPath = 'Weapons/M39EBR/U_M39EBR',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 58000 -- Co-op score
+        xpRequired = 195000,
+        unlocks = {
+            {
+                prettyName = 'SVD (US)',
+                equipmentPath = 'Weapons/SVD/U_SVD',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+            {
+                prettyName = 'MK11 MOD 0 (RU)',
+                equipmentPath = 'Weapons/MK11/U_MK11',
+                kits = {
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 6,
-        prettyName = 'SKS',
-        equipmentPath = 'Weapons/SKS/U_SKS',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 71000
+        xpRequired = 220000,
+        unlocks = {
+            {
+                prettyName = 'M39 EBR',
+                equipmentPath = 'Weapons/M39EBR/U_M39EBR',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 7,
-        prettyName = 'M40A5',
-        equipmentPath = 'Weapons/M40A5/U_M40A5',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 104000
+        xpRequired = 250000,
+        unlocks = {
+            {
+                prettyName = 'L96A1',
+                equipmentPath = 'Weapons/XP1_L96/U_L96',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 8,
-        prettyName = 'M98B',
-        equipmentPath = 'Weapons/Model98B/U_M98B',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 146000
-    },
-    {
-        lvl = 9,
-        prettyName = 'SVD (US)',
-        equipmentPath = 'Weapons/SVD/U_SVD',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 195000
-    },
-    {
-        lvl = 9,
-        prettyName = 'MK11 MOD 0 (RU)',
-        equipmentPath = 'Weapons/MK11/U_MK11',
-        kits = {
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 195000
-    },
-    {
-        lvl = 10,
-        prettyName = 'XBOW',
-        equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_Cobra',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET2',
-        xpRequired = 225000
-    },
-    {
-        lvl = 11,
-        prettyName = 'XBOW SCOPED',
-        equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_RifleScope',
-        kits = {
-            'Gameplay/Kits/USRecon',
-            'Gameplay/Kits/USRecon_XP4',
-            'Gameplay/Kits/RURecon',
-            'Gameplay/Kits/RURecon_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET2',
-        xpRequired = 255000
-    },
+        xpRequired = 280000,
+        unlocks = {
+            {
+                prettyName = 'JNG90',
+                equipmentPath = 'Weapons/XP2_JNG90/U_JNG90',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    }
 }
+
+print("Sorting Recon Progress...")
+
+reconProgression = progressionManager:sortKitProgressionTable(reconProgression)
+
+return reconProgression

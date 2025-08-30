@@ -1,401 +1,561 @@
-return {
+local progressionManager = require("__shared/ProgressionManager")
+
+-- Add/update values in the below table to edit progression
+local generalProgression = {
     {
-        lvl = 1,
-        prettyName = 'M9',
-        equipmentPath = 'Weapons/M9/U_M9',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 0
+        xpRequired = 0,
+        unlocks = {
+            {
+        
+                prettyName = 'M9',
+                equipmentPath = 'Weapons/M9/U_M9',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+            {
+                
+                prettyName = 'MP443',
+                equipmentPath = 'Weapons/MP443/U_MP443',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+            {
+                
+                prettyName = 'NONE Specialization',
+                equipmentPath = 'Weapons/Common/NoSpecialization',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+            -- {
+            --     
+            --     prettyName = 'Default Camo',
+            --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO_DEFAULT',
+            --     kits = {'All'},
+            --     slotId = 'CAMO',
+            -- },
+        }
     },
     {
-        lvl = 1,
-        prettyName = 'MP443',
-        equipmentPath = 'Weapons/MP443/U_MP443',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 0
+        xpRequired = 1000,
+        unlocks = {
+            {
+                prettyName = '870MCS',
+                equipmentPath = 'Weapons/Remington870/U_870',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 1,
-        prettyName = 'NONE Specialization',
-        equipmentPath = 'Weapons/Common/NoSpecialization',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 0
-    },
-    -- {
-    --     lvl = 1,
-    --     prettyName = 'Default Camo',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO_DEFAULT',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 0
-    -- },
-    {
-        lvl = 2,
-        prettyName = '870MCS',
-        equipmentPath = 'Weapons/Remington870/U_870',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 1000
+        xpRequired = 2100,
+        unlocks = {
+            {
+                prettyName = 'SQD SPRNT',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SprintBoostL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
     {
-        lvl = 3,
-        prettyName = 'SQD SPRNT',
-        -- equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SprintBoostL1',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SprintBoostL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 2100
-    },
-    -- {
-    --     lvl = 4,
-    --     prettyName = 'CAMO1',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO1',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 3200
-    -- },
-    {
-        lvl = 4,
-        prettyName = 'G17C',
-        equipmentPath = 'Weapons/Glock17/U_Glock17',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 3200
+        xpRequired = 3200,
+        unlocks = {
+            {
+                prettyName = 'G17C',
+                equipmentPath = 'Weapons/Glock17/U_Glock17',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
     },
     {
-        lvl = 5,
-        prettyName = 'SQD AMMO',
-        -- equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/AmmoBoostL1',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/AmmoBoostL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 4400
-    },
-    -- {
-    --     lvl = 6,
-    --     prettyName = 'CAMO2',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO2',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 5600
-    -- },
-    {
-        lvl = 6,
-        prettyName = 'PP-2000',
-        equipmentPath = 'Weapons/PP2000/U_PP2000',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 5600
+        xpRequired = 4400,
+        unlocks = {
+            {
+                prettyName = 'SQD AMMO',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/AmmoBoostL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
     {
-        lvl = 7,
-        prettyName = 'SQD FLAK',
-        -- equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/ExplosiveResistL1',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/ExplosiveResistL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 8000
-    },
-    -- {
-    --     lvl = 8,
-    --     prettyName = 'CAMO3',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO3',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 11000
-    -- },
-    {
-        lvl = 8,
-        prettyName = 'M9 TACT.',
-        equipmentPath = 'Weapons/M9/U_M9_TacticalLight',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 11000
+        xpRequired = 5600,
+        unlocks = {
+            {
+                prettyName = 'PP-2000',
+                equipmentPath = 'Weapons/PP2000/U_PP2000',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 9,
-        prettyName = 'SQD EXPL',
-        -- equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/ExplosiveBoostL1',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/ExplosiveBoostL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 16000
-    },
-    -- {
-    --     lvl = 10,
-    --     prettyName = 'CAMO4',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO4',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 23000
-    -- },
-    {
-        lvl = 10,
-        prettyName = 'MP443 TACT.',
-        equipmentPath = 'Weapons/MP443/U_MP443_TacticalLight',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 32000
+        xpRequired = 8000,
+        unlocks = {
+            {
+                prettyName = 'SQD FLAK',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/ExplosiveResistL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
     {
-        lvl = 11,
-        prettyName = 'SQD COVR',
-        -- equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SuppressionResistL1',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SuppressionResistL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 43000
-    },
-    -- {
-    --     lvl = 12,
-    --     prettyName = 'CAMO5',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO5',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 56000
-    -- },
-    {
-        lvl = 12,
-        prettyName = 'UMP-45',
-        equipmentPath = 'Weapons/UMP45/U_UMP45',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 56000
+        xpRequired = 11000,
+        unlocks = {
+            {
+                prettyName = 'M9 TACT.',
+                equipmentPath = 'Weapons/M9/U_M9_TacticalLight',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
     },
     {
-        lvl = 13,
-        prettyName = 'SQD SUPR',
-        -- equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SuppressionBoostL1',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SuppressionBoostL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 71000
-    },
-    -- {
-    --     lvl = 14,
-    --     prettyName = 'CAMO6',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO6',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 88000
-    -- },
-    {
-        lvl = 14,
-        prettyName = 'G17C SUPP.',
-        equipmentPath = 'Weapons/Glock17/U_Glock17_Silenced',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 88000
+        xpRequired = 16000,
+        unlocks = {
+            {
+                prettyName = 'SQD EXPL',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/ExplosiveBoostL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
     {
-        lvl = 15,
-        prettyName = 'SQD FRAG',
-        -- equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/GrenadeBoostL1',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/GrenadeBoostL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 107000
-    },
-    -- {
-    --     lvl = 16,
-    --     prettyName = 'CAMO7',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO7',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 128000
-    -- },
-    {
-        lvl = 16,
-        prettyName = 'M1014',
-        equipmentPath = 'Weapons/M1014/U_M1014',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 128000
+        xpRequired = 32000,
+        unlocks = {
+            {
+                prettyName = 'MP443 TACT.',
+                equipmentPath = 'Weapons/MP443/U_MP443_TacticalLight',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
     },
     {
-        lvl = 17,
-        prettyName = 'SQD SPRNT',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SprintBoostL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 152000
-    },
-    -- {
-    --     lvl = 18,
-    --     prettyName = 'CAMO8',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO8',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 180000
-    -- },
-    {
-        lvl = 18,
-        prettyName = 'M9 SUPP.',
-        equipmentPath = 'Weapons/M9/U_M9_Silenced',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 180000
+        xpRequired = 43000,
+        unlocks = {
+            {
+                prettyName = 'SQD COVR',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SuppressionResistL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
     {
-        lvl = 19,
-        prettyName = 'SQD AMMO',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/AmmoBoostL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 213000
-    },
-    -- {
-    --     lvl = 20,
-    --     prettyName = 'CAMO9',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO9',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 253000
-    -- },
-    {
-        lvl = 20,
-        prettyName = 'MP443 SUPP.',
-        equipmentPath = 'Weapons/MP443/U_MP443_Silenced',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 253000
+        xpRequired = 56000,
+        unlocks = {
+            {
+                prettyName = 'UMP-45',
+                equipmentPath = 'Weapons/UMP45/U_UMP45',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 21,
-        prettyName = 'SQD FLAK',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/ExplosiveResistL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 303000
+        xpRequired = 71000,
+        unlocks = {
+            {
+                prettyName = 'SQD SUPR',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SuppressionBoostL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
     {
-        lvl = 22,
-        prettyName = 'G18',
-        equipmentPath = 'Weapons/Glock18/U_Glock18',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 365000
+        xpRequired = 88000,
+        unlocks = {
+            {
+                prettyName = 'G17C SUPP.',
+                equipmentPath = 'Weapons/Glock17/U_Glock17_Silenced',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
     },
     {
-        lvl = 23,
-        prettyName = 'SQD EXPL',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/ExplosiveBoostL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 440000
+        xpRequired = 107000,
+        unlocks = {
+            {
+                prettyName = 'SQD FRAG',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/GrenadeBoostL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
     {
-        lvl = 24,
-        prettyName = 'PDW-R',
-        equipmentPath = 'Weapons/MagpulPDR/U_MagpulPDR',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 530000
+        xpRequired = 128000,
+        unlocks = {
+            {
+                prettyName = 'M1014',
+                equipmentPath = 'Weapons/M1014/U_M1014',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 25,
-        prettyName = 'SQD SUPR',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SuppressionBoostL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 640000
+        xpRequired = 152000,
+        unlocks = {
+            {
+                prettyName = 'SQD SPRNT',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SprintBoostL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
     {
-        lvl = 26,
-        prettyName = 'SAIGA 12K',
-        equipmentPath = 'Weapons/SAIGA20K/U_SAIGA_20K',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 770000
+        xpRequired = 180000,
+        unlocks = {
+            {
+                prettyName = 'M9 SUPP.',
+                equipmentPath = 'Weapons/M9/U_M9_Silenced',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
     },
     {
-        lvl = 27,
-        prettyName = 'SQD COVR',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SuppressionResistL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 920000
+        xpRequired = 213000,
+        unlocks = {
+            {
+                prettyName = 'SQD AMMO',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/AmmoBoostL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
     {
-        lvl = 28,
-        prettyName = '.44 MAGNUM',
-        equipmentPath = 'Weapons/Taurus44/U_Taurus44',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 1090000
+        xpRequired = 253000,
+        unlocks = {
+            {
+                prettyName = 'MP443 SUPP.',
+                equipmentPath = 'Weapons/MP443/U_MP443_Silenced',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
     },
     {
-        lvl = 29,
-        prettyName = 'SQD FRAG',
-        equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/GrenadeBoostL2',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SPECIALIZATION',
-        xpRequired = 1280000
+        xpRequired = 303000,
+        unlocks = {
+            {
+                prettyName = 'SQD FLAK',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/ExplosiveResistL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
     {
-        lvl = 30,
-        prettyName = 'DAO-12',
-        equipmentPath = 'Weapons/DAO-12/U_DAO-12',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 1490000
-    },
-    -- {
-    --     lvl = 31,
-    --     prettyName = 'CAMO10',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO10',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 1720000
-    -- },
-    {
-        lvl = 31,
-        prettyName = 'P90',
-        equipmentPath = 'Weapons/P90/U_P90',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 1720000
+        xpRequired = 365000,
+        unlocks = {
+            {
+                prettyName = 'G18',
+                equipmentPath = 'Weapons/Glock18/U_Glock18',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
     },
     {
-        lvl = 32,
-        prettyName = 'G18 SUPP.',
-        equipmentPath = 'Weapons/Glock18/U_Glock18_Silenced',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 1970000
-    },
-    -- {
-    --     lvl = 33,
-    --     prettyName = 'CAMO11',
-    --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO11',
-    --     kits = {'All'},
-    --     slotId = 'CAMO',
-    --     xpRequired = 2240000
-    -- },
-    {
-        lvl = 33,
-        prettyName = 'USAS-12',
-        equipmentPath = 'Weapons/USAS-12/U_USAS-12',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 2240000
+        xpRequired = 440000,
+        unlocks = {
+            {
+                prettyName = 'SQD EXPL',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/ExplosiveBoostL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
     {
-        lvl = 34,
-        prettyName = '.44 SCOPED',
-        equipmentPath = 'Weapons/Taurus44/U_Taurus44_Scoped',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_SECONDARY',
-        xpRequired = 2540000
+        xpRequired = 530000,
+        unlocks = {
+            {
+                prettyName = 'PDW-R',
+                equipmentPath = 'Weapons/MagpulPDR/U_MagpulPDR',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 35,
-        prettyName = 'AS VAL',
-        equipmentPath = 'Weapons/ASVal/U_ASVal',
-        kits = {'All'},
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 2800000
+        xpRequired = 640000,
+        unlocks = {
+            {
+                prettyName = 'SQD SUPR',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SuppressionBoostL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
     },
+    {
+        xpRequired = 770000,
+        unlocks = {
+            {
+                prettyName = 'SAIGA 12K',
+                equipmentPath = 'Weapons/SAIGA20K/U_SAIGA_20K',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 920000,
+        unlocks = {
+            {
+                prettyName = 'SQD COVR',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SuppressionResistL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
+    },
+    {
+        xpRequired = 1090000,
+        unlocks = {
+            {
+                prettyName = '.44 MAGNUM',
+                equipmentPath = 'Weapons/Taurus44/U_Taurus44',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 1180000,
+        unlocks = {
+            {
+                prettyName = 'M1911',
+                equipmentPath = 'Weapons/M1911/U_M1911',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 1280000,
+        unlocks = {
+            {
+                prettyName = 'SQD FRAG',
+                equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/GrenadeBoostL2',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+        }
+    },
+    {
+        xpRequired = 1490000,
+        unlocks = {
+            {
+                prettyName = 'DAO-12',
+                equipmentPath = 'Weapons/DAO-12/U_DAO-12',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 1720000,
+        unlocks = {
+            {
+                prettyName = 'P90',
+                equipmentPath = 'Weapons/P90/U_P90',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 1970000,
+        unlocks = {
+            {
+                prettyName = 'G18 SUPP.',
+                equipmentPath = 'Weapons/Glock18/U_Glock18_Silenced',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 2000000,
+        unlocks = {
+            {
+                prettyName = 'M1911 Light',
+                equipmentPath = 'Weapons/M1911/U_M1911_lit',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 2240000,
+        unlocks = {
+            {
+                prettyName = 'USAS-12',
+                equipmentPath = 'Weapons/USAS-12/U_USAS-12',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 2400000,
+        unlocks = {
+            {
+                prettyName = 'M1911 Silenced',
+                equipmentPath = 'Weapons/M1911/U_M1911_Silenced',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 2540000,
+        unlocks = {
+            {
+                prettyName = '.44 SCOPED',
+                equipmentPath = 'Weapons/Taurus44/U_Taurus44_Scoped',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 2800000,
+        unlocks = {
+            {
+                prettyName = 'AS VAL',
+                equipmentPath = 'Weapons/ASVal/U_ASVal',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 2900000,
+        unlocks = {
+            {
+                prettyName = 'M1911 Tactical',
+                equipmentPath = 'Weapons/M1911/U_M1911_Tactical',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 3100000,
+        unlocks = {
+            {
+                prettyName = '93R',
+                equipmentPath = 'Weapons/M93R/U_M93R',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 3400000,
+        unlocks = {
+            {
+                prettyName = 'MP412 REX',
+                equipmentPath = 'Weapons/MP412Rex/U_MP412Rex',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 3700000,
+        unlocks = {
+            {
+                prettyName = 'SPAS-12',
+                equipmentPath = 'Weapons/ASVal/U_ASVal',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 4000000,
+        unlocks = {
+            {
+                prettyName = 'PP-19 Bizon',
+                equipmentPath = 'Weapons/XP1_PP-19/U_PP-19',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 4300000,
+        unlocks = {
+            {
+                prettyName = 'MP5K',
+                equipmentPath = 'Weapons/XP2_MP5K/U_MP5K',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 4600000,
+        unlocks = {
+            {
+                prettyName = 'MP7',
+                equipmentPath = 'Weapons/MP7/U_MP7',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 4900000,
+        unlocks = {
+            {
+                prettyName = 'MK3A1',
+                equipmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 5200000,
+        unlocks = {
+            {
+                prettyName = 'Crossbow Cobra',
+                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_Cobra',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+        }
+    },
+    {
+        xpRequired = 5500000,
+        unlocks = {
+            {
+                prettyName = 'Crossbow Scoped',
+                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_RifleScope',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+        }
+    }
 }
+
+print("Sorting General Progress...")
+
+generalProgression = progressionManager:sortKitProgressionTable(generalProgression)
+
+return generalProgression

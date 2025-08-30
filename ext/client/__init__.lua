@@ -17,10 +17,23 @@ soundAssets = {} -- dictionary of prepared game sounds for further use
 local playerSoundEntities = {} -- current player initialized sound entities
 
 -- This function unlocks an item for the client, depending on the selected category
-function UnlockClientItem(levelCat, currentXp)
+function UnlockClientItem(levelCat, levelIndex)
     if #UNLOCK_CONFIGS[levelCat] > 0 then
-        for _, unlock in pairs(UNLOCK_CONFIGS[levelCat]) do
-            if currentXp >= unlock.xpRequired then
+        -- for _, unlockSet in pairs(UNLOCK_CONFIGS[levelCat]) do
+        --     if (currentXp >= unlockSet.xpRequired and #unlockSet.unlocks > 0) then
+        --         -- Loop through unlocks in each unlock
+        --         for _, unlock in pairs(unlockSet.unlocks) do
+        --             for _, kit in pairs(unlock.kits) do
+        --                 ApplyUnlock(unlock.equipmentPath, unlock.slotId, kit)
+        --             end
+        --         end
+
+        --     end
+        -- end
+        local unlockSet = UNLOCK_CONFIGS[levelCat][levelIndex]
+
+        if unlockSet and #unlockSet.unlocks > 0 then
+            for _, unlock in pairs(unlockSet.unlocks) do
                 for _, kit in pairs(unlock.kits) do
                     ApplyUnlock(unlock.equipmentPath, unlock.slotId, kit)
                 end
@@ -79,8 +92,9 @@ end
 local function onLevelLoaded()
     -- load sound assets/entities when possible
     local soundList = {
-        levelUpSoundPath,
-        weapAttachUnlockSoundPath
+        CONFIG.UnlockNotifications.soundPaths.levelUp,
+        CONFIG.UnlockNotifications.soundPaths.weapAttachUnlock,
+        CONFIG.UnlockNotifications.soundPaths.vehicleUnlock
     }
     for _, sound in pairs(soundList) do
         print('Loading sound: ' .. sound)
@@ -150,11 +164,14 @@ Events:Subscribe('Level:Finalized', function(levelName, gameMode)
     NetEvents:Send('AddNewPlayerForStats', 'Adding new player to Stats')
 end)
 
-NetEvents:Subscribe('OnInitialUnlock', function(levelCat, currentXp)
+NetEvents:Subscribe('OnInitialUnlock', function(levelCat, levelIndex)
     print("UNLOCKING INITIAL " .. levelCat .. " GEAR")
 
-    UnlockClientItem(levelCat, currentXp)
-
+    -- UnlockClientItem does not loop through the entire list
+    -- so, for initial unlocks, we need to get everything up until the current level
+    for i = 1, levelIndex do
+       UnlockClientItem(levelCat, i) 
+    end
 end)
 
 NetEvents:Subscribe('OnInitialAttachmentUnlock', function(weaponProgressList)
@@ -195,11 +212,8 @@ NetEvents:Subscribe('OnKilledPlayer', function(weaponName, kills)
     UnlockClientAttachment(weaponName, kills)
 end)
 
-NetEvents:Subscribe('OnLevelUp', function(levelCat, currentXp)
-    -- if levelCat == 'Assault' then
-    --     print("OH YEAH ITS ASSAULT LEVELLIN TIMEEEEE!!!!!!! UWU")
-    -- end
-    UnlockClientItem(levelCat, currentXp)
+NetEvents:Subscribe('OnLevelUp', function(levelCat, levelIndex)
+    UnlockClientItem(levelCat, levelIndex)
 end)
 
 NetEvents:Subscribe('OnVehicleCustUnlock', function(typeName, score)
@@ -208,18 +222,25 @@ end)
 
 NetEvents:Subscribe('PlayUnlockSound', PlayUnlockSound)
 
--- Console:Register('AddXP', 'DEBUG: Adds experience to local player', function(args)
---     if #args == 1 then
--- 	    NetEvents:SendLocal('AddXP', args[1])
---     end
--- end)
+-- DEBUG
+if CONFIG.General.debug then
 
--- Console:Register('AddKillsToWeap', 'DEBUG: Adds kills[1] to weaponName[2]', function(args)
---     if #args == 2 then
--- 	    NetEvents:SendLocal('AddKillsToWeap', args[1], args[2])
---     end
--- end)
+    Console:Register('AddXP', 'DEBUG: Adds experience to local player', function(args)
+        if #args == 1 then
+            NetEvents:SendLocal('AddXP', args[1])
+        end
+    end)
 
--- Console:Register('playlvlsound', 'Plays level up sound', function(p_Args)
--- 	PlayUnlockSound(p_Args[1])
--- end)
+    Console:Register('AddKillsToWeap', 'DEBUG: Adds kills[1] to weaponName[2]', function(args)
+        if #args == 2 then
+            NetEvents:SendLocal('AddKillsToWeap', args[1], args[2])
+        end
+    end)
+
+    Console:Register('playlvlsound', 'DEBUG: Plays unlock sound path[1]', function(p_Args)
+        if #args == 1 then
+            PlayUnlockSound(p_Args[1])
+        end
+    end)
+
+end

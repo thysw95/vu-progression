@@ -1,234 +1,290 @@
--- engineerProgressUnlockList = {
-return {
+local progressionManager = require("__shared/ProgressionManager")
+
+-- Add/update values in the below table to edit progression
+local engineerProgression = {
     {
-        lvl = 1,
-        prettyName = 'AKS-74u (RU)',
-        equipmentPath = 'Weapons/AKS74u/U_AKS74u',
-        kits = {
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 0
+        xpRequired = 0,
+        unlocks = {
+            {
+        
+                prettyName = 'AKS-74u (RU)',
+                equipmentPath = 'Weapons/AKS74u/U_AKS74u',
+                kits = {
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+            {
+                
+                prettyName = 'M4A1 (US)',
+                equipmentPath = 'Weapons/M4A1/U_M4A1',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+            {
+                
+                prettyName = 'RPG-7V2',
+                equipmentPath = 'Weapons/RPG7/U_RPG7',
+                kits = {
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+            {
+                
+                prettyName = 'SMAW',
+                equipmentPath = 'Weapons/SMAW/U_SMAW',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+            {
+                
+                prettyName = 'Repair Tool',
+                equipmentPath = 'Weapons/Gadgets/Repairtool/U_Repairtool',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET2',
+            }, 
+        }
     },
     {
-        lvl = 1,
-        prettyName = 'M4A1 (US)',
-        equipmentPath = 'Weapons/M4A1/U_M4A1',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 0
+        xpRequired = 3000,
+        unlocks = {
+            {
+                prettyName = 'SA-18 IGLA',
+                equipmentPath = 'Weapons/Sa18IGLA/U_Sa18IGLA',
+                kits = {
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+            {
+                prettyName = 'FIM-92 STINGER',
+                equipmentPath = 'Weapons/FIM92A/U_FIM92',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+        }
     },
     {
-        lvl = 1,
-        prettyName = 'RPG-7V2',
-        equipmentPath = 'Weapons/RPG7/U_RPG7',
-        kits = {
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET1',
-        xpRequired = 0
+        xpRequired = 7000,
+        unlocks = {
+            {
+                prettyName = 'M15 AT Mine',
+                equipmentPath = 'Weapons/Gadgets/M15/U_M15',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET2',
+            },
+        }
     },
     {
-        lvl = 1,
-        prettyName = 'SMAW',
-        equipmentPath = 'Weapons/SMAW/U_SMAW',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET1',
-        xpRequired = 0
+        xpRequired = 14000,
+        unlocks = {
+            {
+                prettyName = 'SCAR-H',
+                equipmentPath = 'Weapons/SCAR-H/U_SCAR-H',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 1,
-        prettyName = 'Repair Tool',
-        equipmentPath = 'Weapons/Gadgets/Repairtool/U_Repairtool',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET2',
-        xpRequired = 0
+        xpRequired = 25000,
+        unlocks = {
+            {
+                prettyName = 'EOD Bot',
+                equipmentPath = 'Weapons/Gadgets/EODBot/U_EODBot',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET2',
+            },
+        }
     },
     {
-        lvl = 2,
-        prettyName = 'SA-18 IGLA',
-        equipmentPath = 'Weapons/Sa18IGLA/U_Sa18IGLA',
-        kits = {
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET1',
-        xpRequired = 3000
+        xpRequired = 40000,
+        unlocks = {
+            {
+                prettyName = 'M4',
+                equipmentPath = 'Weapons/M4A1/U_M4',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 2,
-        prettyName = 'FIM-92 STINGER',
-        equipmentPath = 'Weapons/FIM92A/U_FIM92',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET1',
-        xpRequired = 3000
+        xpRequired = 58000,
+        unlocks = {
+            {
+                prettyName = 'A-91',
+                equipmentPath = 'Weapons/A91/U_A91',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 3,
-        prettyName = 'M15 AT Mine',
-        equipmentPath = 'Weapons/Gadgets/M15/U_M15',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET2',
-        xpRequired = 7000
+        xpRequired = 82000,
+        unlocks = {
+            {
+                prettyName = 'FGM-148 JAVELIN',
+                equipmentPath = 'Weapons/FGM148/U_FGM148',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+        }
     },
     {
-        lvl = 4,
-        prettyName = 'SCAR-H',
-        equipmentPath = 'Weapons/SCAR-H/U_SCAR-H',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 14000
+        xpRequired = 110000,
+        unlocks = {
+            {
+                prettyName = 'G36C',
+                equipmentPath = 'Weapons/G36C/U_G36C',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 5,
-        prettyName = 'EOD Bot',
-        equipmentPath = 'Weapons/Gadgets/EODBot/U_EODBot',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET2',
-        xpRequired = 25000
+        xpRequired = 145000,
+        unlocks = {
+            {
+                prettyName = 'AKS-74u (US)',
+                equipmentPath = 'Weapons/AKS74u/U_AKS74u',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+            {
+                prettyName = 'M4A1 (RU)',
+                equipmentPath = 'Weapons/M4A1/U_M4A1',
+                kits = {
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 6,
-        prettyName = 'M4',
-        equipmentPath = 'Weapons/M4A1/U_M4',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 40000
+        xpRequired = 170000,
+        unlocks = {
+            {
+                prettyName = 'SG553',
+                equipmentPath = 'Weapons/SG553LB/U_SG553LB',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 7,
-        prettyName = 'A-91',
-        equipmentPath = 'Weapons/A91/U_A91',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 58000
+        xpRequired = 200000,
+        unlocks = {
+            {
+                prettyName = 'HK53',
+                equipmentPath = 'Weapons/XP1_HK53/U_HK53',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 8,
-        prettyName = 'FGM-148 JAVELIN',
-        equipmentPath = 'Weapons/FGM148/U_FGM148',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET1',
-        xpRequired = 82000
+        xpRequired = 230000,
+        unlocks = {
+            {
+                prettyName = 'MTAR',
+                equipmentPath = 'Weapons/XP2_MTAR/U_MTAR',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     },
     {
-        lvl = 9,
-        prettyName = 'G36C',
-        equipmentPath = 'Weapons/G36C/U_G36C',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 110000
-    },
-    {
-        lvl = 9,
-        prettyName = 'SG553',
-        equipmentPath = 'Weapons/SG553LB/U_SG553LB',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 120000 -- Co-op score
-    },
-    {
-        lvl = 10,
-        prettyName = 'AKS-74u (US)',
-        equipmentPath = 'Weapons/AKS74u/U_AKS74u',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 145000
-    },
-    {
-        lvl = 10,
-        prettyName = 'M4A1 (RU)',
-        equipmentPath = 'Weapons/M4A1/U_M4A1',
-        kits = {
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_PRIMARY',
-        xpRequired = 145000
-    },
-    {
-        lvl = 11,
-        prettyName = 'XBOW',
-        equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_Cobra',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET1',
-        xpRequired = 175000
-    },
-    {
-        lvl = 12,
-        prettyName = 'XBOW SCOPED',
-        equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_RifleScope',
-        kits = {
-            'Gameplay/Kits/USEngineer',
-            'Gameplay/Kits/USEngineer_XP4',
-            'Gameplay/Kits/RUEngineer',
-            'Gameplay/Kits/RUEngineer_XP4',
-        },
-        slotId = 'ID_M_SOLDIER_GADGET1',
-        xpRequired = 205000
-    },
+        xpRequired = 260000,
+        unlocks = {
+            {
+                prettyName = 'ACR',
+                equipmentPath = 'Weapons/XP2_ACR/U_ACR',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    }
 }
+
+print("Sorting Engineer Progress...")
+
+engineerProgression = progressionManager:sortKitProgressionTable(engineerProgression)
+
+return engineerProgression
