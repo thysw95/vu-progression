@@ -1,0 +1,174 @@
+/* Font */
+@font-face {
+  font-family: Purista;
+  src: url('bffont.ttf');
+}
+
+/* Base layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+body {
+  font-family: Purista, sans-serif;
+  line-height: 1.4;
+  margin: 0;
+  padding: 1em;              /* spacing from top edge */
+  color: #111;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: flex-start;   /* stick to top */
+  min-height: 100vh;
+}
+
+/* Media block */
+.media {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(128, 191, 255, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(128, 191, 255, 0.6), 
+              0 0 45px rgba(128, 191, 255, 0.4);
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, box-shadow 0.9s ease-in-out;
+  position: relative;
+  margin-top: 6rem; /* small gap from very top */
+}
+
+.media.show {
+  opacity: 1;
+}
+
+.media img {
+  display: block;
+  width: auto;
+  height: 6vh;
+  object-fit: cover;
+  padding: 0.5rem 0.2rem 0.1rem;
+}
+
+.media .text {
+  padding: 1rem 1.25rem 1.25rem;
+  text-align: center;
+  font-family: Purista;
+}
+
+.media .title {
+  margin: 0 0 0.25rem 0;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.media .subtitle {
+  margin: 0;
+  color: #555;
+  font-size: 1.5rem;
+}
+
+.caption {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .media {
+    flex-direction: column;
+  }
+  .media img, .media .text {
+    width: 100%;
+  }
+}
+
+/* FadeBox */
+#fadeBox {
+  position: fixed;
+  top: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  pointer-events: none; /* let clicks pass through */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#fadeBox.show {
+  opacity: 1;
+}
+
+#fadeBox img {
+  height: 4vh;
+  width: auto;
+  filter: drop-shadow(0 0 20px rgba(0, 153, 255, 0.95));
+}
+
+#fadeBox .text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(0, 153, 255, 0.95);
+}
+
+/* Player Stats */
+.playerstats-flex {
+  display: inline-flex;       
+  flex-wrap: wrap;            
+  justify-content: center;
+  background: rgba(44,58,68,0.76);
+  border-radius: 10px;
+  border: 1px solid black;
+  font-family: Purista, sans-serif;
+  padding: 0.5em 1em;
+}
+
+.playerstats-item {
+  display: flex;
+  align-items: center;
+  margin: 0.3em;
+  font-size: 1em;
+  flex: 1 1 auto;
+}
+
+.playerstats-item img {
+  margin: 0 0.3em;
+  height: auto;
+  max-height: 4em;
+}
+
+.playerstats-sep {
+  transform: rotate(90deg);
+  width: 2em;
+  border: 1px solid #e74c3c;
+  margin: 0 0.3em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .playerstats-flex {
+    font-size: 0.9em;
+  }
+  .playerstats-item {
+    flex: 1 1 45%;
+    justify-content: center;
+  }
+  .playerstats-sep {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .playerstats-flex {
+    font-size: 0.8em;
+    padding: 0.3em;
+  }
+  .playerstats-item {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+  }
+}
