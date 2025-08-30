@@ -216,6 +216,70 @@ local engineerProgression = {
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
         }
+    },
+    {
+        xpRequired = 170000,
+        unlocks = {
+            {
+                prettyName = 'SG553',
+                equipmentPath = 'Weapons/SG553LB/U_SG553LB',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 200000,
+        unlocks = {
+            {
+                prettyName = 'HK53',
+                equipmentPath = 'Weapons/XP1_HK53/U_HK53',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 230000,
+        unlocks = {
+            {
+                prettyName = 'MTAR',
+                equipmentPath = 'Weapons/XP2_MTAR/U_MTAR',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 260000,
+        unlocks = {
+            {
+                prettyName = 'ACR',
+                equipmentPath = 'Weapons/XP2_ACR/U_ACR',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     }
 }
 

@@ -17,24 +17,32 @@ soundAssets = {} -- dictionary of prepared game sounds for further use
 local playerSoundEntities = {} -- current player initialized sound entities
 
 -- This function unlocks an item for the client, depending on the selected category
-function UnlockClientItem(levelCat, currentXp)
+function UnlockClientItem(levelCat, levelIndex)
     if #UNLOCK_CONFIGS[levelCat] > 0 then
-        for _, unlockSet in pairs(UNLOCK_CONFIGS[levelCat]) do
-            if (currentXp >= unlockSet.xpRequired and #unlockSet.unlocks > 0) then
-                -- Loop through unlocks in each unlock
-                for _, unlock in pairs(unlockSet.unlocks) do
-                    for _, kit in pairs(unlock.kits) do
-                        ApplyUnlock(unlock.equipmentPath, unlock.slotId, kit)
-                    end
-                end
+        -- for _, unlockSet in pairs(UNLOCK_CONFIGS[levelCat]) do
+        --     if (currentXp >= unlockSet.xpRequired and #unlockSet.unlocks > 0) then
+        --         -- Loop through unlocks in each unlock
+        --         for _, unlock in pairs(unlockSet.unlocks) do
+        --             for _, kit in pairs(unlock.kits) do
+        --                 ApplyUnlock(unlock.equipmentPath, unlock.slotId, kit)
+        --             end
+        --         end
 
+        --     end
+        -- end
+        local unlockSet = UNLOCK_CONFIGS[levelCat][levelIndex]
+
+        if unlockSet and #unlockSet.unlocks > 0 then
+            for _, unlock in pairs(unlockSet.unlocks) do
+                for _, kit in pairs(unlock.kits) do
+                    ApplyUnlock(unlock.equipmentPath, unlock.slotId, kit)
+                end
             end
         end
     end
 end
 
 function UnlockClientAttachment(weaponName, kills)
-    print("Unlocking attach...")
     if #UNLOCK_CONFIGS.Weapon > 0 then
         for _, weaponUnlocks in pairs(UNLOCK_CONFIGS.Weapon) do
 
@@ -156,11 +164,14 @@ Events:Subscribe('Level:Finalized', function(levelName, gameMode)
     NetEvents:Send('AddNewPlayerForStats', 'Adding new player to Stats')
 end)
 
-NetEvents:Subscribe('OnInitialUnlock', function(levelCat, currentXp)
+NetEvents:Subscribe('OnInitialUnlock', function(levelCat, levelIndex)
     print("UNLOCKING INITIAL " .. levelCat .. " GEAR")
 
-    UnlockClientItem(levelCat, currentXp)
-
+    -- UnlockClientItem does not loop through the entire list
+    -- so, for initial unlocks, we need to get everything up until the current level
+    for i = 1, levelIndex do
+       UnlockClientItem(levelCat, i) 
+    end
 end)
 
 NetEvents:Subscribe('OnInitialAttachmentUnlock', function(weaponProgressList)
@@ -201,11 +212,8 @@ NetEvents:Subscribe('OnKilledPlayer', function(weaponName, kills)
     UnlockClientAttachment(weaponName, kills)
 end)
 
-NetEvents:Subscribe('OnLevelUp', function(levelCat, currentXp)
-    -- if levelCat == 'Assault' then
-    --     print("OH YEAH ITS ASSAULT LEVELLIN TIMEEEEE!!!!!!! UWU")
-    -- end
-    UnlockClientItem(levelCat, currentXp)
+NetEvents:Subscribe('OnLevelUp', function(levelCat, levelIndex)
+    UnlockClientItem(levelCat, levelIndex)
 end)
 
 NetEvents:Subscribe('OnVehicleCustUnlock', function(typeName, score)

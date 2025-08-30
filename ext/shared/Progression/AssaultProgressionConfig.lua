@@ -230,22 +230,6 @@ local assaultProgression = {
         }
     },
     {
-        xpRequired = 160000, -- Co-op score
-        unlocks = {
-            {
-                prettyName = 'G3A3',
-                equipmentPath = 'Weapons/G3A3/U_G3A3',
-                kits = {
-                    'Gameplay/Kits/USAssault',
-                    'Gameplay/Kits/USAssault_XP4',
-                    'Gameplay/Kits/RUAssault',
-                    'Gameplay/Kits/RUAssault_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_PRIMARY',
-            },
-        }
-    },
-    {
         xpRequired = 166000,
         unlocks = {
             {
@@ -277,6 +261,102 @@ local assaultProgression = {
                 prettyName = 'M16A3 (RU)',
                 equipmentPath = 'Weapons/M16A4/U_M16A4',
                 kits = {
+                    'Gameplay/Kits/RUAssault',
+                    'Gameplay/Kits/RUAssault_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 250000,
+        unlocks = {
+            {
+                prettyName = 'KH2002',
+                equipmentPath = 'Weapons/KH2002/U_KH2002',
+                kits = {
+                    'Gameplay/Kits/USAssault',
+                    'Gameplay/Kits/USAssault_XP4',
+                    'Gameplay/Kits/RUAssault',
+                    'Gameplay/Kits/RUAssault_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 280000,
+        unlocks = {
+            {
+                prettyName = 'G3A3',
+                equipmentPath = 'Weapons/G3A3/U_G3A3/',
+                kits = {
+                    'Gameplay/Kits/USAssault',
+                    'Gameplay/Kits/USAssault_XP4',
+                    'Gameplay/Kits/RUAssault',
+                    'Gameplay/Kits/RUAssault_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 310000,
+        unlocks = {
+            {
+                prettyName = 'FAMAS',
+                equipmentPath = 'Weapons/XP1_FAMAS/U_FAMAS',
+                kits = {
+                    'Gameplay/Kits/USAssault',
+                    'Gameplay/Kits/USAssault_XP4',
+                    'Gameplay/Kits/RUAssault',
+                    'Gameplay/Kits/RUAssault_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 340000,
+        unlocks = {
+            {
+                prettyName = 'L85A2',
+                equipmentPath = 'Weapons/XP1_L85A2/U_L85A2',
+                kits = {
+                    'Gameplay/Kits/USAssault',
+                    'Gameplay/Kits/USAssault_XP4',
+                    'Gameplay/Kits/RUAssault',
+                    'Gameplay/Kits/RUAssault_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 370000,
+        unlocks = {
+            {
+                prettyName = 'AUG A3',
+                equipmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug',
+                kits = {
+                    'Gameplay/Kits/USAssault',
+                    'Gameplay/Kits/USAssault_XP4',
+                    'Gameplay/Kits/RUAssault',
+                    'Gameplay/Kits/RUAssault_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 400000,
+        unlocks = {
+            {
+                prettyName = 'SCAR L',
+                equipmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L',
+                kits = {
+                    'Gameplay/Kits/USAssault',
+                    'Gameplay/Kits/USAssault_XP4',
                     'Gameplay/Kits/RUAssault',
                     'Gameplay/Kits/RUAssault_XP4',
                 },
