@@ -188,6 +188,38 @@ local supportProgression = {
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
         }
+    },
+    {
+        xpRequired = 200000,
+        unlocks = {
+            {
+                prettyName = 'QBB-95',
+                equipmentPath = 'Weapons/XP1_QBB-95/U_QBB-95',
+                kits = {
+                    'Gameplay/Kits/USSupport',
+                    'Gameplay/Kits/USSupport_XP4',
+                    'Gameplay/Kits/RUSupport',
+                    'Gameplay/Kits/RUSupport_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 230000,
+        unlocks = {
+            {
+                prettyName = 'LSAT',
+                equipmentPath = 'Weapons/XP2_LSAT/U_LSAT',
+                kits = {
+                    'Gameplay/Kits/USSupport',
+                    'Gameplay/Kits/USSupport_XP4',
+                    'Gameplay/Kits/RUSupport',
+                    'Gameplay/Kits/RUSupport_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     }
 }
 

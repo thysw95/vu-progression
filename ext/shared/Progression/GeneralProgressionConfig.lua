@@ -333,6 +333,17 @@ local generalProgression = {
         }
     },
     {
+        xpRequired = 1180000,
+        unlocks = {
+            {
+                prettyName = 'M1911',
+                equipmentPath = 'Weapons/M1911/U_M1911',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
         xpRequired = 1280000,
         unlocks = {
             {
@@ -377,6 +388,17 @@ local generalProgression = {
         }
     },
     {
+        xpRequired = 2000000,
+        unlocks = {
+            {
+                prettyName = 'M1911 Light',
+                equipmentPath = 'Weapons/M1911/U_M1911_lit',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
         xpRequired = 2240000,
         unlocks = {
             {
@@ -384,6 +406,17 @@ local generalProgression = {
                 equipmentPath = 'Weapons/USAS-12/U_USAS-12',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 2400000,
+        unlocks = {
+            {
+                prettyName = 'M1911 Silenced',
+                equipmentPath = 'Weapons/M1911/U_M1911_Silenced',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
             },
         }
     },
@@ -409,6 +442,116 @@ local generalProgression = {
             },
         }
     },
+    {
+        xpRequired = 2900000,
+        unlocks = {
+            {
+                prettyName = 'M1911 Tactical',
+                equipmentPath = 'Weapons/M1911/U_M1911_Tactical',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 3100000,
+        unlocks = {
+            {
+                prettyName = '93R',
+                equipmentPath = 'Weapons/M93R/U_M93R',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 3400000,
+        unlocks = {
+            {
+                prettyName = 'MP412 REX',
+                equipmentPath = 'Weapons/MP412Rex/U_MP412Rex',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+        }
+    },
+    {
+        xpRequired = 3700000,
+        unlocks = {
+            {
+                prettyName = 'SPAS-12',
+                equipmentPath = 'Weapons/ASVal/U_ASVal',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 4000000,
+        unlocks = {
+            {
+                prettyName = 'PP-19 Bizon',
+                equipmentPath = 'Weapons/XP1_PP-19/U_PP-19',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 4300000,
+        unlocks = {
+            {
+                prettyName = 'MP5K',
+                equipmentPath = 'Weapons/XP2_MP5K/U_MP5K',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 4600000,
+        unlocks = {
+            {
+                prettyName = 'MP7',
+                equipmentPath = 'Weapons/MP7/U_MP7',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 4900000,
+        unlocks = {
+            {
+                prettyName = 'MK3A1',
+                equipmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 5200000,
+        unlocks = {
+            {
+                prettyName = 'Crossbow Cobra',
+                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_Cobra',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+        }
+    },
+    {
+        xpRequired = 5500000,
+        unlocks = {
+            {
+                prettyName = 'Crossbow Scoped',
+                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_RifleScope',
+                kits = {'All'},
+                slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+        }
+    }
 }
 
 print("Sorting General Progress...")

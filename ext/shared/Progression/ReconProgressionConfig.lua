@@ -181,6 +181,54 @@ local reconProgression = {
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
         }
+    },
+    {
+        xpRequired = 220000,
+        unlocks = {
+            {
+                prettyName = 'M39 EBR',
+                equipmentPath = 'Weapons/M39EBR/U_M39EBR',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 250000,
+        unlocks = {
+            {
+                prettyName = 'L96A1',
+                equipmentPath = 'Weapons/XP1_L96/U_L96',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 280000,
+        unlocks = {
+            {
+                prettyName = 'JNG90',
+                equipmentPath = 'Weapons/XP2_JNG90/U_JNG90',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
     }
 }
 
