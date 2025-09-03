@@ -121,7 +121,7 @@ function WeapAttachUnlockCheck(player, weaponName, weapKills)
                             print(player.name .. " unlocked " .. unlock.prettyName .. " for " .. weaponUnlocks.prettyName .. " at " .. weapKills .. " kills!")
                             local message = string.format(CONFIG.UnlockNotifications.messages.weapAttachUnlock, weaponUnlocks.prettyName, weapKills, unlock.prettyName)
                             ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
-                            NetEvents:SendTo('PlayUnlockSound', player, CONFIG.UnlockNotifications.soundPaths.weapAttachUnlock)
+                            NetEvents:SendTo('PlayUnlockSound', player, 'weapAttachUnlock')
                             break
                         end
 
@@ -214,7 +214,7 @@ function PlayerLevelUp(player, levelType, level, unlockName)
         if CONFIG.UnlockNotifications.enabled == true then
             local message = string.format(CONFIG.UnlockNotifications.messages.levelUp, levelType, level, unlockName)
             ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
-            NetEvents:SendTo('PlayUnlockSound', player, CONFIG.UnlockNotifications.soundPaths.levelUp)
+            NetEvents:SendTo('PlayUnlockSound', player, 'levelUp')
         end
     end
 end
@@ -258,7 +258,7 @@ function IncreaseVehicleScore(player, playerGuid, vehicleControllableType, score
             if CONFIG.UnlockNotifications.enabled == true then
                 local message = string.format(CONFIG.UnlockNotifications.messages.vehicleUnlock, progCfg.prettyName, playerVicProg.score, unlock.prettyName)
                 ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
-                NetEvents:SendTo('PlayUnlockSound', player, CONFIG.UnlockNotifications.soundPaths.vehicleUnlock)
+                NetEvents:SendTo('PlayUnlockSound', player, 'vehicleUnlock')
             end
             break
         end
@@ -497,6 +497,10 @@ if CONFIG.General.debug then
 
     NetEvents:Subscribe('AddXP', function(player, xp)
         PlayerXPUpdated(player, xp)
+    end)
+
+    NetEvents:Subscribe('AddKillsToWeap', function(player, kills, weapPath)
+        IncreaseWeaponKills(player.guid, weapPath, kills)
     end)
     
 end
