@@ -13,7 +13,7 @@ local UNLOCK_CONFIGS = {
 }
 require("__shared/Progression/VehicleProgressionConfig")
 
-soundAssets = {} -- dictionary of prepared game sounds for further use
+local soundAssets = {} -- dictionary of prepared game sounds for further use
 local playerSoundEntities = {} -- current player initialized sound entities
 
 -- This function unlocks an item for the client, depending on the selected category
@@ -91,23 +91,29 @@ end
 -- on level load
 local function onLevelLoaded()
     -- load sound assets/entities when possible
-    local soundList = {
-        CONFIG.UnlockNotifications.soundPaths.levelUp,
-        CONFIG.UnlockNotifications.soundPaths.weapAttachUnlock,
-        CONFIG.UnlockNotifications.soundPaths.vehicleUnlock
-    }
-    for _, sound in pairs(soundList) do
-        print('Loading sound: ' .. sound)
-        local soundDataContainer = ResourceManager:SearchForDataContainer(sound)
+    for sound, params in pairs(CONFIG.UnlockNotifications.sounds) do
+        print("Loading " .. sound .. " sound...")
+        local soundDataContainer = ResourceManager:SearchForDataContainer(params.path)
         if soundDataContainer == nil then
-            print('FAILED TO FIND DATA CONTAINER!')
-            return
+            print("Failed to find data container for path: " .. params.path)
+            goto continue_loop
         end
-        -- soundDataContainer = soundDataContainer:Clone()
         local soundAsset = SoundPatchConfigurationAsset(soundDataContainer)
-        -- soundAsset:MakeWritable()
-        -- soundAsset.loudness = 500.0 -- Doesn't make it louder?
+        -- Set volume for unique config asset
+        soundAsset = soundAsset:Clone()
+        for k, entry in pairs(soundAsset.entries) do
+            if entry:Is(SoundPatchConfigurationParameterEntry.typeInfo.name) then
+                local spcpEntry = SoundPatchConfigurationParameterEntry(entry)
+                if spcpEntry.nameHash == 698564572 then -- (Amplitude)
+                    spcpEntry = spcpEntry:Clone()
+                    spcpEntry.value = params.volumeMult
+                    soundAsset.entries[k] = spcpEntry -- Replace ref with unique clone
+                    break
+                end
+            end
+        end
         soundAssets[sound] = soundAsset
+        ::continue_loop::
     end
 end
 
@@ -237,9 +243,9 @@ if CONFIG.General.debug then
         end
     end)
 
-    Console:Register('playlvlsound', 'DEBUG: Plays unlock sound path[1]', function(p_Args)
+    Console:Register('PlayUnlockSound', 'DEBUG: Plays unlock notification sound[1]', function(args)
         if #args == 1 then
-            PlayUnlockSound(p_Args[1])
+            PlayUnlockSound(args[1])
         end
     end)
 

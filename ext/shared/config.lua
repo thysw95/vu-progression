@@ -21,12 +21,21 @@ CONFIG = {
             -- Message must have `%s` for vehicle type name, followed by `%i` for total vehicle score, followed by `%s` for unlock name, in that order
             vehicleUnlock = "[= VEHICLE MILESTONE =]\n%s — %i Vehicle Score\n~ %s Unlocked ~",
         },
-        -- Sound paths to play, based on unlock type
+        -- Sounds to play, based on unlock type
         -- Award sounds: https://github.com/VeniceUnleashed/Venice-EBX/tree/master/Sound/UI/Awards
-        soundPaths = {
-            levelUp = "Sound/UI/Awards/UI_Award_RankUp",
-            weapAttachUnlock = "Sound/UI/Awards/UI_Award_Unlock",
-            vehicleUnlock = "Sound/UI/Awards/UI_Award_RankUp",
+        sounds = {
+            levelUp = {
+                path = "Sound/UI/Awards/UI_Award_RankUp",
+                volumeMult = 2.0, -- Volume multiplier (eg. 2.0 = 200% volume)
+            },
+            weapAttachUnlock = {
+                path = "Sound/UI/Awards/UI_Award_Unlock",
+                volumeMult = 2.0,
+            },
+            vehicleUnlock = {
+                path = "Sound/UI/Awards/UI_Award_RankUp",
+                volumeMult = 2.0,
+            },
         },
     },
 }
