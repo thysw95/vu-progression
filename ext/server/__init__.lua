@@ -423,16 +423,6 @@ function ChatCommand(player, recipientMask, message)
             )
         end
 
-    elseif string.lower(message):sub(1, 3) == "!xp" then
-        local xpAmount = message:sub(5)
-        PlayerXPUpdated(player, xpAmount)
-    -- elseif string.lower(message):sub(1, 3) == "!wp" then
-    --     local killAmount = message:sub(5)
-    --     ChatManager:SendMessage(
-    --         "Added " .. killAmount .. " to the M16A4",
-    --         player
-    --     )
-    --     IncreaseWeaponKills(player.guid, "M16A4", killAmount)
     end
 end
 
