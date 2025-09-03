@@ -1,5 +1,5 @@
-require("__shared/Progression/VehicleProgressionConfig")
-local weaponProgressUnlocks = require("__shared/Progression/WeaponProgressionConfig")
+local vehicleProgConfig = require("__shared/Progression/VehicleProgressionConfig")
+local weaponProgConfig = require("__shared/Progression/WeaponProgressionConfig")
 
 local VUPlayerRankClass = class('VUPlayerRank')
 
@@ -55,7 +55,7 @@ end
 
 function VUPlayerRankClass:InitWeaponKills()
     self.r_WeaponProgressList = {}
-    for _, weapon in pairs(weaponProgressUnlocks) do
+    for _, weapon in pairs(weaponProgConfig) do
         table.insert(self.r_WeaponProgressList, {
             ['weaponName'] = weapon.weaponName,
             ['kills'] = 0
@@ -65,7 +65,7 @@ end
 
 function VUPlayerRankClass:InitVehicleScores()
     self.r_VehicleProgressList = {}
-    for _, vehicleType in pairs(VIC_PROG_CONFIG) do
+    for _, vehicleType in pairs(vehicleProgConfig) do
         table.insert(self.r_VehicleProgressList, {
             ['typeName'] = vehicleType.prettyName,
             ['score'] = 0

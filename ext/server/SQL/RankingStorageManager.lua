@@ -45,13 +45,6 @@ function RankingStorageManager:FetchPlayerProgress(playerRankObject)
             'weaponName',
             'kills'
         )
-        -- returnPlayer['r_WeaponProgressList'] = loadstring("return " .. existingPlayers[1]['weapon_progression'])()
-
-        -- if #returnPlayer['r_WeaponProgressList'] > 0 then
-        --     for _, w in pairs(returnPlayer['r_WeaponProgressList']) do
-        --         print(w)
-        --     end
-        -- end
 
         -- New addition; need to check if nil
         if existingPlayers[1]['vehicle_progression'] ~= nil then

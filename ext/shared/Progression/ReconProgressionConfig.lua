@@ -1,6 +1,9 @@
-local progressionManager = require("__shared/ProgressionManager")
+---------------------------------------------------------
+--------------- Recon Progression Config ----------------
+---------------------------------------------------------
 
--- Add/update values in the below table to edit progression
+-- Add/update values in the below table to edit progression for the Recon Class
+
 local reconProgression = {
     {
         xpRequired = 0,
@@ -112,6 +115,22 @@ local reconProgression = {
         }
     },
     {
+        xpRequired = 58000,
+        unlocks = {
+            {
+                prettyName = 'M39 EMR',
+                equipmentPath = 'Weapons/M39EBR/U_M39EBR',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
         xpRequired = 71000,
         unlocks = {
             {
@@ -148,7 +167,7 @@ local reconProgression = {
         unlocks = {
             {
                 prettyName = 'M98B',
-                equipmentPath = 'Weapons/M98B/U_M98B',
+                equipmentPath = 'Weapons/Model98B/U_M98B',
                 kits = {
                     'Gameplay/Kits/USRecon',
                     'Gameplay/Kits/USRecon_XP4',
@@ -183,26 +202,10 @@ local reconProgression = {
         }
     },
     {
-        xpRequired = 220000,
+        xpRequired = 225000,
         unlocks = {
             {
-                prettyName = 'M39 EBR',
-                equipmentPath = 'Weapons/M39EBR/U_M39EBR',
-                kits = {
-                    'Gameplay/Kits/USRecon',
-                    'Gameplay/Kits/USRecon_XP4',
-                    'Gameplay/Kits/RURecon',
-                    'Gameplay/Kits/RURecon_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_PRIMARY',
-            },
-        }
-    },
-    {
-        xpRequired = 250000,
-        unlocks = {
-            {
-                prettyName = 'L96A1',
+                prettyName = 'L96',
                 equipmentPath = 'Weapons/XP1_L96/U_L96',
                 kits = {
                     'Gameplay/Kits/USRecon',
@@ -215,7 +218,23 @@ local reconProgression = {
         }
     },
     {
-        xpRequired = 280000,
+        xpRequired = 255000,
+        unlocks = {
+            {
+                prettyName = 'QBU-88',
+                equipmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_Sniper',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 285000,
         unlocks = {
             {
                 prettyName = 'JNG90',
@@ -229,11 +248,28 @@ local reconProgression = {
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
         }
-    }
+    },
+    {
+        xpRequired = 325000,
+        unlocks = {
+            {
+                prettyName = 'M417',
+                equipmentPath = 'Weapons/XP2_HK417/U_HK417',
+                kits = {
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
 }
 
-print("Sorting Recon Progress...")
+---------- END OF CONFIG | DO NOT EDIT BELOW ----------
 
-reconProgression = progressionManager:sortKitProgressionTable(reconProgression)
+local progressionManager = require("__shared/ProgressionManager")
+progressionManager:sortKitProgressionTable(reconProgression)
 
 return reconProgression

@@ -1,16 +1,19 @@
 local ProgressionManager = class('ProgressionManager')
 
--- Function to sort kits
+-- Function to sort kit unlock groups
 function ProgressionManager:sortKitProgressionTable(progressTable)
-    local sortedTable = progressTable
+    table.sort(progressTable, function(a, b)
+        return a.xpRequired < b.xpRequired
+    end)
+end
 
-    if #progressTable > 0 then
-        table.sort(sortedTable, function(a, b)
-            return a.xpRequired < b.xpRequired
+-- Function to sort vehicle type unlocks
+function ProgressionManager:sortVehicleProgressionTable(progressTable)
+    for _, vicType in pairs(progressTable) do
+        table.sort(vicType.unlocks, function(a, b)
+            return a.vicScoreRequired < b.vicScoreRequired
         end)
     end
-
-    return sortedTable
 end
 
 return ProgressionManager

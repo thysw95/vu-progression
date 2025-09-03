@@ -1,6 +1,9 @@
-local progressionManager = require("__shared/ProgressionManager")
+---------------------------------------------------------
+-------------- Assault Progression Config ---------------
+---------------------------------------------------------
 
--- Add/update values in the below table to edit progression
+-- Add/update values in the below table to edit progression for the Assault Class
+
 local assaultProgression = {
     {
         xpRequired = 0,
@@ -113,6 +116,22 @@ local assaultProgression = {
                     'Gameplay/Kits/RUAssault_XP4',
                 },
                 slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+        }
+    },
+    {
+        xpRequired = 17000, -- Co-op score
+        unlocks = {
+            {
+                prettyName = 'KH2002',
+                equipmentPath = 'Weapons/KH2002/U_KH2002',
+                kits = {
+                    'Gameplay/Kits/USAssault',
+                    'Gameplay/Kits/USAssault_XP4',
+                    'Gameplay/Kits/RUAssault',
+                    'Gameplay/Kits/RUAssault_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
             },
         }
     },
@@ -230,6 +249,22 @@ local assaultProgression = {
         }
     },
     {
+        xpRequired = 160000, -- Co-op score
+        unlocks = {
+            {
+                prettyName = 'G3A3',
+                equipmentPath = 'Weapons/G3A3/U_G3A3',
+                kits = {
+                    'Gameplay/Kits/USAssault',
+                    'Gameplay/Kits/USAssault_XP4',
+                    'Gameplay/Kits/RUAssault',
+                    'Gameplay/Kits/RUAssault_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
         xpRequired = 166000,
         unlocks = {
             {
@@ -272,38 +307,6 @@ local assaultProgression = {
         xpRequired = 250000,
         unlocks = {
             {
-                prettyName = 'KH2002',
-                equipmentPath = 'Weapons/KH2002/U_KH2002',
-                kits = {
-                    'Gameplay/Kits/USAssault',
-                    'Gameplay/Kits/USAssault_XP4',
-                    'Gameplay/Kits/RUAssault',
-                    'Gameplay/Kits/RUAssault_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_PRIMARY',
-            },
-        }
-    },
-    {
-        xpRequired = 280000,
-        unlocks = {
-            {
-                prettyName = 'G3A3',
-                equipmentPath = 'Weapons/G3A3/U_G3A3/',
-                kits = {
-                    'Gameplay/Kits/USAssault',
-                    'Gameplay/Kits/USAssault_XP4',
-                    'Gameplay/Kits/RUAssault',
-                    'Gameplay/Kits/RUAssault_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_PRIMARY',
-            },
-        }
-    },
-    {
-        xpRequired = 310000,
-        unlocks = {
-            {
                 prettyName = 'FAMAS',
                 equipmentPath = 'Weapons/XP1_FAMAS/U_FAMAS',
                 kits = {
@@ -317,7 +320,7 @@ local assaultProgression = {
         }
     },
     {
-        xpRequired = 340000,
+        xpRequired = 280000,
         unlocks = {
             {
                 prettyName = 'L85A2',
@@ -333,7 +336,7 @@ local assaultProgression = {
         }
     },
     {
-        xpRequired = 370000,
+        xpRequired = 310000,
         unlocks = {
             {
                 prettyName = 'AUG A3',
@@ -349,7 +352,7 @@ local assaultProgression = {
         }
     },
     {
-        xpRequired = 400000,
+        xpRequired = 340000,
         unlocks = {
             {
                 prettyName = 'SCAR L',
@@ -363,11 +366,12 @@ local assaultProgression = {
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
         }
-    }
+    },
 }
 
-print("Sorting Assault Progress...")
+---------- END OF CONFIG | DO NOT EDIT BELOW ----------
 
-assaultProgression = progressionManager:sortKitProgressionTable(assaultProgression)
+local progressionManager = require("__shared/ProgressionManager")
+progressionManager:sortKitProgressionTable(assaultProgression)
 
 return assaultProgression
