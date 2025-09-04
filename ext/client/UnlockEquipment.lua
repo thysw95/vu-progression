@@ -55,12 +55,10 @@ function UnlockEquipment(veniceSoldierAsset, unlockAssetBase, equipmentSlot)
             -- Can later come back to UnlockAssetBase to figure out how to lock or unlock something without removing them from the SoldierAsset
             local foundEquip = false
 
-            if #customizationUnlockParts.selectableUnlocks > 0 then -- Check if already unlocked
-                for _, unlock in pairs(customizationUnlockParts.selectableUnlocks) do
-                    if unlock.debugUnlockId == unlockAssetBase.debugUnlockId then
-                        foundEquip = true
-                        break
-                    end
+            for _, unlock in pairs(customizationUnlockParts.selectableUnlocks) do -- Check if already unlocked
+                if unlock.debugUnlockId == unlockAssetBase.debugUnlockId then
+                    foundEquip = true
+                    break
                 end
             end
 
@@ -90,12 +88,10 @@ function UnlockAttachment(weaponCustomizationPath, attachmentPath, slotIndex)
         local foundAttach = false
 
         if attachTable ~= nil and weaponCustomAssetMain ~= nil and attachmentMain ~= nil then
-            if #attachTable.unlockParts[slotIndex].selectableUnlocks > 0 then -- Check if already unlocked
-                for _, unlock in pairs(attachTable.unlockParts[slotIndex].selectableUnlocks) do
-                    if unlock.debugUnlockId == attachmentMain.debugUnlockId then
-                        foundAttach = true
-                        break
-                    end
+            for _, unlock in pairs(attachTable.unlockParts[slotIndex].selectableUnlocks) do -- Check if already unlocked
+                if unlock.debugUnlockId == attachmentMain.debugUnlockId then
+                    foundAttach = true
+                    break
                 end
             end
 
@@ -128,12 +124,10 @@ function UnlockVicCustomization(vehicleCustomizationPath, unlockPath, unlockCate
         if customizationUnlockParts.uiCategorySid == unlockCategory then
             local foundUnlock = false
 
-            if #customizationUnlockParts.selectableUnlocks > 0 then -- Check if already unlocked
-                for _, unlock in pairs(customizationUnlockParts.selectableUnlocks) do
-                    if unlock.debugUnlockId == unlockAssetBase.debugUnlockId then
-                        foundUnlock = true
-                        break
-                    end
+            for _, unlock in pairs(customizationUnlockParts.selectableUnlocks) do -- Check if already unlocked
+                if unlock.debugUnlockId == unlockAssetBase.debugUnlockId then
+                    foundUnlock = true
+                    break
                 end
             end
 

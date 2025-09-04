@@ -1,5 +1,6 @@
 require("__shared/KitVariables")
-require("__shared/Progression/VehicleProgressionConfig")
+local weaponProgConfig = require("__shared/Progression/WeaponProgressionConfig")
+local vehicleProgConfig = require("__shared/Progression/VehicleProgressionConfig")
 
 -- Function to remove all the customization options on the selected soldier
 function LockSoldierCustomizationAsset(veniceSoldierAsset, categoryId)
@@ -110,8 +111,8 @@ function InitAssetsLock()
 
     -- Loop through all the weapon customization assets
     print(">>>>>>>> LOCKING WEAPON CUSTOMIZATION ASSETS <<<<<<<<")
-    for _, weaponCustom in pairs(WEAP_CUSTOMIZATIONS) do
-        local weaponCustomizationAsset = ResourceManager:SearchForDataContainer(weaponCustom)
+    for _, weapon in pairs(weaponProgConfig) do
+        local weaponCustomizationAsset = ResourceManager:SearchForDataContainer(weapon.customizationPath)
 
         if weaponCustomizationAsset ~= nil then
             weaponCustomizationAsset = VeniceSoldierWeaponCustomizationAsset(weaponCustomizationAsset)
@@ -122,8 +123,8 @@ function InitAssetsLock()
 
     -- Loop through all the vehicle customization assets
     print(">>>>>>>> LOCKING VEHICLE ASSETS <<<<<<<<")
-    for _, vehicleType in pairs(VIC_PROG_CONFIG) do
-        local veniceVehicleCustomizationAsset = ResourceManager:SearchForDataContainer(vehicleType.customizationPath)
+    for _, vicType in pairs(vehicleProgConfig) do
+        local veniceVehicleCustomizationAsset = ResourceManager:SearchForDataContainer(vicType.customizationPath)
 
         if veniceVehicleCustomizationAsset ~= nil then
             veniceVehicleCustomizationAsset = VeniceVehicleCustomizationAsset(veniceVehicleCustomizationAsset)

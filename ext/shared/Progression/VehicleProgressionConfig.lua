@@ -1,6 +1,11 @@
--- Unlocks must be in increasing score order
+---------------------------------------------------------
+-------------- Vehicle Progression Config ---------------
+---------------------------------------------------------
+
+-- Add/update values in the below table to edit progression for each vehicle type
 -- `vehicleNames` must be what `VehicleEntityData.controllableType` returns
-VIC_PROG_CONFIG = {
+
+local vehicleProgression = {
     {
         prettyName = 'Mobile AA',
         unlocks = {
@@ -892,3 +897,10 @@ VIC_PROG_CONFIG = {
         }
     },
 }
+
+---------- END OF CONFIG | DO NOT EDIT BELOW ----------
+
+local progressionManager = require("__shared/ProgressionManager")
+progressionManager:sortVehicleProgressionTable(vehicleProgression)
+
+return vehicleProgression
