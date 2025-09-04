@@ -56,13 +56,15 @@ function initPlayerLevels(player, playerRankObject)
 end
 
 function PlayerXPUpdated(player, score)
-    local selectedKit = player.customization
-    local kitData = DataContainer(selectedKit)
-    local veniceSoldierAsset = VeniceSoldierCustomizationAsset(kitData)
-    veniceSoldierAsset:MakeWritable()
-
-    local kitName = veniceSoldierAsset.labelSid
     local xp = score * CONFIG.General.xpMultiplier
+    -- Get player's current kit
+    -- NOTE: The kit will be nil if they are not spawned in, causing only General XP to be earned
+    local kitName = nil
+    local selectedKit = player.customization
+    if selectedKit ~= nil then
+        local veniceSoldierAsset = VeniceSoldierCustomizationAsset(selectedKit)
+        kitName = veniceSoldierAsset.labelSid
+    end
 
     -- Check if player is in vehicle
     local vehicleEntityData
@@ -439,9 +441,12 @@ NetEvents:Subscribe('AddNewPlayerForStats', function(player, data)
 end)
 
 Events:Subscribe('Extension:Loaded', function()
-    print('Initializing VU Progression DB')
-    CreateProgressionTable()
+    InitProgressionTable()
     PatchProgressionTable()
+end)
+
+Events:Subscribe('Extension:Unloading', function()
+    CloseProgressionTable()
 end)
 
 Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)

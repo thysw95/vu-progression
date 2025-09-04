@@ -538,7 +538,7 @@ local generalProgression = {
         xpRequired = 5200000,
         unlocks = {
             {
-                prettyName = 'Crossbow Cobra',
+                prettyName = 'XBOW',
                 equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_Cobra',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_GADGET1',
@@ -549,8 +549,8 @@ local generalProgression = {
         xpRequired = 5500000,
         unlocks = {
             {
-                prettyName = 'Crossbow Scoped',
-                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_RifleScope',
+                prettyName = 'XBOW SCOPED',
+                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_RifleScope',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_GADGET1',
             },

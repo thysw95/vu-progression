@@ -229,7 +229,7 @@ local supportProgression = {
         unlocks = {
             {
                 prettyName = 'L86A2',
-                equipmentPath = ' Weapons/XP2_L86/U_L86',
+                equipmentPath = 'Weapons/XP2_L86/U_L86',
                 kits = {
                     'Gameplay/Kits/USSupport',
                     'Gameplay/Kits/USSupport_XP4',

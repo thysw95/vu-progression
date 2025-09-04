@@ -34,13 +34,18 @@ end
 
 local function PlayUnlockSound(sound)
     local player = PlayerManager:GetLocalPlayer()
-    print("Playing sound " .. sound .. " for player " .. player.name)
     -- do not continue when player soldier does not exist
-    if player.soldier == nil then return end
+    if player.soldier == nil then
+        print("Player must be spawned in to play " .. sound .. " sound!")
+        return
+    end
     -- do not continue when sound does not exist
     if soundAssets[sound] == nil then
         print(sound .. ' is not a loaded sound!')
         return
+    end
+    if CONFIG.General.debug then
+        print("Playing sound " .. sound .. " for player " .. player.name)
     end
     -- delete old entity
     if playerSoundEntities[player.id] ~= nil then

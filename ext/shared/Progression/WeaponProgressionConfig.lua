@@ -7257,58 +7257,65 @@ return {
                 killsRequired = 0
             },
         },
-    },{
-        weaponName = 'CrossBow',
-        prettyName = 'Crossbow',
-        customizationPath = 'Weapons/XP4_Crossbow_Prototype/Crossbow_Customization',
-        unlocks = {
-            {
-                prettyName = 'No Secondary Rail',
-                attachmentPath = 'Weapons/Common/NoSecondaryRail',
-                attachmentSlotIndex = 2,
-                killsRequired = 0
-            },{
-                prettyName = 'Barbed Bolt',
-                attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Bolt',
-                attachmentSlotIndex = 3,
-                killsRequired = 0
-            },{
-                prettyName = 'Scan Bolt',
-                attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_ScanBolt',
-                attachmentSlotIndex = 3,
-                killsRequired = 60
-            },{
-                prettyName = 'HE Bolt',
-                attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_HEBolt',
-                attachmentSlotIndex = 3,
-                killsRequired = 80
-            },{
-                prettyName = 'BA Bolt',
-                attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_BABolt',
-                attachmentSlotIndex = 3,
-                killsRequired = 40
-            },{
-                prettyName = 'Kobra (RDS)',
-                attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Kobra',
-                attachmentSlotIndex = 1,
-                killsRequired = 20
-            },{
-                prettyName = 'Rifle Scope (8x)',
-                attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Rifle_Scope',
-                attachmentSlotIndex = 1,
-                killsRequired = 140
-            },{
-                prettyName = 'No Optics',
-                attachmentPath = 'Weapons/Common/NoOptics',
-                attachmentSlotIndex = 1,
-                killsRequired = 0
-            },{
-                prettyName = 'No Camo',
-                attachmentPath = 'Weapons/Common/NoCamo',
-                attachmentSlotIndex = 4,
-                killsRequired = 0
-            },
-        },
     },
+    -- Crossbow bolt unlocks don't currently work right.
+    -- The fire modes for each bolt get removed from the UI, but they can still be selected.
+    -- {
+    --     weaponName = 'CrossBow',
+    --     prettyName = 'XBOW',
+    --     customizationPath = 'Weapons/XP4_Crossbow_Prototype/Crossbow_Customization',
+    --     unlocks = {
+    --         {
+    --             prettyName = 'No Secondary Rail',
+    --             attachmentPath = 'Weapons/Common/NoSecondaryRail',
+    --             attachmentSlotIndex = 2,
+    --             killsRequired = 0
+    --         },{
+    --             prettyName = 'Barbed Bolt',
+    --             attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Bolt',
+    --             attachmentSlotIndex = 3,
+    --             killsRequired = 0
+    --         },{
+    --             prettyName = 'Scan Bolt',
+    --             attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_ScanBolt',
+    --             attachmentSlotIndex = 3,
+    --             killsRequired = 60
+    --         },{
+    --             prettyName = 'HE Bolt',
+    --             attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_HEBolt',
+    --             attachmentSlotIndex = 3,
+    --             killsRequired = 80
+    --         },{
+    --             prettyName = 'BA Bolt',
+    --             attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_BABolt',
+    --             attachmentSlotIndex = 3,
+    --             killsRequired = 40
+    --         },
+    --         -- Sights should not be included because they come with each crossbow type
+    --         -- {
+    --         --     prettyName = 'Kobra (RDS)',
+    --         --     attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Kobra',
+    --         --     attachmentSlotIndex = 1,
+    --         --     killsRequired = 20
+    --         -- },
+    --         -- {
+    --         --     prettyName = 'Rifle Scope (8x)',
+    --         --     attachmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Rifle_Scope',
+    --         --     attachmentSlotIndex = 1,
+    --         --     killsRequired = 140
+    --         -- },
+    --         {
+    --             prettyName = 'No Optics',
+    --             attachmentPath = 'Weapons/Common/NoOptics',
+    --             attachmentSlotIndex = 1,
+    --             killsRequired = 0
+    --         },{
+    --             prettyName = 'No Camo',
+    --             attachmentPath = 'Weapons/Common/NoCamo',
+    --             attachmentSlotIndex = 4,
+    --             killsRequired = 0
+    --         },
+    --     },
+    -- },
     
 }

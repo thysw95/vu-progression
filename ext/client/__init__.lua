@@ -116,13 +116,18 @@ if CONFIG.General.debug then
 
     Console:Register('AddXP', 'DEBUG: Adds experience to local player', function(args)
         if #args == 1 then
+            if PlayerManager:GetLocalPlayer().soldier == nil then
+                print("Warning: You must be spawned in to earn Class XP!")
+            end
             NetEvents:SendLocal('AddXP', args[1])
+            print("Added " .. args[1] .. " XP to self")
         end
     end)
 
     Console:Register('AddKillsToWeap', 'DEBUG: Adds kills[1] to weaponName[2]', function(args)
         if #args == 2 then
             NetEvents:SendLocal('AddKillsToWeap', args[1], args[2])
+            print("Added " .. args[1] .. " kills to " .. args[2] .. " for self")
         end
     end)
 
