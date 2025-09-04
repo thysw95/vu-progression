@@ -5,7 +5,8 @@
         "Red-Thirten"
     ],
     "Description": "A mod that integrates progression into Venice Unleashed",
-    "Version": "2.0.1",
+    "Version": "2.1.1",
+    "URL": "https://github.com/thysw95/vu-progression",
     "HasVeniceEXT": true,
     "Dependencies": {
         "veniceext": "^1.0.0"
