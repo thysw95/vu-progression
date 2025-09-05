@@ -30,15 +30,15 @@ CONFIG = {
         sounds = {
             levelUp = {
                 path = "Sound/UI/Awards/UI_Award_RankUp",
-                volumeMult = 2.0, -- Volume multiplier (eg. 2.0 = 200% volume)
+                volumeMult = 3.0, -- Volume multiplier (eg. 3.0 = 300% original volume; 1.0 is fairly quiet)
             },
             weapAttachUnlock = {
                 path = "Sound/UI/Awards/UI_Award_Unlock",
-                volumeMult = 2.0,
+                volumeMult = 2.5,
             },
             vehicleUnlock = {
                 path = "Sound/UI/Awards/UI_Award_RankUp",
-                volumeMult = 2.0,
+                volumeMult = 3.0,
             },
         },
     },

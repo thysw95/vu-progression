@@ -1,4 +1,6 @@
-function CreateProgressionTable()
+function InitProgressionTable()
+    print('Initializing VU Progression DB')
+
     local query = [[
     CREATE TABLE IF NOT EXISTS player_rankings_table (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -22,6 +24,7 @@ function CreateProgressionTable()
     ]]
 
     if not SQL:Open() then
+        print("DB COULD NOT BE OPENED! PROGRESSION WILL NOT BE SAVED!")
         return
     end
 
@@ -55,4 +58,9 @@ function PatchProgressionTable()
             print('Failed to execute query: ' .. SQL:Error())
         end
     end
+end
+
+function CloseProgressionTable()
+    print('Closing VU Progression DB')
+    SQL:Close()
 end
