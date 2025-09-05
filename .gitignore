@@ -1,4 +1,5 @@
 mod.db
+mod.db.prod
 config.lua.prod
 config.lua.test
 .vscode

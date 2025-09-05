@@ -1,6 +1,8 @@
 require("__shared/config")
 require("__shared/KitVariables")
-require("SQL/DBCreation")
+local playerRankClass = require('__shared/PlayerRank')
+local StorageManager = require('StorageManager/StorageManager')
+
 
 local PROG_CONFIGS = {
     General = require("__shared/Progression/GeneralProgressionConfig"),
@@ -12,17 +14,14 @@ local PROG_CONFIGS = {
     Vehicle = require("__shared/Progression/VehicleProgressionConfig"),
 }
 
-local rankingStorageManager = require('SQL/RankingStorageManager')
--- require("SQL/SQLTest")
-
-playerRankClass = require('__shared/PlayerRank')
-currentRankupPlayers = {}
+local currentRankupPlayers = {}
+local storageManager = StorageManager()
 
 function AddPlayerToRankUpList(player)
     local guidKey = tostring(player.guid)
     local playerRankObject = playerRankClass(player)
 
-    playerRankObject = rankingStorageManager:FetchPlayerProgress(playerRankObject)
+    playerRankObject = storageManager:fetchPlayerProgress(playerRankObject)
 
     if currentRankupPlayers[guidKey] then
         print(player.name .. " IS ALREADY ON THE LIST")
@@ -239,7 +238,7 @@ end
 
 function StoreAllPlayerStats()
     for guid, cPlayer in pairs(currentRankupPlayers) do
-        rankingStorageManager:StorePlayerProgress(cPlayer)
+        storageManager:storePlayerProgress(cPlayer)
     end
 end
 
@@ -431,7 +430,7 @@ Events:Subscribe('Player:Left', function(player)
     local guid = tostring(player.guid)
     local cPlayer = currentRankupPlayers[guid]
     if cPlayer then
-        rankingStorageManager:StorePlayerProgress(cPlayer)
+        storageManager:storePlayerProgress(cPlayer)
         currentRankupPlayers[guid] = nil
     end
 end)
@@ -440,14 +439,9 @@ NetEvents:Subscribe('AddNewPlayerForStats', function(player, data)
     AddPlayerToRankUpList(player)
 end)
 
-Events:Subscribe('Extension:Loaded', function()
-    InitProgressionTable()
-    PatchProgressionTable()
-end)
+-- Events:Subscribe('Extension:Loaded', function()
 
-Events:Subscribe('Extension:Unloading', function()
-    CloseProgressionTable()
-end)
+-- end)
 
 Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)
     print("The round is over. Storing player data.")
