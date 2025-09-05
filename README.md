@@ -93,8 +93,10 @@ The mod is written in [VEXT (VeniceEXT)](https://docs.veniceunleashed.net/vext/)
 ## 🤝 Credits
 - **Author**: [thysw95](https://github.com/thysw95)
 - **Contributors**:
-  - [redthirten](https://github.com/redthirten)
+  - [Red-Thirten](https://github.com/redthirten)
 - Additional thanks to [Doc-ice](https://github.com/Doc-ice) for keeping the mod going on the side!
+- **Libraries**:
+  - [json.lua](https://github.com/rxi/json.lua)
 
 Special thanks to the [Venice Unleashed](https://veniceunleashed.net/) team and community.
 

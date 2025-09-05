@@ -5,10 +5,22 @@
 CONFIG = {
     General = {
         -- Multiplier for how quickly you gain experience in game
+        -- (Does not apply if Global Progression is enabled)
         xpMultiplier = 1,
-        -- Enable verbose logging and client debug commands
+        -- Enable verbose logging and debug commands
         -- Do not enable unless you know what you are doing!
         debug = false,
+    },
+
+    GlobalProgression = {
+        -- Global Progression is a way for all servers running this mod to share player progression data.
+        -- If you would like your server to be included in public global progression, or if you would like
+        -- to host your own private master server, please go to the following link for instructions:
+        -- https://github.com/redthirten/vu-progression-api
+        -- (Progression will default to local storage if disabled)
+        enabled = false,
+        url = "",
+        token = "",
     },
 
     UnlockNotifications = {
