@@ -1,6 +1,9 @@
-local progressionManager = require("__shared/ProgressionManager")
+---------------------------------------------------------
+------------- Engineer Progression Config ---------------
+---------------------------------------------------------
 
--- Add/update values in the below table to edit progression
+-- Add/update values in the below table to edit progression for the Engineer Class
+
 local engineerProgression = {
     {
         xpRequired = 0,
@@ -195,6 +198,22 @@ local engineerProgression = {
         }
     },
     {
+        xpRequired = 120000, -- Co-op score
+        unlocks = {
+            {
+                prettyName = 'SG553',
+                equipmentPath = 'Weapons/SG553LB/U_SG553LB',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
         xpRequired = 145000,
         unlocks = {
             {
@@ -218,26 +237,10 @@ local engineerProgression = {
         }
     },
     {
-        xpRequired = 170000,
+        xpRequired = 175000,
         unlocks = {
             {
-                prettyName = 'SG553',
-                equipmentPath = 'Weapons/SG553LB/U_SG553LB',
-                kits = {
-                    'Gameplay/Kits/USEngineer',
-                    'Gameplay/Kits/USEngineer_XP4',
-                    'Gameplay/Kits/RUEngineer',
-                    'Gameplay/Kits/RUEngineer_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_PRIMARY',
-            },
-        }
-    },
-    {
-        xpRequired = 200000,
-        unlocks = {
-            {
-                prettyName = 'HK53',
+                prettyName = 'G53',
                 equipmentPath = 'Weapons/XP1_HK53/U_HK53',
                 kits = {
                     'Gameplay/Kits/USEngineer',
@@ -250,7 +253,39 @@ local engineerProgression = {
         }
     },
     {
-        xpRequired = 230000,
+        xpRequired = 205000,
+        unlocks = {
+            {
+                prettyName = 'QBZ-95B',
+                equipmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 235000,
+        unlocks = {
+            {
+                prettyName = 'ACR',
+                equipmentPath = 'Weapons/XP2_ACR/U_ACR',
+                kits = {
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 265000,
         unlocks = {
             {
                 prettyName = 'MTAR',
@@ -265,26 +300,11 @@ local engineerProgression = {
             },
         }
     },
-    {
-        xpRequired = 260000,
-        unlocks = {
-            {
-                prettyName = 'ACR',
-                equipmentPath = 'Weapons/XP2_ACR/U_ACR',
-                kits = {
-                    'Gameplay/Kits/USEngineer',
-                    'Gameplay/Kits/USEngineer_XP4',
-                    'Gameplay/Kits/RUEngineer',
-                    'Gameplay/Kits/RUEngineer_XP4',
-                },
-                slotId = 'ID_M_SOLDIER_PRIMARY',
-            },
-        }
-    }
 }
 
-print("Sorting Engineer Progress...")
+---------- END OF CONFIG | DO NOT EDIT BELOW ----------
 
-engineerProgression = progressionManager:sortKitProgressionTable(engineerProgression)
+local progressionManager = require("__shared/ProgressionManager")
+progressionManager:sortKitProgressionTable(engineerProgression)
 
 return engineerProgression

@@ -1,6 +1,10 @@
-local progressionManager = require("__shared/ProgressionManager")
+---------------------------------------------------------
+-------------- General Progression Config ---------------
+---------------------------------------------------------
 
--- Add/update values in the below table to edit progression
+-- Add/update values in the below table to edit progression for
+-- gear, specializations, and camos available to all Classes
+
 local generalProgression = {
     {
         xpRequired = 0,
@@ -392,7 +396,7 @@ local generalProgression = {
         unlocks = {
             {
                 prettyName = 'M1911 Light',
-                equipmentPath = 'Weapons/M1911/U_M1911_lit',
+                equipmentPath = 'Weapons/M1911/U_M1911_Lit',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_SECONDARY',
             },
@@ -501,7 +505,7 @@ local generalProgression = {
         xpRequired = 4300000,
         unlocks = {
             {
-                prettyName = 'MP5K',
+                prettyName = 'M5K',
                 equipmentPath = 'Weapons/XP2_MP5K/U_MP5K',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_PRIMARY',
@@ -534,7 +538,7 @@ local generalProgression = {
         xpRequired = 5200000,
         unlocks = {
             {
-                prettyName = 'Crossbow Cobra',
+                prettyName = 'XBOW',
                 equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_Cobra',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_GADGET1',
@@ -545,17 +549,18 @@ local generalProgression = {
         xpRequired = 5500000,
         unlocks = {
             {
-                prettyName = 'Crossbow Scoped',
-                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_RifleScope',
+                prettyName = 'XBOW SCOPED',
+                equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_RifleScope',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_GADGET1',
             },
         }
-    }
+    },
 }
 
-print("Sorting General Progress...")
+---------- END OF CONFIG | DO NOT EDIT BELOW ----------
 
-generalProgression = progressionManager:sortKitProgressionTable(generalProgression)
+local progressionManager = require("__shared/ProgressionManager")
+progressionManager:sortKitProgressionTable(generalProgression)
 
 return generalProgression

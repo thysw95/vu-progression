@@ -1,6 +1,9 @@
-local progressionManager = require("__shared/ProgressionManager")
+---------------------------------------------------------
+-------------- Support Progression Config ---------------
+---------------------------------------------------------
 
--- Add/update values in the below table to edit progression
+-- Add/update values in the below table to edit progression for the Support Class
+
 local supportProgression = {
     {
         xpRequired = 0,
@@ -193,8 +196,8 @@ local supportProgression = {
         xpRequired = 200000,
         unlocks = {
             {
-                prettyName = 'QBB-95',
-                equipmentPath = 'Weapons/XP1_QBB-95/U_QBB-95',
+                prettyName = 'MG36',
+                equipmentPath = 'Weapons/XP1_MG36/U_MG36',
                 kits = {
                     'Gameplay/Kits/USSupport',
                     'Gameplay/Kits/USSupport_XP4',
@@ -209,6 +212,38 @@ local supportProgression = {
         xpRequired = 230000,
         unlocks = {
             {
+                prettyName = 'QBB-95',
+                equipmentPath = 'Weapons/XP1_QBB-95/U_QBB-95',
+                kits = {
+                    'Gameplay/Kits/USSupport',
+                    'Gameplay/Kits/USSupport_XP4',
+                    'Gameplay/Kits/RUSupport',
+                    'Gameplay/Kits/RUSupport_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 260000,
+        unlocks = {
+            {
+                prettyName = 'L86A2',
+                equipmentPath = 'Weapons/XP2_L86/U_L86',
+                kits = {
+                    'Gameplay/Kits/USSupport',
+                    'Gameplay/Kits/USSupport_XP4',
+                    'Gameplay/Kits/RUSupport',
+                    'Gameplay/Kits/RUSupport_XP4',
+                },
+                slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+        }
+    },
+    {
+        xpRequired = 290000,
+        unlocks = {
+            {
                 prettyName = 'LSAT',
                 equipmentPath = 'Weapons/XP2_LSAT/U_LSAT',
                 kits = {
@@ -220,11 +255,12 @@ local supportProgression = {
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
         }
-    }
+    },
 }
 
-print("Sorting Support Progress...")
+---------- END OF CONFIG | DO NOT EDIT BELOW ----------
 
-supportProgression = progressionManager:sortKitProgressionTable(supportProgression)
+local progressionManager = require("__shared/ProgressionManager")
+progressionManager:sortKitProgressionTable(supportProgression)
 
 return supportProgression

@@ -2,13 +2,15 @@ require("__shared/config")
 require("__shared/KitVariables")
 require("SQL/DBCreation")
 
-local generalProgressionUnlockList = require("__shared/Progression/GeneralProgressionConfig")
-local assaultProgressionUnlockList = require("__shared/Progression/AssaultProgressionConfig")
-local engineerProgressUnlockList = require("__shared/Progression/EngineerProgressionConfig")
-local supportProgressUnlockList = require("__shared/Progression/SupportProgressionConfig")
-local reconProgressUnlockList = require("__shared/Progression/ReconProgressionConfig")
-local weaponProgressUnlocks = require("__shared/Progression/WeaponProgressionConfig")
-require("__shared/Progression/VehicleProgressionConfig")
+local PROG_CONFIGS = {
+    General = require("__shared/Progression/GeneralProgressionConfig"),
+    Assault = require("__shared/Progression/AssaultProgressionConfig"),
+    Engineer = require("__shared/Progression/EngineerProgressionConfig"),
+    Support = require("__shared/Progression/SupportProgressionConfig"),
+    Recon = require("__shared/Progression/ReconProgressionConfig"),
+    Weapon = require("__shared/Progression/WeaponProgressionConfig"),
+    Vehicle = require("__shared/Progression/VehicleProgressionConfig"),
+}
 
 local rankingStorageManager = require('SQL/RankingStorageManager')
 -- require("SQL/SQLTest")
@@ -54,13 +56,15 @@ function initPlayerLevels(player, playerRankObject)
 end
 
 function PlayerXPUpdated(player, score)
-    local selectedKit = player.customization
-    local kitData = DataContainer(selectedKit)
-    local veniceSoldierAsset = VeniceSoldierCustomizationAsset(kitData)
-    veniceSoldierAsset:MakeWritable()
-
-    local kitName = veniceSoldierAsset.labelSid
     local xp = score * CONFIG.General.xpMultiplier
+    -- Get player's current kit
+    -- NOTE: The kit will be nil if they are not spawned in, causing only General XP to be earned
+    local kitName = nil
+    local selectedKit = player.customization
+    if selectedKit ~= nil then
+        local veniceSoldierAsset = VeniceSoldierCustomizationAsset(selectedKit)
+        kitName = veniceSoldierAsset.labelSid
+    end
 
     -- Check if player is in vehicle
     local vehicleEntityData
@@ -73,16 +77,16 @@ function PlayerXPUpdated(player, score)
 
     local cPlayer = currentRankupPlayers[guid]
     if cPlayer then
-        IncreasePlayerXP(guid, 'r_PlayerLevel', 'r_PlayerCurrentXP', xp, generalProgressionUnlockList, "General")
+        IncreasePlayerXP(guid, 'r_PlayerLevel', 'r_PlayerCurrentXP', xp, PROG_CONFIGS.General, "General")
 
         if kitName == 'ID_M_ASSAULT' then
-            IncreasePlayerXP(guid, 'r_AssaultLevel', 'r_AssaultCurrentXP', xp, assaultProgressionUnlockList, "Assault")
+            IncreasePlayerXP(guid, 'r_AssaultLevel', 'r_AssaultCurrentXP', xp, PROG_CONFIGS.Assault, "Assault")
         elseif kitName == 'ID_M_ENGINEER' then
-            IncreasePlayerXP(guid, 'r_EngineerLevel', 'r_EngineerCurrentXP', xp, engineerProgressUnlockList, "Engineer")
+            IncreasePlayerXP(guid, 'r_EngineerLevel', 'r_EngineerCurrentXP', xp, PROG_CONFIGS.Engineer, "Engineer")
         elseif kitName == 'ID_M_SUPPORT' then
-            IncreasePlayerXP(guid, 'r_SupportLevel', 'r_SupportCurrentXP', xp, supportProgressUnlockList, "Support")
+            IncreasePlayerXP(guid, 'r_SupportLevel', 'r_SupportCurrentXP', xp, PROG_CONFIGS.Support, "Support")
         elseif kitName == 'ID_M_RECON' then
-            IncreasePlayerXP(guid, 'r_ReconLevel', 'r_ReconCurrentXP', xp, reconProgressUnlockList, "Recon")
+            IncreasePlayerXP(guid, 'r_ReconLevel', 'r_ReconCurrentXP', xp, PROG_CONFIGS.Recon, "Recon")
         elseif kitName == 'Vehicle' then
             IncreaseVehicleScore(player, guid, vehicleEntityData.controllableType, xp)
         end
@@ -95,41 +99,38 @@ function IncreaseWeaponKills(playerGuid, weaponName, killamount)
     local cPlayer = currentRankupPlayers[guid]
     if not cPlayer then return end
 
-    if #cPlayer['r_WeaponProgressList'] > 0 then
-        for _, weapon in pairs(cPlayer['r_WeaponProgressList']) do
-            if weapon['weaponName'] == weaponName then
-                weapon['kills'] = weapon['kills'] + killamount
+    for _, weapon in pairs(cPlayer['r_WeaponProgressList']) do
+        if weapon['weaponName'] == weaponName then
+            weapon['kills'] = weapon['kills'] + killamount
 
-                local player = PlayerManager:GetPlayerByGuid(playerGuid)
-                if player ~= nil then
-                    NetEvents:SendTo('OnKilledPlayer', player, weapon['weaponName'], weapon['kills'])
-                    WeapAttachUnlockCheck(player, weaponName, weapon['kills'])
-                end
-                break
+            local player = PlayerManager:GetPlayerByGuid(playerGuid)
+            if player ~= nil then
+                NetEvents:SendTo('OnKilledPlayer', player, weapon['weaponName'], weapon['kills'])
+                WeapAttachUnlockCheck(player, weaponName, weapon['kills'])
             end
+            break
         end
     end
 end
+
 function WeapAttachUnlockCheck(player, weaponName, weapKills)
-    if #weaponProgressUnlocks > 0 then
-        for _, weaponUnlocks in pairs(weaponProgressUnlocks) do
-
-            if weaponUnlocks.weaponName == weaponName then
-                if #weaponUnlocks.unlocks > 0 then
-                    for _, unlock in pairs(weaponUnlocks.unlocks) do
-                        if CONFIG.UnlockNotifications.enabled == true and weapKills == unlock.killsRequired then
-                            print(player.name .. " unlocked " .. unlock.prettyName .. " for " .. weaponUnlocks.prettyName .. " at " .. weapKills .. " kills!")
-                            local message = string.format(CONFIG.UnlockNotifications.messages.weapAttachUnlock, weaponUnlocks.prettyName, weapKills, unlock.prettyName)
-                            ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
-                            NetEvents:SendTo('PlayUnlockSound', player, CONFIG.UnlockNotifications.soundPaths.weapAttachUnlock)
-                            break
-                        end
-
-                    end
+    for _, weaponUnlocks in pairs(PROG_CONFIGS.Weapon) do
+        if weaponUnlocks.weaponName == weaponName then
+            for _, unlock in pairs(weaponUnlocks.unlocks) do
+                if CONFIG.UnlockNotifications.enabled == true and weapKills == unlock.killsRequired then
+                    print(player.name .. " unlocked " .. unlock.prettyName .. " for " .. weaponUnlocks.prettyName .. " at " .. weapKills .. " kills!")
+                    local message = string.format(
+                        CONFIG.UnlockNotifications.messages.weapAttachUnlock,
+                        weaponUnlocks.prettyName,
+                        weapKills,
+                        unlock.prettyName
+                    )
+                    ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
+                    NetEvents:SendTo('PlayUnlockSound', player, 'weapAttachUnlock')
+                    break -- Unlock found
                 end
-                break
             end
-
+            break -- Weapon found
         end
     end
 end
@@ -140,34 +141,6 @@ function IncreasePlayerXP(playerGuid, levelKey, xpKey, xpValue, progressUnlockLi
 
     local origScore = cPlayer[xpKey]
     cPlayer[xpKey] = cPlayer[xpKey] + xpValue
-
-    -- if #progressUnlockList > 0 then
-    --     for index, aProgress in pairs(progressUnlockList) do
-    --         local progressRequired = aProgress.xpRequired
-
-    --         if progressRequired > origScore and progressRequired <= cPlayer[xpKey] then
-    --             cPlayer[levelKey] = index
-
-    --             local prettyNames = ""
-    --             if #aProgress.unlocks > 0 then
-    --                 for i, unlock in pairs(aProgress.unlocks) do
-    --                     if i == 1 then
-    --                         prettyNames = unlock.prettyName
-    --                     else
-    --                         prettyNames = prettyNames .. ", " .. unlock.prettyName
-    --                     end
-    --                 end
-    --             end
-
-    --             PlayerLevelUp(
-    --                 PlayerManager:GetPlayerByGuid(cPlayer.r_PlayerGuid), 
-    --                 levelType, 
-    --                 cPlayer[levelKey],
-    --                 prettyNames
-    --             )
-    --         end
-    --     end
-    -- end
 
     if progressUnlockList then
         local nextLevelIndex = cPlayer[levelKey] + 1
@@ -181,13 +154,11 @@ function IncreasePlayerXP(playerGuid, levelKey, xpKey, xpValue, progressUnlockLi
                 cPlayer[levelKey] = nextLevelIndex
 
                 local prettyNames = ""
-                if #aProgress.unlocks > 0 then
-                    for i, unlock in pairs(aProgress.unlocks) do
-                        if i == 1 then
-                            prettyNames = unlock.prettyName
-                        else
-                            prettyNames = prettyNames .. ", " .. unlock.prettyName
-                        end
+                for i, unlock in pairs(aProgress.unlocks) do
+                    if i == 1 then
+                        prettyNames = unlock.prettyName
+                    else
+                        prettyNames = prettyNames .. ", " .. unlock.prettyName
                     end
                 end
 
@@ -214,7 +185,7 @@ function PlayerLevelUp(player, levelType, level, unlockName)
         if CONFIG.UnlockNotifications.enabled == true then
             local message = string.format(CONFIG.UnlockNotifications.messages.levelUp, levelType, level, unlockName)
             ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
-            NetEvents:SendTo('PlayUnlockSound', player, CONFIG.UnlockNotifications.soundPaths.levelUp)
+            NetEvents:SendTo('PlayUnlockSound', player, 'levelUp')
         end
     end
 end
@@ -227,7 +198,7 @@ function IncreaseVehicleScore(player, playerGuid, vehicleControllableType, score
 
     -- Find progression config
     local progCfg = nil
-    for _, vehicleType in pairs(VIC_PROG_CONFIG) do
+    for _, vehicleType in pairs(PROG_CONFIGS.Vehicle) do
         for _, vehicleName in pairs(vehicleType.vehicleNames) do
             if vehicleName == vehicleControllableType then
                 progCfg = vehicleType
@@ -258,7 +229,7 @@ function IncreaseVehicleScore(player, playerGuid, vehicleControllableType, score
             if CONFIG.UnlockNotifications.enabled == true then
                 local message = string.format(CONFIG.UnlockNotifications.messages.vehicleUnlock, progCfg.prettyName, playerVicProg.score, unlock.prettyName)
                 ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
-                NetEvents:SendTo('PlayUnlockSound', player, CONFIG.UnlockNotifications.soundPaths.vehicleUnlock)
+                NetEvents:SendTo('PlayUnlockSound', player, 'vehicleUnlock')
             end
             break
         end
@@ -288,11 +259,11 @@ function ChatCommand(player, recipientMask, message)
     if string.lower(message) == "!level" or string.lower(message) == "!score" then
         local classNames = {"Player", "Assault", "Engineer", "Support", "Recon"}
         local unlockLists = {
-            generalProgressionUnlockList,
-            assaultProgressionUnlockList,
-            engineerProgressUnlockList,
-            supportProgressUnlockList,
-            reconProgressUnlockList
+            PROG_CONFIGS.General,
+            PROG_CONFIGS.Assault,
+            PROG_CONFIGS.Engineer,
+            PROG_CONFIGS.Support,
+            PROG_CONFIGS.Recon
         }
         ChatManager:SendMessage(
             "[= CLASS LEVELS =]",
@@ -320,13 +291,13 @@ function ChatCommand(player, recipientMask, message)
     elseif string.lower(message):sub(1, 3) == "!vs" then
         local a_typeName = message:sub(5)
         local vicIndex
-        for i, vicCfg in ipairs(VIC_PROG_CONFIG) do
+        for i, vicCfg in ipairs(PROG_CONFIGS.Vehicle) do
             if string.find(string.lower(vicCfg.prettyName), string.lower(a_typeName)) then
                 vicIndex = i
                 break
             end
         end
-        if VIC_PROG_CONFIG[vicIndex] == nil then
+        if PROG_CONFIGS.Vehicle[vicIndex] == nil then
             ChatManager:SendMessage(
                 'A vehicle type by the name of "' .. a_typeName .. '" could not be found :(', 
                 player
@@ -336,14 +307,14 @@ function ChatCommand(player, recipientMask, message)
         -- Find current vehicle score for type
         local vicScore
         for _, vicType in pairs(cPlayer['r_VehicleProgressList']) do
-            if vicType['typeName'] == VIC_PROG_CONFIG[vicIndex].prettyName then
+            if vicType['typeName'] == PROG_CONFIGS.Vehicle[vicIndex].prettyName then
                 vicScore = vicType['score']
                 break
             end
         end
         if vicScore == nil then
             ChatManager:SendMessage(
-                "ERROR: No vehicle score data for " .. VIC_PROG_CONFIG[vicIndex].prettyName, 
+                "ERROR: No vehicle score data for " .. PROG_CONFIGS.Vehicle[vicIndex].prettyName, 
                 player
             )
             return
@@ -351,20 +322,20 @@ function ChatCommand(player, recipientMask, message)
         -- Find next unlock
         local nextUnlockScore
         local nextUnlockPrettyName
-        for _, unlock in pairs(VIC_PROG_CONFIG[vicIndex].unlocks) do
+        for _, unlock in pairs(PROG_CONFIGS.Vehicle[vicIndex].unlocks) do
             if unlock.vicScoreRequired > vicScore and (nextUnlockScore == nil or unlock.vicScoreRequired < nextUnlockScore) then
                 nextUnlockScore = unlock.vicScoreRequired
                 nextUnlockPrettyName = unlock.prettyName
             end
         end
         ChatManager:SendMessage(
-            "Your vehicle score with " .. VIC_PROG_CONFIG[vicIndex].prettyName .. " is " .. vicScore,
+            "Your vehicle score with " .. PROG_CONFIGS.Vehicle[vicIndex].prettyName .. " is " .. vicScore,
             player
         )
         if nextUnlockScore ~= nil then
             nextUnlockScore = nextUnlockScore - vicScore
             ChatManager:SendMessage(
-                "You need " .. nextUnlockScore .. " more XP in " .. VIC_PROG_CONFIG[vicIndex].prettyName .. " to unlock " .. nextUnlockPrettyName,
+                "You need " .. nextUnlockScore .. " more XP in " .. PROG_CONFIGS.Vehicle[vicIndex].prettyName .. " to unlock " .. nextUnlockPrettyName,
                 player
             )
         end
@@ -374,13 +345,13 @@ function ChatCommand(player, recipientMask, message)
         -- Find weaponProgressUnlock index
         local a_WeapName = message:sub(8)
         local weapIndex
-        for i, weaponCfg in ipairs(weaponProgressUnlocks) do
+        for i, weaponCfg in ipairs(PROG_CONFIGS.Weapon) do
             if string.lower(weaponCfg.prettyName) == string.lower(a_WeapName) then
                 weapIndex = i
                 break
             end
         end
-        if weaponProgressUnlocks[weapIndex] == nil then
+        if PROG_CONFIGS.Weapon[weapIndex] == nil then
             ChatManager:SendMessage(
                 'A weapon by the name of "' .. a_WeapName .. '" could not be found :(', 
                 player
@@ -390,14 +361,14 @@ function ChatCommand(player, recipientMask, message)
         -- Find current kills with weapon
         local curWeapKills
         for _, weapon in pairs(cPlayer['r_WeaponProgressList']) do
-            if weapon['weaponName'] == weaponProgressUnlocks[weapIndex].weaponName then
+            if weapon['weaponName'] == PROG_CONFIGS.Weapon[weapIndex].weaponName then
                 curWeapKills = weapon['kills']
                 break
             end
         end
         if curWeapKills == nil then
             ChatManager:SendMessage(
-                "ERROR: No kills data for " .. weaponProgressUnlocks[weapIndex].prettyName, 
+                "ERROR: No kills data for " .. PROG_CONFIGS.Weapon[weapIndex].prettyName, 
                 player
             )
             return
@@ -405,14 +376,14 @@ function ChatCommand(player, recipientMask, message)
         -- Find next unlock
         local nextUnlockKills
         local nextUnlockPrettyName
-        for _, unlock in pairs(weaponProgressUnlocks[weapIndex].unlocks) do
+        for _, unlock in pairs(PROG_CONFIGS.Weapon[weapIndex].unlocks) do
             if unlock.killsRequired > curWeapKills and (nextUnlockKills == nil or unlock.killsRequired < nextUnlockKills) then
                 nextUnlockKills = unlock.killsRequired
                 nextUnlockPrettyName = unlock.prettyName
             end
         end
         ChatManager:SendMessage(
-            "You have " .. curWeapKills .. " kills with the " .. weaponProgressUnlocks[weapIndex].prettyName,
+            "You have " .. curWeapKills .. " kills with the " .. PROG_CONFIGS.Weapon[weapIndex].prettyName,
             player
         )
         if nextUnlockKills ~= nil then
@@ -423,16 +394,6 @@ function ChatCommand(player, recipientMask, message)
             )
         end
 
-    elseif string.lower(message):sub(1, 3) == "!xp" then
-        local xpAmount = message:sub(5)
-        PlayerXPUpdated(player, xpAmount)
-    -- elseif string.lower(message):sub(1, 3) == "!wp" then
-    --     local killAmount = message:sub(5)
-    --     ChatManager:SendMessage(
-    --         "Added " .. killAmount .. " to the M16A4",
-    --         player
-    --     )
-    --     IncreaseWeaponKills(player.guid, "M16A4", killAmount)
     end
 end
 
@@ -480,9 +441,12 @@ NetEvents:Subscribe('AddNewPlayerForStats', function(player, data)
 end)
 
 Events:Subscribe('Extension:Loaded', function()
-    print('Initializing VU Progression DB')
-    CreateProgressionTable()
+    InitProgressionTable()
     PatchProgressionTable()
+end)
+
+Events:Subscribe('Extension:Unloading', function()
+    CloseProgressionTable()
 end)
 
 Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)
@@ -497,6 +461,10 @@ if CONFIG.General.debug then
 
     NetEvents:Subscribe('AddXP', function(player, xp)
         PlayerXPUpdated(player, xp)
+    end)
+
+    NetEvents:Subscribe('AddKillsToWeap', function(player, kills, weapPath)
+        IncreaseWeaponKills(player.guid, weapPath, kills)
     end)
     
 end
