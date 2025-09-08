@@ -61,29 +61,28 @@ function LocalStorage:_patchDB()
     end
 end
 
--- Injects progression data into a given default playerRankObject if player is present in DB
+-- Injects progression data into a given default PlayerRank object if player is present in DB
 function LocalStorage:fetchPlayerProgress(playerRankObject)
     local existingPlayers = SQL:Query(
         'SELECT * FROM player_rankings_table WHERE player_guid = ?',
         tostring(playerRankObject['r_PlayerGuid'])
     )
-    local returnPlayer = playerRankObject
 
     if existingPlayers ~= nil and #existingPlayers > 0 and existingPlayers[1] ~= nil then
-        returnPlayer['r_Kills'] = existingPlayers[1]['player_kills']
-        returnPlayer['r_Deaths'] = existingPlayers[1]['player_deaths']
-        returnPlayer['r_PlayerLevel'] = existingPlayers[1]['player_level']
-        returnPlayer['r_PlayerCurrentXP'] = existingPlayers[1]['player_current_xp']
-        returnPlayer['r_AssaultLevel'] = existingPlayers[1]['player_assault_level']
-        returnPlayer['r_AssaultCurrentXP'] = existingPlayers[1]['player_assault_current_xp']
-        returnPlayer['r_EngineerLevel'] = existingPlayers[1]['player_engineer_level']
-        returnPlayer['r_EngineerCurrentXP'] = existingPlayers[1]['player_engineer_current_xp']
-        returnPlayer['r_SupportLevel'] = existingPlayers[1]['player_support_level']
-        returnPlayer['r_SupportCurrentXP'] = existingPlayers[1]['player_support_current_xp']
-        returnPlayer['r_ReconLevel'] = existingPlayers[1]['player_recon_level']
-        returnPlayer['r_ReconCurrentXP'] = existingPlayers[1]['player_recon_current_xp']
+        playerRankObject['r_Kills'] = existingPlayers[1]['player_kills']
+        playerRankObject['r_Deaths'] = existingPlayers[1]['player_deaths']
+        playerRankObject['r_PlayerLevel'] = existingPlayers[1]['player_level']
+        playerRankObject['r_PlayerCurrentXP'] = existingPlayers[1]['player_current_xp']
+        playerRankObject['r_AssaultLevel'] = existingPlayers[1]['player_assault_level']
+        playerRankObject['r_AssaultCurrentXP'] = existingPlayers[1]['player_assault_current_xp']
+        playerRankObject['r_EngineerLevel'] = existingPlayers[1]['player_engineer_level']
+        playerRankObject['r_EngineerCurrentXP'] = existingPlayers[1]['player_engineer_current_xp']
+        playerRankObject['r_SupportLevel'] = existingPlayers[1]['player_support_level']
+        playerRankObject['r_SupportCurrentXP'] = existingPlayers[1]['player_support_current_xp']
+        playerRankObject['r_ReconLevel'] = existingPlayers[1]['player_recon_level']
+        playerRankObject['r_ReconCurrentXP'] = existingPlayers[1]['player_recon_current_xp']
 
-        returnPlayer['r_WeaponProgressList'] = csvToTableList(
+        playerRankObject['r_WeaponProgressList'] = csvToTableList(
             existingPlayers[1]['weapon_progression'],
             'weaponName',
             'kills'
@@ -91,14 +90,14 @@ function LocalStorage:fetchPlayerProgress(playerRankObject)
 
         -- New addition; need to check if nil
         if existingPlayers[1]['vehicle_progression'] ~= nil then
-            returnPlayer['r_VehicleProgressList'] = csvToTableList(
+            playerRankObject['r_VehicleProgressList'] = csvToTableList(
                 existingPlayers[1]['vehicle_progression'],
                 'typeName',
                 'score'
             )
         end
 
-        return returnPlayer
+        return playerRankObject
     end
 
     return playerRankObject

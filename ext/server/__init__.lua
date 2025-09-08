@@ -1,6 +1,6 @@
 require("__shared/config")
+require("__shared/Version")
 require("__shared/KitVariables")
-local playerRankClass = require('__shared/PlayerRank')
 local StorageManager = require('StorageManager/StorageManager')
 
 
@@ -17,20 +17,18 @@ local PROG_CONFIGS = {
 local currentRankupPlayers = {}
 local storageManager = StorageManager()
 
-function AddPlayerToRankUpList(player)
-    local guidKey = tostring(player.guid)
-    local playerRankObject = playerRankClass(player)
+function addPlayerToRankUpList(player)
+    storageManager:fetchPlayerProgress(player, function(playerRankObject)
+        local guidKey = tostring(player.guid)
+        if currentRankupPlayers[guidKey] then
+            print(player.name .. " IS ALREADY ON THE LIST")
+        else
+            print("ADDING " .. player.name .. " TO THE RANKUP LIST")
+            currentRankupPlayers[guidKey] = playerRankObject
+        end
 
-    playerRankObject = storageManager:fetchPlayerProgress(playerRankObject)
-
-    if currentRankupPlayers[guidKey] then
-        print(player.name .. " IS ALREADY ON THE LIST")
-    else
-        print("ADDING " .. player.name .. " TO THE RANKUP LIST")
-        currentRankupPlayers[guidKey] = playerRankObject
-    end
-
-    initPlayerLevels(player, playerRankObject)
+        initPlayerLevels(player, playerRankObject)
+    end)
 end
 
 function initPlayerLevels(player, playerRankObject)
@@ -435,13 +433,18 @@ Events:Subscribe('Player:Left', function(player)
     end
 end)
 
-NetEvents:Subscribe('AddNewPlayerForStats', function(player, data)
-    AddPlayerToRankUpList(player)
+NetEvents:Subscribe('AddNewPlayerForStats', function(player)
+    addPlayerToRankUpList(player)
 end)
 
--- Events:Subscribe('Extension:Loaded', function()
+Events:Subscribe('Extension:Loaded', function()
+    print("VU Progression v"..VERSION.Major.."."..VERSION.Minor.."."..VERSION.Patch.." Loaded")
 
--- end)
+    -- In case of extension reload, we need to check if there are existing players on server
+    for _, player in pairs(PlayerManager:GetPlayers()) do
+        addPlayerToRankUpList(player)
+    end
+end)
 
 Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)
     print("The round is over. Storing player data.")
