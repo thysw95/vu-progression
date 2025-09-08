@@ -53,7 +53,10 @@ function initPlayerLevels(player, playerRankObject)
 end
 
 function PlayerXPUpdated(player, score)
-    local xp = score * CONFIG.General.xpMultiplier
+    local xp = score
+    if not CONFIG.GlobalProgression.enabled then
+        xp = score * CONFIG.General.xpMultiplier
+    end
     -- Get player's current kit
     -- NOTE: The kit will be nil if they are not spawned in, causing only General XP to be earned
     local kitName = nil
