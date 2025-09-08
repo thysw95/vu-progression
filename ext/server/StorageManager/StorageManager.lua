@@ -23,7 +23,13 @@ function StorageManager:fetchPlayerProgress(player, callback)
         self.netStorage:fetchPlayerProgress(netPlayerRankObj, function()
             -- print("LOCAL XP: " .. localPlayerRankObj['r_PlayerCurrentXP'])
             -- print("NET XP: " .. netPlayerRankObj['r_PlayerCurrentXP'])
-            callback(localPlayerRankObj)
+            if netPlayerRankObj['r_PlayerCurrentXP'] >= localPlayerRankObj['r_PlayerCurrentXP'] then
+                callback(netPlayerRankObj)
+            else
+                print("Falling back to local progression data for " .. player.name)
+                -- TODO: Notify player somehow of server being offline
+                callback(localPlayerRankObj)
+            end
         end)
     else
         -- Net storage not available, just return local rank object

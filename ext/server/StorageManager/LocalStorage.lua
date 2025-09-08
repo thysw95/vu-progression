@@ -65,7 +65,7 @@ end
 function LocalStorage:fetchPlayerProgress(playerRankObject)
     local existingPlayers = SQL:Query(
         'SELECT * FROM player_rankings_table WHERE player_guid = ?',
-        tostring(playerRankObject['r_PlayerGuid'])
+        playerRankObject['r_PlayerGuid']:ToString('D')
     )
 
     if existingPlayers ~= nil and #existingPlayers > 0 and existingPlayers[1] ~= nil then
@@ -96,8 +96,6 @@ function LocalStorage:fetchPlayerProgress(playerRankObject)
                 'score'
             )
         end
-
-        return playerRankObject
     end
 
     return playerRankObject
@@ -109,7 +107,7 @@ function LocalStorage:storePlayerProgress(playerRankObject)
 
     local existingPlayer = SQL:Query(
         'SELECT * FROM player_rankings_table WHERE player_guid = ?',
-        tostring(playerRankObject['r_PlayerGuid'])
+        playerRankObject['r_PlayerGuid']:ToString('D')
     )
 
     local weaponTable = tableListToCSV(
@@ -160,7 +158,7 @@ function LocalStorage:storePlayerProgress(playerRankObject)
             playerRankObject['r_ReconCurrentXP'],
             weaponTable,
             vehicleTable,
-            tostring(playerRankObject['r_PlayerGuid'])
+            playerRankObject['r_PlayerGuid']:ToString('D')
         ) then
             print("SUCCESSFULLY SAVED EXISTING PLAYER DATA: " .. playerRankObject['r_PlayerName'])
         else
@@ -193,7 +191,7 @@ function LocalStorage:storePlayerProgress(playerRankObject)
         if SQL:Query(
             query,
             playerRankObject['r_PlayerName'],
-            tostring(playerRankObject['r_PlayerGuid']),
+            playerRankObject['r_PlayerGuid']:ToString('D'),
             playerRankObject['r_Kills'],
             playerRankObject['r_Deaths'],
             playerRankObject['r_PlayerLevel'],

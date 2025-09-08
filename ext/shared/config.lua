@@ -17,7 +17,7 @@ CONFIG = {
         -- If you would like your server to be included in public global progression, or if you would like
         -- to host your own private master server, please go to the following link for instructions:
         -- https://github.com/redthirten/vu-progression-api
-        -- (Progression will default to local storage if disabled)
+        -- (Progression will default to local storage if disabled, or if the server is unreachable)
         enabled = false,
         url = "",
         token = "",

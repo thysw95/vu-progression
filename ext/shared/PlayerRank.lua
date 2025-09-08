@@ -24,6 +24,10 @@ end
 function VUPlayerRankClass:InitPlayerVariables(player)
     self.r_PlayerName = player.name
     self.r_PlayerGuid = player.guid
+    -- Failsafe; `player.guid` can rarely return nil when player disconnects from Zeus
+    if not self.r_PlayerGuid then
+        self.r_PlayerGuid = Guid('00000000-0000-0000-0000-000000000000')
+    end
     self.r_Kills = 0
     self.r_Deaths = 0
 end

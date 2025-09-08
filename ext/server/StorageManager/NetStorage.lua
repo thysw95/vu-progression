@@ -1,5 +1,6 @@
 require("__shared/config")
 require("__shared/Version")
+require('lib/csv')
 local json = require('lib/json')
 
 local API_TIMEOUT = 5 -- Timeout (sec)
@@ -82,15 +83,53 @@ end
 function NetStorage:_isValidResponse(res)
     if not res or not res.body then
         print("CANNOT REACH GLOBAL PROGRESSION SERVER!")
-        print("Defaulting to local storage...")
         return false
+    end
+    if CONFIG.General.debug then
+        print("API Response: " .. res.status)
     end
     return true
 end
 
+function NetStorage:_assignPlayerData(playerRankObject, data)
+    playerRankObject['r_Kills'] = data['kills']
+    playerRankObject['r_Deaths'] = data['deaths']
+    playerRankObject['r_PlayerLevel'] = data['total_level']
+    playerRankObject['r_PlayerCurrentXP'] = data['total_xp']
+    playerRankObject['r_AssaultLevel'] = data['assault_level']
+    playerRankObject['r_AssaultCurrentXP'] = data['assault_xp']
+    playerRankObject['r_EngineerLevel'] = data['engineer_level']
+    playerRankObject['r_EngineerCurrentXP'] = data['engineer_xp']
+    playerRankObject['r_SupportLevel'] = data['support_level']
+    playerRankObject['r_SupportCurrentXP'] = data['support_xp']
+    playerRankObject['r_ReconLevel'] = data['recon_level']
+    playerRankObject['r_ReconCurrentXP'] = data['recon_xp']
+
+    playerRankObject['r_WeaponProgressList'] = csvToTableList(
+        data['weapon_progression'],
+        'weaponName',
+        'kills'
+    )
+
+    playerRankObject['r_VehicleProgressList'] = csvToTableList(
+        data['vehicle_progression'],
+        'typeName',
+        'score'
+    )
+end
+
 function NetStorage:fetchPlayerProgress(playerRankObject, callback)
-    playerRankObject['r_PlayerCurrentXP'] = 123
-    callback()
+    Net:GetHTTPAsync(
+        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject['r_PlayerGuid']:ToString('D'),
+        self._httpOptions,
+        function(res)
+            if self:_isValidResponse(res) and res.status == 200 then
+                local tbl = json.decode(res.body)
+                self:_assignPlayerData(playerRankObject, tbl)
+            end
+            callback()
+        end
+    )
 end
 
 function NetStorage:storePlayerProgress(playerRankObject)
