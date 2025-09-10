@@ -6,7 +6,7 @@
 -- NOTE: Do not edit `weaponName`; it is dictated by the game
 
 return {
-    ["Weapons/A91/A91"] = {
+    {
         weaponName = 'Weapons/A91/A91',
         prettyName = 'A-91',
         customizationPath = 'Weapons/A91/A91_Customization',
@@ -123,8 +123,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["AEK-971"] = {
+    },{
         weaponName = 'AEK-971',
         prettyName = 'AEK-971',
         customizationPath = 'Weapons/AEK971/AEK971_Customization',
@@ -246,8 +245,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/AK74M/AK74"] = {
+    },{
         weaponName = 'Weapons/AK74M/AK74',
         prettyName = 'AK-74M',
         customizationPath = 'Weapons/AK74M/AK74M_Customization',
@@ -369,8 +367,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["AKS-74u"] = {
+    },{
         weaponName = 'AKS-74u',
         prettyName = 'AKS-74u',
         customizationPath = 'Weapons/AKS74u/AKS74u_Customization',
@@ -487,8 +484,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["AN-94 Abakan"] = {
+    },{
         weaponName = 'AN-94 Abakan',
         prettyName = 'AN-94',
         customizationPath = 'Weapons/AN94/AN94_Customization',
@@ -610,8 +606,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["AS Val"] = {
+    },{
         weaponName = 'AS Val',
         prettyName = 'AS Val',
         customizationPath = 'Weapons/ASVal/ASVal_Customizations',
@@ -713,8 +708,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["DAO-12"] = {
+    },{
         weaponName = 'DAO-12',
         prettyName = 'DAO-12',
         customizationPath = 'Weapons/DAO-12/DAO-12_Customization',
@@ -836,8 +830,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["F2000"] = {
+    },{
         weaponName = 'F2000',
         prettyName = 'F2000',
         customizationPath = 'Weapons/F2000/F2000_Customization',
@@ -969,8 +962,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/G36C/G36C"] = {
+    },{
         weaponName = 'Weapons/G36C/G36C',
         prettyName = 'G36C',
         customizationPath = 'Weapons/G36C/G36C_Customization',
@@ -1092,8 +1084,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/G3A3/G3A3"] = {
+    },{
         weaponName = 'Weapons/G3A3/G3A3',
         prettyName = 'G3A3',
         customizationPath = 'Weapons/G3A3/G3A3_Customization',
@@ -1215,8 +1206,24 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/KH2002/KH2002"] = {
+    },{
+        weaponName = 'Glock18',
+        prettyName = 'Glock18',
+        customizationPath = 'Weapons/Glock18/Glock18_Customization',
+        unlocks = {
+            {
+                prettyName = 'Laser',
+                attachmentPath = 'Weapons/Glock17/U_Glock17_Laser',
+                attachmentSlotIndex = 3,
+                killsRequired = 120
+            },{
+                prettyName = 'Suppressor',
+                attachmentPath = 'Weapons/Glock17/U_Glock17_Silencer',
+                attachmentSlotIndex = 3,
+                killsRequired = 90
+            },
+        },
+    },{
         weaponName = 'Weapons/KH2002/KH2002',
         prettyName = 'KH2002',
         customizationPath = 'Weapons/KH2002/KH2002_Customization',
@@ -1338,8 +1345,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["M1014"] = {
+    },{
         weaponName = 'M1014',
         prettyName = 'M1014',
         customizationPath = 'Weapons/M1014/M1014_Customization',
@@ -1461,8 +1467,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["M16A4"] = {
+    },{
         weaponName = 'M16A4',
         prettyName = 'M16A4',
         customizationPath = 'Weapons/M16A4/M16A4_Customization',
@@ -1584,8 +1589,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["M240"] = {
+    },{
         weaponName = 'M240',
         prettyName = 'M240B',
         customizationPath = 'Weapons/M240/M240_Customization',
@@ -1717,8 +1721,7 @@ return {
                 killsRequired = 60
             },
         },
-    },
-    ["M249"] = {
+    },{
         weaponName = 'M249',
         prettyName = 'M249',
         customizationPath = 'Weapons/M249/M249_Customization',
@@ -1840,8 +1843,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["M27IAR"] = {
+    },{
         weaponName = 'M27IAR',
         prettyName = 'M27 IAR',
         customizationPath = 'Weapons/M27IAR/M27IAR_Customization',
@@ -1968,8 +1970,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["M39"] = {
+    },{
         weaponName = 'M39',
         prettyName = 'M39 EMR',
         customizationPath = 'Weapons/M39EBR/M39EBR_Customization',
@@ -2096,8 +2097,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["M40A5"] = {
+    },{
         weaponName = 'M40A5',
         prettyName = 'M40A5',
         customizationPath = 'Weapons/M40A5/M40A5_Customization',
@@ -2214,8 +2214,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["M416"] = {
+    },{
         weaponName = 'M416',
         prettyName = 'M416',
         customizationPath = 'Weapons/M416/M416_Customization',
@@ -2347,8 +2346,7 @@ return {
                 killsRequired = 60
             },
         },
-    },
-    ["M4A1"] = {
+    },{
         weaponName = 'M4A1',
         prettyName = 'M4A1',
         customizationPath = 'Weapons/M4A1/M4A1_Customization',
@@ -2470,8 +2468,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["M60"] = {
+    },{
         weaponName = 'M60',
         prettyName = 'M60E4',
         customizationPath = 'Weapons/M60/M60_Customization',
@@ -2593,8 +2590,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["M82A3"] = {
+    },{
         weaponName = 'M82A3',
         prettyName = 'M82A3',
         customizationPath = 'Weapons/M82A3/M82_Customization',
@@ -2691,8 +2687,19 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/MagpulPDR/MagpulPDR"] = {
+    },{
+        weaponName = 'M93R',
+        prettyName = 'M93R',
+        customizationPath = 'Weapons/M93R/M93R_Customization',
+        unlocks = {
+            {
+                prettyName = 'Laser Sight',
+                attachmentPath = 'Weapons/M93R/U_M93R_TargetPointer',
+                attachmentSlotIndex = 3,
+                killsRequired = 120
+            },
+        },
+    },{
         weaponName = 'Weapons/MagpulPDR/MagpulPDR',
         prettyName = 'PDW-R',
         customizationPath = 'Weapons/MagpulPDR/MagpulPDR_Customization',
@@ -2784,8 +2791,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Mk11"] = {
+    },{
         weaponName = 'Mk11',
         prettyName = 'MK11 MOD 0',
         customizationPath = 'Weapons/MK11/Mk11_Customization',
@@ -2902,8 +2908,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Model98B"] = {
+    },{
         weaponName = 'Model98B',
         prettyName = 'M98B',
         customizationPath = 'Weapons/Model98B/M98B_Customization',
@@ -3020,8 +3025,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["MP7"] = {
+    },{
         weaponName = 'MP7',
         prettyName = 'MP7',
         customizationPath = 'Weapons/MP7/MP7_Customization',
@@ -3113,8 +3117,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/P90/P90"] = {
+    },{
         weaponName = 'Weapons/P90/P90',
         prettyName = 'P90',
         customizationPath = 'Weapons/P90/P90_Customization',
@@ -3201,8 +3204,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Pecheneg"] = {
+    },{
         weaponName = 'Pecheneg',
         prettyName = 'PKP Pecheneg',
         customizationPath = 'Weapons/Pecheneg/Pecheneg_Customization',
@@ -3334,8 +3336,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["PP-2000"] = {
+    },{
         weaponName = 'PP-2000',
         prettyName = 'PP-2000',
         customizationPath = 'Weapons/PP2000/PP2000_Customization',
@@ -3427,8 +3428,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["870MCS"] = {
+    },{
         weaponName = '870MCS',
         prettyName = '870MCS',
         customizationPath = 'Weapons/Remington870/870_Customization',
@@ -3555,8 +3555,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["RPK-74M"] = {
+    },{
         weaponName = 'RPK-74M',
         prettyName = 'RPK-74M',
         customizationPath = 'Weapons/RPK/RPK_Customization',
@@ -3683,8 +3682,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Siaga20k"] = {
+    },{
         weaponName = 'Siaga20k',
         prettyName = 'Saiga 12k',
         customizationPath = 'Weapons/SAIGA20K/Saiga_20k_Customization',
@@ -3811,8 +3809,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/SCAR-H/SCAR-H"] = {
+    },{
         weaponName = 'Weapons/SCAR-H/SCAR-H',
         prettyName = 'SCAR-H',
         customizationPath = 'Weapons/SCAR-H/SCAR-H_Customization',
@@ -3944,9 +3941,8 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["SG553LB"] = {
-        weaponName = 'SG553LB',
+    },{
+        weaponName = 'SG 553 LB',
         prettyName = 'SG553',
         customizationPath = 'Weapons/SG553LB/SG553LB_Customization',
         unlocks = {
@@ -4067,8 +4063,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["SKS"] = {
+    },{
         weaponName = 'SKS',
         prettyName = 'SKS',
         customizationPath = 'Weapons/SKS/SKS_Customization',
@@ -4200,8 +4195,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["SV98"] = {
+    },{
         weaponName = 'SV98',
         prettyName = 'SV98',
         customizationPath = 'Weapons/SV98/SV98_Customization',
@@ -4318,8 +4312,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["SVD"] = {
+    },{
         weaponName = 'SVD',
         prettyName = 'SVD',
         customizationPath = 'Weapons/SVD/SVD_Customization',
@@ -4436,8 +4429,19 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Type88"] = {
+    },{
+        weaponName = 'Taurus .44',
+        prettyName = 'Taurus .44',
+        customizationPath = 'Weapons/Taurus44/Taurus44_Customization',
+        unlocks = {
+            {
+                prettyName = 'Suppressor',
+                attachmentPath = 'Weapons/Taurus44/U_Taurus44_Suppressor',
+                attachmentSlotIndex = 3,
+                killsRequired = 90
+            },
+        },
+    },{
         weaponName = 'Type88',
         prettyName = 'Type88',
         customizationPath = 'Weapons/Type88/Type88_Customization',
@@ -4559,8 +4563,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/UMP45/UMP45"] = {
+    },{
         weaponName = 'Weapons/UMP45/UMP45',
         prettyName = 'UMP-45',
         customizationPath = 'Weapons/UMP45/UMP45_Customization',
@@ -4657,8 +4660,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["USAS-12"] = {
+    },{
         weaponName = 'USAS-12',
         prettyName = 'USAS-12',
         customizationPath = 'Weapons/USAS-12/USAS-12_Customization',
@@ -4780,8 +4782,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["FAMAS"] = {
+    },{
         weaponName = 'FAMAS',
         prettyName = 'FAMAS',
         customizationPath = 'Weapons/XP1_FAMAS/FAMAS_Customization',
@@ -4903,8 +4904,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["HK53"] = {
+    },{
         weaponName = 'HK53',
         prettyName = 'HK53',
         customizationPath = 'Weapons/XP1_HK53/HK53_Customization',
@@ -5031,8 +5031,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["jackhammer"] = {
+    },{
         weaponName = 'jackhammer',
         prettyName = 'MK3A1',
         customizationPath = 'Weapons/XP1_Jackhammer/Jackhammer_Customization',
@@ -5164,8 +5163,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/XP1_L85A2/L85A2"] = {
+    },{
         weaponName = 'Weapons/XP1_L85A2/L85A2',
         prettyName = 'L85A2',
         customizationPath = 'Weapons/XP1_L85A2/L85A2_Customization',
@@ -5297,8 +5295,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["L96"] = {
+    },{
         weaponName = 'L96',
         prettyName = 'L96',
         customizationPath = 'Weapons/XP1_L96/L96_Customization',
@@ -5435,8 +5432,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["MG36"] = {
+    },{
         weaponName = 'MG36',
         prettyName = 'MG36',
         customizationPath = 'Weapons/XP1_MG36/MG36_Customization',
@@ -5563,8 +5559,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["PP-19"] = {
+    },{
         weaponName = 'PP-19',
         prettyName = 'PP-19',
         customizationPath = 'Weapons/XP1_PP-19/PP-19_Customization',
@@ -5661,8 +5656,7 @@ return {
                 killsRequired = 60
             },
         },
-    },
-    ["QBB-95"] = {
+    },{
         weaponName = 'QBB-95',
         prettyName = 'QBB-95',
         customizationPath = 'Weapons/XP1_QBB-95/QBB-95_Customization',
@@ -5799,8 +5793,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["QBU-88"] = {
+    },{
         weaponName = 'QBU-88',
         prettyName = 'QBU-88',
         customizationPath = 'Weapons/XP1_QBU-88/QBU-88_Customization',
@@ -5917,8 +5910,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["QBZ-95"] = {
+    },{
         weaponName = 'QBZ-95',
         prettyName = 'QBZ-95',
         customizationPath = 'Weapons/XP1_QBZ-95B/QBZ-95B_Customization',
@@ -6030,8 +6022,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/XP2_ACR/ACR"] = {
+    },{
         weaponName = 'Weapons/XP2_ACR/ACR',
         prettyName = 'ACW-R',
         customizationPath = 'Weapons/XP2_ACR/ACR_Customization',
@@ -6163,8 +6154,7 @@ return {
                 killsRequired = 60
             },
         },
-    },
-    ["M417"] = {
+    },{
         weaponName = 'M417',
         prettyName = 'M417',
         customizationPath = 'Weapons/XP2_HK417/HK417_Customization',
@@ -6281,8 +6271,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["JNG90"] = {
+    },{
         weaponName = 'JNG90',
         prettyName = 'JNG-90',
         customizationPath = 'Weapons/XP2_JNG90/JNG90_Customization',
@@ -6409,8 +6398,7 @@ return {
                 killsRequired = 60
             },
         },
-    },
-    ["Weapons/XP2_L86/L86"] = {
+    },{
         weaponName = 'Weapons/XP2_L86/L86',
         prettyName = 'L86A2',
         customizationPath = 'Weapons/XP2_L86/L86_Customization',
@@ -6537,8 +6525,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["LSAT"] = {
+    },{
         weaponName = 'LSAT',
         prettyName = 'LSAT',
         customizationPath = 'Weapons/XP2_LSAT/LSAT_Customization',
@@ -6670,8 +6657,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/XP2_MP5K/MP5K"] = {
+    },{
         weaponName = 'Weapons/XP2_MP5K/MP5K',
         prettyName = 'M5K',
         customizationPath = 'Weapons/XP2_MP5K/MP5K_Customization',
@@ -6763,8 +6749,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Weapons/XP2_MTAR/MTAR"] = {
+    },{
         weaponName = 'Weapons/XP2_MTAR/MTAR',
         prettyName = 'MTAR-21',
         customizationPath = 'Weapons/XP2_MTAR/MTAR_Customization',
@@ -6891,8 +6876,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["SCAR-L"] = {
+    },{
         weaponName = 'SCAR-L',
         prettyName = 'SCAR-L',
         customizationPath = 'Weapons/XP2_SCAR-L/SCAR-L_Customization',
@@ -7024,8 +7008,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["SPAS-12"] = {
+    },{
         weaponName = 'SPAS-12',
         prettyName = 'SPAS-12',
         customizationPath = 'Weapons/XP2_SPAS12/SPAS12_Customization',
@@ -7152,8 +7135,7 @@ return {
                 killsRequired = 0
             },
         },
-    },
-    ["Steyr AUG"] = {
+    },{
         weaponName = 'Steyr AUG',
         prettyName = 'Steyr AUG',
         customizationPath = 'Weapons/XP2_SteyrAug/SteyrAug_Customization',
@@ -7278,7 +7260,7 @@ return {
     },
     -- Crossbow bolt unlocks don't currently work right.
     -- The fire modes for each bolt get removed from the UI, but they can still be selected.
-    -- ["CrossBow"] = {
+    -- {
     --     weaponName = 'CrossBow',
     --     prettyName = 'XBOW',
     --     customizationPath = 'Weapons/XP4_Crossbow_Prototype/Crossbow_Customization',
