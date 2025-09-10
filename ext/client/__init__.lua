@@ -41,15 +41,24 @@ function UnlockClientItem(levelCat, levelIndex)
 end
 
 function UnlockClientAttachment(weaponName, kills)
-    for _, weaponUnlocks in pairs(PROG_CONFIGS.Weapon) do
-        if weaponUnlocks.weaponName == weaponName then
-            for _, unlock in pairs(weaponUnlocks.unlocks) do
-                if kills >= unlock.killsRequired then
-                    UnlockAttachment(weaponUnlocks.customizationPath, unlock.attachmentPath, unlock.attachmentSlotIndex)
-                end
+    -- for _, weaponUnlocks in pairs(PROG_CONFIGS.Weapon) do
+    --     if weaponUnlocks.weaponName == weaponName then
+    --         for _, unlock in pairs(weaponUnlocks.unlocks) do
+    --             if kills >= unlock.killsRequired then
+    --                 UnlockAttachment(weaponUnlocks.customizationPath, unlock.attachmentPath, unlock.attachmentSlotIndex)
+    --             end
+    --         end
+    --         -- Break the main loop when a weapon is found
+    --         break
+    --     end
+    -- end
+    local weaponUnlocks = PROG_CONFIGS.Weapon[weaponName]
+
+    if weaponUnlocks ~= nil then
+        for _, unlock in pairs(weaponUnlocks.unlocks) do
+            if kills >= unlock.killsRequired then
+                UnlockAttachment(weaponUnlocks.customizationPath, unlock.attachmentPath, unlock.attachmentSlotIndex)
             end
-            -- Break the main loop when a weapon is found
-            break
         end
     end
 end

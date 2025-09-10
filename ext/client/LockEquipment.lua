@@ -111,8 +111,8 @@ function InitAssetsLock()
 
     -- Loop through all the weapon customization assets
     print(">>>>>>>> LOCKING WEAPON CUSTOMIZATION ASSETS <<<<<<<<")
-    for _, weapon in pairs(weaponProgConfig) do
-        local weaponCustomizationAsset = ResourceManager:SearchForDataContainer(weapon.customizationPath)
+    for weaponName, weaponData in pairs(weaponProgConfig) do
+        local weaponCustomizationAsset = ResourceManager:SearchForDataContainer(weaponData.customizationPath)
 
         if weaponCustomizationAsset ~= nil then
             weaponCustomizationAsset = VeniceSoldierWeaponCustomizationAsset(weaponCustomizationAsset)

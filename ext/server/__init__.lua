@@ -114,23 +114,41 @@ function IncreaseWeaponKills(playerGuid, weaponName, killamount)
 end
 
 function WeapAttachUnlockCheck(player, weaponName, weapKills)
-    for _, weaponUnlocks in pairs(PROG_CONFIGS.Weapon) do
-        if weaponUnlocks.weaponName == weaponName then
-            for _, unlock in pairs(weaponUnlocks.unlocks) do
-                if CONFIG.UnlockNotifications.enabled == true and weapKills == unlock.killsRequired then
-                    print(player.name .. " unlocked " .. unlock.prettyName .. " for " .. weaponUnlocks.prettyName .. " at " .. weapKills .. " kills!")
-                    local message = string.format(
-                        CONFIG.UnlockNotifications.messages.weapAttachUnlock,
-                        weaponUnlocks.prettyName,
-                        weapKills,
-                        unlock.prettyName
-                    )
-                    ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
-                    NetEvents:SendTo('PlayUnlockSound', player, 'weapAttachUnlock')
-                    break -- Unlock found
-                end
+    -- for _, weaponUnlocks in pairs(PROG_CONFIGS.Weapon) do
+    --     if weaponUnlocks.weaponName == weaponName then
+    --         for _, unlock in pairs(weaponUnlocks.unlocks) do
+    --             if CONFIG.UnlockNotifications.enabled == true and weapKills == unlock.killsRequired then
+    --                 print(player.name .. " unlocked " .. unlock.prettyName .. " for " .. weaponUnlocks.prettyName .. " at " .. weapKills .. " kills!")
+    --                 local message = string.format(
+    --                     CONFIG.UnlockNotifications.messages.weapAttachUnlock,
+    --                     weaponUnlocks.prettyName,
+    --                     weapKills,
+    --                     unlock.prettyName
+    --                 )
+    --                 ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
+    --                 NetEvents:SendTo('PlayUnlockSound', player, 'weapAttachUnlock')
+    --                 break -- Unlock found
+    --             end
+    --         end
+    --         break -- Weapon found
+    --     end
+    -- end
+    local weaponUnlocks = PROG_CONFIGS.Weapon[weaponName]
+
+    if weaponUnlocks ~= nil then
+        for _, unlock in pairs(weaponUnlocks.unlocks) do
+            if CONFIG.UnlockNotifications.enabled == true and weapKills == unlock.killsRequired then
+                print(player.name .. " unlocked " .. unlock.prettyName .. " for " .. weaponUnlocks.prettyName .. " at " .. weapKills .. " kills!")
+                local message = string.format(
+                    CONFIG.UnlockNotifications.messages.weapAttachUnlock,
+                    weaponUnlocks.prettyName,
+                    weapKills,
+                    unlock.prettyName
+                )
+                ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
+                NetEvents:SendTo('PlayUnlockSound', player, 'weapAttachUnlock')
+                break -- Unlock found
             end
-            break -- Weapon found
         end
     end
 end
