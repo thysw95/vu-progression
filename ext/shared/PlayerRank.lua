@@ -55,11 +55,17 @@ end
 
 function VUPlayerRankClass:InitWeaponKills()
     self.r_WeaponProgressList = {}
+    -- for weaponName, weaponData in pairs(weaponProgConfig) do
+    --     table.insert(self.r_WeaponProgressList, {
+    --         ['weaponName'] = weaponName,
+    --         ['kills'] = 0
+    --     })
+    -- end
     for weaponName, weaponData in pairs(weaponProgConfig) do
-        table.insert(self.r_WeaponProgressList, {
+        self.r_WeaponProgressList[weaponName] = {
             ['weaponName'] = weaponName,
             ['kills'] = 0
-        })
+        }
     end
 end
 

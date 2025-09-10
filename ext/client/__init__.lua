@@ -95,8 +95,8 @@ end)
 NetEvents:Subscribe('OnInitialAttachmentUnlock', function(weaponProgressList)
     print("UNLOCKING INITIAL Weapon ATTACHMENTS")
     
-    for _, weapon in pairs(weaponProgressList) do
-        UnlockClientAttachment(weapon.weaponName, weapon.kills)
+    for weaponName, weaponData in pairs(weaponProgressList) do
+        UnlockClientAttachment(weaponData.weaponName, weaponData.kills)
     end
 end)
 

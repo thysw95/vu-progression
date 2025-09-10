@@ -99,16 +99,28 @@ function IncreaseWeaponKills(playerGuid, weaponName, killamount)
     local cPlayer = currentRankupPlayers[guid]
     if not cPlayer then return end
 
-    for _, weapon in pairs(cPlayer['r_WeaponProgressList']) do
-        if weapon['weaponName'] == weaponName then
-            weapon['kills'] = weapon['kills'] + killamount
+    -- for _, weapon in pairs(cPlayer['r_WeaponProgressList']) do
+    --     if weapon['weaponName'] == weaponName then
+    --         weapon['kills'] = weapon['kills'] + killamount
 
-            local player = PlayerManager:GetPlayerByGuid(playerGuid)
-            if player ~= nil then
-                NetEvents:SendTo('OnKilledPlayer', player, weapon['weaponName'], weapon['kills'])
-                WeapAttachUnlockCheck(player, weaponName, weapon['kills'])
-            end
-            break
+    --         local player = PlayerManager:GetPlayerByGuid(playerGuid)
+    --         if player ~= nil then
+    --             NetEvents:SendTo('OnKilledPlayer', player, weapon['weaponName'], weapon['kills'])
+    --             WeapAttachUnlockCheck(player, weaponName, weapon['kills'])
+    --         end
+    --         break
+    --     end
+    -- end
+
+    local weapon = cPlayer['r_WeaponProgressList'][weaponName]
+
+    if weapon['weaponName'] ~= nil then
+        weapon['kills'] = weapon['kills'] + killamount
+
+        local player = PlayerManager:GetPlayerByGuid(playerGuid)
+        if player ~= nil then
+            NetEvents:SendTo('OnKilledPlayer', player, weapon['weaponName'], weapon['kills'])
+            WeapAttachUnlockCheck(player, weaponName, weapon['kills'])
         end
     end
 end
