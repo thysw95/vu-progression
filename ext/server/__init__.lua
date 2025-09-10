@@ -19,6 +19,7 @@ local storageManager = StorageManager()
 
 function addPlayerToRankUpList(player)
     storageManager:fetchPlayerProgress(player, function(playerRankObject)
+        -- TODO: Fix; make nil-proof
         local guidKey = tostring(player.guid)
         if currentRankupPlayers[guidKey] then
             print(player.name .. " IS ALREADY ON THE LIST")

@@ -97,8 +97,6 @@ function LocalStorage:fetchPlayerProgress(playerRankObject)
             )
         end
     end
-
-    return playerRankObject
 end
 
 function LocalStorage:storePlayerProgress(playerRankObject)
@@ -122,6 +120,7 @@ function LocalStorage:storePlayerProgress(playerRankObject)
     )
 
     if #existingPlayer > 0 then -- Existing player found in DB
+        -- print("Saving data for existing player: " .. playerRankObject['r_PlayerName'])
         local query = [[
         UPDATE player_rankings_table
         SET
@@ -142,7 +141,7 @@ function LocalStorage:storePlayerProgress(playerRankObject)
         WHERE player_guid = ?
         ]]
 
-        if SQL:Query(
+        if not SQL:Query(
             query,
             playerRankObject['r_Kills'],
             playerRankObject['r_Deaths'],
@@ -160,12 +159,12 @@ function LocalStorage:storePlayerProgress(playerRankObject)
             vehicleTable,
             playerRankObject['r_PlayerGuid']:ToString('D')
         ) then
-            print("SUCCESSFULLY SAVED EXISTING PLAYER DATA: " .. playerRankObject['r_PlayerName'])
-        else
-            print('Failed to execute query: ' .. SQL:Error())
+            print('LOCAL STORAGE failed to execute query: ' .. SQL:Error())
+            return false
         end
         
     else -- New player to save to DB
+        -- print("Saving data for new player: " .. playerRankObject['r_PlayerName'])
         local query = [[
         INSERT INTO player_rankings_table (
             player_name,
@@ -188,7 +187,7 @@ function LocalStorage:storePlayerProgress(playerRankObject)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ]]
 
-        if SQL:Query(
+        if not SQL:Query(
             query,
             playerRankObject['r_PlayerName'],
             playerRankObject['r_PlayerGuid']:ToString('D'),
@@ -207,13 +206,13 @@ function LocalStorage:storePlayerProgress(playerRankObject)
             weaponTable,
             vehicleTable
         ) then
-            print("SUCCESSFULLY SAVED A NEW PLAYER IN DB: " .. playerRankObject['r_PlayerName'])
-        else
-            print('Failed to execute query: ' .. SQL:Error())
+            print('LOCAL STORAGE failed to execute query: ' .. SQL:Error())
+            return false
         end
 
     end
 
+    return true
 end
 
 return LocalStorage

@@ -7,6 +7,25 @@ local API_TIMEOUT = 5 -- Timeout (sec)
 -- Server loading state that will trigger net storage init/auth.
 -- (ie. The earliest time `RCON:GetServerGuid()` can reliably be called)
 local INIT_STORAGE_EVENT_STATE = 'Registering entity resources'
+-- Maps Net Storage keys to PlayerRank keys
+local KEY_MAP = {
+    name                = 'r_PlayerName',
+    guid                = 'r_PlayerGuid',
+    kills               = 'r_Kills',
+    deaths              = 'r_Deaths',
+    total_level         = 'r_PlayerLevel',
+    total_xp            = 'r_PlayerCurrentXP',
+    assault_level       = 'r_AssaultLevel',
+    assault_xp          = 'r_AssaultCurrentXP',
+    engineer_level      = 'r_EngineerLevel',
+    engineer_xp         = 'r_EngineerCurrentXP',
+    support_level       = 'r_SupportLevel',
+    support_xp          = 'r_SupportCurrentXP',
+    recon_level         = 'r_ReconLevel',
+    recon_xp            = 'r_ReconCurrentXP',
+    weapon_progression  = 'r_WeaponProgressList',
+    vehicle_progression = 'r_VehicleProgressList'
+}
 
 
 -- Class that manages Global Progression storage over the net
@@ -91,31 +110,30 @@ function NetStorage:_isValidResponse(res)
     return true
 end
 
-function NetStorage:_assignPlayerData(playerRankObject, data)
-    playerRankObject['r_Kills'] = data['kills']
-    playerRankObject['r_Deaths'] = data['deaths']
-    playerRankObject['r_PlayerLevel'] = data['total_level']
-    playerRankObject['r_PlayerCurrentXP'] = data['total_xp']
-    playerRankObject['r_AssaultLevel'] = data['assault_level']
-    playerRankObject['r_AssaultCurrentXP'] = data['assault_xp']
-    playerRankObject['r_EngineerLevel'] = data['engineer_level']
-    playerRankObject['r_EngineerCurrentXP'] = data['engineer_xp']
-    playerRankObject['r_SupportLevel'] = data['support_level']
-    playerRankObject['r_SupportCurrentXP'] = data['support_xp']
-    playerRankObject['r_ReconLevel'] = data['recon_level']
-    playerRankObject['r_ReconCurrentXP'] = data['recon_xp']
-
-    playerRankObject['r_WeaponProgressList'] = csvToTableList(
-        data['weapon_progression'],
-        'weaponName',
-        'kills'
-    )
-
-    playerRankObject['r_VehicleProgressList'] = csvToTableList(
-        data['vehicle_progression'],
-        'typeName',
-        'score'
-    )
+function NetStorage:_remapData(src, dest, map, toNet)
+    for k, v in pairs(map) do
+        if toNet then -- To Net keys
+            -- Weapon prog. special case
+            if v == 'r_WeaponProgressList' then
+                dest[k] = tableListToCSV(src[v], 'weaponName', 'kills')
+            -- Vehicle prog. special case
+            elseif v == 'r_VehicleProgressList' then
+                dest[k] = tableListToCSV(src[v], 'typeName', 'score')
+            else
+                dest[k] = src[v]
+            end
+        else -- To PlayerRank keys
+            -- Weapon prog. special case
+            if k == 'weapon_progression' then
+                dest[v] = csvToTableList(src[k], 'weaponName', 'kills')
+            -- Vehicle prog. special case
+            elseif k == 'vehicle_progression' then
+                dest[v] = csvToTableList(src[k], 'typeName', 'score')
+            else
+                dest[v] = src[k]
+            end
+        end
+    end
 end
 
 function NetStorage:fetchPlayerProgress(playerRankObject, callback)
@@ -124,16 +142,40 @@ function NetStorage:fetchPlayerProgress(playerRankObject, callback)
         self._httpOptions,
         function(res)
             if self:_isValidResponse(res) and res.status == 200 then
-                local tbl = json.decode(res.body)
-                self:_assignPlayerData(playerRankObject, tbl)
+                self:_remapData(
+                    json.decode(res.body),
+                    playerRankObject,
+                    KEY_MAP,
+                    false -- To PlayerRank keys
+                )
             end
             callback()
         end
     )
 end
 
-function NetStorage:storePlayerProgress(playerRankObject)
-    
+function NetStorage:storePlayerProgress(playerRankObject, callback)
+    local data = {}
+    self:_remapData(
+        playerRankObject,
+        data,
+        KEY_MAP,
+        true -- To Net keys
+    )
+    Net:PostHTTPAsync(
+        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject['r_PlayerGuid']:ToString('D'),
+        json.encode(data),
+        self._httpOptions,
+        function(res)
+            if self:_isValidResponse(res) and res.status == 200 then
+                callback(true)
+            else
+                local tbl = json.decode(res.body)
+                print("FAILED TO SAVE " .. playerRankObject['r_PlayerName'] .. " data globally: " .. (tbl.error or "No response"))
+                callback(false)
+            end
+        end
+    )
 end
 
 return NetStorage
