@@ -29,8 +29,11 @@ KITS = {
 -- 'Gameplay/Kits/<KIT>_GM' is for Gun Master gamemode and should not be added
 -- 'Gameplay/Kits/<KIT>_SCV' is for Scavenger gamemode and should not be added
 
-KIT_PRIMARY_WEAP_ID = 'ID_M_SOLDIER_PRIMARY'
-KIT_SECONDARY_WEAP_ID = 'ID_M_SOLDIER_SECONDARY'
-KIT_SPECIALIZATION_ID = 'ID_M_SOLDIER_SPECIALIZATION'
-KIT_SOLDIER_GADGET1_ID = 'ID_M_SOLDIER_GADGET1'
-KIT_SOLDIER_GADGET2_ID = 'ID_M_SOLDIER_GADGET2'
+CUST_UNLOCK_CAT_IDS = {
+    primary = 'ID_M_SOLDIER_PRIMARY',
+    secondary = 'ID_M_SOLDIER_SECONDARY',
+    gadget1 = 'ID_M_SOLDIER_GADGET1',
+    gadget2 = 'ID_M_SOLDIER_GADGET2',
+    specialization = 'ID_M_SOLDIER_SPECIALIZATION',
+    camo = 'CAMO', -- This is not a real ID; it is only referenced internally in this mod
+}

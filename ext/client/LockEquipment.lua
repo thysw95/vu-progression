@@ -2,42 +2,36 @@ require("__shared/KitVariables")
 local weaponProgConfig = require("__shared/Progression/WeaponProgressionConfig")
 local vehicleProgConfig = require("__shared/Progression/VehicleProgressionConfig")
 
--- Function to remove all the customization options on the selected soldier
-function LockSoldierCustomizationAsset(veniceSoldierAsset, categoryId)
-    local weaponTable = CustomizationTable(veniceSoldierAsset.weaponTable)
-    for i,unlockPart in pairs(weaponTable.unlockParts) do
-        local unlockPart = CustomizationUnlockParts(unlockPart)
-        unlockPart:MakeWritable()
+-- Function to remove all the customization options for a given soldier asset and category ID
+function lockSoldierCustomizationAsset(veniceSoldierAsset, categoryId)
+    local customizationTable
 
-        local partCatId = unlockPart.uiCategorySid
-
-        if partCatId == categoryId then
-            for i = #unlockPart.selectableUnlocks,1,-1 do
-                unlockPart.selectableUnlocks:erase(i)
-            end
-        end
-        
+    -- Get correct CustomizationTable 
+    if categoryId == CUST_UNLOCK_CAT_IDS.specialization then
+        customizationTable = CustomizationTable(veniceSoldierAsset.specializationTable)
+    elseif categoryId == CUST_UNLOCK_CAT_IDS.camo then
+        customizationTable = CustomizationTable(veniceSoldierAsset.visualTable)
+    else
+        customizationTable = CustomizationTable(veniceSoldierAsset.weaponTable)
     end
-end
 
--- Function to remove all the specialization options on the selected soldier
-function lockSoldierSpecializationAsset(veniceSoldierAsset)
-    local specialTable = CustomizationTable(veniceSoldierAsset.specializationTable)
+    -- Loop through UnlockParts until category ID is found 
+    for _, unlockPart in pairs(customizationTable.unlockParts) do
+        local unlockPart = CustomizationUnlockParts(unlockPart)
 
-    if specialTable ~= nil then
-        for _, unlockPart in pairs(specialTable.unlockParts) do
-            local unlockPart = CustomizationUnlockParts(unlockPart)
+        if categoryId == unlockPart.uiCategorySid
+            or categoryId == CUST_UNLOCK_CAT_IDS.camo then -- Camo has special case b/c it has nil ID and only 1 unlock part
             unlockPart:MakeWritable()
-
             for i = #unlockPart.selectableUnlocks,1,-1 do
                 unlockPart.selectableUnlocks:erase(i)
             end
+            break -- Category ID found 
         end
     end
 end
 
 -- Function to remove all the customization options on the selected weapon
-function LockWeaponCustomizationAsset(weaponCustomizationAsset)
+function lockWeaponCustomizationAsset(weaponCustomizationAsset)
     local attachTable = CustomizationTable(weaponCustomizationAsset.customization)
     -- print("{name = " .. weaponCustomizationAsset.name .. "}")
 
@@ -57,7 +51,7 @@ function LockWeaponCustomizationAsset(weaponCustomizationAsset)
 end
 
 -- Function to remove all the customization options on the selected vehicle
-function LockVehicleCustomizationAsset(veniceVehicleCustomizationAsset)
+function lockVehicleCustomizationAsset(veniceVehicleCustomizationAsset)
     for _, unlockPart in pairs(veniceVehicleCustomizationAsset.customization.unlockParts) do
         unlockPart:MakeWritable()
 
@@ -90,21 +84,9 @@ function InitAssetsLock()
             if veniceSoldierAsset ~= nil then
                 veniceSoldierAsset = VeniceSoldierCustomizationAsset(veniceSoldierAsset)
 
-                -- Lock primary weapons
-                LockSoldierCustomizationAsset(veniceSoldierAsset, KIT_PRIMARY_WEAP_ID)
-
-                -- Lock secondary weapons
-                LockSoldierCustomizationAsset(veniceSoldierAsset, KIT_SECONDARY_WEAP_ID)
-
-                -- Lock specializations
-                lockSoldierSpecializationAsset(veniceSoldierAsset)
-
-                -- Lock Soldier Gadget 1
-                LockSoldierCustomizationAsset(veniceSoldierAsset, KIT_SOLDIER_GADGET1_ID)
-
-                -- Lock Soldier Gadget 2
-                LockSoldierCustomizationAsset(veniceSoldierAsset, KIT_SOLDIER_GADGET2_ID)
-
+                for _, categoryId in pairs(CUST_UNLOCK_CAT_IDS) do
+                    lockSoldierCustomizationAsset(veniceSoldierAsset, categoryId)
+                end
             end
         end
     end
@@ -117,7 +99,7 @@ function InitAssetsLock()
         if weaponCustomizationAsset ~= nil then
             weaponCustomizationAsset = VeniceSoldierWeaponCustomizationAsset(weaponCustomizationAsset)
 
-            LockWeaponCustomizationAsset(weaponCustomizationAsset)
+            lockWeaponCustomizationAsset(weaponCustomizationAsset)
         end
     end
 
@@ -129,7 +111,7 @@ function InitAssetsLock()
         if veniceVehicleCustomizationAsset ~= nil then
             veniceVehicleCustomizationAsset = VeniceVehicleCustomizationAsset(veniceVehicleCustomizationAsset)
 
-            LockVehicleCustomizationAsset(veniceVehicleCustomizationAsset)
+            lockVehicleCustomizationAsset(veniceVehicleCustomizationAsset)
         end
     end
 end

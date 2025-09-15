@@ -36,22 +36,19 @@ end
 
 function UnlockEquipment(veniceSoldierAsset, unlockAssetBase, equipmentSlot)
     local customizationTable
-    if equipmentSlot == KIT_SPECIALIZATION_ID then
-        if veniceSoldierAsset.specializationTable == nil then
-            print("specializationTable IS NIL!?")
-            return
-        end
+    
+    -- Get correct CustomizationTable 
+    if equipmentSlot == CUST_UNLOCK_CAT_IDS.specialization then
         customizationTable = CustomizationTable(veniceSoldierAsset.specializationTable)
+    elseif equipmentSlot == CUST_UNLOCK_CAT_IDS.camo then
+        customizationTable = CustomizationTable(veniceSoldierAsset.visualTable)
     else
-        if veniceSoldierAsset.weaponTable == nil then
-            print("weaponTable IS NIL!?")
-            return
-        end
         customizationTable = CustomizationTable(veniceSoldierAsset.weaponTable)
     end
 
     for _, customizationUnlockParts in pairs(customizationTable.unlockParts) do
-        if customizationUnlockParts.uiCategorySid == equipmentSlot then
+        if equipmentSlot == customizationUnlockParts.uiCategorySid
+            or equipmentSlot == CUST_UNLOCK_CAT_IDS.camo then -- Camo has special case b/c it has nil ID and only 1 unlock part
             -- Can later come back to UnlockAssetBase to figure out how to lock or unlock something without removing them from the SoldierAsset
             local foundEquip = false
 
