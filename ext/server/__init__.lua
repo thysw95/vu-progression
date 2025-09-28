@@ -55,7 +55,7 @@ end
 
 function PlayerXPUpdated(player, score)
     local xp = score
-    if not CONFIG.GlobalProgression.enabled then
+    if storageManager:isNetStorageAuthed() or not CONFIG.GlobalProgression.enabled then
         xp = score * CONFIG.General.xpMultiplier
     end
     -- Get player's current kit

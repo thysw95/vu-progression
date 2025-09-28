@@ -19,8 +19,13 @@ This mod is still in early development, so some key features are still missing.
 - Weapon unlocks based on score
 - Attachment unlocks per weapon based on kills
 - Vehicle unlock progression
-- Persistent player stats (local to server; global progression coming soon!)
+- Persistent player stats across all servers (req. opt-in approval; see below for details)
 - Configurable progression settings for server owners
+
+> ![TIP]
+> If you would like your VU server to be included in public global progression, please visit [this wiki page](https://github.com/redthirten/vu-progression-api/wiki/Public-Global-Progression) for instructions to apply.\
+> \
+> The mod will default to local storage if you prefer not to participate.
 
 ---
 
@@ -31,20 +36,26 @@ This mod is still in early development, so some key features are still missing.
 
 ### Steps
 1. Download the latest release from the [Releases](./releases) page.
-2. Extract the mod into your server’s `mods` directory:
-   ```bash
-   Mods/vu-progression/
-   ```
-3. Add `vu-progression` to your server’s `modlist.txt`:
+2. Extract the mod into your server’s `mods` directory. The folder structure should look like this:
+    ```bash
+    instance/
+    └── Admin/
+        └── Mods/
+            └── vu-progression/
+                ├── ext/
+                └── mod.json
+    ```
+3. Add `vu-progression` to your server’s `ModList.txt`:
    ```
    vu-progression
    ```
-4. Restart your server.
+4. (Optional) Adjust config files (see below for details).
+5. Restart your server.
 
 ---
 
 ## ⚙️ Configuration
-The mod includes a config file (`ext/shared/config.lua`) where you can adjust various settings.
+The mod includes a general config file at `ext/shared/config.lua` where you can adjust various settings. Advanced users can adjust additional config files under `/ext/shared/Progression` if they wish to have non-vanilla unlock requirements (useful if you want to make progression less grindy).
 
 ---
 
@@ -67,15 +78,15 @@ These should be considered temporary until a proper UI can be built to view thes
 Want to contribute? Here’s how:
 1. Fork the repo
 2. Create a feature branch
-3. Submit a pull request
+3. Submit a pull request to the `dev` branch
 
 The mod is written in [VEXT (VeniceEXT)](https://docs.veniceunleashed.net/vext/) scripting, primarily in LUA.
 
 ---
 
 ## 🚧 Roadmap
-- [ ] Global persistent tracking across multiple servers
-- [ ] Add Ribbons and challenges
+- [x] Global persistent tracking across multiple servers
+- [ ] Add Ribbons and Assignments
 - [ ] Add dog tag unlocks
 - [ ] UI stats page 
 - [ ] UI notifications for rank up / unlocks (like vanilla BF3)
@@ -85,8 +96,8 @@ The mod is written in [VEXT (VeniceEXT)](https://docs.veniceunleashed.net/vext/)
 ---
 
 ## 🐞 Known Issues
-- Unlock notifications are currently minimal
-- Some awards may not track properly
+- Unlock notifications are currently minimal. 
+- Some awards (like Assignment-based unlocks) may not track properly or have arbitrary/placeholder XP/kill requirements.
 
 ---
 

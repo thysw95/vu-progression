@@ -9,8 +9,6 @@ local API_TIMEOUT = 5 -- Timeout (sec)
 local INIT_STORAGE_EVENT_STATE = 'Registering entity resources'
 -- Maps Net Storage keys to PlayerRank keys
 local KEY_MAP = {
-    name                = 'r_PlayerName',
-    guid                = 'r_PlayerGuid',
     kills               = 'r_Kills',
     deaths              = 'r_Deaths',
     total_level         = 'r_PlayerLevel',
@@ -65,6 +63,7 @@ function NetStorage:_onLoadingEvent(state)
             return
         end
         local tbl = json.decode(res.body)
+        local xpMultiplier = tbl.xpMultiplier
         if VERSION.Major < tbl.minModVerSupported.Major
             or VERSION.Minor < tbl.minModVerSupported.Minor
             or VERSION.Patch < tbl.minModVerSupported.Patch
@@ -94,6 +93,7 @@ function NetStorage:_onLoadingEvent(state)
         end
 
         print("Successfully authenticated with Global Progression server!")
+        CONFIG.General.xpMultiplier = xpMultiplier
         self.authed = true
         self._loadingEvent:Unsubscribe()
     end
@@ -105,13 +105,13 @@ function NetStorage:_isValidResponse(res)
         return false
     end
     if CONFIG.General.debug then
-        print("API Response: " .. res.status)
+        print("API Response: " .. res.status .. " " .. res.body)
     end
     return true
 end
 
-function NetStorage:_remapData(src, dest, map, toNet)
-    for k, v in pairs(map) do
+function NetStorage:_remapData(src, dest, toNet)
+    for k, v in pairs(KEY_MAP) do
         if toNet then -- To Net keys
             -- Weapon prog. special case
             if v == 'r_WeaponProgressList' then
@@ -138,14 +138,13 @@ end
 
 function NetStorage:fetchPlayerProgress(playerRankObject, callback)
     Net:GetHTTPAsync(
-        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject['r_PlayerGuid']:ToString('D'),
+        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject['r_PlayerGuid']:ToString('D') .. "/progression",
         self._httpOptions,
         function(res)
             if self:_isValidResponse(res) and res.status == 200 then
                 self:_remapData(
                     json.decode(res.body),
                     playerRankObject,
-                    KEY_MAP,
                     false -- To PlayerRank keys
                 )
             end
@@ -159,19 +158,23 @@ function NetStorage:storePlayerProgress(playerRankObject, callback)
     self:_remapData(
         playerRankObject,
         data,
-        KEY_MAP,
         true -- To Net keys
     )
+    data.name = playerRankObject['r_PlayerName'] -- Name needs to be added in case of new player
     Net:PostHTTPAsync(
-        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject['r_PlayerGuid']:ToString('D'),
+        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject['r_PlayerGuid']:ToString('D') .. "/progression",
         json.encode(data),
         self._httpOptions,
         function(res)
-            if self:_isValidResponse(res) and res.status == 200 then
+            local isValidResponse = self:_isValidResponse(res)
+            if isValidResponse and res.status == 200 then
                 callback(true)
             else
-                local tbl = json.decode(res.body)
-                print("FAILED TO SAVE " .. playerRankObject['r_PlayerName'] .. " data globally: " .. (tbl.error or "No response"))
+                local err = "No response"
+                if isValidResponse then
+                    err = json.decode(res.body).error
+                end
+                print("FAILED TO SAVE " .. playerRankObject['r_PlayerName'] .. " data globally: " .. err)
                 callback(false)
             end
         end
