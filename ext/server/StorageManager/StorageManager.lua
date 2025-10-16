@@ -14,6 +14,18 @@ function StorageManager:__init()
     end
 end
 
+function StorageManager:newRound(levelName, gameMode)
+    if CONFIG.GlobalProgression.enabled and self.netStorage.authed then
+        self.netStorage:newRound(levelName, gameMode)
+    end
+end
+
+function StorageManager:finalizeRound(roundTime, winningTeam)
+    if CONFIG.GlobalProgression.enabled and self.netStorage.authed then
+        self.netStorage:finalizeRound(roundTime, winningTeam)
+    end
+end
+
 function StorageManager:fetchPlayerProgress(player, callback)
     local localPlayerRankObj = playerRankClass(player)
     self.localStorage:fetchPlayerProgress(localPlayerRankObj)
@@ -42,17 +54,19 @@ function StorageManager:fetchPlayerProgress(player, callback)
 end
 
 function StorageManager:storePlayerProgress(playerRankObject)
+    local playerName = playerRankObject.r_Player.name -- Closure of name is req. b/c playerRankObject may not exist upon net callback
     local localStored = self.localStorage:storePlayerProgress(playerRankObject)
+
     if CONFIG.GlobalProgression.enabled and self.netStorage.authed then
         self.netStorage:storePlayerProgress(playerRankObject, function(netStored)
             if netStored then
-                print("SUCCESSFULLY SAVED player data globally: " .. playerRankObject['r_PlayerName'])
+                print("SUCCESSFULLY SAVED player data globally: " .. playerName)
             elseif localStored then
-                print("Failsafe: Saved player data locally: " .. playerRankObject['r_PlayerName'])
+                print("Failsafe - Saved player data locally: " .. playerName)
             end
         end)
     elseif localStored then
-        print("SUCCESSFULLY SAVED player data locally: " .. playerRankObject['r_PlayerName'])
+        print("SUCCESSFULLY SAVED player data locally: " .. playerName)
     end
 end
 

@@ -65,7 +65,7 @@ end
 function LocalStorage:fetchPlayerProgress(playerRankObject)
     local existingPlayers = SQL:Query(
         'SELECT * FROM player_rankings_table WHERE player_guid = ?',
-        playerRankObject['r_PlayerGuid']:ToString('D')
+        playerRankObject.r_Player.guid:ToString('D')
     )
 
     if existingPlayers ~= nil and #existingPlayers > 0 and existingPlayers[1] ~= nil then
@@ -101,11 +101,11 @@ end
 
 function LocalStorage:storePlayerProgress(playerRankObject)
     -- print("STORING PLAYER RANKING DETAILS.")
-    -- print("PLAYER TO ADD TO DB: " .. playerRankObject['r_PlayerName'])
+    -- print("PLAYER TO ADD TO DB: " .. playerRankObject.r_Player.name)
 
     local existingPlayer = SQL:Query(
         'SELECT * FROM player_rankings_table WHERE player_guid = ?',
-        playerRankObject['r_PlayerGuid']:ToString('D')
+        playerRankObject.r_Player.guid:ToString('D')
     )
 
     local weaponTable = tableListToCSV(
@@ -120,7 +120,7 @@ function LocalStorage:storePlayerProgress(playerRankObject)
     )
 
     if #existingPlayer > 0 then -- Existing player found in DB
-        -- print("Saving data for existing player: " .. playerRankObject['r_PlayerName'])
+        -- print("Saving data for existing player: " .. playerRankObject.r_Player.name)
         local query = [[
         UPDATE player_rankings_table
         SET
@@ -157,14 +157,14 @@ function LocalStorage:storePlayerProgress(playerRankObject)
             playerRankObject['r_ReconCurrentXP'],
             weaponTable,
             vehicleTable,
-            playerRankObject['r_PlayerGuid']:ToString('D')
+            playerRankObject.r_Player.guid:ToString('D')
         ) then
             print('LOCAL STORAGE failed to execute query: ' .. SQL:Error())
             return false
         end
         
     else -- New player to save to DB
-        -- print("Saving data for new player: " .. playerRankObject['r_PlayerName'])
+        -- print("Saving data for new player: " .. playerRankObject.r_Player.name)
         local query = [[
         INSERT INTO player_rankings_table (
             player_name,
@@ -189,8 +189,8 @@ function LocalStorage:storePlayerProgress(playerRankObject)
 
         if not SQL:Query(
             query,
-            playerRankObject['r_PlayerName'],
-            playerRankObject['r_PlayerGuid']:ToString('D'),
+            playerRankObject.r_Player.name,
+            playerRankObject.r_Player.guid:ToString('D'),
             playerRankObject['r_Kills'],
             playerRankObject['r_Deaths'],
             playerRankObject['r_PlayerLevel'],

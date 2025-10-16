@@ -19,16 +19,16 @@ local storageManager = StorageManager()
 
 function addPlayerToRankUpList(player)
     storageManager:fetchPlayerProgress(player, function(playerRankObject)
-        -- TODO: Fix; make nil-proof
-        local guidKey = tostring(player.guid)
-        if currentRankupPlayers[guidKey] then
-            print(player.name .. " IS ALREADY ON THE LIST")
-        else
-            print("ADDING " .. player.name .. " TO THE RANKUP LIST")
-            currentRankupPlayers[guidKey] = playerRankObject
-        end
+        if player then -- Just in case player left before callback
+            if currentRankupPlayers[tostring(player.guid)] then
+                print(player.name .. " IS ALREADY ON THE LIST")
+            else
+                print("ADDING " .. player.name .. " TO THE RANKUP LIST")
+                currentRankupPlayers[tostring(player.guid)] = playerRankObject
+            end
 
-        initPlayerLevels(player, playerRankObject)
+            initPlayerLevels(player, playerRankObject)
+        end
     end)
 end
 
@@ -56,7 +56,7 @@ end
 function PlayerXPUpdated(player, score)
     local xp = score
     if storageManager:isNetStorageAuthed() or not CONFIG.GlobalProgression.enabled then
-        xp = score * CONFIG.General.xpMultiplier
+        xp = math.floor(score * CONFIG.General.xpMultiplier)
     end
     -- Get player's current kit
     -- NOTE: The kit will be nil if they are not spawned in, causing only General XP to be earned
@@ -94,21 +94,15 @@ function PlayerXPUpdated(player, score)
     end
 end
 
-function IncreaseWeaponKills(playerGuid, weaponName, killamount) 
-    local guid = tostring(playerGuid)
-
-    local cPlayer = currentRankupPlayers[guid]
+function IncreaseWeaponKills(player, weaponName, killAmount)
+    local cPlayer = currentRankupPlayers[tostring(player.guid)]
     if not cPlayer then return end
 
     for _, weapon in pairs(cPlayer['r_WeaponProgressList']) do
         if weapon['weaponName'] == weaponName then
-            weapon['kills'] = weapon['kills'] + killamount
-
-            local player = PlayerManager:GetPlayerByGuid(playerGuid)
-            if player ~= nil then
-                NetEvents:SendTo('OnKilledPlayer', player, weapon['weaponName'], weapon['kills'])
-                WeapAttachUnlockCheck(player, weaponName, weapon['kills'])
-            end
+            weapon['kills'] = weapon['kills'] + killAmount
+            NetEvents:SendTo('OnKilledPlayer', player, weapon['weaponName'], weapon['kills'])
+            WeapAttachUnlockCheck(player, weaponName, weapon['kills'])
             break
         end
     end
@@ -164,8 +158,8 @@ function IncreasePlayerXP(playerGuid, levelKey, xpKey, xpValue, progressUnlockLi
                 end
 
                 PlayerLevelUp(
-                    PlayerManager:GetPlayerByGuid(cPlayer.r_PlayerGuid), 
-                    levelType, 
+                    cPlayer.r_Player,
+                    levelType,
                     cPlayer[levelKey],
                     prettyNames
                 )
@@ -234,13 +228,6 @@ function IncreaseVehicleScore(player, playerGuid, vehicleControllableType, score
             end
             break
         end
-    end
-end
-
-
-function StoreAllPlayerStats()
-    for guid, cPlayer in pairs(currentRankupPlayers) do
-        storageManager:storePlayerProgress(cPlayer)
     end
 end
 
@@ -409,20 +396,17 @@ end)
 
 -- Player killed / death
 Events:Subscribe('Player:Killed', function(player, inflictor, position, weapon, isRoadKill, isHeadShot, wasVictimInReviveState, info)
-    local guid = tostring(player.guid)
-    
-    if player and guid then
-        local victim = currentRankupPlayers[guid]
+    if player and player.guid then
+        local victim = currentRankupPlayers[tostring(player.guid)]
         if victim then
             victim['r_Deaths'] = victim['r_Deaths'] + 1
         end
     end
-    if inflictor and inflictor.guid then
-        local inflictorGuid = tostring(inflictor.guid)
-        local killer = currentRankupPlayers[inflictorGuid]
+    if inflictor and inflictor.guid and inflictor ~= player then
+        local killer = currentRankupPlayers[tostring(inflictor.guid)]
         if killer then
             killer['r_Kills'] = killer['r_Kills'] + 1
-            IncreaseWeaponKills(inflictor.guid, weapon, 1)
+            IncreaseWeaponKills(inflictor, weapon, 1)
         end
     end
 end)
@@ -450,9 +434,16 @@ Events:Subscribe('Extension:Loaded', function()
     end
 end)
 
+Events:Subscribe('Level:Loaded', function(levelName, gameMode, round, roundsPerMap)
+    storageManager:newRound(levelName, gameMode)
+end)
+
 Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)
-    print("The round is over. Storing player data.")
-    StoreAllPlayerStats()
+    print("The round is over. Storing round & player data.")
+    storageManager:finalizeRound(roundTime, winningTeam)
+    for guid, rankupPlayer in pairs(currentRankupPlayers) do
+        storageManager:storePlayerProgress(rankupPlayer)
+    end
 end)
 
 Events:Subscribe('Player:Chat', ChatCommand)
@@ -465,7 +456,7 @@ if CONFIG.General.debug then
     end)
 
     NetEvents:Subscribe('AddKillsToWeap', function(player, kills, weapPath)
-        IncreaseWeaponKills(player.guid, weapPath, kills)
+        IncreaseWeaponKills(player, weapPath, kills)
     end)
     
 end

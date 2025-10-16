@@ -1,7 +1,6 @@
 require("__shared/config")
 require("__shared/Version")
 require('lib/csv')
-local json = require('lib/json')
 
 local API_TIMEOUT = 5 -- Timeout (sec)
 -- Server loading state that will trigger net storage init/auth.
@@ -32,6 +31,7 @@ local NetStorage = class('NetStorage')
 function NetStorage:__init()
     self.authed = false
     self._httpOptions = nil
+    self._curRoundID = -1
 
     self._loadingEvent = Events:Subscribe('Level:LoadingInfo', self, self._onLoadingEvent)
     if RCON:GetServerGuid() ~= nil then -- Mod reload; need to force re-init
@@ -85,8 +85,6 @@ function NetStorage:_onLoadingEvent(state)
             return
         end
         if res.status ~= 200 then -- Auth error
-            local tbl = json.decode(res.body)
-            print("GLOBAL PROGRESSION ERROR " .. res.status .. ": " .. tbl.error)
             print("Defaulting to local storage...")
             self._loadingEvent:Unsubscribe() -- Fatal; don't try again
             return
@@ -99,11 +97,20 @@ function NetStorage:_onLoadingEvent(state)
     end
 end
 
-function NetStorage:_isValidResponse(res)
+function NetStorage:_isValidResponse(res, errPrefix)
+    if errPrefix == nil then
+        errPrefix = "GLOBAL PROGRESSION ERROR: "
+    end
+    -- Check if response exists
     if not res or not res.body then
-        print("CANNOT REACH GLOBAL PROGRESSION SERVER!")
+        print(errPrefix .. "No response (Master server down?)")
         return false
     end
+    -- Check for error response and print it if present
+    if res.status >= 400 then
+        print(errPrefix .. json.decode(res.body).error)
+    end
+    -- Print status code and body if debugging
     if CONFIG.General.debug then
         print("API Response: " .. res.status .. " " .. res.body)
     end
@@ -136,9 +143,45 @@ function NetStorage:_remapData(src, dest, toNet)
     end
 end
 
+function NetStorage:newRound(levelName, gameMode)
+    local serverSettings = ResourceManager:GetSettings("ServerSettings")
+    serverSettings = ServerSettings(serverSettings)
+    local data = {
+        server_name = serverSettings.serverName,
+        gamemode = gameMode,
+        map = levelName
+    }
+    Net:PostHTTPAsync(
+        CONFIG.GlobalProgression.url .. "/rounds",
+        json.encode(data),
+        self._httpOptions,
+        function(res)
+            if self:_isValidResponse(res) and res.status == 201 then
+                self._curRoundID = json.decode(res.body).id
+            else
+                self._curRoundID = -1
+            end
+        end
+    )
+end
+
+function NetStorage:finalizeRound(roundTime, winningTeam)
+    local data = {
+        num_players = PlayerManager:GetPlayerCount(),
+        winning_team_id = winningTeam,
+        duration = roundTime
+    }
+    Net:PatchHTTPAsync(
+        CONFIG.GlobalProgression.url .. "/rounds/" .. self._curRoundID,
+        json.encode(data),
+        self._httpOptions,
+        function(res) self:_isValidResponse(res) end
+    )
+end
+
 function NetStorage:fetchPlayerProgress(playerRankObject, callback)
     Net:GetHTTPAsync(
-        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject['r_PlayerGuid']:ToString('D') .. "/progression",
+        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject.r_Player.guid:ToString('D') .. "/progression",
         self._httpOptions,
         function(res)
             if self:_isValidResponse(res) and res.status == 200 then
@@ -160,21 +203,23 @@ function NetStorage:storePlayerProgress(playerRankObject, callback)
         data,
         true -- To Net keys
     )
-    data.name = playerRankObject['r_PlayerName'] -- Name needs to be added in case of new player
+    -- Add extra required data
+    data.name = playerRankObject.r_Player.name -- Name needs to be added in case of new player
+    data.server_round_id = self._curRoundID
+    data.team_id = playerRankObject.r_Player.teamId
+    data.squad_id = playerRankObject.r_Player.squadId
     Net:PostHTTPAsync(
-        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject['r_PlayerGuid']:ToString('D') .. "/progression",
+        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject.r_Player.guid:ToString('D') .. "/progression",
         json.encode(data),
         self._httpOptions,
         function(res)
-            local isValidResponse = self:_isValidResponse(res)
-            if isValidResponse and res.status == 200 then
+            local isValidResponse = self:_isValidResponse(
+                res,
+                "FAILED TO SAVE " .. data.name .. " data globally: "
+            )
+            if isValidResponse and (res.status == 200 or res.status == 201) then
                 callback(true)
             else
-                local err = "No response"
-                if isValidResponse then
-                    err = json.decode(res.body).error
-                end
-                print("FAILED TO SAVE " .. playerRankObject['r_PlayerName'] .. " data globally: " .. err)
                 callback(false)
             end
         end
