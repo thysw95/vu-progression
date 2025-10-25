@@ -32,6 +32,10 @@ function NetStorage:__init()
     self.authed = false
     self._httpOptions = nil
     self._curRoundID = -1
+    
+    if string.ends(CONFIG.GlobalProgression.url, "/") then
+        CONFIG.GlobalProgression.url = string.sub(CONFIG.GlobalProgression.url, 1, -2)
+    end
 
     self._loadingEvent = Events:Subscribe('Level:LoadingInfo', self, self._onLoadingEvent)
     if RCON:GetServerGuid() ~= nil then -- Mod reload; need to force re-init
