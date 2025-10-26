@@ -141,7 +141,7 @@ function NetStorage:_remapData(src, dest, toNet)
             elseif k == 'vehicle_progression' then
                 dest[v] = csvToTableList(src[k], 'typeName', 'score')
             else
-                dest[v] = src[k]
+                dest[v] = math.floor(src[k]) -- Convert ambiguous floats to ints
             end
         end
     end
