@@ -20,9 +20,9 @@ function StorageManager:newRound(levelName, gameMode)
     end
 end
 
-function StorageManager:finalizeRound(roundTime, winningTeam)
+function StorageManager:finalizeRound(numPlayers, roundTime, winningTeam)
     if CONFIG.GlobalProgression.enabled and self.netStorage.authed then
-        self.netStorage:finalizeRound(roundTime, winningTeam)
+        self.netStorage:finalizeRound(numPlayers, roundTime, winningTeam)
     end
 end
 

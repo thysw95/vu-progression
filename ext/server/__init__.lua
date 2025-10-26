@@ -440,10 +440,12 @@ end)
 
 Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)
     print("The round is over. Storing round & player data.")
-    storageManager:finalizeRound(roundTime, winningTeam)
+    local numHumanPlayers = 0
     for guid, rankupPlayer in pairs(currentRankupPlayers) do
+        numHumanPlayers = numHumanPlayers + 1
         storageManager:storePlayerProgress(rankupPlayer)
     end
+    storageManager:finalizeRound(numHumanPlayers, roundTime, winningTeam)
 end)
 
 Events:Subscribe('Player:Chat', ChatCommand)

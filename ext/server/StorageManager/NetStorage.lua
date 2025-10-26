@@ -169,7 +169,7 @@ function NetStorage:newRound(levelName, gameMode)
     )
 end
 
-function NetStorage:finalizeRound(roundTime, winningTeam)
+function NetStorage:finalizeRound(numPlayers, roundTime, winningTeam)
     local data = {
         num_players = PlayerManager:GetPlayerCount(),
         winning_team_id = winningTeam,
