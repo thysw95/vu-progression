@@ -201,6 +201,18 @@ function NetStorage:fetchPlayerProgress(playerRankObject, callback)
 end
 
 function NetStorage:storePlayerProgress(playerRankObject, callback)
+    -- Closure, nil check, and string conversion of GUID
+    local s_guid = playerRankObject
+        and playerRankObject.r_Player
+        and playerRankObject.r_Player.guid
+        and playerRankObject.r_Player.guid:ToString('D')
+    if s_guid == nil then
+        print("FAILED TO SAVE player data globally: Player or GUID is nil!")
+        callback(false)
+        return
+    end
+
+    -- Build API-compliant data table
     local data = {}
     self:_remapData(
         playerRankObject,
@@ -212,8 +224,9 @@ function NetStorage:storePlayerProgress(playerRankObject, callback)
     data.server_round_id = self._curRoundID
     data.team_id = playerRankObject.r_Player.teamId
     data.squad_id = playerRankObject.r_Player.squadId
+    -- Post player data to API
     Net:PostHTTPAsync(
-        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject.r_Player.guid:ToString('D') .. "/progression",
+        CONFIG.GlobalProgression.url .. "/players/" .. s_guid .. "/progression",
         json.encode(data),
         self._httpOptions,
         function(res)
