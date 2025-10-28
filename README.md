@@ -35,7 +35,7 @@ This mod is still in early development, so some key features are still missing.
 - A dedicated server or local server
 
 ### Steps
-1. Download the latest release from the [Releases](./releases) page.
+1. Download the latest release from the [Releases](https://github.com/thysw95/vu-progression/releases) page.
 2. Extract the mod into your server’s `mods` directory. The folder structure should look like this:
     ```bash
     instance/
