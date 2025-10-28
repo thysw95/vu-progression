@@ -22,7 +22,7 @@ This mod is still in early development, so some key features are still missing.
 - Persistent player stats across all servers (req. opt-in approval; see below for details)
 - Configurable progression settings for server owners
 
-> ![TIP]
+> [!TIP]
 > If you would like your VU server to be included in public global progression, please visit [this wiki page](https://github.com/redthirten/vu-progression-api/wiki/Public-Global-Progression) for instructions to apply.\
 > \
 > The mod will default to local storage if you prefer not to participate.
