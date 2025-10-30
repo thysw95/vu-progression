@@ -74,22 +74,20 @@ function PlayerXPUpdated(player, score)
         vehicleEntityData = VehicleEntityData(player.attachedControllable.data)
     end
 
-    local guid = tostring(player.guid)
-
-    local cPlayer = currentRankupPlayers[guid]
+    local cPlayer = currentRankupPlayers[tostring(player.guid)]
     if cPlayer then
-        IncreasePlayerXP(guid, 'r_PlayerLevel', 'r_PlayerCurrentXP', xp, PROG_CONFIGS.General, "General")
+        IncreasePlayerXP(cPlayer, 'r_PlayerLevel', 'r_PlayerCurrentXP', xp, PROG_CONFIGS.General, "General")
 
         if kitName == 'ID_M_ASSAULT' then
-            IncreasePlayerXP(guid, 'r_AssaultLevel', 'r_AssaultCurrentXP', xp, PROG_CONFIGS.Assault, "Assault")
+            IncreasePlayerXP(cPlayer, 'r_AssaultLevel', 'r_AssaultCurrentXP', xp, PROG_CONFIGS.Assault, "Assault")
         elseif kitName == 'ID_M_ENGINEER' then
-            IncreasePlayerXP(guid, 'r_EngineerLevel', 'r_EngineerCurrentXP', xp, PROG_CONFIGS.Engineer, "Engineer")
+            IncreasePlayerXP(cPlayer, 'r_EngineerLevel', 'r_EngineerCurrentXP', xp, PROG_CONFIGS.Engineer, "Engineer")
         elseif kitName == 'ID_M_SUPPORT' then
-            IncreasePlayerXP(guid, 'r_SupportLevel', 'r_SupportCurrentXP', xp, PROG_CONFIGS.Support, "Support")
+            IncreasePlayerXP(cPlayer, 'r_SupportLevel', 'r_SupportCurrentXP', xp, PROG_CONFIGS.Support, "Support")
         elseif kitName == 'ID_M_RECON' then
-            IncreasePlayerXP(guid, 'r_ReconLevel', 'r_ReconCurrentXP', xp, PROG_CONFIGS.Recon, "Recon")
+            IncreasePlayerXP(cPlayer, 'r_ReconLevel', 'r_ReconCurrentXP', xp, PROG_CONFIGS.Recon, "Recon")
         elseif kitName == 'Vehicle' then
-            IncreaseVehicleScore(player, guid, vehicleEntityData.controllableType, xp)
+            IncreaseVehicleScore(cPlayer, vehicleEntityData.controllableType, xp)
         end
     end
 end
@@ -130,10 +128,7 @@ function WeapAttachUnlockCheck(player, weaponName, weapKills)
     end
 end
 
-function IncreasePlayerXP(playerGuid, levelKey, xpKey, xpValue, progressUnlockList, levelType)
-    local cPlayer = currentRankupPlayers[playerGuid]
-    if not cPlayer then return end
-
+function IncreasePlayerXP(cPlayer, levelKey, xpKey, xpValue, progressUnlockList, levelType)
     local origScore = cPlayer[xpKey]
     cPlayer[xpKey] = cPlayer[xpKey] + xpValue
 
@@ -185,12 +180,7 @@ function PlayerLevelUp(player, levelType, level, unlockName)
     end
 end
 
-function IncreaseVehicleScore(player, playerGuid, vehicleControllableType, scoreGained)
-    local guid = tostring(playerGuid)
-
-    local cPlayer = currentRankupPlayers[guid]
-    if not cPlayer then return end
-
+function IncreaseVehicleScore(cPlayer, vehicleControllableType, scoreGained)
     -- Find progression config
     local progCfg = nil
     for _, vehicleType in pairs(PROG_CONFIGS.Vehicle) do
@@ -219,7 +209,7 @@ function IncreaseVehicleScore(player, playerGuid, vehicleControllableType, score
 
     for _, unlock in pairs(progCfg.unlocks) do
         if unlock.vicScoreRequired > origScore and unlock.vicScoreRequired <= playerVicProg.score then
-            print(player.name .. " unlocked " .. unlock.prettyName .. " for " .. progCfg.prettyName .. "!")
+            print(cPlayer.r_Player.name .. " unlocked " .. unlock.prettyName .. " for " .. progCfg.prettyName .. "!")
             NetEvents:SendTo('OnVehicleCustUnlock', player, progCfg.prettyName, playerVicProg.score)
             if CONFIG.UnlockNotifications.enabled == true then
                 local message = string.format(CONFIG.UnlockNotifications.messages.vehicleUnlock, progCfg.prettyName, playerVicProg.score, unlock.prettyName)
@@ -235,7 +225,6 @@ function ChatCommand(player, recipientMask, message)
     if player == nil then return end
 
     local guid = tostring(player.guid)
-
     local cPlayer = currentRankupPlayers[guid]
 
     if not cPlayer then

@@ -65,7 +65,7 @@ end
 function LocalStorage:fetchPlayerProgress(playerRankObject)
     local existingPlayers = SQL:Query(
         'SELECT * FROM player_rankings_table WHERE player_guid = ?',
-        playerRankObject.r_Player.guid:ToString('D')
+        playerRankObject.r_PlayerGuidStr
     )
 
     if existingPlayers ~= nil and #existingPlayers > 0 and existingPlayers[1] ~= nil then
@@ -102,10 +102,14 @@ end
 function LocalStorage:storePlayerProgress(playerRankObject)
     -- print("STORING PLAYER RANKING DETAILS.")
     -- print("PLAYER TO ADD TO DB: " .. playerRankObject.r_Player.name)
+    if playerRankObject == nil then
+        print("FAILED TO SAVE player data locally: Player or GUID is nil!")
+        return false
+    end
 
     local existingPlayer = SQL:Query(
         'SELECT * FROM player_rankings_table WHERE player_guid = ?',
-        playerRankObject.r_Player.guid:ToString('D')
+        playerRankObject.r_PlayerGuidStr
     )
 
     local weaponTable = tableListToCSV(
@@ -157,7 +161,7 @@ function LocalStorage:storePlayerProgress(playerRankObject)
             playerRankObject['r_ReconCurrentXP'],
             weaponTable,
             vehicleTable,
-            playerRankObject.r_Player.guid:ToString('D')
+            playerRankObject.r_PlayerGuidStr
         ) then
             print('LOCAL STORAGE failed to execute query: ' .. SQL:Error())
             return false
@@ -190,7 +194,7 @@ function LocalStorage:storePlayerProgress(playerRankObject)
         if not SQL:Query(
             query,
             playerRankObject.r_Player.name,
-            playerRankObject.r_Player.guid:ToString('D'),
+            playerRankObject.r_PlayerGuidStr,
             playerRankObject['r_Kills'],
             playerRankObject['r_Deaths'],
             playerRankObject['r_PlayerLevel'],

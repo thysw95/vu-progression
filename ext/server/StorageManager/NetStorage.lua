@@ -185,7 +185,7 @@ end
 
 function NetStorage:fetchPlayerProgress(playerRankObject, callback)
     Net:GetHTTPAsync(
-        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject.r_Player.guid:ToString('D') .. "/progression",
+        CONFIG.GlobalProgression.url .. "/players/" .. playerRankObject.r_PlayerGuidStr .. "/progression",
         self._httpOptions,
         function(res)
             if self:_isValidResponse(res) and res.status == 200 then
@@ -201,13 +201,11 @@ function NetStorage:fetchPlayerProgress(playerRankObject, callback)
 end
 
 function NetStorage:storePlayerProgress(playerRankObject, callback)
-    -- Closure, nil check, and string conversion of GUID
-    local s_guid = playerRankObject
-        and playerRankObject.r_Player
-        and playerRankObject.r_Player.guid
-        and playerRankObject.r_Player.guid:ToString('D')
-    if s_guid == nil then
-        print("FAILED TO SAVE player data globally: Player or GUID is nil!")
+    -- Closure & nil check of GUID
+    -- (Still not sure if parameters in async functions are evaluated async as well)
+    local s_guid = playerRankObject.r_PlayerGuidStr
+    if not s_guid then
+        print("FAILED TO SAVE " .. playerRankObject.r_Player.name .. " data globally: GUID is nil!")
         callback(false)
         return
     end
