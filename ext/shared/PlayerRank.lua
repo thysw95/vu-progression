@@ -6,10 +6,6 @@ local VUPlayerRankClass = class('VUPlayerRank')
 function VUPlayerRankClass:__init(player)
     -- print("I RECEIVED THE FOLLOWING PLAYER FOR OBJECT CREATION:")
     -- print(player)
-	self.InitVariables(self, player)
-end
-
-function VUPlayerRankClass:InitVariables(player)
     self.InitPlayerVariables(self, player)
     self.InitGeneralRankStats(self)
 
@@ -22,8 +18,12 @@ function VUPlayerRankClass:InitVariables(player)
 end
 
 function VUPlayerRankClass:InitPlayerVariables(player)
-    self.r_PlayerName = player.name
-    self.r_PlayerGuid = player.guid
+    self.r_Player = player
+    if player.guid ~= nil then
+        self.r_PlayerGuidStr = player.guid:ToString('D')
+    else
+        print("ERROR: Player " .. player.name .. " doesn't have a GUID?!")
+    end
     self.r_Kills = 0
     self.r_Deaths = 0
 end
@@ -90,7 +90,7 @@ end
 --     self.r_PlayerRequiredXP = self.r_PlayerRequiredXP + (self.r_PlayerRequiredXP)
 --     self.r_PlayerLevel = self.r_PlayerLevel + 1
 
---     print(self.r_PlayerName .. " HAS GAINED A LEVEL!!!!")
+--     print(self.r_Player.name .. " HAS GAINED A LEVEL!!!!")
 --     print("NEW LEVEL IS: ")
 --     print(self.r_PlayerLevel)
     
