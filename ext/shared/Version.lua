@@ -1,5 +1,5 @@
 VERSION = {
-    Major = 2,
-    Minor = 1,
-    Patch = 1
+    Major = 3,
+    Minor = 0,
+    Patch = 0
 }
