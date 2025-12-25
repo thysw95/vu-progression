@@ -70,7 +70,7 @@ end
 
 Events:Subscribe('Level:Finalized', function(levelName, gameMode)
     InitAssetsLock()
-    NetEvents:Send('AddNewPlayerForStats', 'Adding new player to Stats')
+    NetEvents:SendLocal('AddNewPlayerForStats')
 end)
 
 NetEvents:Subscribe('OnInitialUnlock', function(levelCat, levelIndex)

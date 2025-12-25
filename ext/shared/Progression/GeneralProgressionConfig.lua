@@ -10,33 +10,53 @@ local generalProgression = {
         xpRequired = 0,
         unlocks = {
             {
-        
                 prettyName = 'M9',
                 equipmentPath = 'Weapons/M9/U_M9',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_SECONDARY',
             },
             {
-                
                 prettyName = 'MP443',
                 equipmentPath = 'Weapons/MP443/U_MP443',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_SECONDARY',
             },
             {
-                
                 prettyName = 'NONE Specialization',
                 equipmentPath = 'Weapons/Common/NoSpecialization',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_SPECIALIZATION',
             },
-            -- {
-            --     
-            --     prettyName = 'Default Camo',
-            --     equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO_DEFAULT',
-            --     kits = {'All'},
-            --     slotId = 'CAMO',
-            -- },
+            {
+                prettyName = 'Default Camo', -- Level 1
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO_DEFAULT',
+                kits = {'All'},
+                slotId = 'CAMO',
+            },
+            {
+                prettyName = 'Premium 1 Camo', -- Exclusive Premium bonus
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO_XP2_ABU',
+                kits = {'All'},
+                slotId = 'CAMO',
+            },
+            {
+                prettyName = 'Premium 2 Camo', -- Exclusive Premium bonus
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO_XP2_ATACS',
+                kits = {'All'},
+                slotId = 'CAMO',
+            },
+            {
+                prettyName = 'Premium 3 Camo', -- Exclusive Premium bonus
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO_XP2_DsrtTiger',
+                kits = {'All'},
+                slotId = 'CAMO',
+            },
+            {
+                prettyName = 'Premium 4 Camo', -- Exclusive Premium bonus
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO_XP2_NWU',
+                kits = {'All'},
+                slotId = 'CAMO',
+            },
         }
     },
     {
@@ -58,6 +78,12 @@ local generalProgression = {
                 equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SprintBoostL2',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+            {
+                prettyName = 'Woodland Pattern Camo', -- Level 3
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO1',
+                kits = {'All'},
+                slotId = 'CAMO',
             },
         }
     },
@@ -92,6 +118,12 @@ local generalProgression = {
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
+            {
+                prettyName = 'Ranger Camo', -- Level 6
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO2',
+                kits = {'All'},
+                slotId = 'CAMO',
+            },
         }
     },
     {
@@ -113,6 +145,12 @@ local generalProgression = {
                 equipmentPath = 'Weapons/M9/U_M9_TacticalLight',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+            {
+                prettyName = 'Army Green Camo', -- Level 8
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO3',
+                kits = {'All'},
+                slotId = 'CAMO',
             },
         }
     },
@@ -158,6 +196,12 @@ local generalProgression = {
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
+            {
+                prettyName = 'Expeditinary Force Camo', -- Level 12
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO4',
+                kits = {'All'},
+                slotId = 'CAMO',
+            },
         }
     },
     {
@@ -190,6 +234,12 @@ local generalProgression = {
                 equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/GrenadeBoostL2',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+            {
+                prettyName = 'Paratrooper Camo', -- Level 15
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO5',
+                kits = {'All'},
+                slotId = 'CAMO',
             },
         }
     },
@@ -224,6 +274,12 @@ local generalProgression = {
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_SECONDARY',
             },
+            {
+                prettyName = 'Navy Blue Camo', -- Level 18
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO6',
+                kits = {'All'},
+                slotId = 'CAMO',
+            },
         }
     },
     {
@@ -245,6 +301,12 @@ local generalProgression = {
                 equipmentPath = 'Weapons/MP443/U_MP443_Silenced',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_SECONDARY',
+            },
+            {
+                prettyName = 'Jungle Pattern Camo', -- Level 20
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO7',
+                kits = {'All'},
+                slotId = 'CAMO',
             },
         }
     },
@@ -290,6 +352,12 @@ local generalProgression = {
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
+            {
+                prettyName = 'Desert Khaki Camo', -- Level 24
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO8',
+                kits = {'All'},
+                slotId = 'CAMO',
+            },
         }
     },
     {
@@ -322,6 +390,12 @@ local generalProgression = {
                 equipmentPath = 'Persistence/Unlocks/Soldiers/Specializations/SuppressionResistL2',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_SPECIALIZATION',
+            },
+            {
+                prettyName = 'Urban Pattern Camo', -- Level 27
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO9',
+                kits = {'All'},
+                slotId = 'CAMO',
             },
         }
     },
@@ -455,6 +529,12 @@ local generalProgression = {
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_SECONDARY',
             },
+            {
+                prettyName = 'Veteran Kit Camo', -- Level 39
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO10',
+                kits = {'All'},
+                slotId = 'CAMO',
+            },
         }
     },
     {
@@ -487,6 +567,12 @@ local generalProgression = {
                 equipmentPath = 'Weapons/ASVal/U_ASVal',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_PRIMARY',
+            },
+            {
+                prettyName = 'Spec Ops Black Camo', -- Level 42
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO11',
+                kits = {'All'},
+                slotId = 'CAMO',
             },
         }
     },
@@ -521,6 +607,12 @@ local generalProgression = {
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_PRIMARY',
             },
+            {
+                prettyName = 'SPECACT Camo', -- Pre-order bonus & Purchasable content
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO_SPECACT',
+                kits = {'All'},
+                slotId = 'CAMO',
+            },
         }
     },
     {
@@ -553,6 +645,12 @@ local generalProgression = {
                 equipmentPath = 'Weapons/XP4_Crossbow_Prototype/U_Crossbow_Scoped_RifleScope',
                 kits = {'All'},
                 slotId = 'ID_M_SOLDIER_GADGET1',
+            },
+            {
+                prettyName = 'Dr. Pepper Camo', -- Dr. Pepper promotion & Purchasable content
+                equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO_DrPepper',
+                kits = {'All'},
+                slotId = 'CAMO',
             },
         }
     },
