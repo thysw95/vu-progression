@@ -210,11 +210,11 @@ function IncreaseVehicleScore(cPlayer, vehicleControllableType, scoreGained)
     for _, unlock in pairs(progCfg.unlocks) do
         if unlock.vicScoreRequired > origScore and unlock.vicScoreRequired <= playerVicProg.score then
             print(cPlayer.r_Player.name .. " unlocked " .. unlock.prettyName .. " for " .. progCfg.prettyName .. "!")
-            NetEvents:SendTo('OnVehicleCustUnlock', player, progCfg.prettyName, playerVicProg.score)
+            NetEvents:SendTo('OnVehicleCustUnlock', cPlayer.r_Player, progCfg.prettyName, playerVicProg.score)
             if CONFIG.UnlockNotifications.enabled == true then
                 local message = string.format(CONFIG.UnlockNotifications.messages.vehicleUnlock, progCfg.prettyName, playerVicProg.score, unlock.prettyName)
-                ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, player)
-                NetEvents:SendTo('PlayUnlockSound', player, 'vehicleUnlock')
+                ChatManager:Yell(message, CONFIG.UnlockNotifications.duration, cPlayer.r_Player)
+                NetEvents:SendTo('PlayUnlockSound', cPlayer.r_Player, 'vehicleUnlock')
             end
             break
         end
