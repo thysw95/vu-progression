@@ -29,6 +29,7 @@ local generalProgression = {
             },
             {
                 prettyName = 'Default Camo', -- Level 1
+                -- Do not use 'XP4' paths for camos; they will be automatically converted when needed
                 equipmentPath = 'UI/Art/Persistence/Camo/U_CAMO_DEFAULT',
                 kits = {'All'},
                 slotId = 'CAMO',

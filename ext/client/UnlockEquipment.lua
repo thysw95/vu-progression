@@ -2,7 +2,7 @@ require("__shared/KitVariables")
 
 function ApplyUnlock(equipmentPath, equipmentSlot, kitName)
     local unlockAssetBase = ResourceManager:SearchForDataContainer(equipmentPath)
-    -- Handle XP4 maps having different equipment paths
+    -- Handle XP4 maps having different equipment paths for soldier camos
     if unlockAssetBase == nil and equipmentSlot == CUST_UNLOCK_CAT_IDS.camo then
         -- Default camo is the only one that doesn't end in '_XP4'
         if equipmentPath:match("_DEFAULT$") then
