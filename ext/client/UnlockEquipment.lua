@@ -2,6 +2,17 @@ require("__shared/KitVariables")
 
 function ApplyUnlock(equipmentPath, equipmentSlot, kitName)
     local unlockAssetBase = ResourceManager:SearchForDataContainer(equipmentPath)
+    -- Handle XP4 maps having different equipment paths
+    if unlockAssetBase == nil and equipmentSlot == CUST_UNLOCK_CAT_IDS.camo then
+        -- Default camo is the only one that doesn't end in '_XP4'
+        if equipmentPath:match("_DEFAULT$") then
+            equipmentPath = equipmentPath:gsub("_DEFAULT$", "_XP4_DEFAULT")
+        else
+            equipmentPath = equipmentPath .. "_XP4"
+        end
+        unlockAssetBase = ResourceManager:SearchForDataContainer(equipmentPath)
+    end
+    -- Final check if resource was found
     if unlockAssetBase == nil then
         print("CANNOT FIND UNLOCK equipmentPath: " .. equipmentPath)
         return
