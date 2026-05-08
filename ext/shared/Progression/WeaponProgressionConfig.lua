@@ -15,7 +15,7 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/A91/U_A91_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -25,7 +25,7 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/A91/U_A91_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/A91/U_A91_Flashlight',
@@ -35,17 +35,17 @@ return {
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/A91/U_A91_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/A91/U_A91_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/A91/U_A91_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 200
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -55,57 +55,57 @@ return {
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/A91/U_A91_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 10
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/A91/U_A91_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 60
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/A91/U_A91_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/A91/U_A91_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 125
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/A91/U_A91_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 100
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/A91/U_A91_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 40
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/A91/U_A91_RX_01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 235
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/A91/U_A91_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 270
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/A91/U_A91_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 300
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/A91/U_A91_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 150
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/A91/U_A91_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 175
             },{
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/A91/U_A91_Ballistic_scope',
@@ -132,12 +132,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Rail',
                 attachmentPath = 'Weapons/Common/NoSecondaryRail',
@@ -147,27 +147,27 @@ return {
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_Soundsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -177,57 +177,57 @@ return {
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 10
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 50
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 200
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 235
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 270
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 300
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/AEK971/U_AEK971_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -254,12 +254,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Rail',
                 attachmentPath = 'Weapons/Common/NoSecondaryRail',
@@ -269,27 +269,27 @@ return {
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -299,57 +299,57 @@ return {
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 10
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 50
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 200
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_RX_01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 235
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 270
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 300
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/AK74M/U_AK74M_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -376,7 +376,7 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -386,7 +386,7 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_Flashlight',
@@ -396,17 +396,17 @@ return {
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 200
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -416,57 +416,57 @@ return {
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 10
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 60
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 125
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 100
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 40
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_RX_01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 235
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 270
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 300
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 150
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/AKS74u/U_AKS74u_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 175
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -493,12 +493,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/AN94/U_AN94_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/AN94/U_AN94_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Rail',
                 attachmentPath = 'Weapons/Common/NoSecondaryRail',
@@ -508,27 +508,27 @@ return {
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/AN94/U_AN94_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/AN94/U_AN94_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/AN94/U_AN94_Soundsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/AN94/U_AN94_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/AN94/U_AN94_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -538,57 +538,57 @@ return {
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/AN94/U_AN94_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 10
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/AN94/U_AN94_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 50
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/AN94/U_AN94_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/AN94/U_AN94_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/AN94/U_AN94_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/AN94/U_AN94_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/AN94/U_AN94_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 200
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/AN94/U_AN94_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 235
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/AN94/U_AN94_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 270
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/AN94/U_AN94_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 300
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/AN94/U_AN94_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -615,17 +615,17 @@ return {
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 20
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 50
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_ExtendedMag',
                 attachmentSlotIndex = 2,
-                killsRequired = 30
+                killsRequired = 200
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -640,57 +640,57 @@ return {
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 10
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 30
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 40
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 60
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 70
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 80
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 90
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 100
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 125
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_RifleScope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 150
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/ASVal/U_ASVal_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 175
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -717,17 +717,17 @@ return {
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_ExtendedMag',
                 attachmentSlotIndex = 2,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_Flashlight',
                 attachmentSlotIndex = 2,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_Targetpointer',
                 attachmentSlotIndex = 2,
-                killsRequired = 120
+                killsRequired = 70
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_Flashsuppressor',
@@ -752,47 +752,47 @@ return {
                 prettyName = '12G Flechette',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_Flechette',
                 attachmentSlotIndex = 3,
-                killsRequired = 20
+                killsRequired = 0
             },{
                 prettyName = '12G Frag',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_Frag',
                 attachmentSlotIndex = 3,
-                killsRequired = 60
+                killsRequired = 50
             },{
                 prettyName = '12G Slug',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_Slug',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 80
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 175
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 200
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 235
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 90
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 270
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 300
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_RX01',
@@ -802,7 +802,7 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 30
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_Acog',
@@ -812,12 +812,12 @@ return {
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 100
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/DAO-12/U_DAO-12_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 125
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -839,12 +839,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/F2000/U_F2000_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/F2000/U_F2000_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -854,27 +854,27 @@ return {
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/F2000/U_F2000_Heavy_Barrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/F2000/U_F2000_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/F2000/U_F2000_Sound_Suppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/F2000/U_F2000_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/F2000/U_F2000_Flash_Suppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -884,57 +884,57 @@ return {
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/F2000/U_F2000_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/F2000/U_F2000_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 50
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/F2000/U_F2000_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/F2000/U_F2000_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/F2000/U_F2000_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/F2000/U_F2000_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/F2000/U_F2000_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/F2000/U_F2000_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/F2000/U_F2000_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/F2000/U_F2000_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/F2000/U_F2000_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -971,12 +971,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/G36C/U_G36C_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/G36C/U_G36C_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 90
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -986,27 +986,27 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/G36C/U_G36C_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/G36C/U_G36C_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/G36C/U_G36C_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/G36C/U_G36C_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/G36C/U_G36C_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -1021,52 +1021,52 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/G36C/U_G36C_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/G36C/U_G36C_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/G36C/U_G36C_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/G36C/U_G36C_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/G36C/U_G36C_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/G36C/U_G36C_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/G36C/U_G36C_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 235
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/G36C/U_G36C_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/G36C/U_G36C_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/G36C/U_G36C_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -1093,12 +1093,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Rail',
                 attachmentPath = 'Weapons/Common/NoSecondaryRail',
@@ -1108,27 +1108,27 @@ return {
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_FlashLight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -1138,57 +1138,57 @@ return {
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 50
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/G3A3/U_G3A3_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -1232,12 +1232,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -1247,27 +1247,27 @@ return {
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_Heavy_Barrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_Sound_Suppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_Flash_Suppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -1277,57 +1277,57 @@ return {
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 10
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 50
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 200
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 235
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 270
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 300
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/KH2002/U_KH2002_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -1364,7 +1364,7 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/M1014/U_M1014_Targetpointer',
                 attachmentSlotIndex = 2,
-                killsRequired = 120
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/M1014/U_M1014_Flashsuppressor',
@@ -1409,52 +1409,52 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/M1014/U_M1014_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 40
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/M1014/U_M1014_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/M1014/U_M1014_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/M1014/U_M1014_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/M1014/U_M1014_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/M1014/U_M1014_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/M1014/U_M1014_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 235
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/M1014/U_M1014_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/M1014/U_M1014_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/M1014/U_M1014_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -1476,12 +1476,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Rail',
                 attachmentPath = 'Weapons/Common/NoSecondaryRail',
@@ -1491,27 +1491,27 @@ return {
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_Sound_Suppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -1521,57 +1521,57 @@ return {
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 50
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/M16A4/U_M16A4_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -1598,12 +1598,12 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/M240/U_M240_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 0
             },{
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/M240/U_M240_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -1613,7 +1613,7 @@ return {
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/M240/U_M240_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 20
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/M240/U_M240_ExtendedMag',
@@ -1623,12 +1623,12 @@ return {
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/M240/U_M240_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/M240/U_M240_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 70
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/M240/U_M240_Silencer',
@@ -1643,47 +1643,47 @@ return {
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/M240/U_M240_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 10
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/M240/U_M240_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/M240/U_M240_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/M240/U_M240_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/M240/U_M240_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/M240/U_M240_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/M240/U_M240_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 175
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/M240/U_M240_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/M240/U_M240_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 235
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -1730,12 +1730,12 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/M249/U_M249_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 0
             },{
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/M249/U_M249_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -1745,7 +1745,7 @@ return {
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/M249/U_M249_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 20
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/M249/U_M249_ExtendedMag',
@@ -1755,12 +1755,12 @@ return {
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/M249/U_M249_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/M249/U_M249_Targetpointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 70
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/M249/U_M249_Silencer',
@@ -1775,47 +1775,47 @@ return {
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/M249/U_M249_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 10
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/M249/U_M249_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/M249/U_M249_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/M249/U_M249_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/M249/U_M249_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/M249/U_M249_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/M249/U_M249_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 175
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/M249/U_M249_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/M249/U_M249_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 235
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -1852,12 +1852,12 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 0
             },{
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -1867,32 +1867,32 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 80
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 350
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_ExtendedMag',
                 attachmentSlotIndex = 2,
-                killsRequired = 30
+                killsRequired = 300
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -1902,57 +1902,57 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 10
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 50
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 70
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 175
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 235
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/M27IAR/U_M27IAR_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -1979,12 +1979,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -1994,17 +1994,17 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_Target_pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -2019,62 +2019,62 @@ return {
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 0
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_Ballistic_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 80
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 175
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/M39EBR/U_M39EBR_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -2106,7 +2106,7 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 30
             },{
                 prettyName = 'Straight Pull Bolt',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_StraightPull',
@@ -2121,17 +2121,17 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -2151,57 +2151,57 @@ return {
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_Ballistic_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 10
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 50
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 80
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 175
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/M40A5/U_M40A5_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -2223,12 +2223,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/M416/U_M416_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/M416/U_M416_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Rail',
                 attachmentPath = 'Weapons/Common/NoSecondaryRail',
@@ -2238,27 +2238,27 @@ return {
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/M416/U_M416_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/M416/U_M416_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/M416/U_M416_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/M416/U_M416_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/M416/U_M416_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -2268,57 +2268,57 @@ return {
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/M416/U_M416_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/M416/U_M416_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 50
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/M416/U_M416_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/M416/U_M416_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/M416/U_M416_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/M416/U_M416_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/M416/U_M416_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/M416/U_M416_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/M416/U_M416_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/M416/U_M416_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/M416/U_M416_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -2355,12 +2355,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 90
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -2370,27 +2370,27 @@ return {
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_Targetpointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -2405,52 +2405,52 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 235
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/M4A1/U_M4A1_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -2477,12 +2477,12 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/M60/U_M60_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 0
             },{
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/M60/U_M60_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -2492,7 +2492,7 @@ return {
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/M60/U_M60_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 20
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/M60/U_M60_ExtendedMag',
@@ -2502,12 +2502,12 @@ return {
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/M60/U_M60_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/M60/U_M60_Targetpointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 70
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/M60/U_M60_Silencer',
@@ -2522,47 +2522,47 @@ return {
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/M60/U_M60_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 10
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/M60/U_M60_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/M60/U_M60_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/M60/U_M60_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/M60/U_M60_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/M60/U_M60_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/M60/U_M60_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 175
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/M60/U_M60_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/M60/U_M60_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 235
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -2599,7 +2599,7 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/M82A3/U_M82_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 50
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -2609,12 +2609,12 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/M82A3/U_M82_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/M82A3/U_M82_FlashLight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 30
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -2629,57 +2629,57 @@ return {
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/M82A3/U_M82_BallisticScope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 60
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/M82A3/U_M82_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/M82A3/U_M82_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 40
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/M82A3/U_M82_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/M82A3/U_M82_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 80
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/M82A3/U_M82_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 90
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/M82A3/U_M82_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 100
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/M82A3/U_M82_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 125
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/M82A3/U_M82_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/M82A3/U_M82_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 175
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/M82A3/U_M82_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 200
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -2708,7 +2708,7 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/MagpulPDR/U_MagpulPDR_Targetpointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/MagpulPDR/U_MagpulPDR_Flashlight',
@@ -2723,12 +2723,12 @@ return {
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/MagpulPDR/U_MagpulPDR_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 30
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/MagpulPDR/U_MagpulPDR_ExtendedMag',
                 attachmentSlotIndex = 2,
-                killsRequired = 30
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -2748,37 +2748,37 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/MagpulPDR/U_MagpulPDR_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 40
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/MagpulPDR/U_MagpulPDR_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 70
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/MagpulPDR/U_MagpulPDR_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 80
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/MagpulPDR/U_MagpulPDR_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/MagpulPDR/U_MagpulPDR_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/MagpulPDR/U_MagpulPDR_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/MagpulPDR/U_MagpulPDR_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -2800,12 +2800,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/MK11/U_Mk11_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/MK11/U_Mk11_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -2815,17 +2815,17 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/MK11/U_Mk11_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/MK11/U_Mk11_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/MK11/U_Mk11_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -2845,57 +2845,57 @@ return {
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/MK11/U_Mk11_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/MK11/U_Mk11_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/MK11/U_Mk11_Ballistic_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 80
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/MK11/U_Mk11_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/MK11/U_Mk11_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/MK11/U_Mk11_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/MK11/U_Mk11_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/MK11/U_Mk11_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 175
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/MK11/U_Mk11_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/MK11/U_Mk11_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/MK11/U_Mk11_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -2917,7 +2917,7 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/Model98B/U_M98B_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 30
             },{
                 prettyName = 'Straight Pull Bolt',
                 attachmentPath = 'Weapons/Model98B/U_M98B_StraightPull',
@@ -2932,17 +2932,17 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/Model98B/U_M98B_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/Model98B/U_M98B_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/Model98B/U_M98B_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -2962,57 +2962,57 @@ return {
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/Model98B/U_M98B_Ballistic_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 10
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/Model98B/U_M98B_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 50
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/Model98B/U_M98B_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 80
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/Model98B/U_M98B_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/Model98B/U_M98B_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/Model98B/U_M98B_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/Model98B/U_M98B_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/Model98B/U_M98B_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 175
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/Model98B/U_M98B_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/Model98B/U_M98B_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/Model98B/U_M98B_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -3034,7 +3034,7 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/MP7/U_MP7_Targetpointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/MP7/U_MP7_Flashlight',
@@ -3049,12 +3049,12 @@ return {
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/MP7/U_MP7_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 30
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/MP7/U_MP7_ExtendedMag',
                 attachmentSlotIndex = 2,
-                killsRequired = 30
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -3074,37 +3074,37 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/MP7/U_MP7_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 40
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/MP7/U_MP7_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 70
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/MP7/U_MP7_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 80
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/MP7/U_MP7_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/MP7/U_MP7_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/MP7/U_MP7_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/MP7/U_MP7_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -3126,7 +3126,7 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/P90/U_P90_Targetpointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/P90/U_P90_Flashlight',
@@ -3141,12 +3141,12 @@ return {
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/P90/U_P90_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 30
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/P90/U_P90_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -3161,37 +3161,37 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/P90/U_P90_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 40
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/P90/U_P90_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 70
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/P90/U_P90_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 80
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/P90/U_P90_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/P90/U_P90_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/P90/U_P90_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/P90/U_P90_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -3213,12 +3213,12 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 0
             },{
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -3228,7 +3228,7 @@ return {
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_Flash_Suppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 20
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_ExtendedMag',
@@ -3238,12 +3238,12 @@ return {
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 70
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_Silencer',
@@ -3258,47 +3258,47 @@ return {
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 10
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 50
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 175
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 200
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/Pecheneg/U_Pecheneg_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 235
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -3345,7 +3345,7 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_Targetpointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_Flashlight',
@@ -3360,12 +3360,12 @@ return {
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 30
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_Extendedmag',
                 attachmentSlotIndex = 2,
-                killsRequired = 30
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -3380,42 +3380,42 @@ return {
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 10
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 40
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 70
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 80
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/PP2000/U_PP2000_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -3447,12 +3447,12 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/Remington870/U_870_Target_Pointer',
                 attachmentSlotIndex = 2,
-                killsRequired = 120
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/Remington870/U_870_FlashSuppressor',
                 attachmentSlotIndex = 2,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -3492,52 +3492,52 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/Remington870/U_870_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 40
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/Remington870/U_870_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/Remington870/U_870_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/Remington870/U_870_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/Remington870/U_870_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/Remington870/U_870_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/Remington870/U_870_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 235
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/Remington870/U_870_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/Remington870/U_870_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/Remington870/U_870_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -3564,12 +3564,12 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/RPK/U_RPK_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 0
             },{
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/RPK/U_RPK_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -3579,32 +3579,32 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/RPK/U_RPK_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/RPK/U_RPK_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/RPK/U_RPK_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/RPK/U_RPK_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 80
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/RPK/U_RPK_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 300
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/RPK/U_RPK_ExtendedMag',
                 attachmentSlotIndex = 2,
-                killsRequired = 30
+                killsRequired = 350
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -3614,57 +3614,57 @@ return {
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/RPK/U_RPK_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 10
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/RPK/U_RPK_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 50
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/RPK/U_RPK_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 70
             },{
                 prettyName = 'PSO-01',
                 attachmentPath = 'Weapons/RPK/U_RPK_PSO-01',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/RPK/U_RPK_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/RPK/U_RPK_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/RPK/U_RPK_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 150
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/RPK/U_RPK_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 175
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/RPK/U_RPK_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 200
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/RPK/U_RPK_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 235
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/RPK/U_RPK_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -3701,12 +3701,12 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_Targetpointer',
                 attachmentSlotIndex = 2,
-                killsRequired = 120
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_Flashsuppressor',
                 attachmentSlotIndex = 2,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -3741,12 +3741,12 @@ return {
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 10
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 40
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_PSO-1',
@@ -3756,42 +3756,42 @@ return {
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 200
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 235
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 270
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 300
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/SAIGA20K/U_Saiga_20k_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -3818,12 +3818,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 90
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -3833,27 +3833,27 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -3868,52 +3868,52 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_RifleScope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 235
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/SCAR-H/U_SCAR-H_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -3950,12 +3950,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 90
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -3965,27 +3965,27 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -4000,52 +4000,52 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_RifleScope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 235
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/SG553LB/U_SG553LB_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -4072,12 +4072,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/SKS/U_SKS_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/SKS/U_SKS_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -4087,27 +4087,27 @@ return {
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/SKS/U_SKS_Flash_Suppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 0
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/SKS/U_SKS_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/SKS/U_SKS_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/SKS/U_SKS_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/SKS/U_SKS_Heavy_Barrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 300
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -4117,62 +4117,62 @@ return {
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/SKS/U_SKS_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 0
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/SKS/U_SKS_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 10
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/SKS/U_SKS_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 50
             },{
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/SKS/U_SKS_Ballistic_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 80
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/SKS/U_SKS_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/SKS/U_SKS_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/SKS/U_SKS_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 0
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/SKS/U_SKS_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/SKS/U_SKS_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 175
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/SKS/U_SKS_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 200
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/SKS/U_SKS_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 235
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/SKS/U_SKS_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -4204,7 +4204,7 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/SV98/U_SV98_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 30
             },{
                 prettyName = 'Straight Pull Bolt',
                 attachmentPath = 'Weapons/SV98/U_SV98_StraightPull',
@@ -4219,17 +4219,17 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/SV98/U_SV98_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/SV98/U_SV98_Flash_light',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/SV98/U_SV98_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -4244,62 +4244,62 @@ return {
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/SV98/U_SV98_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 0
             },{
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/SV98/U_SV98_Ballistic_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 10
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/SV98/U_SV98_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 50
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/SV98/U_SV98_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 80
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/SV98/U_SV98_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/SV98/U_SV98_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/SV98/U_SV98_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 0
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/SV98/U_SV98_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/SV98/U_SV98_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 175
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/SV98/U_SV98_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 200
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/SV98/U_SV98_RX_01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 235
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/SV98/U_SV98_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -4321,12 +4321,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/SVD/U_SVD_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/SVD/U_SVD_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -4336,17 +4336,17 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/SVD/U_SVD_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/SVD/U_SVD_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/SVD/U_SVD_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -4361,62 +4361,62 @@ return {
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/SVD/U_SVD_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 0
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/SVD/U_SVD_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 10
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/SVD/U_SVD_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 50
             },{
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/SVD/U_SVD_Ballistic_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 80
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/SVD/U_SVD_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/SVD/U_SVD_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/SVD/U_SVD_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 0
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/SVD/U_SVD_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/SVD/U_SVD_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 175
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/SVD/U_SVD_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 200
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/SVD/U_SVD_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 235
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/SVD/U_SVD_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -4450,12 +4450,12 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/Type88/U_Type88_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 0
             },{
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/Type88/U_Type88_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -4470,12 +4470,12 @@ return {
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/Type88/U_Type88_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/Type88/U_Type88_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 70
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/Type88/U_Type88_Sound_Suppressor',
@@ -4490,52 +4490,52 @@ return {
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/Type88/U_Type88_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 20
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/Type88/U_Type88_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 10
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/Type88/U_Type88_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 50
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/Type88/U_Type88_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/Type88/U_Type88_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/Type88/U_Type88_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/Type88/U_Type88_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/Type88/U_Type88_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 175
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/Type88/U_Type88_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 200
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/Type88/U_Type88_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 235
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -4572,7 +4572,7 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/UMP45/U_UMP45_Targetpointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/UMP45/U_UMP45_Flashlight',
@@ -4587,12 +4587,12 @@ return {
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/UMP45/U_UMP45_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 30
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/UMP45/U_UMP45_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -4607,37 +4607,37 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/UMP45/U_UMP45_Eotech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 40
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/UMP45/U_UMP45_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 70
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/UMP45/U_UMP45_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 80
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/UMP45/U_UMP45_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/UMP45/U_UMP45_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/UMP45/U_UMP45_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/UMP45/U_UMP45_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -4679,12 +4679,12 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_Target_Pointer',
                 attachmentSlotIndex = 2,
-                killsRequired = 120
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_FlashSuppressor',
                 attachmentSlotIndex = 2,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -4719,42 +4719,42 @@ return {
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_RX_01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 200
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 235
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 270
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_Rifle_scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 300
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 350
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 10
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 40
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_PSO-1',
@@ -4764,12 +4764,12 @@ return {
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/USAS-12/U_USAS-12_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -4791,12 +4791,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -4806,27 +4806,27 @@ return {
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_targetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -4836,57 +4836,57 @@ return {
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 50
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP1_FAMAS/U_FAMAS_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -4913,7 +4913,7 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -4923,22 +4923,22 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_FlashLight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_FlashSuppressor',
@@ -4958,52 +4958,52 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 90
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 100
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 125
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 175
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 200
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 235
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 270
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP1_HK53/U_HK53_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 300
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -5050,12 +5050,12 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_TargetPointer',
                 attachmentSlotIndex = 2,
-                killsRequired = 120
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_FlashSuppressor',
                 attachmentSlotIndex = 2,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -5095,52 +5095,52 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 40
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_RifleScope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 235
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP1_Jackhammer/U_Jackhammer_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -5172,12 +5172,12 @@ return {
                 prettyName = 'ForeGrip',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_ForeGrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -5187,27 +5187,27 @@ return {
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -5217,57 +5217,57 @@ return {
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 50
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP1_L85A2/U_L85A2_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -5304,7 +5304,7 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 30
             },{
                 prettyName = 'Straight Pull Bolt',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_StraightPull',
@@ -5319,17 +5319,17 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -5344,57 +5344,57 @@ return {
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_Ballistic_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 10
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 50
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 80
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 175
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -5414,7 +5414,7 @@ return {
                 prettyName = 'Rifle Scope (20x)',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_Ballistic_20xScope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 10
             },{
                 prettyName = 'ABU Camo',
                 attachmentPath = 'Weapons/XP1_L96/U_L96_CAMO_ABU',
@@ -5441,7 +5441,7 @@ return {
                 prettyName = 'ForeGrip',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_ForeGrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -5451,37 +5451,37 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 0
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_targetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_Rifle_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 80
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_ExtendedMag',
                 attachmentSlotIndex = 2,
-                killsRequired = 30
+                killsRequired = 300
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 350
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -5491,27 +5491,27 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 10
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 50
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 70
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_Rifle_Scope',
@@ -5521,27 +5521,27 @@ return {
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 175
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 235
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP1_MG36/U_MG36_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -5568,7 +5568,7 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_Flashlight',
@@ -5583,12 +5583,12 @@ return {
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 30
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -5598,42 +5598,42 @@ return {
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 10
             },{
                 prettyName = 'PKA-S',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_PKA-S',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 40
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 70
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 80
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP1_PP-19/U_PP-19_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -5665,12 +5665,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 0
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -5680,32 +5680,32 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_Sound_Suppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 80
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 300
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_ExtendedMag',
                 attachmentSlotIndex = 2,
-                killsRequired = 30
+                killsRequired = 350
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -5715,57 +5715,57 @@ return {
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 10
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 50
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 70
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 150
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 175
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 200
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 235
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP1_QBB-95/U_QBB-95_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -5802,12 +5802,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -5817,17 +5817,17 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -5842,57 +5842,57 @@ return {
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 10
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 50
             },{
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_Ballistic_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 80
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 175
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 200
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 235
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -5902,7 +5902,7 @@ return {
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP1_QBU-88/U_QBU-88_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 0
             },{
                 prettyName = 'No Camo',
                 attachmentPath = 'Weapons/Common/NoCamo',
@@ -5919,12 +5919,12 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -5934,17 +5934,17 @@ return {
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -5954,17 +5954,17 @@ return {
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 10
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 30
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 50
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_PSO-1',
@@ -5974,37 +5974,37 @@ return {
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 200
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 235
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP1_QBZ-95B/U_QBZ-95B_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -6031,12 +6031,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 90
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -6046,27 +6046,27 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -6081,52 +6081,52 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 235
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP2_ACR/U_ACR_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -6163,12 +6163,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -6178,17 +6178,17 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -6203,57 +6203,57 @@ return {
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_Ballistic_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 80
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 175
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP2_HK417/U_HK417_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -6280,7 +6280,7 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 30
             },{
                 prettyName = 'Straight Pull Bolt',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_StraightPull',
@@ -6295,17 +6295,17 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -6320,57 +6320,57 @@ return {
                 prettyName = 'Rifle Scope (12x)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_Ballistic_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 190
+                killsRequired = 10
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 50
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 80
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 0
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 175
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 200
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 235
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -6380,7 +6380,7 @@ return {
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP2_JNG90/U_JNG90_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 0
             },{
                 prettyName = 'Default Camo',
                 attachmentPath = 'Weapons/Common/DefaultCamo',
@@ -6407,7 +6407,7 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -6417,37 +6417,37 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 0
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 80
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 350
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_ExtendedMag',
                 attachmentSlotIndex = 2,
-                killsRequired = 30
+                killsRequired = 300
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -6457,57 +6457,57 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 10
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 50
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 70
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 175
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 235
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP2_L86/U_L86_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 270
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -6534,7 +6534,7 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 60
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -6544,12 +6544,12 @@ return {
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 0
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 20
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_ExtendedMag',
@@ -6559,12 +6559,12 @@ return {
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_Targetpointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 70
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_Silencer',
@@ -6579,42 +6579,42 @@ return {
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 10
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 125
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 175
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP2_LSAT/U_LSAT_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -6666,7 +6666,7 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_Targetpointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_Flashlight',
@@ -6681,17 +6681,17 @@ return {
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 30
             },{
                 prettyName = 'Extended Mag',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_ExtendedMag',
                 attachmentSlotIndex = 2,
-                killsRequired = 30
+                killsRequired = 60
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_Flashsuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 100
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -6706,37 +6706,37 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 40
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 70
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 80
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 90
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 125
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 150
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP2_MP5K/U_MP5K_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 175
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -6758,7 +6758,7 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -6768,22 +6768,22 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 60
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_Flashsuppressor',
@@ -6803,52 +6803,52 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 50
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 90
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 100
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 125
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 175
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 200
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 235
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 270
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP2_MTAR/U_MTAR_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 300
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -6885,12 +6885,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Rail',
                 attachmentPath = 'Weapons/Common/NoSecondaryRail',
@@ -6900,27 +6900,27 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_TargetPointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_Silencer',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-l_HeavyBarrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_FlashSuppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -6930,57 +6930,57 @@ return {
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 50
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 80
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-l_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 200
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP2_SCAR-L/U_SCAR-L_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -7027,12 +7027,12 @@ return {
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_Target_Pointer',
                 attachmentSlotIndex = 2,
-                killsRequired = 120
+                killsRequired = 80
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_FlashSuppressor',
                 attachmentSlotIndex = 2,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Primary Accessory',
                 attachmentPath = 'Weapons/Common/NoPrimaryAccessory',
@@ -7072,52 +7072,52 @@ return {
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 40
             },{
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_ACOG',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 70
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 200
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 235
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP2_SPAS12/U_SPAS12_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
@@ -7144,12 +7144,12 @@ return {
                 prettyName = 'Foregrip',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_Foregrip',
                 attachmentSlotIndex = 2,
-                killsRequired = 40
+                killsRequired = 30
             },{
                 prettyName = 'Bipod',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_Bipod',
                 attachmentSlotIndex = 2,
-                killsRequired = 80
+                killsRequired = 60
             },{
                 prettyName = 'No Secondary Rail',
                 attachmentPath = 'Weapons/Common/NoSecondaryRail',
@@ -7159,27 +7159,27 @@ return {
                 prettyName = 'Heavy Barrel',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_Heavy_Barrel',
                 attachmentSlotIndex = 3,
-                killsRequired = 30
+                killsRequired = 20
             },{
                 prettyName = 'Tactical Light',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_Flashlight',
                 attachmentSlotIndex = 3,
-                killsRequired = 50
+                killsRequired = 40
             },{
                 prettyName = 'Suppressor',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_Sound_Suppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 70
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_Target_Pointer',
                 attachmentSlotIndex = 3,
-                killsRequired = 120
+                killsRequired = 90
             },{
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_Flash_Suppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 175
             },{
                 prettyName = 'No Secondary Accessory',
                 attachmentPath = 'Weapons/Common/NoSecondaryAccessory',
@@ -7189,57 +7189,57 @@ return {
                 prettyName = 'ACOG (4x)',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_Acog',
                 attachmentSlotIndex = 1,
-                killsRequired = 60
+                killsRequired = 10
             },{
                 prettyName = 'Reflex (RDS)',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_RX01',
                 attachmentSlotIndex = 1,
-                killsRequired = 10
+                killsRequired = 50
             },{
                 prettyName = 'Holographic (HOLO)',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_EOTech',
                 attachmentSlotIndex = 1,
-                killsRequired = 100
+                killsRequired = 80
             },{
                 prettyName = 'IRNV (IR 1x)',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_IRNV',
                 attachmentSlotIndex = 1,
-                killsRequired = 180
+                killsRequired = 100
             },{
                 prettyName = 'Rifle Scope (8x)',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_Rifle_Scope',
                 attachmentSlotIndex = 1,
-                killsRequired = 140
+                killsRequired = 125
             },{
                 prettyName = 'M145 (3.4x)',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_M145',
                 attachmentSlotIndex = 1,
-                killsRequired = 160
+                killsRequired = 150
             },{
                 prettyName = 'PSO-1 (4x)',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_PSO-1',
                 attachmentSlotIndex = 1,
-                killsRequired = 70
+                killsRequired = 200
             },{
                 prettyName = 'Kobra (RDS)',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_Kobra',
                 attachmentSlotIndex = 1,
-                killsRequired = 20
+                killsRequired = 235
             },{
                 prettyName = 'PKA-S (HOLO)',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_PK-AS',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 270
             },{
                 prettyName = 'PKS-07 (7x)',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_PKS-07',
                 attachmentSlotIndex = 1,
-                killsRequired = 150
+                killsRequired = 300
             },{
                 prettyName = 'PK-A (3.4x)',
                 attachmentPath = 'Weapons/XP2_SteyrAug/U_SteyrAug_PKA',
                 attachmentSlotIndex = 1,
-                killsRequired = 170
+                killsRequired = 350
             },{
                 prettyName = 'No Optics',
                 attachmentPath = 'Weapons/Common/NoOptics',
