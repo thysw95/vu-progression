@@ -12,13 +12,31 @@ local generalProgression = {
             {
                 prettyName = 'M9',
                 equipmentPath = 'Weapons/M9/U_M9',
-                kits = {'All'},
+                kits = {
+                    'Gameplay/Kits/USAssault',
+                    'Gameplay/Kits/USAssault_XP4',
+                    'Gameplay/Kits/USEngineer',
+                    'Gameplay/Kits/USEngineer_XP4',
+                    'Gameplay/Kits/USSupport',
+                    'Gameplay/Kits/USSupport_XP4',
+                    'Gameplay/Kits/USRecon',
+                    'Gameplay/Kits/USRecon_XP4',
+                },
                 slotId = 'ID_M_SOLDIER_SECONDARY',
             },
             {
                 prettyName = 'MP443',
                 equipmentPath = 'Weapons/MP443/U_MP443',
-                kits = {'All'},
+                kits = {
+                    'Gameplay/Kits/RUAssault',
+                    'Gameplay/Kits/RUAssault_XP4',
+                    'Gameplay/Kits/RUEngineer',
+                    'Gameplay/Kits/RUEngineer_XP4',
+                    'Gameplay/Kits/RUSupport',
+                    'Gameplay/Kits/RUSupport_XP4',
+                    'Gameplay/Kits/RURecon',
+                    'Gameplay/Kits/RURecon_XP4',
+                },
                 slotId = 'ID_M_SOLDIER_SECONDARY',
             },
             {
