@@ -16,6 +16,7 @@ This mod is still in early development, so some key features are still missing.
 
 ## ✨ Features
 - Rank progression system
+- Ribbon progression system (59 ribbons from BF3 with premium holographic/glitch top-HUD WebUI notifications & sequential sounds)
 - Weapon unlocks based on score
 - Attachment unlocks per weapon based on kills
 - Vehicle unlock progression
@@ -66,6 +67,7 @@ These should be considered temporary until a proper UI can be built to view thes
 - `!level` or `!score`: Privately prints to the player all Class & General levels, score, and score required for next unlock.
 - `!kills <Weapon Name>`: Prints number of kills for that weapon, kills required for next unlock, and what that unlock will be.
 - `!vs <Vehicle Type>`: Does the same, but for Vehicle Score.
+- `!ribbons`: Privately prints a list of all your earned ribbons and their total counts.
 
 ## 🎮 Usage
 - Join a server with a `progression` mod tag
@@ -82,11 +84,15 @@ Want to contribute? Here’s how:
 
 The mod is written in [VEXT (VeniceEXT)](https://docs.veniceunleashed.net/vext/) scripting, primarily in LUA.
 
+For detailed technical guides on console commands, VEXT hooks, downcasting Frostbite classes in Lua, database layout, and UI compilation, please see [technical.md](technical.md).
+For a detailed guide on the Ribbon system architecture, please see [RIBBONS.md](RIBBONS.md).
+
 ---
 
 ## 🚧 Roadmap
 - [x] Global persistent tracking across multiple servers
-- [ ] Add Ribbons and Assignments
+- [x] Add Ribbons (with original BF3 WebUI HUD popups, premium holographic/glitch visual effects & sequential sounds)
+- [ ] Add Assignments
 - [ ] Add dog tag unlocks
 - [ ] UI stats page 
 - [ ] UI notifications for rank up / unlocks (like vanilla BF3)

@@ -1,5 +1,6 @@
 local vehicleProgConfig = require("__shared/Progression/VehicleProgressionConfig")
 local weaponProgConfig = require("__shared/Progression/WeaponProgressionConfig")
+local ribbonProgConfig = require("__shared/Progression/RibbonConfig")
 
 local VUPlayerRankClass = class('VUPlayerRank')
 
@@ -15,6 +16,7 @@ function VUPlayerRankClass:__init(player)
     self.InitReconRankStats(self)
     self.InitWeaponKills(self)
     self.InitVehicleScores(self)
+    self.InitRibbons(self)
 end
 
 function VUPlayerRankClass:InitPlayerVariables(player)
@@ -69,6 +71,16 @@ function VUPlayerRankClass:InitVehicleScores()
         table.insert(self.r_VehicleProgressList, {
             ['typeName'] = vehicleType.prettyName,
             ['score'] = 0
+        })
+    end
+end
+
+function VUPlayerRankClass:InitRibbons()
+    self.r_RibbonList = {}
+    for ribbonKey, _ in pairs(ribbonProgConfig) do
+        table.insert(self.r_RibbonList, {
+            ['ribbonName'] = ribbonKey,
+            ['count'] = 0
         })
     end
 end

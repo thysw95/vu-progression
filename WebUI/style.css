@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    overflow: hidden;
+    font-family: 'Rajdhani', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#ribbon-container {
+    position: fixed;
+    top: 10vh; /* Centered top position (108px at 1080p) */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+.ribbon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+
+.ribbon-card.show {
+    opacity: 1;
+}
+
+.ribbon-card.hide {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.ribbon-title {
+    font-size: 2.7778vh; /* 30px / 1080px */
+    font-weight: 700;
+    color: #8bc7e2; /* Light blue BF3 HUD color */
+    text-shadow: 0 0 1.1111vh rgba(139, 199, 226, 0.6), 0 0.1852vh 0.3704vh rgba(0, 0, 0, 0.85);
+    letter-spacing: 0.1852vh; /* 2px / 1080px */
+    text-transform: uppercase;
+    margin-bottom: 0.7407vh; /* 8px / 1080px */
+    text-align: center;
+}
+
+.ribbon-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 27.7778vh; /* 300px / 1080px */
+    height: 9.2593vh; /* 100px / 1080px */
+    margin-bottom: 0.7407vh; /* 8px / 1080px */
+    position: relative;
+    
+    /* Pop-out scaling transition: starting very small */
+    transform: scale(0.15);
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+}
+
+.ribbon-card.show .ribbon-image-container {
+    transform: scale(1);
+}
+
+.ribbon-card.hide .ribbon-image-container {
+    transform: scale(0.7);
+    transition: transform 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+/* Subtle glow behind the ribbon */
+.ribbon-image-container::before {
+    content: '';
+    position: absolute;
+    width: 18.5185vh; /* 200px / 1080px */
+    height: 6.9444vh; /* 75px / 1080px */
+    background: radial-gradient(ellipse, rgba(139, 199, 226, 0.15) 0%, rgba(139, 199, 226, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Base image styling */
+.ribbon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.1852vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ribbon-image.main {
+    z-index: 1;
+    filter: drop-shadow(0 0.3704vh 0.7407vh rgba(0, 0, 0, 0.7)) drop-shadow(0 0 0.3704vh rgba(139, 199, 226, 0.2));
+}
+
+/* Holographic Chromatic Aberration - Cyan Glitch Layer */
+.ribbon-image.glitch-cyan {
+    position: absolute; /* Overlay exactly on top of main */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    mix-blend-mode: screen;
+    filter: brightness(1.6) sepia(1) hue-rotate(180deg) saturate(3.5);
+    opacity: 0;
+}
+
+.glitch-active .ribbon-image.glitch-cyan {
+    animation: glitch-cyan-anim 1.8s infinite steps(2);
+}
+
+/* Holographic Chromatic Aberration - Red/Magenta Glitch Layer */
+.ribbon-image.glitch-red {
+    position: absolute; /* Overlay exactly on top of main */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    mix-blend-mode: screen;
+    filter: brightness(1.6) sepia(1) hue-rotate(330deg) saturate(3.5);
+    opacity: 0;
+}
+
+.glitch-active .ribbon-image.glitch-red {
+    animation: glitch-red-anim 1.8s infinite steps(2);
+}
+
+/* Holographic scanlines and laser scan effect overlay */
+.ribbon-scanlines {
+    position: absolute; /* Sized exactly to match the container (which matches the image width) */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: 0.1852vh;
+    
+    /* Mask properties to fit the image silhouette perfectly */
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    
+    /* Horizontal scanlines pattern (Very subtle black lines) */
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.18) 50%, 
+        rgba(0, 0, 0, 0) 50%
+    );
+    background-size: 100% 0.3704vh; /* 4px height lines */
+}
+
+/* Cyan digital noise blocks glitching */
+.ribbon-scanlines::before {
+    content: '';
+    position: absolute;
+    background: rgba(0, 210, 255, 0.3);
+    box-shadow: 0 0 0.9259vh rgba(0, 210, 255, 0.5);
+    opacity: 0;
+    z-index: 5;
+}
+
+.glitch-active .ribbon-scanlines::before {
+    animation: glitch-blocks 2s infinite steps(1);
+}
+
+/* Animated laser scanning line */
+.ribbon-scanlines::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 210, 255, 0) 0%,
+        rgba(139, 199, 226, 0.55) 75%,
+        rgba(255, 255, 255, 0.95) 100%
+    );
+    box-shadow: 0 0 1.2963vh rgba(139, 199, 226, 0.85);
+    opacity: 0;
+}
+
+.glitch-active .ribbon-scanlines::after {
+    opacity: 1;
+    animation: laser-scan 1.6s infinite linear;
+}
+
+/* --- Glitch Animations Keyframes --- */
+
+@keyframes laser-scan {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 150%;
+    }
+}
+
+@keyframes glitch-cyan-anim {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    12% {
+        transform: translate(-0.3704vh, 0.1852vh);
+        opacity: 0.35;
+    }
+    16% {
+        transform: translate(0.2778vh, -0.1852vh);
+        opacity: 0.45;
+    }
+    22% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    48% {
+        transform: translate(-0.463vh, -0.2778vh);
+        opacity: 0.4;
+    }
+    54% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    75% {
+        transform: translate(0.3704vh, 0.2778vh);
+        opacity: 0.35;
+    }
+    80% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes glitch-red-anim {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    8% {
+        transform: translate(0.2778vh, -0.1852vh);
+        opacity: 0.35;
+    }
+    14% {
+        transform: translate(-0.2778vh, 0.2778vh);
+        opacity: 0.45;
+    }
+    20% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(0.463vh, 0.1852vh);
+        opacity: 0.4;
+    }
+    56% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    78% {
+        transform: translate(-0.3704vh, -0.1852vh);
+        opacity: 0.35;
+    }
+    82% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes glitch-blocks {
+    0%, 100% {
+        top: 15%;
+        left: 8%;
+        width: 12%;
+        height: 70%;
+        opacity: 0;
+    }
+    4% {
+        top: 25%;
+        left: 3%;
+        width: 28%;
+        height: 50%;
+        opacity: 0.55;
+    }
+    8% {
+        top: 5%;
+        left: 75%;
+        width: 18%;
+        height: 85%;
+        opacity: 0.65;
+    }
+    11% {
+        opacity: 0;
+    }
+    44% {
+        top: 35%;
+        left: 12%;
+        width: 32%;
+        height: 25%;
+        opacity: 0.45;
+    }
+    48% {
+        top: 20%;
+        left: 82%;
+        width: 14%;
+        height: 65%;
+        opacity: 0.75;
+    }
+    51% {
+        opacity: 0;
+    }
+    72% {
+        top: 55%;
+        left: 35%;
+        width: 25%;
+        height: 35%;
+        opacity: 0.55;
+    }
+    76% {
+        opacity: 0;
+    }
+}
+
+.ribbon-xp {
+    font-size: 2.3148vh; /* 25px / 1080px */
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 0.7407vh rgba(255, 255, 255, 0.4), 0 0.1852vh 0.3704vh rgba(0, 0, 0, 0.9);
+    letter-spacing: 0.0926vh; /* 1px / 1080px */
+    text-align: center;
+}

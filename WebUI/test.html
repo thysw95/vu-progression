@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ribbon Animation Test (BF3 HUD)</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles exclusively for browser testing page */
+        body {
+            /* Dark gradient background to simulate in-game contrast */
+            background-color: #1a222d;
+            background-image: radial-gradient(circle, #253346 0%, #0d1218 100%);
+            margin: 0;
+            padding: 20px;
+        }
+
+        #test-panel {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(10, 20, 28, 0.9);
+            border: 1px solid rgba(0, 210, 255, 0.4);
+            padding: 15px;
+            border-radius: 4px;
+            z-index: 10000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #test-panel h3 {
+            margin: 0 0 10px 0;
+            color: #00d2ff;
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(0, 210, 255, 0.5);
+        }
+
+        .btn {
+            background: rgba(0, 210, 255, 0.1);
+            border: 1px solid #00d2ff;
+            color: #ffffff;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            text-align: left;
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .btn:hover {
+            background: rgba(0, 210, 255, 0.3);
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Test Control Panel -->
+    <div id="test-panel">
+        <h3>Ribbon Test Panel</h3>
+        <button class="btn" onclick="triggerTest('AssaultRifle', 'Assault Rifle Ribbon', 'Kill 7 enemies with Assault Rifles', 200)">Assault Rifle Ribbon</button>
+        <button class="btn" onclick="triggerTest('Accuracy', 'Accuracy Ribbon', 'Get 5 Headshot Kills', 200)">Accuracy Ribbon</button>
+        <button class="btn" onclick="triggerTest('MVP', 'MVP Ribbon', 'Be the best Player of the round', 500)">MVP Ribbon</button>
+        <button class="btn" onclick="triggerTest('CombatEfficiency', 'Combat Efficiency Ribbon', 'Get 3 Streak Bonuses', 500)">Combat Efficiency Ribbon</button>
+        <button class="btn" onclick="triggerMultiple()">Queue Test (3 Ribbons in a row)</button>
+    </div>
+
+    <!-- Container for displaying notifications -->
+    <div id="ribbon-container"></div>
+
+    <script src="script.js"></script>
+    <script>
+        function triggerTest(key, name, desc, xp) {
+            if (window.showRibbon) {
+                window.showRibbon({
+                    key: key,
+                    name: name,
+                    desc: desc,
+                    xp: xp,
+                    duration: 2500
+                });
+            }
+        }
+
+        function triggerMultiple() {
+            triggerTest('AssaultRifle', 'Assault Rifle Ribbon', 'Kill 7 enemies with Assault Rifles', 200);
+            setTimeout(() => {
+                triggerTest('Accuracy', 'Accuracy Ribbon', 'Get 5 Headshot Kills', 200);
+            }, 400);
+            setTimeout(() => {
+                triggerTest('MVP', 'MVP Ribbon', 'Be the best Player of the round', 500);
+            }, 800);
+        }
+    </script>
+</body>
+</html>

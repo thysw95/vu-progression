@@ -39,7 +39,8 @@ function LocalStorage:_initDB()
         player_recon_level INTEGER,
         player_recon_current_xp INTEGER,
         weapon_progression BLOB,
-        vehicle_progression BLOB
+        vehicle_progression BLOB,
+        ribbon_progression BLOB
     )
     ]]
     if not SQL:Query(query) then
@@ -48,14 +49,37 @@ function LocalStorage:_initDB()
     end
 end
 
+--- Queries the player_rankings_table structure and automatically adds missing progression columns.
+--- Safe for empty databases and updates schemas without altering existing data.
+--- @return nil
 function LocalStorage:_patchDB()
-    local response = SQL:Query('SELECT * FROM player_rankings_table LIMIT 1')
-    if response == nil or #response ~= 1 or response[1] == nil then return end
-    
-    -- Add vehicle_progression if missing
-    if response[1]['vehicle_progression'] == nil then
+    local columns = SQL:Query('PRAGMA table_info(player_rankings_table)')
+    if columns == nil then
+        print('Failed to query table info: ' .. SQL:Error())
+        return
+    end
+
+    local hasVehicleProgression = false
+    local hasRibbonProgression = false
+
+    for _, col in pairs(columns) do
+        if col.name == 'vehicle_progression' then
+            hasVehicleProgression = true
+        elseif col.name == 'ribbon_progression' then
+            hasRibbonProgression = true
+        end
+    end
+
+    if not hasVehicleProgression then
         print("Missing 'vehicle_progression' column detected. Patching DB to include it...")
         if not SQL:Query('ALTER TABLE player_rankings_table ADD COLUMN vehicle_progression BLOB') then
+            print('Failed to execute query: ' .. SQL:Error())
+        end
+    end
+
+    if not hasRibbonProgression then
+        print("Missing 'ribbon_progression' column detected. Patching DB to include it...")
+        if not SQL:Query('ALTER TABLE player_rankings_table ADD COLUMN ribbon_progression BLOB') then
             print('Failed to execute query: ' .. SQL:Error())
         end
     end
@@ -96,6 +120,15 @@ function LocalStorage:fetchPlayerProgress(playerRankObject)
                 'score'
             )
         end
+
+        -- Ribbon progression
+        if existingPlayers[1]['ribbon_progression'] ~= nil then
+            playerRankObject['r_RibbonList'] = csvToTableList(
+                existingPlayers[1]['ribbon_progression'],
+                'ribbonName',
+                'count'
+            )
+        end
     end
 end
 
@@ -122,6 +155,11 @@ function LocalStorage:storePlayerProgress(playerRankObject)
         'typeName',
         'score'
     )
+    local ribbonTable = tableListToCSV(
+        playerRankObject['r_RibbonList'],
+        'ribbonName',
+        'count'
+    )
 
     if #existingPlayer > 0 then -- Existing player found in DB
         -- print("Saving data for existing player: " .. playerRankObject.r_Player.name)
@@ -141,7 +179,8 @@ function LocalStorage:storePlayerProgress(playerRankObject)
             player_recon_level = ?,
             player_recon_current_xp = ?,
             weapon_progression = ?,
-            vehicle_progression = ?
+            vehicle_progression = ?,
+            ribbon_progression = ?
         WHERE player_guid = ?
         ]]
 
@@ -161,6 +200,7 @@ function LocalStorage:storePlayerProgress(playerRankObject)
             playerRankObject['r_ReconCurrentXP'],
             weaponTable,
             vehicleTable,
+            ribbonTable,
             playerRankObject.r_PlayerGuidStr
         ) then
             print('LOCAL STORAGE failed to execute query: ' .. SQL:Error())
@@ -186,9 +226,10 @@ function LocalStorage:storePlayerProgress(playerRankObject)
             player_recon_level,
             player_recon_current_xp,
             weapon_progression,
-            vehicle_progression
+            vehicle_progression,
+            ribbon_progression
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ]]
 
         if not SQL:Query(
@@ -208,7 +249,8 @@ function LocalStorage:storePlayerProgress(playerRankObject)
             playerRankObject['r_ReconLevel'],
             playerRankObject['r_ReconCurrentXP'],
             weaponTable,
-            vehicleTable
+            vehicleTable,
+            ribbonTable
         ) then
             print('LOCAL STORAGE failed to execute query: ' .. SQL:Error())
             return false

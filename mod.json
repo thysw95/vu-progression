@@ -8,6 +8,7 @@
     "Version": "3.0.3",
     "URL": "https://github.com/thysw95/vu-progression",
     "HasVeniceEXT": true,
+    "HasWebUI": true,
     "Dependencies": {
         "veniceext": "^1.0.0"
     },

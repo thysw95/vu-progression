@@ -111,6 +111,32 @@ NetEvents:Subscribe('OnVehicleCustUnlock', function(typeName, score)
     UnlockClientVehicleCust(typeName, score)
 end)
 
+NetEvents:Subscribe('OnRibbonAwarded', function(ribbonKey)
+    print("Client received Ribbon Awarded: " .. ribbonKey)
+
+    local RibbonConfig = require('__shared/Progression/RibbonConfig')
+    local ribbon = RibbonConfig[ribbonKey]
+
+    if ribbon then
+        if CONFIG.UnlockNotifications.enabled then
+            local jsonStr = json.encode({
+                key = ribbonKey,
+                name = ribbon.prettyName,
+                desc = ribbon.description,
+                xp = ribbon.xpReward,
+                duration = CONFIG.UnlockNotifications.duration * 1000
+            })
+            WebUI:ExecuteJS('if (window.showRibbon) { window.showRibbon(' .. jsonStr .. '); }')
+        end
+    else
+        print("Ribbon config not found for key: " .. tostring(ribbonKey))
+    end
+end)
+
+Events:Subscribe('Extension:Loaded', function()
+    WebUI:Init()
+end)
+
 -- DEBUG
 if CONFIG.General.debug then
 

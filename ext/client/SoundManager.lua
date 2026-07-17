@@ -87,6 +87,10 @@ Events:Subscribe('Level:Destroy', onLevelDestroy)
 
 NetEvents:Subscribe('PlayUnlockSound', PlayUnlockSound)
 
+Events:Subscribe('PlayRibbonSound', function()
+    PlayUnlockSound('ribbon')
+end)
+
 -- DEBUG
 if CONFIG.General.debug then
 
